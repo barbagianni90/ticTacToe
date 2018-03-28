@@ -8,20 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		FE4D552D2069023F00ABF6C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4D552C2069023F00ABF6C1 /* AppDelegate.swift */; };
-		FE4D552F2069024000ABF6C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4D552E2069024000ABF6C1 /* ViewController.swift */; };
+		FE4D552F2069024000ABF6C1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4D552E2069024000ABF6C1 /* MainViewController.swift */; };
 		FE4D55322069024000ABF6C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE4D55302069024000ABF6C1 /* Main.storyboard */; };
 		FE4D55342069024000ABF6C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE4D55332069024000ABF6C1 /* Assets.xcassets */; };
 		FE4D55372069024000ABF6C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE4D55352069024000ABF6C1 /* LaunchScreen.storyboard */; };
+		FEC8A084206B849C0031001B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A083206B849C0031001B /* SignInViewController.swift */; };
+		FEC8A087206B84E60031001B /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A086206B84E60031001B /* LobbyViewController.swift */; };
+		FEC8A089206B87AA0031001B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A088206B87AA0031001B /* SignUpViewController.swift */; };
+		FEC8A08B206B89380031001B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A08A206B89380031001B /* ProfileViewController.swift */; };
+		FEC8A08D206B899D0031001B /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A08C206B899D0031001B /* RankingViewController.swift */; };
+		FEC8A0A5206BA0A40031001B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A0A4206BA0A40031001B /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FE4D55292069023F00ABF6C1 /* ticTacToeEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ticTacToeEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE4D552C2069023F00ABF6C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FE4D552E2069024000ABF6C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FE4D552E2069024000ABF6C1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FE4D55312069024000ABF6C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE4D55332069024000ABF6C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE4D55362069024000ABF6C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE4D55382069024000ABF6C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEC8A083206B849C0031001B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		FEC8A086206B84E60031001B /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
+		FEC8A088206B87AA0031001B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		FEC8A08A206B89380031001B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FEC8A08C206B899D0031001B /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
+		FEC8A092206B9AAE0031001B /* SanFranciscoDisplay-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Heavy.otf"; sourceTree = "<group>"; };
+		FEC8A09B206B9AB30031001B /* SanFranciscoDisplay-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Regular.otf"; sourceTree = "<group>"; };
+		FEC8A09C206B9AB40031001B /* SanFranciscoDisplay-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Semibold.otf"; sourceTree = "<group>"; };
+		FEC8A0A0206B9AB50031001B /* SanFranciscoDisplay-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Medium.otf"; sourceTree = "<group>"; };
+		FEC8A0A1206B9AB60031001B /* SanFranciscoDisplay-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Light.otf"; sourceTree = "<group>"; };
+		FEC8A0A2206B9AB60031001B /* SanFranciscoDisplay-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Thin.otf"; sourceTree = "<group>"; };
+		FEC8A0A4206BA0A40031001B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +73,41 @@
 			isa = PBXGroup;
 			children = (
 				FE4D552C2069023F00ABF6C1 /* AppDelegate.swift */,
-				FE4D552E2069024000ABF6C1 /* ViewController.swift */,
+				FEC8A085206B84D60031001B /* Controller */,
 				FE4D55302069024000ABF6C1 /* Main.storyboard */,
 				FE4D55332069024000ABF6C1 /* Assets.xcassets */,
 				FE4D55352069024000ABF6C1 /* LaunchScreen.storyboard */,
 				FE4D55382069024000ABF6C1 /* Info.plist */,
+				FEC8A0A3206B9AC20031001B /* Fonts */,
 			);
 			path = ticTacToeEx;
+			sourceTree = "<group>";
+		};
+		FEC8A085206B84D60031001B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FE4D552E2069024000ABF6C1 /* MainViewController.swift */,
+				FEC8A083206B849C0031001B /* SignInViewController.swift */,
+				FEC8A086206B84E60031001B /* LobbyViewController.swift */,
+				FEC8A088206B87AA0031001B /* SignUpViewController.swift */,
+				FEC8A08A206B89380031001B /* ProfileViewController.swift */,
+				FEC8A08C206B899D0031001B /* RankingViewController.swift */,
+				FEC8A0A4206BA0A40031001B /* GameViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FEC8A0A3206B9AC20031001B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FEC8A092206B9AAE0031001B /* SanFranciscoDisplay-Heavy.otf */,
+				FEC8A0A1206B9AB60031001B /* SanFranciscoDisplay-Light.otf */,
+				FEC8A0A0206B9AB50031001B /* SanFranciscoDisplay-Medium.otf */,
+				FEC8A09B206B9AB30031001B /* SanFranciscoDisplay-Regular.otf */,
+				FEC8A09C206B9AB40031001B /* SanFranciscoDisplay-Semibold.otf */,
+				FEC8A0A2206B9AB60031001B /* SanFranciscoDisplay-Thin.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +182,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE4D552F2069024000ABF6C1 /* ViewController.swift in Sources */,
+				FEC8A08B206B89380031001B /* ProfileViewController.swift in Sources */,
+				FE4D552F2069024000ABF6C1 /* MainViewController.swift in Sources */,
 				FE4D552D2069023F00ABF6C1 /* AppDelegate.swift in Sources */,
+				FEC8A08D206B899D0031001B /* RankingViewController.swift in Sources */,
+				FEC8A0A5206BA0A40031001B /* GameViewController.swift in Sources */,
+				FEC8A084206B849C0031001B /* SignInViewController.swift in Sources */,
+				FEC8A087206B84E60031001B /* LobbyViewController.swift in Sources */,
+				FEC8A089206B87AA0031001B /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
