@@ -10,6 +10,8 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    static var user = User()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,6 +28,11 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func signIn(_ sender: Any) {
+        
+        let signInView = UIStoryboard(name: "SignInANDSignUp", bundle: nil).instantiateViewController(withIdentifier: "signIn")
+        self.present(signInView, animated: true, completion: nil)
+    }
+    
 }
 
