@@ -53,15 +53,13 @@ class SignInViewController: UIViewController {
                 } else {
                     
                     //Tells the user that there is an error and then gets firebase to tell them the error
-                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+        
+                    self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
                     
-                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alertController.addAction(defaultAction)
+                    let user = Auth.auth().currentUser
                     
-                    self.present(alertController, animated: true, completion: nil)
                 }
             }
         }
-        //dismiss(animated: true, completion: nil)
     }
 }
