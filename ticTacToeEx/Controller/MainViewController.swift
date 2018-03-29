@@ -33,6 +33,11 @@ class MainViewController: UIViewController {
         let signInView = UIStoryboard(name: "SignInANDSignUp", bundle: nil).instantiateViewController(withIdentifier: "signIn")
         self.present(signInView, animated: true, completion: nil)
     }
+    @IBAction func ranking(_ sender: Any) {
+        
+        let rankingView = UIStoryboard(name: "Ranking", bundle: nil).instantiateViewController(withIdentifier: "rankingList")
+        self.present(rankingView, animated: true, completion: nil)
+    }
     
 }
 

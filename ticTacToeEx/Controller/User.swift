@@ -12,7 +12,7 @@ import UIKit
 class User {
     
     var nickName: String = ""
-    var password: String = ""
+    var email: String = ""
     var vittorie: Int = 0
     var sconfitte: Int = 0
     var stato: String = ""
@@ -20,7 +20,7 @@ class User {
     
     init() {
         nickName = ""
-        password = ""
+        email = ""
         vittorie = 0
         sconfitte = 0
         stato = "offline"
@@ -28,9 +28,9 @@ class User {
     init(_ nickName: String) {
         self.nickName = nickName
     }
-    init(_ nickName: String, _ password: String, _ image: UIImage){
+    init(_ nickName: String, _ email: String, _ image: UIImage){
         self.nickName = nickName
-        self.password = password
+        self.email = email
         self.image = image
     }
 }
