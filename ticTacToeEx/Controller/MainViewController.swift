@@ -10,6 +10,10 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var avatarImage: UIImageView!
+    
+    
     static var user = User()
     
     override func viewDidLoad() {
