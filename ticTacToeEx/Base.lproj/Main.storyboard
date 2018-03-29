@@ -165,16 +165,34 @@
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SecondoAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="hbE-rJ-H48">
+                                <rect key="frame" x="30" y="50" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="igY-UO-Gd2"/>
+                                    <constraint firstAttribute="width" constant="40" id="pva-dY-B2B"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrD-L2-Dis">
+                                <rect key="frame" x="78" y="60" width="79" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bp1-fa-Lnr" secondAttribute="trailing" constant="30" id="5Cr-DZ-Gzq"/>
+                            <constraint firstItem="YrD-L2-Dis" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="7X4-PB-L2r"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IDn-w2-xMD" secondAttribute="bottom" constant="33" id="CCp-QC-zj6"/>
                             <constraint firstItem="1EI-R5-x26" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="F2F-8H-Wjf"/>
+                            <constraint firstItem="hbE-rJ-H48" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="GOw-YH-zMG"/>
+                            <constraint firstItem="YrD-L2-Dis" firstAttribute="leading" secondItem="hbE-rJ-H48" secondAttribute="trailing" constant="10" id="IZ2-wU-lFt"/>
                             <constraint firstItem="ePS-Wg-ri0" firstAttribute="top" secondItem="6Hb-Vd-dNN" secondAttribute="bottom" constant="25" id="Iw1-Qy-2Ty"/>
                             <constraint firstItem="6Hb-Vd-dNN" firstAttribute="top" secondItem="BwO-M9-pEi" secondAttribute="bottom" constant="25" id="Jjr-kE-Hwe"/>
+                            <constraint firstItem="hbE-rJ-H48" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="KJB-BR-8AD"/>
                             <constraint firstItem="1EI-R5-x26" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KkZ-Qf-E8w"/>
                             <constraint firstItem="BwO-M9-pEi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="115" id="Twb-LS-eUl"/>
+                            <constraint firstItem="hbE-rJ-H48" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="XS2-Dy-iaU"/>
                             <constraint firstItem="bp1-fa-Lnr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="ijc-ua-bjO"/>
                             <constraint firstItem="ePS-Wg-ri0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="paL-LM-yTT"/>
                             <constraint firstItem="6Hb-Vd-dNN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s4V-n5-ny6"/>
@@ -185,10 +203,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="avatarImage" destination="hbE-rJ-H48" id="Dmd-LW-mO9"/>
+                        <outlet property="usernameLabel" destination="YrD-L2-Dis" id="UC8-xN-jpq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="669.60000000000002" y="31.03448275862069"/>
+            <point key="canvasLocation" x="669.375" y="30.633802816901408"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gba-wE-nz7">
@@ -247,9 +269,6 @@
                                                     <rect key="frame" x="137" y="11" width="46" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Game"/>
-                                                    <connections>
-                                                        <segue destination="Ief-t0-ly6" kind="show" id="sPj-f4-mSl"/>
-                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stark92" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coR-n1-GWv">
                                                     <rect key="frame" x="20" y="11" width="61" height="21"/>
@@ -273,8 +292,15 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <segue destination="Ief-t0-ly6" kind="show" id="DlR-ZW-xHn"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="XXD-H3-53u" id="dpS-AF-od9"/>
+                                    <outlet property="delegate" destination="XXD-H3-53u" id="Ev3-va-xir"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giocatore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7t-jI-BjQ">
                                 <rect key="frame" x="20" y="75" width="119" height="25"/>
@@ -329,6 +355,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tris" translatesAutoresizingMaskIntoConstraints="NO" id="agd-uH-7xh">
                                 <rect key="frame" x="0.0" y="30" width="320" height="303"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hth-Ob-9C3">
+                                <rect key="frame" x="132" y="173" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Game"/>
+                                <connections>
+                                    <action selector="button:" destination="Ief-t0-ly6" eventType="touchUpInside" id="04W-qK-Q74"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -356,6 +390,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="SecondoAvatar" width="256" height="256"/>
         <image name="cherryTree" width="375" height="608"/>
         <image name="tris" width="1170" height="1120"/>
     </resources>
