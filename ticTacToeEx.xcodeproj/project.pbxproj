@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B1467CBB5A5A1BE6F82CFDE /* Pods_ticTacToeEx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D9F084CFCF052BA4C562CB /* Pods_ticTacToeEx.framework */; };
+		C4847796206CEE70002B6E18 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4847795206CEE70002B6E18 /* SignUp.storyboard */; };
 		FE4D552D2069023F00ABF6C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4D552C2069023F00ABF6C1 /* AppDelegate.swift */; };
 		FE4D552F2069024000ABF6C1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4D552E2069024000ABF6C1 /* MainViewController.swift */; };
 		FE4D55322069024000ABF6C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE4D55302069024000ABF6C1 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		1C32D8ED4D9B0548426CE6BE /* Pods-ticTacToeEx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ticTacToeEx.release.xcconfig"; path = "Pods/Target Support Files/Pods-ticTacToeEx/Pods-ticTacToeEx.release.xcconfig"; sourceTree = "<group>"; };
 		43D9F084CFCF052BA4C562CB /* Pods_ticTacToeEx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ticTacToeEx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED0EAF96825F86A2AE54DBE /* Pods-ticTacToeEx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ticTacToeEx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ticTacToeEx/Pods-ticTacToeEx.debug.xcconfig"; sourceTree = "<group>"; };
+		C4847795206CEE70002B6E18 /* SignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		FE4D55292069023F00ABF6C1 /* ticTacToeEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ticTacToeEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE4D552C2069023F00ABF6C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE4D552E2069024000ABF6C1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				FE4D552C2069023F00ABF6C1 /* AppDelegate.swift */,
 				FEC8A085206B84D60031001B /* Controller */,
 				FE4D55302069024000ABF6C1 /* Main.storyboard */,
+				C4847795206CEE70002B6E18 /* SignUp.storyboard */,
 				FE4D55332069024000ABF6C1 /* Assets.xcassets */,
 				FE4D55352069024000ABF6C1 /* LaunchScreen.storyboard */,
 				FE4D55382069024000ABF6C1 /* Info.plist */,
@@ -198,6 +201,7 @@
 			files = (
 				FE4D55372069024000ABF6C1 /* LaunchScreen.storyboard in Resources */,
 				FE4D55342069024000ABF6C1 /* Assets.xcassets in Resources */,
+				C4847796206CEE70002B6E18 /* SignUp.storyboard in Resources */,
 				FE4D55322069024000ABF6C1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
