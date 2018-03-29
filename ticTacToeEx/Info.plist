@@ -30,6 +30,8 @@
 		<string>SanFranciscoDisplay-Thin.otf</string>
 		<string>SanFranciscoDisplay-Regular.otf</string>
 		<string>SanFranciscoDisplay-Light.otf</string>
+		<string>Shojumaru-Regular.ttf</string>
+		<string>CatCafe.ttf</string>
 	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>

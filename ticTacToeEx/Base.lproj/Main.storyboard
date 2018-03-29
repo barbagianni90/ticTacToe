@@ -10,17 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SanFranciscoDisplay-Light.otf">
-            <string>SanFranciscoDisplay-Light</string>
+        <array key="CatCafe.ttf">
+            <string>CatCafe</string>
         </array>
-        <array key="SanFranciscoDisplay-Regular.otf">
-            <string>SanFranciscoDisplay-Regular</string>
-        </array>
-        <array key="SanFranciscoDisplay-Semibold.otf">
-            <string>SanFranciscoDisplay-Semibold</string>
-        </array>
-        <array key="SanFranciscoDisplay-Thin.otf">
-            <string>SanFranciscoDisplay-Thin</string>
+        <array key="Shojumaru-Regular.ttf">
+            <string>Shojumaru-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -94,10 +88,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDn-w2-xMD">
-                                <rect key="frame" x="127" y="494" width="66" height="41"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                <rect key="frame" x="123" y="500" width="74" height="35"/>
+                                <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="17"/>
+                                <size key="titleShadowOffset" width="0.0" height="2"/>
                                 <state key="normal" title="Sign in">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="asj-Fk-Lx3" kind="presentation" identifier="signInSegue" id="cyd-gj-26o"/>
@@ -113,33 +109,39 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwO-M9-pEi">
-                                <rect key="frame" x="47" y="135" width="226" height="70"/>
+                                <rect key="frame" x="29" y="135" width="262" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="NhW-oy-9yF"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="47"/>
+                                <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="35"/>
+                                <size key="titleShadowOffset" width="0.0" height="2"/>
                                 <state key="normal" title="Start Game">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="XXD-H3-53u" kind="show" identifier="lobbySegue" id="fd9-5h-7TO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Hb-Vd-dNN">
-                                <rect key="frame" x="99" y="230" width="122" height="55"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                <rect key="frame" x="86.5" y="230" width="147" height="50"/>
+                                <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="28"/>
+                                <size key="titleShadowOffset" width="0.0" height="2"/>
                                 <state key="normal" title="Ranking">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="Dtu-bO-iXS" kind="show" id="ICd-z9-88Z"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePS-Wg-ri0">
-                                <rect key="frame" x="100.5" y="310" width="119" height="55"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                <rect key="frame" x="88" y="305" width="144" height="50"/>
+                                <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="28"/>
+                                <size key="titleShadowOffset" width="0.0" height="2"/>
                                 <state key="normal" title="Options">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                         </subviews>
@@ -204,60 +206,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cherryTree" translatesAutoresizingMaskIntoConstraints="NO" id="p42-IG-fk9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cherryTree" translatesAutoresizingMaskIntoConstraints="NO" id="p42-IG-fk9">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7d-c5-3AU">
-                                <rect key="frame" x="20" y="120" width="112" height="29"/>
-                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="24"/>
+                                <rect key="frame" x="20" y="120" width="113" height="28"/>
+                                <fontDescription key="fontDescription" name="CatCafe" family="CatCafe" pointSize="24"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rym-15-GHc">
-                                <rect key="frame" x="20" y="219" width="105" height="29"/>
-                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="24"/>
+                                <rect key="frame" x="20" y="218" width="108" height="28"/>
+                                <fontDescription key="fontDescription" name="CatCafe" family="CatCafe" pointSize="24"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ghs-7F-oXK">
-                                <rect key="frame" x="20" y="164" width="280" height="30"/>
+                                <rect key="frame" x="20" y="163" width="280" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fij-cT-SYt">
-                                <rect key="frame" x="20" y="258" width="280" height="30"/>
+                                <rect key="frame" x="20" y="256" width="280" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHc-d9-MQ2">
-                                <rect key="frame" x="122" y="499" width="76" height="36"/>
-                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Light" family="San Francisco Display" pointSize="20"/>
+                                <rect key="frame" x="117.5" y="498" width="85" height="37"/>
+                                <fontDescription key="fontDescription" name="CatCafe" family="CatCafe" pointSize="22"/>
+                                <size key="titleShadowOffset" width="0.0" height="2"/>
                                 <state key="normal" title="Register!">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Vwt-ck-WzV" kind="show" identifier="signUpSegue" id="6gr-Di-8IO"/>
+                                    <segue destination="PYw-PI-eBA" kind="show" id="Y86-aV-CQp"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlg-HL-29Z">
-                                <rect key="frame" x="105" y="40" width="110" height="43"/>
-                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Semibold" family="San Francisco Display" pointSize="36"/>
+                                <rect key="frame" x="82" y="40" width="156.5" height="50"/>
+                                <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="36"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="0.0" height="2"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't you have an account yet?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvu-Fg-hGu">
-                                <rect key="frame" x="44" y="477" width="232" height="22"/>
-                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Thin" family="San Francisco Display" pointSize="18"/>
+                                <rect key="frame" x="58.5" y="480" width="203" height="18"/>
+                                <fontDescription key="fontDescription" name="CatCafe" family="CatCafe" pointSize="15"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="0.0" height="0.5"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFv-ka-Ndp">
-                                <rect key="frame" x="112.5" y="363" width="95" height="55"/>
-                                <fontDescription key="fontDescription" name="SanFranciscoDisplay-Regular" family="San Francisco Display" pointSize="36"/>
+                                <rect key="frame" x="91" y="361" width="138" height="60"/>
+                                <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="36"/>
+                                <size key="titleShadowOffset" width="0.0" height="2"/>
                                 <state key="normal" title="Login!">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="loginButton:" destination="asj-Fk-Lx3" eventType="touchUpInside" id="6Ds-0e-fct"/>
@@ -306,44 +320,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8MG-ge-CrR">
-                                <rect key="frame" x="20" y="146" width="335" height="521"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DpA-cF-Ixq">
+                                <rect key="frame" x="0.0" y="105" width="320" height="463"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="3Rx-v0-Guf">
-                                        <rect key="frame" x="0.0" y="28" width="335" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="nEW-Av-gIs">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Rx-v0-Guf" id="D9V-3D-4yh">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nEW-Av-gIs" id="LOP-hy-4Ia">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQy-ZF-Z4x">
-                                                    <rect key="frame" x="155" y="6" width="46" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6F-3b-Ndc">
+                                                    <rect key="frame" x="137" y="11" width="46" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="game"/>
+                                                    <state key="normal" title="Game"/>
                                                     <connections>
-                                                        <action selector="nextButton:" destination="XXD-H3-53u" eventType="touchUpInside" id="TAu-CS-3hn"/>
-                                                        <segue destination="Ief-t0-ly6" kind="show" identifier="gameSegue" id="elb-sG-qZ4"/>
+                                                        <segue destination="Ief-t0-ly6" kind="show" id="sPj-f4-mSl"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="XXD-H3-53u" id="aAS-g5-LMR"/>
-                                    <outlet property="delegate" destination="XXD-H3-53u" id="2OA-TG-bye"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7J7-mR-qys" firstAttribute="bottom" secondItem="DpA-cF-Ixq" secondAttribute="bottom" id="0PQ-50-8sO"/>
+                            <constraint firstItem="7J7-mR-qys" firstAttribute="trailing" secondItem="DpA-cF-Ixq" secondAttribute="trailing" id="8EP-ab-hR8"/>
+                            <constraint firstItem="DpA-cF-Ixq" firstAttribute="leading" secondItem="7J7-mR-qys" secondAttribute="leading" id="CSY-Rp-vtB"/>
+                            <constraint firstItem="DpA-cF-Ixq" firstAttribute="top" secondItem="7J7-mR-qys" secondAttribute="top" constant="85" id="fvS-Tf-nEa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7J7-mR-qys"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dwp-H6-pD1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1552.8" y="29.23538230884558"/>
+            <point key="canvasLocation" x="1552.5" y="28.52112676056338"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="c5f-VV-Bfe">
@@ -371,13 +385,127 @@
             </objects>
             <point key="canvasLocation" x="2416.8000000000002" y="31.934032983508249"/>
         </scene>
-        <!--SignUp-->
-        <scene sceneID="fp3-wq-B01">
+        <!--Sign Up View Controller-->
+        <scene sceneID="ye0-gW-APu">
             <objects>
-                <viewControllerPlaceholder storyboardName="SignUp" id="Vwt-ck-WzV" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ydh-Np-1w7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="PYw-PI-eBA" customClass="SignUpViewController" customModule="ticTacToeEx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b7x-k0-9F8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cherryTree" translatesAutoresizingMaskIntoConstraints="NO" id="dmA-f0-b0o">
+                                <rect key="frame" x="0.0" y="-24" width="320" height="592"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dY8-mE-jU5">
+                                <rect key="frame" x="75" y="50" width="171" height="50"/>
+                                <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="36"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="0.0" height="2"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwd-Mu-Cva">
+                                <rect key="frame" x="20" y="130" width="113" height="28"/>
+                                <fontDescription key="fontDescription" name="CatCafe" family="CatCafe" pointSize="24"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="0.0" height="1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsn-4m-PJO">
+                                <rect key="frame" x="20" y="204" width="108" height="28"/>
+                                <fontDescription key="fontDescription" name="CatCafe" family="CatCafe" pointSize="24"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="0.0" height="1"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1wE-jz-GHg">
+                                <rect key="frame" x="20" y="166" width="280" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avatar:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xY-5D-Q1R">
+                                <rect key="frame" x="20" y="295" width="76" height="28"/>
+                                <fontDescription key="fontDescription" name="CatCafe" family="CatCafe" pointSize="24"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="0.0" height="1"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFa-Z0-maR">
+                                <rect key="frame" x="126" y="498" width="68" height="37"/>
+                                <fontDescription key="fontDescription" name="CatCafe" family="CatCafe" pointSize="22"/>
+                                <size key="titleShadowOffset" width="0.0" height="2"/>
+                                <state key="normal" title="Sign in!">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="signInButton:" destination="PYw-PI-eBA" eventType="touchUpInside" id="DoJ-Og-uNR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfB-tf-Dac">
+                                <rect key="frame" x="74.5" y="376" width="171" height="60"/>
+                                <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="36"/>
+                                <size key="titleShadowOffset" width="0.0" height="2"/>
+                                <state key="normal" title="Submit!">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitButton:" destination="PYw-PI-eBA" eventType="touchUpInside" id="IiZ-cL-PPZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you already have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8g-S9-5tw">
+                                <rect key="frame" x="52" y="482" width="217" height="18"/>
+                                <fontDescription key="fontDescription" name="CatCafe" family="CatCafe" pointSize="15"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="0.0" height="0.51000000000000001"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4nX-nE-CrJ">
+                                <rect key="frame" x="20" y="240" width="280" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tfB-tf-Dac" firstAttribute="centerX" secondItem="b7x-k0-9F8" secondAttribute="centerX" id="06K-05-DbW"/>
+                            <constraint firstItem="dmA-f0-b0o" firstAttribute="leading" secondItem="47U-vC-NRe" secondAttribute="leading" id="0XN-uu-vaf"/>
+                            <constraint firstItem="dY8-mE-jU5" firstAttribute="top" secondItem="47U-vC-NRe" secondAttribute="top" constant="30" id="2B9-dJ-Wdp"/>
+                            <constraint firstItem="47U-vC-NRe" firstAttribute="bottom" secondItem="iFa-Z0-maR" secondAttribute="bottom" constant="33" id="5rX-zD-wKS"/>
+                            <constraint firstItem="8xY-5D-Q1R" firstAttribute="top" secondItem="4nX-nE-CrJ" secondAttribute="bottom" constant="25" id="6ug-Oj-6xy"/>
+                            <constraint firstItem="8xY-5D-Q1R" firstAttribute="leading" secondItem="47U-vC-NRe" secondAttribute="leading" constant="20" id="838-ia-pXr"/>
+                            <constraint firstItem="dmA-f0-b0o" firstAttribute="bottom" secondItem="47U-vC-NRe" secondAttribute="bottom" id="8Rf-S4-1p7"/>
+                            <constraint firstItem="M8g-S9-5tw" firstAttribute="centerX" secondItem="b7x-k0-9F8" secondAttribute="centerX" id="Alf-8Q-gx7"/>
+                            <constraint firstItem="1wE-jz-GHg" firstAttribute="leading" secondItem="47U-vC-NRe" secondAttribute="leading" constant="20" id="BDe-22-g9U"/>
+                            <constraint firstItem="4nX-nE-CrJ" firstAttribute="top" secondItem="jsn-4m-PJO" secondAttribute="bottom" constant="8" id="HoN-4f-gfa"/>
+                            <constraint firstItem="4nX-nE-CrJ" firstAttribute="centerX" secondItem="b7x-k0-9F8" secondAttribute="centerX" id="I6c-MQ-P1e"/>
+                            <constraint firstItem="dY8-mE-jU5" firstAttribute="centerX" secondItem="b7x-k0-9F8" secondAttribute="centerX" id="LNT-mh-fdl"/>
+                            <constraint firstItem="47U-vC-NRe" firstAttribute="bottom" secondItem="M8g-S9-5tw" secondAttribute="bottom" constant="68" id="ZxY-K6-olU"/>
+                            <constraint firstItem="dmA-f0-b0o" firstAttribute="trailing" secondItem="47U-vC-NRe" secondAttribute="trailing" id="b4j-0O-a6r"/>
+                            <constraint firstItem="jsn-4m-PJO" firstAttribute="top" secondItem="1wE-jz-GHg" secondAttribute="bottom" constant="8" id="bQA-RF-zv2"/>
+                            <constraint firstItem="tfB-tf-Dac" firstAttribute="top" secondItem="4nX-nE-CrJ" secondAttribute="bottom" constant="106" id="egG-BZ-Anh"/>
+                            <constraint firstItem="1wE-jz-GHg" firstAttribute="top" secondItem="Bwd-Mu-Cva" secondAttribute="bottom" constant="8" id="j5U-UG-CzC"/>
+                            <constraint firstItem="Bwd-Mu-Cva" firstAttribute="top" secondItem="dY8-mE-jU5" secondAttribute="bottom" constant="30" id="qwZ-SX-96Y"/>
+                            <constraint firstItem="Bwd-Mu-Cva" firstAttribute="leading" secondItem="47U-vC-NRe" secondAttribute="leading" constant="20" id="rBS-9M-arf"/>
+                            <constraint firstItem="jsn-4m-PJO" firstAttribute="leading" secondItem="47U-vC-NRe" secondAttribute="leading" constant="20" id="s6Q-li-ax7"/>
+                            <constraint firstItem="4nX-nE-CrJ" firstAttribute="leading" secondItem="47U-vC-NRe" secondAttribute="leading" constant="20" id="sDL-6g-CHR"/>
+                            <constraint firstItem="dmA-f0-b0o" firstAttribute="top" secondItem="47U-vC-NRe" secondAttribute="top" constant="-44" id="sFd-XW-vWc"/>
+                            <constraint firstItem="1wE-jz-GHg" firstAttribute="centerX" secondItem="b7x-k0-9F8" secondAttribute="centerX" id="t8O-54-kTF"/>
+                            <constraint firstItem="iFa-Z0-maR" firstAttribute="centerX" secondItem="b7x-k0-9F8" secondAttribute="centerX" id="wc2-88-qO8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="47U-vC-NRe"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G2p-BF-VJ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1703.2" y="973.76311844077964"/>
+            <point key="canvasLocation" x="1701.5999999999999" y="972.86356821589209"/>
         </scene>
     </scenes>
     <resources>

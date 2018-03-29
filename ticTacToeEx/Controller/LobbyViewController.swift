@@ -14,6 +14,10 @@ class LobbyViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBAction func nextButton(_ sender: Any) {
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -21,8 +25,10 @@ class LobbyViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         
+        
         return cell!
     }
+    
     
     
 }
