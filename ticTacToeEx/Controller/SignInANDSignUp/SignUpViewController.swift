@@ -15,11 +15,17 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 
 class SignUpViewController: UIViewController {
     
+    var avatarSelected = ""
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
+    
+    
+    @IBOutlet var avatars: [UIButton]!
     
     
     @IBAction func signInButton(_ sender: Any) {
@@ -64,12 +70,13 @@ class SignUpViewController: UIViewController {
                             let ref = Database.database().reference()
                             
                             ref.child("Players").child("\(MainViewController.user.nickName)").setValue(
-                                ["password" : "\(self.passTextField.text as! String)",
+                                ["email" : "\(self.emailTextField.text as! String)",
                                     "stato" : "online",
                                     "vittorie" : "0",
                                     "sconfitte" : "0",
                                     "invitatoDa" : "",
-                                    "invitoAccettato" : ""])
+                                    "invitoAccettato" : "",
+                                    "avatar": "\(self.avatarSelected)"])
                         }
                         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
                         
@@ -90,14 +97,26 @@ class SignUpViewController: UIViewController {
         
         //dismiss(animated: true, completion: nil)
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        var i = 1
+        for button in avatars {
+            button.setImage(UIImage(named: "avatar\(i).png"), for: .normal)
+            button.setTitle("avatar\(i).png", for: .normal)
+            i += 1
+        }
         //        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         //        backgroundImage.image = UIImage(named: "cherryTree")
         //        backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
         //        self.view.insertSubview(backgroundImage, at: 0)
+    }
+    @IBAction func avatarSelected(_ sender: UIButton) {
+        
+        self.avatarSelected = sender.titleLabel?.text as! String
+        MainViewController.user.image = sender.imageView?.image
     }
 }
 
