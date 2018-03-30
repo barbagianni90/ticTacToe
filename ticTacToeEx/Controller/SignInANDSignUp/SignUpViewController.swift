@@ -17,6 +17,7 @@ import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
 
+
 class SignUpViewController: UIViewController {
     
     var avatarSelected = ""
@@ -101,6 +102,8 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.hideKeyboardWhenTappedAround()
         
         var i = 1
         for button in avatars {

@@ -14,6 +14,7 @@ class CustomLobbyCell: UITableViewCell {
     
     @IBOutlet weak var stateLabel: UILabel!
     
+    @IBOutlet weak var imageCell: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

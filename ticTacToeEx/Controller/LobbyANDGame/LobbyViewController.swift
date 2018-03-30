@@ -39,11 +39,13 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
                 let datiSinglePalyer = value as! [String : Any]
                 
-                let player = User()
-                player.nickName = key
-                player.stato = datiSinglePalyer["stato"] as! String
-                player.image = UIImage(named: "\(datiSinglePalyer["avatar"] as! String)")
-                self.players.append(player)
+                if key != MainViewController.user.nickName {
+                    let player = User()
+                    player.nickName = key
+                    player.stato = datiSinglePalyer["stato"] as! String
+                    player.image = UIImage(named: "\(datiSinglePalyer["avatar"] as! String)")
+                    self.players.append(player)
+                }
             }
             self.lobbyTable.reloadData()
         })
@@ -68,20 +70,18 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     ref.child("Players").child("\(value)").child("invitoAccettato").setValue("Si")
                     
                     
-                    let segue = self.storyboard?.instantiateViewController(withIdentifier: "Gioco")
-                    
+                    let segue =  UIStoryboard(name:"LobbyANDGame",bundle:nil).instantiateViewController(withIdentifier: "Gioco") as! GameViewController
                     
                     let enemy = User()
                     enemy.nickName = "\(value)"
                     
-                    let segue2 = segue as! GameViewController
+                    let segue2 = segue
                     segue2.enemy = enemy
                     
                     segue2.fPlayer = false
                     segue2.sPlayer = true
                     
-                    self.navigationController?.show(segue!, sender: false)
-                    
+                    self.present(segue, animated: true, completion: nil)
                 }))
                 
                 alert.addAction(UIAlertAction(title: "Rifiuto", style: .default, handler: { action in
@@ -105,18 +105,18 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
                 if value == "Si" {
                     
-                    let segue = self.storyboard?.instantiateViewController(withIdentifier: "Gioco")
+                    let segue =  UIStoryboard(name:"LobbyANDGame",bundle:nil).instantiateViewController(withIdentifier: "Gioco") as! GameViewController
                     
                     let enemy = User()
                     enemy.nickName = "\(self.nickNameSfidato)"
                     
-                    let segue2 = segue as! GameViewController
+                    let segue2 = segue
                     segue2.enemy = enemy
                     
                     segue2.fPlayer = true
                     segue2.sPlayer = false
                     
-                    self.navigationController?.show(segue!, sender: false)
+                    self.present(segue, animated: true, completion: nil)
                 }
                 else {
                     ref.child("Players").child("\(MainViewController.user.nickName)").child("stato").setValue("online")
@@ -174,6 +174,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         cell.nickNameLabel.text = players[indexPath.row].nickName
         cell.stateLabel.text = players[indexPath.row].stato
+        cell.imageCell.image = players[indexPath.row].image
         
         return cell
     }

@@ -49,6 +49,9 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vCd-H4-gBB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Hb-Vd-dNN">
                                 <rect key="frame" x="86.5" y="230" width="147" height="50"/>
@@ -120,6 +123,7 @@
                     <connections>
                         <outlet property="avatarButton" destination="q17-lu-dXO" id="GGS-5Y-jN9"/>
                         <outlet property="nickNameLabel" destination="ode-OO-V6w" id="Uu3-u5-7A4"/>
+                        <outlet property="startButton" destination="BwO-M9-pEi" id="lK5-0D-VCk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

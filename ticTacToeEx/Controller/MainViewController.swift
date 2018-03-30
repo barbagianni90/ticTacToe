@@ -8,6 +8,20 @@
 
 import UIKit
 
+extension UIViewController {
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+        
+    }
+}
+
 class MainViewController: UIViewController {
 
     @IBOutlet weak var usernameLabel: UILabel!
@@ -19,12 +33,14 @@ class MainViewController: UIViewController {
     @IBOutlet weak var avatarButton: UIButton!
     @IBOutlet weak var nickNameLabel: UILabel!
     
+    @IBOutlet weak var startButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if MainViewController.user.nickName == "" {
             self.avatarButton.isHidden = true
             self.nickNameLabel.isHidden = true
+            self.startButton.isEnabled = false
         }
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -49,6 +65,7 @@ class MainViewController: UIViewController {
         else{
             self.avatarButton.isHidden = false
             self.nickNameLabel.isHidden = false
+            self.startButton.isEnabled = true
             
             self.avatarButton.setImage(MainViewController.user.image, for: .normal)
             self.nickNameLabel.text = MainViewController.user.nickName
@@ -70,6 +87,11 @@ class MainViewController: UIViewController {
         
         let rankingView = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "pfofileInfo")
         self.present(rankingView, animated: true, completion: nil)
+    }
+    @IBAction func startGame(_ sender: Any) {
+        
+        let startGameView = UIStoryboard(name: "LobbyANDGame", bundle: nil).instantiateViewController(withIdentifier: "lobby")
+        self.present(startGameView, animated: true, completion: nil)
     }
 }
 

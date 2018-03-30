@@ -11,6 +11,8 @@
 		C41036E9206E26BA00423D7D /* LobbyANDGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C41036E8206E26BA00423D7D /* LobbyANDGame.storyboard */; };
 		C41036EB206E277C00423D7D /* CustomLobbyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41036EA206E277C00423D7D /* CustomLobbyCell.swift */; };
 		C41036ED206E284E00423D7D /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41036EC206E284E00423D7D /* LobbyViewController.swift */; };
+		C41036F0206E363300423D7D /* cerchioRosso.png in Resources */ = {isa = PBXBuildFile; fileRef = C41036EF206E363300423D7D /* cerchioRosso.png */; };
+		C41036F2206E363A00423D7D /* crossRossa.png in Resources */ = {isa = PBXBuildFile; fileRef = C41036F1206E363A00423D7D /* crossRossa.png */; };
 		C433A56E206D2D1400C2888F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C433A56D206D2D1400C2888F /* User.swift */; };
 		C433A571206D32DD00C2888F /* Ranking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C433A570206D32DD00C2888F /* Ranking.storyboard */; };
 		C433A575206D399300C2888F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C433A574206D399300C2888F /* Profile.storyboard */; };
@@ -42,6 +44,8 @@
 		C41036E8206E26BA00423D7D /* LobbyANDGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LobbyANDGame.storyboard; sourceTree = "<group>"; };
 		C41036EA206E277C00423D7D /* CustomLobbyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLobbyCell.swift; sourceTree = "<group>"; };
 		C41036EC206E284E00423D7D /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
+		C41036EF206E363300423D7D /* cerchioRosso.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cerchioRosso.png; sourceTree = "<group>"; };
+		C41036F1206E363A00423D7D /* crossRossa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crossRossa.png; sourceTree = "<group>"; };
 		C433A56D206D2D1400C2888F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Controller/User.swift; sourceTree = "<group>"; };
 		C433A570206D32DD00C2888F /* Ranking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ranking.storyboard; sourceTree = "<group>"; };
 		C433A574206D399300C2888F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -112,6 +116,15 @@
 				C41036E8206E26BA00423D7D /* LobbyANDGame.storyboard */,
 			);
 			path = LobbyANDGame;
+			sourceTree = "<group>";
+		};
+		C41036EE206E35E600423D7D /* GameIamges */ = {
+			isa = PBXGroup;
+			children = (
+				C41036EF206E363300423D7D /* cerchioRosso.png */,
+				C41036F1206E363A00423D7D /* crossRossa.png */,
+			);
+			path = GameIamges;
 			sourceTree = "<group>";
 		};
 		C433A56F206D32B800C2888F /* Ranking */ = {
@@ -186,6 +199,7 @@
 				C433A56D206D2D1400C2888F /* User.swift */,
 				FEC8A085206B84D60031001B /* Controller */,
 				FE4D55302069024000ABF6C1 /* Main.storyboard */,
+				C41036EE206E35E600423D7D /* GameIamges */,
 				C433A576206D3DC800C2888F /* avatars */,
 				FE4D55332069024000ABF6C1 /* Assets.xcassets */,
 				FE4D55352069024000ABF6C1 /* LaunchScreen.storyboard */,
@@ -292,6 +306,8 @@
 				FE4D55372069024000ABF6C1 /* LaunchScreen.storyboard in Resources */,
 				C48477A1206D15C8002B6E18 /* SignInANDSignUp.storyboard in Resources */,
 				FE4D55342069024000ABF6C1 /* Assets.xcassets in Resources */,
+				C41036F2206E363A00423D7D /* crossRossa.png in Resources */,
+				C41036F0206E363300423D7D /* cerchioRosso.png in Resources */,
 				C433A571206D32DD00C2888F /* Ranking.storyboard in Resources */,
 				FE4D55322069024000ABF6C1 /* Main.storyboard in Resources */,
 				FE6BF157206D0F1500BA7800 /* Shojumaru-Regular.ttf in Resources */,
@@ -521,6 +537,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V2CAC79V4J;
 				INFOPLIST_FILE = ticTacToeEx/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = it.stefanoApuzzo.ticTacToeEx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -537,6 +554,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V2CAC79V4J;
 				INFOPLIST_FILE = ticTacToeEx/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = it.stefanoApuzzo.ticTacToeEx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
