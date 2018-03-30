@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		2B1467CBB5A5A1BE6F82CFDE /* Pods_ticTacToeEx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D9F084CFCF052BA4C562CB /* Pods_ticTacToeEx.framework */; };
 		C48477A1206D15C8002B6E18 /* SignInANDSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48477A0206D15C8002B6E18 /* SignInANDSignUp.storyboard */; };
-		C48477A5206D1843002B6E18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C48477A4206D1843002B6E18 /* GoogleService-Info.plist */; };
 		FE4D552D2069023F00ABF6C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4D552C2069023F00ABF6C1 /* AppDelegate.swift */; };
 		FE4D552F2069024000ABF6C1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4D552E2069024000ABF6C1 /* MainViewController.swift */; };
 		FE4D55322069024000ABF6C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE4D55302069024000ABF6C1 /* Main.storyboard */; };
 		FE4D55342069024000ABF6C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE4D55332069024000ABF6C1 /* Assets.xcassets */; };
 		FE4D55372069024000ABF6C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE4D55352069024000ABF6C1 /* LaunchScreen.storyboard */; };
 		FE52BDD2206D293600DF3A4D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE52BDD1206D293600DF3A4D /* User.swift */; };
+		FE52BDD6206D3D1400DF3A4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE52BDD5206D3D1400DF3A4D /* GoogleService-Info.plist */; };
 		FE6BF157206D0F1500BA7800 /* Shojumaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE6BF156206D0F1400BA7800 /* Shojumaru-Regular.ttf */; };
 		FE6BF159206D113900BA7800 /* CatCafe.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE6BF158206D113800BA7800 /* CatCafe.ttf */; };
 		FEC8A084206B849C0031001B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A083206B849C0031001B /* SignInViewController.swift */; };
@@ -31,7 +31,6 @@
 		43D9F084CFCF052BA4C562CB /* Pods_ticTacToeEx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ticTacToeEx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED0EAF96825F86A2AE54DBE /* Pods-ticTacToeEx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ticTacToeEx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ticTacToeEx/Pods-ticTacToeEx.debug.xcconfig"; sourceTree = "<group>"; };
 		C48477A0206D15C8002B6E18 /* SignInANDSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInANDSignUp.storyboard; sourceTree = "<group>"; };
-		C48477A4206D1843002B6E18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FE4D55292069023F00ABF6C1 /* ticTacToeEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ticTacToeEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE4D552C2069023F00ABF6C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE4D552E2069024000ABF6C1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +39,7 @@
 		FE4D55362069024000ABF6C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE4D55382069024000ABF6C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE52BDD1206D293600DF3A4D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = /Users/stefanoapuzzo/Documents/ticTacToe/ticTacToeEx/User.swift; sourceTree = "<absolute>"; };
+		FE52BDD5206D3D1400DF3A4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FE6BF156206D0F1400BA7800 /* Shojumaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Shojumaru-Regular.ttf"; sourceTree = "<group>"; };
 		FE6BF158206D113800BA7800 /* CatCafe.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CatCafe.ttf; sourceTree = "<group>"; };
 		FEC8A083206B849C0031001B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -122,8 +122,8 @@
 				FE4D55302069024000ABF6C1 /* Main.storyboard */,
 				FE4D55332069024000ABF6C1 /* Assets.xcassets */,
 				FE4D55352069024000ABF6C1 /* LaunchScreen.storyboard */,
-				C48477A4206D1843002B6E18 /* GoogleService-Info.plist */,
 				FE4D55382069024000ABF6C1 /* Info.plist */,
+				FE52BDD5206D3D1400DF3A4D /* GoogleService-Info.plist */,
 				FEC8A0A3206B9AC20031001B /* Fonts */,
 			);
 			path = ticTacToeEx;
@@ -225,7 +225,7 @@
 				FE4D55322069024000ABF6C1 /* Main.storyboard in Resources */,
 				FE6BF157206D0F1500BA7800 /* Shojumaru-Regular.ttf in Resources */,
 				FE6BF159206D113900BA7800 /* CatCafe.ttf in Resources */,
-				C48477A5206D1843002B6E18 /* GoogleService-Info.plist in Resources */,
+				FE52BDD6206D3D1400DF3A4D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
