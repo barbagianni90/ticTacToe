@@ -91,7 +91,18 @@
                     <view key="view" contentMode="scaleToFill" id="ifE-gK-TgX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cherryTree" translatesAutoresizingMaskIntoConstraints="NO" id="zR6-76-GpX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zR6-76-GpX" firstAttribute="trailing" secondItem="TOW-VM-MEr" secondAttribute="trailing" id="3tM-dH-Qac"/>
+                            <constraint firstItem="zR6-76-GpX" firstAttribute="leading" secondItem="TOW-VM-MEr" secondAttribute="leading" id="55o-eX-eg0"/>
+                            <constraint firstItem="zR6-76-GpX" firstAttribute="top" secondItem="ifE-gK-TgX" secondAttribute="top" id="NAL-zO-cQY"/>
+                            <constraint firstItem="zR6-76-GpX" firstAttribute="bottom" secondItem="TOW-VM-MEr" secondAttribute="bottom" id="NvM-4P-bU0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TOW-VM-MEr"/>
                     </view>
                 </viewController>
