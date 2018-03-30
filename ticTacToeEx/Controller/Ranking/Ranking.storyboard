@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="a08-0q-26d">
+            <objects>
+                <viewController storyboardIdentifier="rankingList" id="eOE-nf-9mp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vOl-Ie-Xmc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YO0-mk-1iM">
+                                <rect key="frame" x="0.0" y="131" width="375" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ranking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHc-3x-lOI">
+                                <rect key="frame" x="121" y="47" width="133" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="7XO-Dq-hj7"/>
+                                    <constraint firstAttribute="width" constant="133" id="86F-yA-Npo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YO0-mk-1iM" firstAttribute="trailing" secondItem="sC5-lF-bi0" secondAttribute="trailing" id="0Yx-Wf-qIR"/>
+                            <constraint firstItem="YO0-mk-1iM" firstAttribute="leading" secondItem="sC5-lF-bi0" secondAttribute="leading" id="5ep-wo-jne"/>
+                            <constraint firstItem="nHc-3x-lOI" firstAttribute="leading" secondItem="sC5-lF-bi0" secondAttribute="leading" constant="121" id="9SB-sL-hLR"/>
+                            <constraint firstItem="YO0-mk-1iM" firstAttribute="bottom" secondItem="sC5-lF-bi0" secondAttribute="bottom" id="F4Q-0j-JLU"/>
+                            <constraint firstItem="sC5-lF-bi0" firstAttribute="trailing" secondItem="nHc-3x-lOI" secondAttribute="trailing" constant="121" id="HF0-KY-ud4"/>
+                            <constraint firstItem="YO0-mk-1iM" firstAttribute="top" secondItem="nHc-3x-lOI" secondAttribute="bottom" constant="41" id="wm7-h4-F5K"/>
+                            <constraint firstItem="nHc-3x-lOI" firstAttribute="top" secondItem="sC5-lF-bi0" secondAttribute="top" constant="27" id="xaG-Rr-fuB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sC5-lF-bi0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AtX-gI-9iq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-644" y="973.76311844077964"/>
+        </scene>
+    </scenes>
+</document>

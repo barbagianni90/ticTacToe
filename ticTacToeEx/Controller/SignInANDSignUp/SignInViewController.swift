@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 
 class SignInViewController: UIViewController {
     
@@ -53,15 +54,30 @@ class SignInViewController: UIViewController {
                 } else {
                     
                     //Tells the user that there is an error and then gets firebase to tell them the error
-                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
                     
-                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alertController.addAction(defaultAction)
+                    let emailCurrentUser = Auth.auth().currentUser?.email as! String
                     
-                    self.present(alertController, animated: true, completion: nil)
+                    let ref = Database.database().reference()
+                    
+                    ref.child("Players").observeSingleEvent(of: .value, with:{ (snap) in
+                        
+                        let players = snap.value as! [String : Any]
+                        
+                        for(key, value) in players {
+                            
+                            let datiPlayer = value as! [String : Any]
+                            
+                            if datiPlayer["email"] as! String == emailCurrentUser {
+                                MainViewController.user.nickName = key
+                                MainViewController.user.vittorie = Int(datiPlayer["vittorie"] as! String)!
+                                MainViewController.user.sconfitte = Int(datiPlayer["sconfitte"] as! String)!
+                                MainViewController.user.stato = "online"
+                            }
+                        }
+                        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+                    })
                 }
             }
         }
-        //dismiss(animated: true, completion: nil)
     }
 }
