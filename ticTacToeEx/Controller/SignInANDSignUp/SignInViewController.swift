@@ -48,13 +48,6 @@ class SignInViewController: UIViewController {
                     //Print into the console if successfully logged in
                     print("You have successfully logged in")
                     
-                    //Go to the HomeViewController if the login is sucessful
-                    self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
-                    
-                } else {
-                    
-                    //Tells the user that there is an error and then gets firebase to tell them the error
-                    
                     let emailCurrentUser = Auth.auth().currentUser?.email as! String
                     
                     let ref = Database.database().reference()
@@ -72,10 +65,15 @@ class SignInViewController: UIViewController {
                                 MainViewController.user.vittorie = Int(datiPlayer["vittorie"] as! String)!
                                 MainViewController.user.sconfitte = Int(datiPlayer["sconfitte"] as! String)!
                                 MainViewController.user.stato = "online"
+                                MainViewController.user.image = UIImage(named: datiPlayer["avatar"] as! String)
                             }
                         }
                         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
                     })
+                    
+                } else {
+                    
+                    //Tells the user that there is an error and then gets firebase to tell them the error
                 }
             }
         }

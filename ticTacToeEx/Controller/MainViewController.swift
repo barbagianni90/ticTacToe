@@ -16,8 +16,17 @@ class MainViewController: UIViewController {
     
     static var user = User()
     
+    @IBOutlet weak var avatarButton: UIButton!
+    @IBOutlet weak var nickNameLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if MainViewController.user.nickName == "" {
+            self.avatarButton.isHidden = true
+            self.nickNameLabel.isHidden = true
+        }
+        
         // Do any additional setup after loading the view, typically from a nib.
         
 //        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
@@ -31,6 +40,20 @@ class MainViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        
+        if MainViewController.user.nickName == "" {
+            self.avatarButton.isHidden = true
+            self.nickNameLabel.isHidden = true
+        }
+        else{
+            self.avatarButton.isHidden = false
+            self.nickNameLabel.isHidden = false
+            
+            self.avatarButton.setImage(MainViewController.user.image, for: .normal)
+            self.nickNameLabel.text = MainViewController.user.nickName
+        }
+    }
 
     @IBAction func signIn(_ sender: Any) {
         
@@ -43,5 +66,10 @@ class MainViewController: UIViewController {
         self.present(rankingView, animated: true, completion: nil)
     }
     
+    @IBAction func showProfile(_ sender: Any) {
+        
+        let rankingView = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "pfofileInfo")
+        self.present(rankingView, animated: true, completion: nil)
+    }
 }
 

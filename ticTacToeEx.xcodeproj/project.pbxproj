@@ -8,8 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		2B1467CBB5A5A1BE6F82CFDE /* Pods_ticTacToeEx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D9F084CFCF052BA4C562CB /* Pods_ticTacToeEx.framework */; };
+		C41036E9206E26BA00423D7D /* LobbyANDGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C41036E8206E26BA00423D7D /* LobbyANDGame.storyboard */; };
+		C41036EB206E277C00423D7D /* CustomLobbyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41036EA206E277C00423D7D /* CustomLobbyCell.swift */; };
+		C41036ED206E284E00423D7D /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41036EC206E284E00423D7D /* LobbyViewController.swift */; };
 		C433A56E206D2D1400C2888F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C433A56D206D2D1400C2888F /* User.swift */; };
 		C433A571206D32DD00C2888F /* Ranking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C433A570206D32DD00C2888F /* Ranking.storyboard */; };
+		C433A575206D399300C2888F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C433A574206D399300C2888F /* Profile.storyboard */; };
+		C433A57C206D3DE700C2888F /* avatar4.png in Resources */ = {isa = PBXBuildFile; fileRef = C433A577206D3DE700C2888F /* avatar4.png */; };
+		C433A57D206D3DE700C2888F /* avatar3.png in Resources */ = {isa = PBXBuildFile; fileRef = C433A578206D3DE700C2888F /* avatar3.png */; };
+		C433A57E206D3DE700C2888F /* avatar5.png in Resources */ = {isa = PBXBuildFile; fileRef = C433A579206D3DE700C2888F /* avatar5.png */; };
+		C433A57F206D3DE700C2888F /* avatar2.png in Resources */ = {isa = PBXBuildFile; fileRef = C433A57A206D3DE700C2888F /* avatar2.png */; };
+		C433A580206D3DE700C2888F /* avatar1.png in Resources */ = {isa = PBXBuildFile; fileRef = C433A57B206D3DE700C2888F /* avatar1.png */; };
 		C48477A1206D15C8002B6E18 /* SignInANDSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48477A0206D15C8002B6E18 /* SignInANDSignUp.storyboard */; };
 		C48477A5206D1843002B6E18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C48477A4206D1843002B6E18 /* GoogleService-Info.plist */; };
 		FE4D552D2069023F00ABF6C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4D552C2069023F00ABF6C1 /* AppDelegate.swift */; };
@@ -20,7 +29,6 @@
 		FE6BF157206D0F1500BA7800 /* Shojumaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE6BF156206D0F1400BA7800 /* Shojumaru-Regular.ttf */; };
 		FE6BF159206D113900BA7800 /* CatCafe.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE6BF158206D113800BA7800 /* CatCafe.ttf */; };
 		FEC8A084206B849C0031001B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A083206B849C0031001B /* SignInViewController.swift */; };
-		FEC8A087206B84E60031001B /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A086206B84E60031001B /* LobbyViewController.swift */; };
 		FEC8A089206B87AA0031001B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A088206B87AA0031001B /* SignUpViewController.swift */; };
 		FEC8A08B206B89380031001B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A08A206B89380031001B /* ProfileViewController.swift */; };
 		FEC8A08D206B899D0031001B /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A08C206B899D0031001B /* RankingViewController.swift */; };
@@ -31,8 +39,17 @@
 		1C32D8ED4D9B0548426CE6BE /* Pods-ticTacToeEx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ticTacToeEx.release.xcconfig"; path = "Pods/Target Support Files/Pods-ticTacToeEx/Pods-ticTacToeEx.release.xcconfig"; sourceTree = "<group>"; };
 		43D9F084CFCF052BA4C562CB /* Pods_ticTacToeEx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ticTacToeEx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ED0EAF96825F86A2AE54DBE /* Pods-ticTacToeEx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ticTacToeEx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ticTacToeEx/Pods-ticTacToeEx.debug.xcconfig"; sourceTree = "<group>"; };
+		C41036E8206E26BA00423D7D /* LobbyANDGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LobbyANDGame.storyboard; sourceTree = "<group>"; };
+		C41036EA206E277C00423D7D /* CustomLobbyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLobbyCell.swift; sourceTree = "<group>"; };
+		C41036EC206E284E00423D7D /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 		C433A56D206D2D1400C2888F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Controller/User.swift; sourceTree = "<group>"; };
 		C433A570206D32DD00C2888F /* Ranking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ranking.storyboard; sourceTree = "<group>"; };
+		C433A574206D399300C2888F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		C433A577206D3DE700C2888F /* avatar4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar4.png; sourceTree = "<group>"; };
+		C433A578206D3DE700C2888F /* avatar3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar3.png; sourceTree = "<group>"; };
+		C433A579206D3DE700C2888F /* avatar5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar5.png; sourceTree = "<group>"; };
+		C433A57A206D3DE700C2888F /* avatar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar2.png; sourceTree = "<group>"; };
+		C433A57B206D3DE700C2888F /* avatar1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar1.png; sourceTree = "<group>"; };
 		C48477A0206D15C8002B6E18 /* SignInANDSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInANDSignUp.storyboard; sourceTree = "<group>"; };
 		C48477A4206D1843002B6E18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FE4D55292069023F00ABF6C1 /* ticTacToeEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ticTacToeEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,7 +62,6 @@
 		FE6BF156206D0F1400BA7800 /* Shojumaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Shojumaru-Regular.ttf"; sourceTree = "<group>"; };
 		FE6BF158206D113800BA7800 /* CatCafe.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CatCafe.ttf; sourceTree = "<group>"; };
 		FEC8A083206B849C0031001B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		FEC8A086206B84E60031001B /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 		FEC8A088206B87AA0031001B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FEC8A08A206B89380031001B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FEC8A08C206B899D0031001B /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +103,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C41036E7206E268200423D7D /* LobbyANDGame */ = {
+			isa = PBXGroup;
+			children = (
+				C41036EA206E277C00423D7D /* CustomLobbyCell.swift */,
+				C41036EC206E284E00423D7D /* LobbyViewController.swift */,
+				FEC8A0A4206BA0A40031001B /* GameViewController.swift */,
+				C41036E8206E26BA00423D7D /* LobbyANDGame.storyboard */,
+			);
+			path = LobbyANDGame;
+			sourceTree = "<group>";
+		};
 		C433A56F206D32B800C2888F /* Ranking */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +128,27 @@
 			children = (
 			);
 			path = Avatar;
+			sourceTree = "<group>";
+		};
+		C433A573206D394E00C2888F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FEC8A08A206B89380031001B /* ProfileViewController.swift */,
+				C433A574206D399300C2888F /* Profile.storyboard */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		C433A576206D3DC800C2888F /* avatars */ = {
+			isa = PBXGroup;
+			children = (
+				C433A57B206D3DE700C2888F /* avatar1.png */,
+				C433A57A206D3DE700C2888F /* avatar2.png */,
+				C433A578206D3DE700C2888F /* avatar3.png */,
+				C433A577206D3DE700C2888F /* avatar4.png */,
+				C433A579206D3DE700C2888F /* avatar5.png */,
+			);
+			path = avatars;
 			sourceTree = "<group>";
 		};
 		C48477A6206D1B69002B6E18 /* SignInANDSignUp */ = {
@@ -138,6 +186,7 @@
 				C433A56D206D2D1400C2888F /* User.swift */,
 				FEC8A085206B84D60031001B /* Controller */,
 				FE4D55302069024000ABF6C1 /* Main.storyboard */,
+				C433A576206D3DC800C2888F /* avatars */,
 				FE4D55332069024000ABF6C1 /* Assets.xcassets */,
 				FE4D55352069024000ABF6C1 /* LaunchScreen.storyboard */,
 				C48477A4206D1843002B6E18 /* GoogleService-Info.plist */,
@@ -151,12 +200,11 @@
 		FEC8A085206B84D60031001B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C41036E7206E268200423D7D /* LobbyANDGame */,
+				C433A573206D394E00C2888F /* Profile */,
 				C433A56F206D32B800C2888F /* Ranking */,
 				C48477A6206D1B69002B6E18 /* SignInANDSignUp */,
 				FE4D552E2069024000ABF6C1 /* MainViewController.swift */,
-				FEC8A086206B84E60031001B /* LobbyViewController.swift */,
-				FEC8A08A206B89380031001B /* ProfileViewController.swift */,
-				FEC8A0A4206BA0A40031001B /* GameViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -238,14 +286,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C433A57D206D3DE700C2888F /* avatar3.png in Resources */,
+				C433A57E206D3DE700C2888F /* avatar5.png in Resources */,
+				C433A57F206D3DE700C2888F /* avatar2.png in Resources */,
 				FE4D55372069024000ABF6C1 /* LaunchScreen.storyboard in Resources */,
 				C48477A1206D15C8002B6E18 /* SignInANDSignUp.storyboard in Resources */,
 				FE4D55342069024000ABF6C1 /* Assets.xcassets in Resources */,
 				C433A571206D32DD00C2888F /* Ranking.storyboard in Resources */,
 				FE4D55322069024000ABF6C1 /* Main.storyboard in Resources */,
 				FE6BF157206D0F1500BA7800 /* Shojumaru-Regular.ttf in Resources */,
+				C433A57C206D3DE700C2888F /* avatar4.png in Resources */,
+				C433A575206D399300C2888F /* Profile.storyboard in Resources */,
 				FE6BF159206D113900BA7800 /* CatCafe.ttf in Resources */,
+				C433A580206D3DE700C2888F /* avatar1.png in Resources */,
 				C48477A5206D1843002B6E18 /* GoogleService-Info.plist in Resources */,
+				C41036E9206E26BA00423D7D /* LobbyANDGame.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,14 +372,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEC8A08B206B89380031001B /* ProfileViewController.swift in Sources */,
+				C41036ED206E284E00423D7D /* LobbyViewController.swift in Sources */,
 				FE4D552F2069024000ABF6C1 /* MainViewController.swift in Sources */,
 				FE4D552D2069023F00ABF6C1 /* AppDelegate.swift in Sources */,
 				FEC8A08D206B899D0031001B /* RankingViewController.swift in Sources */,
 				FEC8A0A5206BA0A40031001B /* GameViewController.swift in Sources */,
 				C433A56E206D2D1400C2888F /* User.swift in Sources */,
 				FEC8A084206B849C0031001B /* SignInViewController.swift in Sources */,
-				FEC8A087206B84E60031001B /* LobbyViewController.swift in Sources */,
 				FEC8A089206B87AA0031001B /* SignUpViewController.swift in Sources */,
+				C41036EB206E277C00423D7D /* CustomLobbyCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
