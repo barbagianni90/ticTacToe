@@ -8,29 +8,67 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class RankingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var vittorieLabel: UILabel!
-    @IBOutlet weak var giocatoreLabel: UILabel!
+    var players: [User] = []
+    
+    @IBOutlet weak var tableRanking: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableRanking.delegate = self
+        self.tableRanking.dataSource = self
+        
+        let ref = Database.database().reference()
+        
+        ref.child("Players").observe(.value, with: { (snap) in
+            
+            let players = snap.value as! [String : Any]
+            
+            for(key, value) in players{
+                
+                let datiSinglePlayer = value as! [String : Any]
+                
+                let player = User()
+                
+                player.nickName = key
+                player.vittorie = Int(datiSinglePlayer["vittorie"] as! String)!
+                player.image = UIImage(named: "\(datiSinglePlayer["avatar"] as! String)")
+                
+                self.players.append(player)
+            }
+            self.players.sort(by: {$0.vittorie > $1.vittorie})
+            self.tableRanking.reloadData()
+        })
     }
     
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return players.count
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellRank")
         
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellRank") as! CustomCellRanking
+        
+        cell.nickNameLabel.text = players[indexPath.row].nickName
+        cell.scoreLabel.text = String(players[indexPath.row].vittorie)
+        cell.imagePlayer.image = players[indexPath.row].image
+        
+        return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+   
+    @IBAction func goHome(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
     }
 }
