@@ -36,6 +36,9 @@
 		FE4D55372069024000ABF6C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE4D55352069024000ABF6C1 /* LaunchScreen.storyboard */; };
 		FE6BF157206D0F1500BA7800 /* Shojumaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE6BF156206D0F1400BA7800 /* Shojumaru-Regular.ttf */; };
 		FE6BF159206D113900BA7800 /* CatCafe.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE6BF158206D113800BA7800 /* CatCafe.ttf */; };
+		FEB28C502073BB9100ACF301 /* ChooseGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB28C4F2073BB9100ACF301 /* ChooseGameViewController.swift */; };
+		FEB28C512073BEE000ACF301 /* ChooseGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEB28C532073BEE000ACF301 /* ChooseGame.storyboard */; };
+		FEB28C572073C73E00ACF301 /* chooseGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB28C562073C73E00ACF301 /* chooseGameCell.swift */; };
 		FEC8A084206B849C0031001B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A083206B849C0031001B /* SignInViewController.swift */; };
 		FEC8A089206B87AA0031001B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A088206B87AA0031001B /* SignUpViewController.swift */; };
 		FEC8A08B206B89380031001B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A08A206B89380031001B /* ProfileViewController.swift */; };
@@ -77,6 +80,9 @@
 		FE4D55382069024000ABF6C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE6BF156206D0F1400BA7800 /* Shojumaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Shojumaru-Regular.ttf"; sourceTree = "<group>"; };
 		FE6BF158206D113800BA7800 /* CatCafe.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CatCafe.ttf; sourceTree = "<group>"; };
+		FEB28C4F2073BB9100ACF301 /* ChooseGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseGameViewController.swift; sourceTree = "<group>"; };
+		FEB28C522073BEE000ACF301 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ChooseGame.storyboard; sourceTree = "<group>"; };
+		FEB28C562073C73E00ACF301 /* chooseGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chooseGameCell.swift; sourceTree = "<group>"; };
 		FEC8A083206B849C0031001B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		FEC8A088206B87AA0031001B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FEC8A08A206B89380031001B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -223,10 +229,21 @@
 				FE4D55352069024000ABF6C1 /* LaunchScreen.storyboard */,
 				C48477A4206D1843002B6E18 /* GoogleService-Info.plist */,
 				FE4D55382069024000ABF6C1 /* Info.plist */,
+				FEB28C552073C72800ACF301 /* Choose Game */,
 				FEC8A0A3206B9AC20031001B /* Fonts */,
 				C433A572206D356B00C2888F /* Avatar */,
 			);
 			path = ticTacToeEx;
+			sourceTree = "<group>";
+		};
+		FEB28C552073C72800ACF301 /* Choose Game */ = {
+			isa = PBXGroup;
+			children = (
+				FEB28C532073BEE000ACF301 /* ChooseGame.storyboard */,
+				FEB28C4F2073BB9100ACF301 /* ChooseGameViewController.swift */,
+				FEB28C562073C73E00ACF301 /* chooseGameCell.swift */,
+			);
+			path = "Choose Game";
 			sourceTree = "<group>";
 		};
 		FEC8A085206B84D60031001B /* Controller */ = {
@@ -330,6 +347,7 @@
 				C41036FB206E6C5900423D7D /* avatar5.png in Resources */,
 				C41036F2206E363A00423D7D /* crossRossa.png in Resources */,
 				C41036F0206E363300423D7D /* cerchioRosso.png in Resources */,
+				FEB28C512073BEE000ACF301 /* ChooseGame.storyboard in Resources */,
 				C433A571206D32DD00C2888F /* Ranking.storyboard in Resources */,
 				C41036F9206E6C5900423D7D /* avatar1.png in Resources */,
 				FE4D55322069024000ABF6C1 /* Main.storyboard in Resources */,
@@ -421,6 +439,8 @@
 				FEC8A084206B849C0031001B /* SignInViewController.swift in Sources */,
 				FEC8A089206B87AA0031001B /* SignUpViewController.swift in Sources */,
 				C41036EB206E277C00423D7D /* CustomLobbyCell.swift in Sources */,
+				FEB28C502073BB9100ACF301 /* ChooseGameViewController.swift in Sources */,
+				FEB28C572073C73E00ACF301 /* chooseGameCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +461,14 @@
 				FE4D55362069024000ABF6C1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FEB28C532073BEE000ACF301 /* ChooseGame.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FEB28C522073BEE000ACF301 /* Base */,
+			);
+			name = ChooseGame.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -559,7 +587,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V2CAC79V4J;
+				DEVELOPMENT_TEAM = ZAJLT4BRY8;
 				INFOPLIST_FILE = ticTacToeEx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -576,7 +604,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V2CAC79V4J;
+				DEVELOPMENT_TEAM = ZAJLT4BRY8;
 				INFOPLIST_FILE = ticTacToeEx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
