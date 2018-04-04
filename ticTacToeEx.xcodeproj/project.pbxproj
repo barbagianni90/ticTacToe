@@ -30,6 +30,7 @@
 		C433A580206D3DE700C2888F /* avatar1.png in Resources */ = {isa = PBXBuildFile; fileRef = C433A57B206D3DE700C2888F /* avatar1.png */; };
 		C48477A1206D15C8002B6E18 /* SignInANDSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48477A0206D15C8002B6E18 /* SignInANDSignUp.storyboard */; };
 		C48477A5206D1843002B6E18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C48477A4206D1843002B6E18 /* GoogleService-Info.plist */; };
+		FE0724B820750DFC0076A281 /* checkers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE0724B720750DFC0076A281 /* checkers.storyboard */; };
 		FE4D552D2069023F00ABF6C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4D552C2069023F00ABF6C1 /* AppDelegate.swift */; };
 		FE4D552F2069024000ABF6C1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4D552E2069024000ABF6C1 /* MainViewController.swift */; };
 		FE4D55322069024000ABF6C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE4D55302069024000ABF6C1 /* Main.storyboard */; };
@@ -76,6 +77,7 @@
 		C433A57B206D3DE700C2888F /* avatar1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar1.png; sourceTree = "<group>"; };
 		C48477A0206D15C8002B6E18 /* SignInANDSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInANDSignUp.storyboard; sourceTree = "<group>"; };
 		C48477A4206D1843002B6E18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FE0724B720750DFC0076A281 /* checkers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = checkers.storyboard; sourceTree = "<group>"; };
 		FE4D55292069023F00ABF6C1 /* ticTacToeEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ticTacToeEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE4D552C2069023F00ABF6C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE4D552E2069024000ABF6C1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				FED3E9912074B7F400148A67 /* NewMain.storyboard */,
 				FED3E9932074BD1700148A67 /* NewMainViewController.swift */,
 				FED3E9952074BEDE00148A67 /* CollectionViewCell.swift */,
+				FE0724B720750DFC0076A281 /* checkers.storyboard */,
 			);
 			path = "Choose Game";
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				FED3E9922074B7F400148A67 /* NewMain.storyboard in Resources */,
 				C433A57D206D3DE700C2888F /* avatar3.png in Resources */,
 				C41036FA206E6C5900423D7D /* avatar4.png in Resources */,
+				FE0724B820750DFC0076A281 /* checkers.storyboard in Resources */,
 				C433A57E206D3DE700C2888F /* avatar5.png in Resources */,
 				C41036F8206E6C5900423D7D /* avatar3.png in Resources */,
 				C433A57F206D3DE700C2888F /* avatar2.png in Resources */,
