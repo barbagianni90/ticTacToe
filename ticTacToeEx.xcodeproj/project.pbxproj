@@ -45,6 +45,9 @@
 		FEC8A08B206B89380031001B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A08A206B89380031001B /* ProfileViewController.swift */; };
 		FEC8A08D206B899D0031001B /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A08C206B899D0031001B /* RankingViewController.swift */; };
 		FEC8A0A5206BA0A40031001B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A0A4206BA0A40031001B /* GameViewController.swift */; };
+		FED3E9922074B7F400148A67 /* NewMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FED3E9912074B7F400148A67 /* NewMain.storyboard */; };
+		FED3E9942074BD1700148A67 /* NewMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED3E9932074BD1700148A67 /* NewMainViewController.swift */; };
+		FED3E9962074BEDE00148A67 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED3E9952074BEDE00148A67 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +99,9 @@
 		FEC8A0A1206B9AB60031001B /* SanFranciscoDisplay-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Light.otf"; sourceTree = "<group>"; };
 		FEC8A0A2206B9AB60031001B /* SanFranciscoDisplay-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Thin.otf"; sourceTree = "<group>"; };
 		FEC8A0A4206BA0A40031001B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		FED3E9912074B7F400148A67 /* NewMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewMain.storyboard; sourceTree = "<group>"; };
+		FED3E9932074BD1700148A67 /* NewMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMainViewController.swift; sourceTree = "<group>"; };
+		FED3E9952074BEDE00148A67 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,9 +248,10 @@
 		FEB28C552073C72800ACF301 /* Choose Game */ = {
 			isa = PBXGroup;
 			children = (
-				FEB28C532073BEE000ACF301 /* ChooseGame.storyboard */,
-				FEB28C4F2073BB9100ACF301 /* ChooseGameViewController.swift */,
-				FEB28C562073C73E00ACF301 /* chooseGameCell.swift */,
+				FED3E9992074C92300148A67 /* tableview */,
+				FED3E9912074B7F400148A67 /* NewMain.storyboard */,
+				FED3E9932074BD1700148A67 /* NewMainViewController.swift */,
+				FED3E9952074BEDE00148A67 /* CollectionViewCell.swift */,
 			);
 			path = "Choose Game";
 			sourceTree = "<group>";
@@ -274,6 +281,16 @@
 				FE6BF158206D113800BA7800 /* CatCafe.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FED3E9992074C92300148A67 /* tableview */ = {
+			isa = PBXGroup;
+			children = (
+				FEB28C532073BEE000ACF301 /* ChooseGame.storyboard */,
+				FEB28C4F2073BB9100ACF301 /* ChooseGameViewController.swift */,
+				FEB28C562073C73E00ACF301 /* chooseGameCell.swift */,
+			);
+			path = tableview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +355,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FED3E9922074B7F400148A67 /* NewMain.storyboard in Resources */,
 				C433A57D206D3DE700C2888F /* avatar3.png in Resources */,
 				C41036FA206E6C5900423D7D /* avatar4.png in Resources */,
 				C433A57E206D3DE700C2888F /* avatar5.png in Resources */,
@@ -437,9 +455,11 @@
 				FE4D552F2069024000ABF6C1 /* MainViewController.swift in Sources */,
 				FE4D552D2069023F00ABF6C1 /* AppDelegate.swift in Sources */,
 				FEC8A08D206B899D0031001B /* RankingViewController.swift in Sources */,
+				FED3E9942074BD1700148A67 /* NewMainViewController.swift in Sources */,
 				FEC8A0A5206BA0A40031001B /* GameViewController.swift in Sources */,
 				C433A56E206D2D1400C2888F /* User.swift in Sources */,
 				C4103700206E84DE00423D7D /* EditProfileViewController.swift in Sources */,
+				FED3E9962074BEDE00148A67 /* CollectionViewCell.swift in Sources */,
 				FEC8A084206B849C0031001B /* SignInViewController.swift in Sources */,
 				FEC8A089206B87AA0031001B /* SignUpViewController.swift in Sources */,
 				C41036EB206E277C00423D7D /* CustomLobbyCell.swift in Sources */,
