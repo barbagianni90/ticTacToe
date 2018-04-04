@@ -19,6 +19,7 @@
 		C41036FB206E6C5900423D7D /* avatar5.png in Resources */ = {isa = PBXBuildFile; fileRef = C41036F6206E6C5800423D7D /* avatar5.png */; };
 		C41036FC206E6C5900423D7D /* avatar2.png in Resources */ = {isa = PBXBuildFile; fileRef = C41036F7206E6C5800423D7D /* avatar2.png */; };
 		C41036FE206E6EE400423D7D /* CustomCellRanking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41036FD206E6EE400423D7D /* CustomCellRanking.swift */; };
+		C4103700206E84DE00423D7D /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41036FF206E84DE00423D7D /* EditProfileViewController.swift */; };
 		C433A56E206D2D1400C2888F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C433A56D206D2D1400C2888F /* User.swift */; };
 		C433A571206D32DD00C2888F /* Ranking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C433A570206D32DD00C2888F /* Ranking.storyboard */; };
 		C433A575206D399300C2888F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C433A574206D399300C2888F /* Profile.storyboard */; };
@@ -58,6 +59,7 @@
 		C41036F6206E6C5800423D7D /* avatar5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar5.png; sourceTree = "<group>"; };
 		C41036F7206E6C5800423D7D /* avatar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar2.png; sourceTree = "<group>"; };
 		C41036FD206E6EE400423D7D /* CustomCellRanking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellRanking.swift; sourceTree = "<group>"; };
+		C41036FF206E84DE00423D7D /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		C433A56D206D2D1400C2888F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Controller/User.swift; sourceTree = "<group>"; };
 		C433A570206D32DD00C2888F /* Ranking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ranking.storyboard; sourceTree = "<group>"; };
 		C433A574206D399300C2888F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				FEC8A08A206B89380031001B /* ProfileViewController.swift */,
+				C41036FF206E84DE00423D7D /* EditProfileViewController.swift */,
 				C433A574206D399300C2888F /* Profile.storyboard */,
 			);
 			path = Profile;
@@ -418,6 +421,7 @@
 				FEC8A08D206B899D0031001B /* RankingViewController.swift in Sources */,
 				FEC8A0A5206BA0A40031001B /* GameViewController.swift in Sources */,
 				C433A56E206D2D1400C2888F /* User.swift in Sources */,
+				C4103700206E84DE00423D7D /* EditProfileViewController.swift in Sources */,
 				FEC8A084206B849C0031001B /* SignInViewController.swift in Sources */,
 				FEC8A089206B87AA0031001B /* SignUpViewController.swift in Sources */,
 				C41036EB206E277C00423D7D /* CustomLobbyCell.swift in Sources */,
