@@ -103,8 +103,6 @@ class SignUpViewController: UIViewController {
                 }
             }
         }
-        
-        //dismiss(animated: true, completion: nil)
     }
     
     func isValidEmail(testStr:String) -> Bool {
@@ -136,6 +134,8 @@ class SignUpViewController: UIViewController {
         
         self.avatarSelected = sender.titleLabel?.text as! String
         MainViewController.user.image = sender.imageView?.image
+        MainViewController.user.nameImage = sender.titleLabel?.text as! String
+        
     }
 }
 
