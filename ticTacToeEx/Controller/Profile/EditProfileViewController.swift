@@ -11,8 +11,8 @@ import Firebase
 
 class EditProfileViewController: UIViewController {
     
-    var avatarSelected = ""
-
+    static var imageSelected: UIImage!
+    
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passTextField: UITextField!
@@ -23,13 +23,7 @@ class EditProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
         self.hideKeyboardWhenTappedAround()
         
         var i = 1
@@ -38,6 +32,13 @@ class EditProfileViewController: UIViewController {
             button.setTitle("avatar\(i).png", for: .normal)
             i += 1
         }
+
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     func isValidEmail(testStr:String) -> Bool {
@@ -60,13 +61,12 @@ class EditProfileViewController: UIViewController {
     */
     @IBAction func avatarSelected(_ sender: UIButton) {
         
-        self.avatarSelected = sender.titleLabel?.text as! String
-        MainViewController.user.image = sender.imageView?.image
+        EditProfileViewController.imageSelected = sender.imageView?.image
     }
     
     @IBAction func done(_ sender: Any) {
         
-        if emailTextField.text == "" && passTextField.text == "" && self.avatarSelected == "" {
+        if nickNameTextField.text == "" && emailTextField.text == "" && passTextField.text == "" && EditProfileViewController.imageSelected == nil {
             let alertController = UIAlertController(title: "Error", message: "Nessuna modifica effettuata", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -97,20 +97,19 @@ class EditProfileViewController: UIViewController {
                     ref.child("Players").child("\(MainViewController.user.nickName)").removeValue()
                     ref.child("Players").child("\(self.nickNameTextField.text as! String)").setValue(["email" : "\(MainViewController.user.email)",
                         "stato" : "online",
-                        "vittorie" : "\(MainViewController.user.vittorie as! String)",
-                        "sconfitte" : "\(MainViewController.user.vittorie as! String)",
+                        "vittorie" : "\(String(MainViewController.user.vittorie))",
+                        "sconfitte" : "\(String(MainViewController.user.sconfitte))",
                         "invitatoDa" : "",
-                        "invitoAccettato" : "",
-                        "avatar": "\(MainViewController.user.nameImage)"])
+                        "invitoAccettato" : ""])
                     
                     MainViewController.user.nickName = self.nickNameTextField.text as! String
                     MainViewController.user.stato = "online"
-                    
                     
                 }
                 if self.emailTextField.text != "" {
                     
                     Auth.auth().currentUser?.updateEmail(to: "\(self.emailTextField.text as! String)", completion: nil)
+                    
                 }
                 
                 if self.passTextField.text != "" {
@@ -118,10 +117,22 @@ class EditProfileViewController: UIViewController {
                     Auth.auth().currentUser?.updatePassword(to: "\(self.passTextField.text as! String)", completion: nil)
                 }
                 
-                if self.avatarSelected != "" {
+                if EditProfileViewController.imageSelected != nil {
                     
-                    MainViewController.user.nameImage = self.avatarSelected
-                    MainViewController.user.image = UIImage(named: "\(self.avatarSelected)")
+                    let sRef = Storage.storage().reference()
+                    
+                    let uploadData = UIImagePNGRepresentation(EditProfileViewController.imageSelected)
+                    
+                    sRef.child("Images").child("\(MainViewController.user.nickName)").child("myImage.png").putData(uploadData!)
+                    
+                    sRef.child("Images").child("\(MainViewController.user.nickName)").child("myImage.png") .getData(maxSize: 20 * 1024 * 1024) { data, error in
+                        if error != nil {
+                            print(error as Any)
+                        }
+                        else {
+                            MainViewController.user.image = UIImage(data: data!)
+                        }
+                    }
                 }
                 
                 
@@ -132,5 +143,14 @@ class EditProfileViewController: UIViewController {
             self.present(alert, animated: true)
         }
     }
+    @IBAction func goProfile(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
     
+    @IBAction func camera(_ sender: UIButton) {
+        
+        let cameraView = UIStoryboard(name: "SignInANDSignUp", bundle: nil).instantiateViewController(withIdentifier: "camera")
+        self.present(cameraView, animated: true, completion: nil)
+    }
 }

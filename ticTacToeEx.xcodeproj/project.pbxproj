@@ -23,11 +23,11 @@
 		C433A56E206D2D1400C2888F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C433A56D206D2D1400C2888F /* User.swift */; };
 		C433A571206D32DD00C2888F /* Ranking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C433A570206D32DD00C2888F /* Ranking.storyboard */; };
 		C433A575206D399300C2888F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C433A574206D399300C2888F /* Profile.storyboard */; };
-		C433A57C206D3DE700C2888F /* avatar4.png in Resources */ = {isa = PBXBuildFile; fileRef = C433A577206D3DE700C2888F /* avatar4.png */; };
-		C433A57D206D3DE700C2888F /* avatar3.png in Resources */ = {isa = PBXBuildFile; fileRef = C433A578206D3DE700C2888F /* avatar3.png */; };
-		C433A57E206D3DE700C2888F /* avatar5.png in Resources */ = {isa = PBXBuildFile; fileRef = C433A579206D3DE700C2888F /* avatar5.png */; };
-		C433A57F206D3DE700C2888F /* avatar2.png in Resources */ = {isa = PBXBuildFile; fileRef = C433A57A206D3DE700C2888F /* avatar2.png */; };
-		C433A580206D3DE700C2888F /* avatar1.png in Resources */ = {isa = PBXBuildFile; fileRef = C433A57B206D3DE700C2888F /* avatar1.png */; };
+		C445E5722074CE5C00241182 /* CustomEnemyChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E5712074CE5C00241182 /* CustomEnemyChatCell.swift */; };
+		C445E5742074CE7400241182 /* CustomUserChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E5732074CE7400241182 /* CustomUserChatCell.swift */; };
+		C445E5762074D00B00241182 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E5752074D00B00241182 /* Message.swift */; };
+		C445E5782075057100241182 /* PhotoProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E5772075057100241182 /* PhotoProfile.swift */; };
+		C445E57C20750AED00241182 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = C445E57B20750AED00241182 /* camera.png */; };
 		C48477A1206D15C8002B6E18 /* SignInANDSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48477A0206D15C8002B6E18 /* SignInANDSignUp.storyboard */; };
 		C48477A5206D1843002B6E18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C48477A4206D1843002B6E18 /* GoogleService-Info.plist */; };
 		FE4D552D2069023F00ABF6C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4D552C2069023F00ABF6C1 /* AppDelegate.swift */; };
@@ -63,11 +63,11 @@
 		C433A56D206D2D1400C2888F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Controller/User.swift; sourceTree = "<group>"; };
 		C433A570206D32DD00C2888F /* Ranking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ranking.storyboard; sourceTree = "<group>"; };
 		C433A574206D399300C2888F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		C433A577206D3DE700C2888F /* avatar4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar4.png; sourceTree = "<group>"; };
-		C433A578206D3DE700C2888F /* avatar3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar3.png; sourceTree = "<group>"; };
-		C433A579206D3DE700C2888F /* avatar5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar5.png; sourceTree = "<group>"; };
-		C433A57A206D3DE700C2888F /* avatar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar2.png; sourceTree = "<group>"; };
-		C433A57B206D3DE700C2888F /* avatar1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar1.png; sourceTree = "<group>"; };
+		C445E5712074CE5C00241182 /* CustomEnemyChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEnemyChatCell.swift; sourceTree = "<group>"; };
+		C445E5732074CE7400241182 /* CustomUserChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserChatCell.swift; sourceTree = "<group>"; };
+		C445E5752074D00B00241182 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		C445E5772075057100241182 /* PhotoProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoProfile.swift; sourceTree = "<group>"; };
+		C445E57B20750AED00241182 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		C48477A0206D15C8002B6E18 /* SignInANDSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInANDSignUp.storyboard; sourceTree = "<group>"; };
 		C48477A4206D1843002B6E18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FE4D55292069023F00ABF6C1 /* ticTacToeEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ticTacToeEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +127,8 @@
 				C41036EA206E277C00423D7D /* CustomLobbyCell.swift */,
 				C41036EC206E284E00423D7D /* LobbyViewController.swift */,
 				FEC8A0A4206BA0A40031001B /* GameViewController.swift */,
+				C445E5712074CE5C00241182 /* CustomEnemyChatCell.swift */,
+				C445E5732074CE7400241182 /* CustomUserChatCell.swift */,
 				C41036E8206E26BA00423D7D /* LobbyANDGame.storyboard */,
 			);
 			path = LobbyANDGame;
@@ -173,24 +175,13 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		C433A576206D3DC800C2888F /* avatars */ = {
-			isa = PBXGroup;
-			children = (
-				C433A57B206D3DE700C2888F /* avatar1.png */,
-				C433A57A206D3DE700C2888F /* avatar2.png */,
-				C433A578206D3DE700C2888F /* avatar3.png */,
-				C433A577206D3DE700C2888F /* avatar4.png */,
-				C433A579206D3DE700C2888F /* avatar5.png */,
-			);
-			path = avatars;
-			sourceTree = "<group>";
-		};
 		C48477A6206D1B69002B6E18 /* SignInANDSignUp */ = {
 			isa = PBXGroup;
 			children = (
 				C48477A0206D15C8002B6E18 /* SignInANDSignUp.storyboard */,
 				FEC8A083206B849C0031001B /* SignInViewController.swift */,
 				FEC8A088206B87AA0031001B /* SignUpViewController.swift */,
+				C445E5772075057100241182 /* PhotoProfile.swift */,
 			);
 			path = SignInANDSignUp;
 			sourceTree = "<group>";
@@ -218,10 +209,11 @@
 			children = (
 				FE4D552C2069023F00ABF6C1 /* AppDelegate.swift */,
 				C433A56D206D2D1400C2888F /* User.swift */,
+				C445E5752074D00B00241182 /* Message.swift */,
+				C445E57B20750AED00241182 /* camera.png */,
 				FEC8A085206B84D60031001B /* Controller */,
 				FE4D55302069024000ABF6C1 /* Main.storyboard */,
 				C41036EE206E35E600423D7D /* GameIamges */,
-				C433A576206D3DC800C2888F /* avatars */,
 				FE4D55332069024000ABF6C1 /* Assets.xcassets */,
 				FE4D55352069024000ABF6C1 /* LaunchScreen.storyboard */,
 				C48477A4206D1843002B6E18 /* GoogleService-Info.plist */,
@@ -321,13 +313,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C433A57D206D3DE700C2888F /* avatar3.png in Resources */,
 				C41036FA206E6C5900423D7D /* avatar4.png in Resources */,
-				C433A57E206D3DE700C2888F /* avatar5.png in Resources */,
 				C41036F8206E6C5900423D7D /* avatar3.png in Resources */,
-				C433A57F206D3DE700C2888F /* avatar2.png in Resources */,
 				FE4D55372069024000ABF6C1 /* LaunchScreen.storyboard in Resources */,
 				C48477A1206D15C8002B6E18 /* SignInANDSignUp.storyboard in Resources */,
+				C445E57C20750AED00241182 /* camera.png in Resources */,
 				C41036FC206E6C5900423D7D /* avatar2.png in Resources */,
 				FE4D55342069024000ABF6C1 /* Assets.xcassets in Resources */,
 				C41036FB206E6C5900423D7D /* avatar5.png in Resources */,
@@ -337,10 +327,8 @@
 				C41036F9206E6C5900423D7D /* avatar1.png in Resources */,
 				FE4D55322069024000ABF6C1 /* Main.storyboard in Resources */,
 				FE6BF157206D0F1500BA7800 /* Shojumaru-Regular.ttf in Resources */,
-				C433A57C206D3DE700C2888F /* avatar4.png in Resources */,
 				C433A575206D399300C2888F /* Profile.storyboard in Resources */,
 				FE6BF159206D113900BA7800 /* CatCafe.ttf in Resources */,
-				C433A580206D3DE700C2888F /* avatar1.png in Resources */,
 				C48477A5206D1843002B6E18 /* GoogleService-Info.plist in Resources */,
 				C41036E9206E26BA00423D7D /* LobbyANDGame.storyboard in Resources */,
 			);
@@ -421,10 +409,14 @@
 				FEC8A08D206B899D0031001B /* RankingViewController.swift in Sources */,
 				FEC8A0A5206BA0A40031001B /* GameViewController.swift in Sources */,
 				C433A56E206D2D1400C2888F /* User.swift in Sources */,
+				C445E5782075057100241182 /* PhotoProfile.swift in Sources */,
 				C4103700206E84DE00423D7D /* EditProfileViewController.swift in Sources */,
 				FEC8A084206B849C0031001B /* SignInViewController.swift in Sources */,
 				FEC8A089206B87AA0031001B /* SignUpViewController.swift in Sources */,
+				C445E5742074CE7400241182 /* CustomUserChatCell.swift in Sources */,
+				C445E5762074D00B00241182 /* Message.swift in Sources */,
 				C41036EB206E277C00423D7D /* CustomLobbyCell.swift in Sources */,
+				C445E5722074CE5C00241182 /* CustomEnemyChatCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

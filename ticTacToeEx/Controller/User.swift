@@ -17,7 +17,8 @@ class User {
     var sconfitte: Int = 0
     var stato: String = ""
     var image: UIImage?
-    var nameImage: String!
+    var nameImage: String = ""
+    
     
     init() {
         nickName = ""

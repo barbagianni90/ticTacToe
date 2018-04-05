@@ -31,7 +31,98 @@ class Utils{
     
 }
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate{
+    
+    @IBOutlet weak var chatTable: UITableView!
+    
+    @IBOutlet weak var textFieldMessage: UITextField!
+    
+    @IBOutlet weak var bottomTextField: NSLayoutConstraint!
+    var messages: [Message] = []
+    
+    var n_key: Int = 0
+    
+    var textFieldTouched: UITextField!
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return messages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        
+        if messages[indexPath.row].nickName == MainViewController.user.nickName {
+            
+            let cell = chatTable.dequeueReusableCell(withIdentifier: "cellUser", for: indexPath) as! CustomUserChatCell
+            
+            cell.imageProfile.image = MainViewController.user.image
+            
+            cell.nickNameLabel.text = MainViewController.user.nickName
+            
+            cell.messageLabel.text = messages[indexPath.row].message
+            
+            return cell
+        }
+        
+        else {
+            
+            let cell = chatTable.dequeueReusableCell(withIdentifier: "cellEnemy", for: indexPath) as! CustomEnemyChatCell
+            
+            cell.imageProfile.image = messages[indexPath.row].imageProgile
+            
+            cell.nickNameLabel.text = messages[indexPath.row].nickName
+            
+            cell.messageLabel.text = messages[indexPath.row].message
+            
+            return cell
+        }
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textFieldTouched = textField
+    }
+    
+    @objc func keyboardDidShow(notification: Notification) {
+        
+        let info = notification.userInfo! as NSDictionary
+        let keyboardSize = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        
+        self.bottomTextField.constant = keyboardSize.height - self.textFieldTouched.frame.size.height
+        if self.view.frame.origin.y >= 0 {
+            UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut, animations: {
+                self.textFieldTouched.layoutIfNeeded()
+            }, completion: nil)
+        }
+        
+    }
+    @objc func keyboardWillHide(notification: Notification) {
+        
+        self.bottomTextField.constant = 3
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
+            self.textFieldTouched.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()  //if desired
+        performAction()
+        return true
+    }
+    
+    func performAction() {
+        let ref = Database.database().reference()
+        let messageText = self.textFieldTouched.text as! String
+        let message = [
+            "Message" : "\(messageText)",
+            "Nickname" : "\(MainViewController.user.nickName)"
+        ]
+        let newMessageNumber = self.messages.count + 1
+        ref.child("Messages\(nomeTabella)").child("Message\(newMessageNumber)").setValue(message)
+        self.textFieldTouched.text = ""
+    }
+    
     
     var enemy = User()
     
@@ -61,7 +152,52 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.chatTable.delegate = self
+        self.chatTable.dataSource = self
+        self.textFieldMessage.delegate = self
+        
+        let center = NotificationCenter.default
+        center.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+        center.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        self.hideKeyboardWhenTappedAround()
+        
         let ref = Database.database().reference()
+        
+        let storage = Storage.storage()
+        
+        ref.child("Messages\(nomeTabella)").observe(.value) { (snap) in
+            self.messages.removeAll()
+            let dict = snap.value as! [String : Any]
+            self.n_key = dict.count
+            for(key, value) in dict {
+                let keyMessage = key as String
+                let n_message = String(keyMessage.suffix(1))
+                
+                let dict2 = value as! [String : Any]
+                let message = Message()
+                message.nickName = dict2["Nickname"] as! String
+                message.message = dict2["Message"] as! String
+                message.n_message = Int(n_message)!
+                
+                let urlImage = (dict2["Nickname"] as! String)
+                let imageRef = storage.reference().child("images/" + urlImage + "/imageProfile.jpg")
+                imageRef.getData(maxSize: 10 * 1024 * 1024) { data, error in
+                    if error != nil {
+                        self.messages.append(message)
+                        self.n_key -= 1
+                    }
+                    else {
+                        message.imageProgile = UIImage(data: data!)!
+                        self.messages.append(message)
+                        self.n_key -= 1
+                    }
+                    self.messages.sort(by: {$0.n_message < $1.n_message})
+                    if self.n_key == 0 {
+                        self.chatTable.reloadData()
+                    }
+                }
+            }
+        }
         
         
         if fPlayer == true && sPlayer == false {

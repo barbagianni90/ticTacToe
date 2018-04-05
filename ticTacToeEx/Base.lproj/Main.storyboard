@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -74,17 +74,6 @@
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q17-lu-dXO">
-                                <rect key="frame" x="264" y="45" width="46" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="OlU-dh-vGN"/>
-                                    <constraint firstAttribute="height" constant="40" id="cae-0S-PGH"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="showProfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WAr-hO-wec"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ode-OO-V6w">
                                 <rect key="frame" x="38" y="45" width="218" height="40"/>
                                 <constraints>
@@ -95,6 +84,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q17-lu-dXO">
+                                <rect key="frame" x="264" y="43" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="OlU-dh-vGN"/>
+                                    <constraint firstAttribute="height" constant="45" id="cae-0S-PGH"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button" image="avatar3.png" backgroundImage="avatar2.png">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="showProfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WAr-hO-wec"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -106,9 +109,9 @@
                             <constraint firstItem="1EI-R5-x26" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KkZ-Qf-E8w"/>
                             <constraint firstItem="BwO-M9-pEi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="115" id="Twb-LS-eUl"/>
                             <constraint firstItem="BwO-M9-pEi" firstAttribute="top" secondItem="ode-OO-V6w" secondAttribute="bottom" constant="50" id="VxS-WT-1cl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="q17-lu-dXO" secondAttribute="trailing" constant="10" id="aC3-BN-bdV"/>
-                            <constraint firstItem="q17-lu-dXO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="dQh-pL-0un"/>
-                            <constraint firstItem="BwO-M9-pEi" firstAttribute="top" secondItem="q17-lu-dXO" secondAttribute="bottom" constant="50" id="lec-l4-BCg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="q17-lu-dXO" secondAttribute="trailing" constant="11" id="aC3-BN-bdV"/>
+                            <constraint firstItem="q17-lu-dXO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="23" id="dQh-pL-0un"/>
+                            <constraint firstItem="BwO-M9-pEi" firstAttribute="top" secondItem="q17-lu-dXO" secondAttribute="bottom" constant="47" id="lec-l4-BCg"/>
                             <constraint firstItem="ePS-Wg-ri0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="paL-LM-yTT"/>
                             <constraint firstItem="6Hb-Vd-dNN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s4V-n5-ny6"/>
                             <constraint firstItem="1EI-R5-x26" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="s9V-Tf-lIM"/>
@@ -132,6 +135,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="avatar2.png" width="128" height="128"/>
+        <image name="avatar3.png" width="512" height="512"/>
         <image name="cherryTree" width="375" height="608"/>
     </resources>
 </document>
