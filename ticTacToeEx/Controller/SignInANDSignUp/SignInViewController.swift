@@ -16,6 +16,8 @@ import FirebaseDatabase
 
 class SignInViewController: UIViewController {
     
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
     
@@ -40,6 +42,14 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func loginButton(_ sender: Any) {
+        
+        self.activityIndicator.center = self.view.center
+        self.activityIndicator.hidesWhenStopped = true
+        self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        self.view.addSubview(self.activityIndicator)
+        
+        activityIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
         
         if self.emailTextField.text == "" || self.passTextField.text == "" {
             
@@ -84,14 +94,30 @@ class SignInViewController: UIViewController {
                             
                             if datiPlayer["email"] as! String == emailCurrentUser {
                                 MainViewController.user.nickName = key
+                                MainViewController.user.email = datiPlayer["email"] as! String
                                 MainViewController.user.vittorie = Int(datiPlayer["vittorie"] as! String)!
                                 MainViewController.user.sconfitte = Int(datiPlayer["sconfitte"] as! String)!
                                 MainViewController.user.stato = "online"
-                                MainViewController.user.image = UIImage(named: datiPlayer["avatar"] as! String)
+                                
+                                let sRef = Storage.storage().reference()
+                                
+                                sRef.child("Images").child("\(MainViewController.user.nickName)").child("myImage.png") .getData(maxSize: 20 * 1024 * 1024) { data, error in
+                                    if error != nil {
+                                        print(error as Any)
+                                    }
+                                    else {
+                                        MainViewController.user.image = UIImage(data: data!)
+                                        
+                                        self.activityIndicator.stopAnimating()
+                                        UIApplication.shared.endIgnoringInteractionEvents()
+                                        
+                                        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+                                    }
+                                }
                             }
                         }
-                        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
                     })
+                    
                     
                 } else {
                     

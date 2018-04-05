@@ -60,17 +60,13 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         if MainViewController.user.nickName == "" {
+            
             self.avatarButton.isHidden = true
             self.nickNameLabel.isHidden = true
             self.startButton.isEnabled = false
         }
         
         // Do any additional setup after loading the view, typically from a nib.
-        
-//        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-//        backgroundImage.image = UIImage(named: "cherryTree")
-//        backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
-//        self.view.insertSubview(backgroundImage, at: 0)
         
     }
 
@@ -92,6 +88,10 @@ class MainViewController: UIViewController {
            self.signInButton.isHidden = true
             self.signOutButton.isHidden = false
             self.avatarButton.setImage(MainViewController.user.image, for: .normal)
+            self.avatarButton.transform = CGAffineTransform(rotationAngle: (90.0 * .pi) / 180.0)
+            self.avatarButton.layer.cornerRadius = self.avatarButton.frame.width / 2
+            self.avatarButton.layer.masksToBounds = true
+            
             self.nickNameLabel.text = MainViewController.user.nickName
         }
     }
@@ -109,7 +109,7 @@ class MainViewController: UIViewController {
     
     @IBAction func showProfile(_ sender: Any) {
         
-        let rankingView = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "pfofileInfo")
+        let rankingView = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "profileInfo")
         self.present(rankingView, animated: true, completion: nil)
     }
     @IBAction func startGame(_ sender: Any) {

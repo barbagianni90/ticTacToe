@@ -20,7 +20,7 @@ import FirebaseStorage
 
 class SignUpViewController: UIViewController {
     
-    var avatarSelected = ""
+    static var imageProfileSelected: UIImage!
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
@@ -28,6 +28,7 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet var avatars: [UIButton]!
     
+    @IBOutlet weak var scatta: UIButton!
     
     @IBAction func signInButton(_ sender: Any) {
         
@@ -75,6 +76,7 @@ class SignUpViewController: UIViewController {
                             
                             MainViewController.user.nickName = name
                             MainViewController.user.stato = "online"
+                            MainViewController.user.email = "\(self.emailTextField.text as! String)"
                             
                             let ref = Database.database().reference()
                             
@@ -84,9 +86,19 @@ class SignUpViewController: UIViewController {
                                     "vittorie" : "0",
                                     "sconfitte" : "0",
                                     "invitatoDa" : "",
-                                    "invitoAccettato" : "",
-                                    "avatar": "\(self.avatarSelected)"])
+                                    "invitoAccettato" : ""])
+                            
+                            
                         }
+                        
+                        let sRef = Storage.storage().reference()
+                        
+                        let uploadData = UIImagePNGRepresentation(SignUpViewController.imageProfileSelected)
+                        
+                        sRef.child("Images").child("\(MainViewController.user.nickName)").child("myImage.png").putData(uploadData!)
+                        
+                        MainViewController.user.image = SignUpViewController.imageProfileSelected
+                        
                         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
                         
                     }))
@@ -125,17 +137,13 @@ class SignUpViewController: UIViewController {
             button.setTitle("avatar\(i).png", for: .normal)
             i += 1
         }
-        //        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        //        backgroundImage.image = UIImage(named: "cherryTree")
-        //        backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
-        //        self.view.insertSubview(backgroundImage, at: 0)
+        
+        self.scatta.layer.cornerRadius = self.scatta.frame.size.width / 2
+        
     }
     @IBAction func avatarSelected(_ sender: UIButton) {
         
-        self.avatarSelected = sender.titleLabel?.text as! String
-        MainViewController.user.image = sender.imageView?.image
-        MainViewController.user.nameImage = sender.titleLabel?.text as! String
-        
+        SignUpViewController.imageProfileSelected = sender.imageView?.image
     }
 }
 

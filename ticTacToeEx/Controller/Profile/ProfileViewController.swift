@@ -20,6 +20,9 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         
         self.avatarImage.image = MainViewController.user.image
+        self.avatarImage.transform = CGAffineTransform(rotationAngle: (90.0 * .pi) / 180.0)
+        self.avatarImage.layer.cornerRadius = self.avatarImage.frame.size.width / 2
+        self.avatarImage.layer.masksToBounds = true
         
         self.nickNameLabel.text = MainViewController.user.nickName
         
