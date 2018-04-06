@@ -27,28 +27,20 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.lobbyTable.dataSource = self
         // Do any additional setup after loading the view.
         
-        let ref = Database.database().reference()
+        refresh()
         
-        ref.child("Players").observe(.value, with:{ (snap) in
+        let refreshControl: UIRefreshControl = {
             
-            self.players.removeAll()
+            let refreshControl = UIRefreshControl()
+            refreshControl.addTarget(self, action:
+                #selector(LobbyViewController.handleRefresh(_:)),
+                                     for: UIControlEvents.valueChanged)
+            refreshControl.tintColor = UIColor.red
             
-            let players = snap.value as! [String : Any]
-            
-            for(key, value) in players {
-                
-                let datiSinglePalyer = value as! [String : Any]
-                
-                if key != MainViewController.user.nickName {
-                    let player = User()
-                    player.nickName = key
-                    player.stato = datiSinglePalyer["stato"] as! String
-                    player.image = UIImage(named: "\(datiSinglePalyer["avatar"] as! String)")
-                    self.players.append(player)
-                }
-            }
-            self.lobbyTable.reloadData()
-        })
+            return refreshControl
+        }()
+        
+        self.lobbyTable.addSubview(refreshControl)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,20 +61,32 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     
                     ref.child("Players").child("\(value)").child("invitoAccettato").setValue("Si")
                     
-                    
-                    let segue =  UIStoryboard(name:"LobbyANDGame",bundle:nil).instantiateViewController(withIdentifier: "Gioco") as! GameViewController
-                    
-                    let enemy = User()
-                    enemy.nickName = "\(value)"
-                    
-                    let segue2 = segue
-                    segue2.enemy = enemy
-                    
-                    segue2.fPlayer = false
-                    segue2.sPlayer = true
-                    
-                    self.present(segue, animated: true, completion: nil)
-                }))
+                    //ref.child("Players").child("\(value)").child("image").observeSingleEvent(of: .value, with: { (snap) in
+                        
+                        //let value = snap.value as! String
+                        
+                        //let decodeString = Data(base64Encoded: value)
+                        
+                        //let image = UIImage(data: decodeString!)
+                        
+                        //let imagePNG = UIImagePNGRepresentation(image!)
+                        
+                        let segue =  UIStoryboard(name:"LobbyANDGame",bundle:nil).instantiateViewController(withIdentifier: "Gioco") as! GameViewController
+                        
+                        let enemy = User()
+                        enemy.nickName = "\(value)"
+                        //enemy.image = UIImage(data: imagePNG!)
+                        
+                        //let segue2 = segue
+                        segue.enemy = enemy
+                        
+                        segue.fPlayer = false
+                        segue.sPlayer = true
+                        
+                        self.present(segue, animated: true, completion: nil)
+                    })
+                //})
+                )
                 
                 alert.addAction(UIAlertAction(title: "Rifiuto", style: .default, handler: { action in
                     
@@ -105,18 +109,30 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
                 if value == "Si" {
                     
-                    let segue =  UIStoryboard(name:"LobbyANDGame",bundle:nil).instantiateViewController(withIdentifier: "Gioco") as! GameViewController
-                    
-                    let enemy = User()
-                    enemy.nickName = "\(self.nickNameSfidato)"
-                    
-                    let segue2 = segue
-                    segue2.enemy = enemy
-                    
-                    segue2.fPlayer = true
-                    segue2.sPlayer = false
-                    
-                    self.present(segue, animated: true, completion: nil)
+                    //ref.child("Players").child("\(self.nickNameSfidato)").child("image").observeSingleEvent(of: .value, with: { (snap) in
+                        
+                        //let value = snap.value as! String
+                        
+                        //let decodeString = Data(base64Encoded: value)
+                        
+                        //let image = UIImage(data: decodeString!)
+                        
+                        //let imagePNG = UIImagePNGRepresentation(image!)
+                        
+                        let segue =  UIStoryboard(name:"LobbyANDGame",bundle:nil).instantiateViewController(withIdentifier: "Gioco") as! GameViewController
+                        
+                        let enemy = User()
+                        enemy.nickName = "\(self.nickNameSfidato)"
+                        //enemy.image = UIImage(data: imagePNG!)
+                        
+                        //let segue2 = segue
+                        segue.enemy = enemy
+                        
+                        segue.fPlayer = true
+                        segue.sPlayer = false
+                        
+                        self.present(segue, animated: true, completion: nil)
+                    //})
                 }
                 else {
                     ref.child("Players").child("\(MainViewController.user.nickName)").child("stato").setValue("online")
@@ -147,6 +163,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let ref = Database.database().reference()
         
+        
         ref.child("Players").child("\(MainViewController.user.nickName)").child("stato").setValue("occupato")
         
         ref.child("Players").child("\(currentCell.nickNameLabel.text as! String)").child("invitatoDa").setValue("\(MainViewController.user.nickName)")
@@ -175,8 +192,70 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.nickNameLabel.text = players[indexPath.row].nickName
         cell.stateLabel.text = players[indexPath.row].stato
         cell.imageCell.image = players[indexPath.row].image
+        //cell.imageCell.transform =  CGAffineTransform(rotationAngle: (90.0 * .pi) / 180.0)
+        cell.imageCell.layer.cornerRadius = cell.imageCell.frame.size.width / 2
+        cell.imageCell.layer.masksToBounds = true
         
         return cell
     }
-
+    
+    func refresh() -> Void {
+        
+        let ref = Database.database().reference()
+        
+        ref.child("Players").observeSingleEvent(of: .value, with:{ (snap) in
+            
+            self.players.removeAll()
+            
+            let players = snap.value as! [String : Any]
+            
+            for(key, value) in players {
+                
+                let datiSinglePlayer = value as! [String : Any]
+                
+                if key != MainViewController.user.nickName {
+                    let player = User()
+                    player.nickName = key
+                    player.stato = datiSinglePlayer["stato"] as! String
+                    
+                    let decodeString = Data(base64Encoded: datiSinglePlayer["image"] as! String)
+                    
+                    let image = UIImage(data: decodeString!)
+                    
+                    let imagePNG = UIImagePNGRepresentation(image!)
+                    
+                    player.image = UIImage(data: imagePNG!)
+                    
+                    self.players.append(player)
+                    self.lobbyTable.reloadData()
+                    
+                    /*
+                    let sRef = Storage.storage().reference()
+                     
+                    sRef.child("Images").child("\(key)").child("myImage.png").getData(maxSize: 20 * 1024 * 1024) { data, error in
+                        if error != nil {
+                            print(error as Any)
+                        }
+                        else {
+                            player.image = UIImage(data: data!)
+                            self.players.append(player)
+                            self.lobbyTable.reloadData()
+                        }
+                    }
+                    */
+                }
+            }
+        })
+    }
+    
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        
+        refresh()
+        refreshControl.endRefreshing()
+        
+    }
+    @IBAction func goHome(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
 }

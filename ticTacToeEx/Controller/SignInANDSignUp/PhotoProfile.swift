@@ -46,6 +46,7 @@ class PhotoProfile: UIViewController, UIImagePickerControllerDelegate, UINavigat
         
         EditProfileViewController.imageSelected = self.image.image
         SignUpViewController.imageProfileSelected = self.image.image
+        
         self.dismiss(animated: true, completion: nil)
     }
     

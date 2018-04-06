@@ -99,14 +99,35 @@ class SignInViewController: UIViewController {
                                 MainViewController.user.sconfitte = Int(datiPlayer["sconfitte"] as! String)!
                                 MainViewController.user.stato = "online"
                                 
-                                let sRef = Storage.storage().reference()
+                                let decodeString = Data(base64Encoded: datiPlayer["image"] as! String)
                                 
-                                sRef.child("Images").child("\(MainViewController.user.nickName)").child("myImage.png") .getData(maxSize: 20 * 1024 * 1024) { data, error in
+                                let image = UIImage(data: decodeString!)
+                                
+                                let imagePNG = UIImagePNGRepresentation(image!)
+                                
+                                MainViewController.user.image = UIImage(data: imagePNG!)
+                                
+                                self.activityIndicator.stopAnimating()
+                                UIApplication.shared.endIgnoringInteractionEvents()
+                                
+                                self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+                                
+                                //let sRef = Storage.storage().reference()
+                                
+                                /*
+                                sRef.child("Images").child("\(MainViewController.user.nickName)").child("myImage") .getData(maxSize: 20 * 1024 * 1024) { data, error in
                                     if error != nil {
                                         print(error as Any)
                                     }
                                     else {
-                                        MainViewController.user.image = UIImage(data: data!)
+                                        
+                                        let decode = Data(base64Encoded: data!, options: [])
+                                        
+                                        let image = UIImage(data: decode!)
+                                        
+                                        let imagePNG = UIImagePNGRepresentation(image!)
+                                        
+                                        MainViewController.user.image = UIImage(data: imagePNG!)
                                         
                                         self.activityIndicator.stopAnimating()
                                         UIApplication.shared.endIgnoringInteractionEvents()
@@ -114,6 +135,7 @@ class SignInViewController: UIViewController {
                                         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
                                     }
                                 }
+                                */
                             }
                         }
                     })
@@ -121,9 +143,15 @@ class SignInViewController: UIViewController {
                     
                 } else {
                     
-                    //Tells the user that there is an error and then gets firebase to tell them the error
+                    print("wrong login")
+                    self.activityIndicator.stopAnimating()
+                    UIApplication.shared.endIgnoringInteractionEvents()
                 }
             }
         }
+    }
+    @IBAction func goHome(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
     }
 }

@@ -11,7 +11,6 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-    
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var stateLabel: UILabel!
@@ -19,14 +18,6 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.avatarImage.image = MainViewController.user.image
-        self.avatarImage.transform = CGAffineTransform(rotationAngle: (90.0 * .pi) / 180.0)
-        self.avatarImage.layer.cornerRadius = self.avatarImage.frame.size.width / 2
-        self.avatarImage.layer.masksToBounds = true
-        
-        self.nickNameLabel.text = MainViewController.user.nickName
-        
-        self.stateLabel.text = MainViewController.user.stato
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,6 +30,17 @@ class ProfileViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.avatarImage.image = MainViewController.user.image
+        //self.avatarImage.transform = CGAffineTransform(rotationAngle: (90.0 * .pi) / 180.0)
+        self.avatarImage.layer.cornerRadius = self.avatarImage.frame.size.width / 2
+        self.avatarImage.layer.masksToBounds = true
+        
+        self.nickNameLabel.text = MainViewController.user.nickName
+        
+        self.stateLabel.text = MainViewController.user.stato
+    }
    
     /*
      // MARK: - Navigation

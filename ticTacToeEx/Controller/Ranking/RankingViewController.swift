@@ -36,12 +36,21 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
                 
                 player.nickName = key
                 player.vittorie = Int(datiSinglePlayer["vittorie"] as! String)!
-                player.image = UIImage(named: "\(datiSinglePlayer["avatar"] as! String)")
                 
-                self.players.append(player)
+                let sRef = Storage.storage().reference()
+                
+                sRef.child("Images").child("\(key)").child("myImage.png").getData(maxSize: 20 * 1024 * 1024) { data, error in
+                    if error != nil {
+                        print(error as Any)
+                    }
+                    else {
+                        player.image = UIImage(data: data!)
+                        self.players.append(player)
+                        self.players.sort(by: {$0.vittorie > $1.vittorie})
+                        self.tableRanking.reloadData()
+                    }
+                }
             }
-            self.players.sort(by: {$0.vittorie > $1.vittorie})
-            self.tableRanking.reloadData()
         })
     }
     
