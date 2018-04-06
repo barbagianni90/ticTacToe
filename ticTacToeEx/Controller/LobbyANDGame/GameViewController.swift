@@ -195,12 +195,12 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         if fPlayer == true {
-            myImage = UIImage(named: "crossRossa.png")
-            oppositeImage = UIImage(named: "cerchioRosso.png")
+            myImage = UIImage(named: "croce.png")
+            oppositeImage = UIImage(named: "cerchio.png")
         }
         else if sPlayer == true {
-            myImage = UIImage(named: "cerchioRosso.png")
-            oppositeImage = UIImage(named: "crossRossa.png")
+            myImage = UIImage(named: "cerchio.png")
+            oppositeImage = UIImage(named: "croce.png")
         }
         
         self.chatTable.delegate = self

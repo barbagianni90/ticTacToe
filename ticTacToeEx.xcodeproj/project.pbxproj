@@ -11,8 +11,6 @@
 		C41036E9206E26BA00423D7D /* LobbyANDGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C41036E8206E26BA00423D7D /* LobbyANDGame.storyboard */; };
 		C41036EB206E277C00423D7D /* CustomLobbyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41036EA206E277C00423D7D /* CustomLobbyCell.swift */; };
 		C41036ED206E284E00423D7D /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41036EC206E284E00423D7D /* LobbyViewController.swift */; };
-		C41036F0206E363300423D7D /* cerchioRosso.png in Resources */ = {isa = PBXBuildFile; fileRef = C41036EF206E363300423D7D /* cerchioRosso.png */; };
-		C41036F2206E363A00423D7D /* crossRossa.png in Resources */ = {isa = PBXBuildFile; fileRef = C41036F1206E363A00423D7D /* crossRossa.png */; };
 		C41036F8206E6C5900423D7D /* avatar3.png in Resources */ = {isa = PBXBuildFile; fileRef = C41036F3206E6C5700423D7D /* avatar3.png */; };
 		C41036F9206E6C5900423D7D /* avatar1.png in Resources */ = {isa = PBXBuildFile; fileRef = C41036F4206E6C5700423D7D /* avatar1.png */; };
 		C41036FA206E6C5900423D7D /* avatar4.png in Resources */ = {isa = PBXBuildFile; fileRef = C41036F5206E6C5800423D7D /* avatar4.png */; };
@@ -30,6 +28,8 @@
 		C445E57C20750AED00241182 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = C445E57B20750AED00241182 /* camera.png */; };
 		C48477A1206D15C8002B6E18 /* SignInANDSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48477A0206D15C8002B6E18 /* SignInANDSignUp.storyboard */; };
 		C48477A5206D1843002B6E18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C48477A4206D1843002B6E18 /* GoogleService-Info.plist */; };
+		C4E2E64D2077C1A9005CDD72 /* croce.png in Resources */ = {isa = PBXBuildFile; fileRef = C4E2E64B2077C1A9005CDD72 /* croce.png */; };
+		C4E2E64E2077C1A9005CDD72 /* cerchio.png in Resources */ = {isa = PBXBuildFile; fileRef = C4E2E64C2077C1A9005CDD72 /* cerchio.png */; };
 		FE4D552D2069023F00ABF6C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4D552C2069023F00ABF6C1 /* AppDelegate.swift */; };
 		FE4D552F2069024000ABF6C1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4D552E2069024000ABF6C1 /* MainViewController.swift */; };
 		FE4D55322069024000ABF6C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE4D55302069024000ABF6C1 /* Main.storyboard */; };
@@ -51,8 +51,6 @@
 		C41036E8206E26BA00423D7D /* LobbyANDGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LobbyANDGame.storyboard; sourceTree = "<group>"; };
 		C41036EA206E277C00423D7D /* CustomLobbyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLobbyCell.swift; sourceTree = "<group>"; };
 		C41036EC206E284E00423D7D /* LobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
-		C41036EF206E363300423D7D /* cerchioRosso.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cerchioRosso.png; sourceTree = "<group>"; };
-		C41036F1206E363A00423D7D /* crossRossa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crossRossa.png; sourceTree = "<group>"; };
 		C41036F3206E6C5700423D7D /* avatar3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar3.png; sourceTree = "<group>"; };
 		C41036F4206E6C5700423D7D /* avatar1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar1.png; sourceTree = "<group>"; };
 		C41036F5206E6C5800423D7D /* avatar4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar4.png; sourceTree = "<group>"; };
@@ -70,6 +68,8 @@
 		C445E57B20750AED00241182 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		C48477A0206D15C8002B6E18 /* SignInANDSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInANDSignUp.storyboard; sourceTree = "<group>"; };
 		C48477A4206D1843002B6E18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C4E2E64B2077C1A9005CDD72 /* croce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = croce.png; sourceTree = "<group>"; };
+		C4E2E64C2077C1A9005CDD72 /* cerchio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cerchio.png; sourceTree = "<group>"; };
 		FE4D55292069023F00ABF6C1 /* ticTacToeEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ticTacToeEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE4D552C2069023F00ABF6C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE4D552E2069024000ABF6C1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -137,8 +137,8 @@
 		C41036EE206E35E600423D7D /* GameIamges */ = {
 			isa = PBXGroup;
 			children = (
-				C41036EF206E363300423D7D /* cerchioRosso.png */,
-				C41036F1206E363A00423D7D /* crossRossa.png */,
+				C4E2E64C2077C1A9005CDD72 /* cerchio.png */,
+				C4E2E64B2077C1A9005CDD72 /* croce.png */,
 			);
 			path = GameIamges;
 			sourceTree = "<group>";
@@ -317,12 +317,12 @@
 				C41036F8206E6C5900423D7D /* avatar3.png in Resources */,
 				FE4D55372069024000ABF6C1 /* LaunchScreen.storyboard in Resources */,
 				C48477A1206D15C8002B6E18 /* SignInANDSignUp.storyboard in Resources */,
+				C4E2E64D2077C1A9005CDD72 /* croce.png in Resources */,
+				C4E2E64E2077C1A9005CDD72 /* cerchio.png in Resources */,
 				C445E57C20750AED00241182 /* camera.png in Resources */,
 				C41036FC206E6C5900423D7D /* avatar2.png in Resources */,
 				FE4D55342069024000ABF6C1 /* Assets.xcassets in Resources */,
 				C41036FB206E6C5900423D7D /* avatar5.png in Resources */,
-				C41036F2206E363A00423D7D /* crossRossa.png in Resources */,
-				C41036F0206E363300423D7D /* cerchioRosso.png in Resources */,
 				C433A571206D32DD00C2888F /* Ranking.storyboard in Resources */,
 				C41036F9206E6C5900423D7D /* avatar1.png in Resources */,
 				FE4D55322069024000ABF6C1 /* Main.storyboard in Resources */,

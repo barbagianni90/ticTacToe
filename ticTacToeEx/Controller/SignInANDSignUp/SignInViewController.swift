@@ -107,39 +107,16 @@ class SignInViewController: UIViewController {
                                 
                                 MainViewController.user.image = UIImage(data: imagePNG!)
                                 
+                                ref.child("Players").child("\(MainViewController.user.nickName)").child("stato").setValue("online")
+                                
                                 self.activityIndicator.stopAnimating()
                                 UIApplication.shared.endIgnoringInteractionEvents()
                                 
                                 self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
                                 
-                                //let sRef = Storage.storage().reference()
-                                
-                                /*
-                                sRef.child("Images").child("\(MainViewController.user.nickName)").child("myImage") .getData(maxSize: 20 * 1024 * 1024) { data, error in
-                                    if error != nil {
-                                        print(error as Any)
-                                    }
-                                    else {
-                                        
-                                        let decode = Data(base64Encoded: data!, options: [])
-                                        
-                                        let image = UIImage(data: decode!)
-                                        
-                                        let imagePNG = UIImagePNGRepresentation(image!)
-                                        
-                                        MainViewController.user.image = UIImage(data: imagePNG!)
-                                        
-                                        self.activityIndicator.stopAnimating()
-                                        UIApplication.shared.endIgnoringInteractionEvents()
-                                        
-                                        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
-                                    }
-                                }
-                                */
                             }
                         }
                     })
-                    
                     
                 } else {
                     

@@ -37,20 +37,19 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
                 player.nickName = key
                 player.vittorie = Int(datiSinglePlayer["vittorie"] as! String)!
                 
-                let sRef = Storage.storage().reference()
+                let decodeString = Data(base64Encoded: datiSinglePlayer["image"] as! String)
                 
-                sRef.child("Images").child("\(key)").child("myImage.png").getData(maxSize: 20 * 1024 * 1024) { data, error in
-                    if error != nil {
-                        print(error as Any)
-                    }
-                    else {
-                        player.image = UIImage(data: data!)
-                        self.players.append(player)
-                        self.players.sort(by: {$0.vittorie > $1.vittorie})
-                        self.tableRanking.reloadData()
-                    }
-                }
+                let image = UIImage(data: decodeString!)
+                
+                let imagePNG = UIImagePNGRepresentation(image!)
+                
+                player.image = UIImage(data: imagePNG!)
+                                
+                self.players.append(player)
+                
             }
+            self.players.sort(by: {$0.vittorie > $1.vittorie})
+            self.tableRanking.reloadData()
         })
     }
     
