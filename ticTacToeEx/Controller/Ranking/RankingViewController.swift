@@ -36,9 +36,17 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
                 
                 player.nickName = key
                 player.vittorie = Int(datiSinglePlayer["vittorie"] as! String)!
-                player.image = UIImage(named: "\(datiSinglePlayer["avatar"] as! String)")
                 
+                let decodeString = Data(base64Encoded: datiSinglePlayer["image"] as! String)
+                
+                let image = UIImage(data: decodeString!)
+                
+                let imagePNG = UIImagePNGRepresentation(image!)
+                
+                player.image = UIImage(data: imagePNG!)
+                                
                 self.players.append(player)
+                
             }
             self.players.sort(by: {$0.vittorie > $1.vittorie})
             self.tableRanking.reloadData()

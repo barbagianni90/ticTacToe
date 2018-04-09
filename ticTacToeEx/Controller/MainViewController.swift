@@ -70,7 +70,7 @@ class MainViewController: UIViewController {
             self.startButton.isEnabled = true
             self.signInButton.isHidden = true
             self.avatarButton.setImage(MainViewController.user.image, for: .normal)
-            self.avatarButton.transform = CGAffineTransform(rotationAngle: (90.0 * .pi) / 180.0)
+            //self.avatarButton.transform = CGAffineTransform(rotationAngle: (90.0 * .pi) / 180.0)
             self.avatarButton.layer.cornerRadius = self.avatarButton.frame.width / 2
             self.avatarButton.layer.masksToBounds = true
             

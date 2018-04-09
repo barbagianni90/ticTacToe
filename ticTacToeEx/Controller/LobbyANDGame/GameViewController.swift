@@ -33,14 +33,17 @@ class Utils{
 
 class GameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate{
     
+    //----------------------Chat-------------------------
+    
     @IBOutlet weak var chatTable: UITableView!
     
     @IBOutlet weak var textFieldMessage: UITextField!
     
     @IBOutlet weak var bottomTextField: NSLayoutConstraint!
+    
     var messages: [Message] = []
     
-    var n_key: Int = 0
+    var messagesTot: Int = 0
     
     var textFieldTouched: UITextField!
     
@@ -59,6 +62,10 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             cell.imageProfile.image = MainViewController.user.image
             
+            cell.imageProfile.layer.cornerRadius = cell.imageProfile.frame.width / 2
+            
+            cell.imageProfile.layer.masksToBounds = true
+            
             cell.nickNameLabel.text = MainViewController.user.nickName
             
             cell.messageLabel.text = messages[indexPath.row].message
@@ -70,9 +77,13 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             let cell = chatTable.dequeueReusableCell(withIdentifier: "cellEnemy", for: indexPath) as! CustomEnemyChatCell
             
-            cell.imageProfile.image = messages[indexPath.row].imageProgile
+            cell.imageProfile.image = self.enemy.image
             
-            cell.nickNameLabel.text = messages[indexPath.row].nickName
+            cell.imageProfile.layer.cornerRadius = cell.imageProfile.frame.width / 2
+            
+            cell.imageProfile.layer.masksToBounds = true
+            
+            cell.nickNameLabel.text = self.enemy.nickName
             
             cell.messageLabel.text = messages[indexPath.row].message
             
@@ -89,7 +100,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         let info = notification.userInfo! as NSDictionary
         let keyboardSize = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         
-        self.bottomTextField.constant = keyboardSize.height - self.textFieldTouched.frame.size.height
+        self.bottomTextField.constant = keyboardSize.height + 8.0
         if self.view.frame.origin.y >= 0 {
             UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut, animations: {
                 self.textFieldTouched.layoutIfNeeded()
@@ -118,11 +129,11 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
             "Message" : "\(messageText)",
             "Nickname" : "\(MainViewController.user.nickName)"
         ]
-        let newMessageNumber = self.messages.count + 1
+        let newMessageNumber = self.messagesTot + 1
         ref.child("Messages\(nomeTabella)").child("Message\(newMessageNumber)").setValue(message)
         self.textFieldTouched.text = ""
     }
-    
+    //----------------------Game-------------------------
     
     var enemy = User()
     
@@ -152,53 +163,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.chatTable.delegate = self
-        self.chatTable.dataSource = self
-        self.textFieldMessage.delegate = self
-        
-        let center = NotificationCenter.default
-        center.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
-        center.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        self.hideKeyboardWhenTappedAround()
-        
         let ref = Database.database().reference()
-        
-        let storage = Storage.storage()
-        
-        ref.child("Messages\(nomeTabella)").observe(.value) { (snap) in
-            self.messages.removeAll()
-            let dict = snap.value as! [String : Any]
-            self.n_key = dict.count
-            for(key, value) in dict {
-                let keyMessage = key as String
-                let n_message = String(keyMessage.suffix(1))
-                
-                let dict2 = value as! [String : Any]
-                let message = Message()
-                message.nickName = dict2["Nickname"] as! String
-                message.message = dict2["Message"] as! String
-                message.n_message = Int(n_message)!
-                
-                let urlImage = (dict2["Nickname"] as! String)
-                let imageRef = storage.reference().child("images/" + urlImage + "/imageProfile.jpg")
-                imageRef.getData(maxSize: 10 * 1024 * 1024) { data, error in
-                    if error != nil {
-                        self.messages.append(message)
-                        self.n_key -= 1
-                    }
-                    else {
-                        message.imageProgile = UIImage(data: data!)!
-                        self.messages.append(message)
-                        self.n_key -= 1
-                    }
-                    self.messages.sort(by: {$0.n_message < $1.n_message})
-                    if self.n_key == 0 {
-                        self.chatTable.reloadData()
-                    }
-                }
-            }
-        }
-        
         
         if fPlayer == true && sPlayer == false {
             
@@ -230,12 +195,55 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         if fPlayer == true {
-            myImage = UIImage(named: "crossRossa.png")
-            oppositeImage = UIImage(named: "cerchioRosso.png")
+            myImage = UIImage(named: "croce.png")
+            oppositeImage = UIImage(named: "cerchio.png")
         }
         else if sPlayer == true {
-            myImage = UIImage(named: "cerchioRosso.png")
-            oppositeImage = UIImage(named: "crossRossa.png")
+            myImage = UIImage(named: "cerchio.png")
+            oppositeImage = UIImage(named: "croce.png")
+        }
+        
+        self.chatTable.delegate = self
+        self.chatTable.dataSource = self
+        self.textFieldMessage.delegate = self
+        
+        let center = NotificationCenter.default
+        
+        center.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+        
+        center.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        self.hideKeyboardWhenTappedAround()
+        
+        ref.child("Messages\(nomeTabella)").child("Message0").setValue(["Nickname" : "", "Message" : ""])
+        
+        ref.child("Messages\(nomeTabella)").observe(.value) { (snap) in
+            
+            self.messages.removeAll()
+            
+            if  snap.value != nil {
+                
+                let dict = snap.value as! [String : Any]
+                
+                let n_key = dict.count
+                self.messagesTot = n_key - 1
+                
+                for(key, value) in dict {
+                    let keyMessage = key as String
+                    let n_message = String(keyMessage.suffix(1))
+                    
+                    if n_message != "0" {
+                        let dict2 = value as! [String : Any]
+                        let message = Message()
+                        message.nickName = dict2["Nickname"] as! String
+                        message.message = dict2["Message"] as! String
+                        message.n_message = Int(n_message)!
+                        self.messages.append(message)
+                    }
+                }
+                self.messages.sort(by: {$0.n_message < $1.n_message})
+                self.chatTable.reloadData()
+            }
         }
         
         
@@ -249,6 +257,13 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         ref.child("\(nomeTabella)").observe(.value) { (snap) in
             
             let celle = snap.value as! [String : Any]
+            
+            if self.fPlayer == true {
+                print("--------Sono \(MainViewController.user.nickName) e sono il primo giocatore----------")
+            }
+            else {
+                print("--------Sono \(MainViewController.user.nickName) e sono il secondo giocatore----------")
+            }
             
             for(key, value) in celle {
                 
@@ -289,6 +304,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
                         
                         ref.child("\(self.nomeTabella)").removeAllObservers()
                         ref.child("Utility\(self.nomeTabella)").removeAllObservers()
+                        ref.child("Messages\(self.nomeTabella)").removeAllObservers()
                         
                         let alert = UIAlertController(title: "Hai vinto", message: "Complimenti", preferredStyle: .alert)
                         
@@ -309,9 +325,11 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
                         
                         ref.child("\(self.nomeTabella)").removeAllObservers()
                         ref.child("Utility\(self.nomeTabella)").removeAllObservers()
+                        ref.child("Messages\(self.nomeTabella)").removeAllObservers()
                         
                         ref.child("\(self.nomeTabella)").removeValue()
                         ref.child("Utility\(self.nomeTabella)").removeValue()
+                        ref.child("Messages\(self.nomeTabella)").removeValue()
                         
                         let alert = UIAlertController(title: "Hai perso", message: "Mi spiace", preferredStyle: .alert)
                         
@@ -326,6 +344,24 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        let ref = Database.database().reference()
+        
+        ref.child("Players").child("\(self.enemy.nickName)").child("image").observeSingleEvent(of: .value, with: { (snap) in
+            
+            let value = snap.value as! String
+            
+            let decodeString = Data(base64Encoded: value)
+            
+            let image = UIImage(data: decodeString!)
+            
+            let imagePNG = UIImagePNGRepresentation(image!)
+            
+            self.enemy.image = UIImage(data: imagePNG!)
+        })
     }
     
     @IBAction func mossa(_ sender: UIButton) {

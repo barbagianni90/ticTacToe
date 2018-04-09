@@ -13,13 +13,12 @@ class Message {
     
     var nickName: String = ""
     var message: String = ""
-    var imageProgile: UIImage
+    var imageProgile: UIImage!
     var n_message: Int = 0
     
     init() {
         self.nickName = ""
         self.message = ""
-        self.imageProgile = UIImage.init(named: "imageProfile.jpg")!
     }
     init(_ nickName: String, _ message: String, _ image: UIImage){
         self.nickName = nickName

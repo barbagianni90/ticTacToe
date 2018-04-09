@@ -19,10 +19,6 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var lobbyTable: UITableView!
     
-    
-    
-    
- 
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,33 +27,21 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.lobbyTable.dataSource = self
         // Do any additional setup after loading the view.
         
-        let ref = Database.database().reference()
+        refresh()
         
-        ref.child("Players").observe(.value, with:{ (snap) in
+        let refreshControl: UIRefreshControl = {
             
-            self.players.removeAll()
+            let refreshControl = UIRefreshControl()
+            refreshControl.addTarget(self, action:
+                #selector(LobbyViewController.handleRefresh(_:)),
+                                     for: UIControlEvents.valueChanged)
+            refreshControl.tintColor = UIColor.red
             
-            let players = snap.value as! [String : Any]
-            
-            for(key, value) in players {
-                
-                let datiSinglePalyer = value as! [String : Any]
-                
-                if key != MainViewController.user.nickName {
-                    let player = User()
-                    player.nickName = key
-                    player.stato = datiSinglePalyer["stato"] as! String
-                    player.image = UIImage(named: "\(datiSinglePalyer["avatar"] as! String)")
-                    self.players.append(player)
-                }
-            }
-            self.lobbyTable.reloadData()
-        })
-       
+            return refreshControl
+        }()
         
+        self.lobbyTable.addSubview(refreshControl)
     }
-    
-   
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -76,21 +60,19 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 alert.addAction(UIAlertAction(title: "Accetto", style: .default, handler: { action in
                     
                     ref.child("Players").child("\(value)").child("invitoAccettato").setValue("Si")
-                    
-                    
-                    let segue =  UIStoryboard(name:"LobbyANDGame",bundle:nil).instantiateViewController(withIdentifier: "Gioco") as! GameViewController
-                    
-                    let enemy = User()
-                    enemy.nickName = "\(value)"
-                    
-                    let segue2 = segue
-                    segue2.enemy = enemy
-                    
-                    segue2.fPlayer = false
-                    segue2.sPlayer = true
-                    
-                    self.present(segue, animated: true, completion: nil)
-                }))
+                        
+                        let segue =  UIStoryboard(name:"LobbyANDGame",bundle:nil).instantiateViewController(withIdentifier: "Gioco") as! GameViewController
+                        
+                        let enemy = User()
+                        enemy.nickName = "\(value)"
+                        segue.enemy = enemy
+                        
+                        segue.fPlayer = false
+                        segue.sPlayer = true
+                        
+                        self.present(segue, animated: true, completion: nil)
+                    })
+                )
                 
                 alert.addAction(UIAlertAction(title: "Rifiuto", style: .default, handler: { action in
                     
@@ -117,13 +99,11 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     
                     let enemy = User()
                     enemy.nickName = "\(self.nickNameSfidato)"
-                    
-                    let segue2 = segue
-                    segue2.enemy = enemy
-                    
-                    segue2.fPlayer = true
-                    segue2.sPlayer = false
-                    
+                    segue.enemy = enemy
+                        
+                    segue.fPlayer = true
+                    segue.sPlayer = false
+                        
                     self.present(segue, animated: true, completion: nil)
                 }
                 else {
@@ -155,19 +135,23 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let ref = Database.database().reference()
         
-        ref.child("Players").child("\(MainViewController.user.nickName)").child("stato").setValue("occupato")
+        if currentCell.stateLabel.text == "online" {
+            
+            ref.child("Players").child("\(MainViewController.user.nickName)").child("stato").setValue("occupato")
+            
+            ref.child("Players").child("\(currentCell.nickNameLabel.text as! String)").child("invitatoDa").setValue("\(MainViewController.user.nickName)")
+            
+            self.nickNameSfidato = currentCell.nickNameLabel.text as! String
+            
+            self.activityIndicator.center = self.view.center
+            self.activityIndicator.hidesWhenStopped = true
+            self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+            self.view.addSubview(self.activityIndicator)
+            
+            activityIndicator.startAnimating()
+            UIApplication.shared.beginIgnoringInteractionEvents()
+        }
         
-        ref.child("Players").child("\(currentCell.nickNameLabel.text as! String)").child("invitatoDa").setValue("\(MainViewController.user.nickName)")
-        
-        self.nickNameSfidato = currentCell.nickNameLabel.text as! String
-        
-        self.activityIndicator.center = self.view.center
-        self.activityIndicator.hidesWhenStopped = true
-        self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-        self.view.addSubview(self.activityIndicator)
-        
-        activityIndicator.startAnimating()
-        UIApplication.shared.beginIgnoringInteractionEvents()
     }
     
     
@@ -183,8 +167,59 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.nickNameLabel.text = players[indexPath.row].nickName
         cell.stateLabel.text = players[indexPath.row].stato
         cell.imageCell.image = players[indexPath.row].image
+        //cell.imageCell.transform =  CGAffineTransform(rotationAngle: (90.0 * .pi) / 180.0)
+        cell.imageCell.layer.cornerRadius = cell.imageCell.frame.size.width / 2
+        cell.imageCell.layer.masksToBounds = true
         
         return cell
     }
-
+    
+    func refresh() -> Void {
+        
+        let ref = Database.database().reference()
+        
+        ref.child("Players").observeSingleEvent(of: .value, with:{ (snap) in
+            
+            self.players.removeAll()
+            
+            let players = snap.value as! [String : Any]
+            
+            for(key, value) in players {
+                
+                let datiSinglePlayer = value as! [String : Any]
+                
+                if key != MainViewController.user.nickName {
+                    
+                    let player = User()
+                    player.nickName = key
+                    player.stato = datiSinglePlayer["stato"] as! String
+                    
+                    if player.stato == "online" || player.stato == "occupato" {
+                    
+                        let decodeString = Data(base64Encoded: datiSinglePlayer["image"] as! String)
+                        
+                        let image = UIImage(data: decodeString!)
+                        
+                        let imagePNG = UIImagePNGRepresentation(image!)
+                        
+                        player.image = UIImage(data: imagePNG!)
+                        
+                        self.players.append(player)
+                        self.lobbyTable.reloadData()
+                    }
+                }
+            }
+        })
+    }
+    
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        
+        refresh()
+        refreshControl.endRefreshing()
+        
+    }
+    @IBAction func goHome(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
 }

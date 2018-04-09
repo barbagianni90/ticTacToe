@@ -13,6 +13,8 @@ class EditProfileViewController: UIViewController {
     
     static var imageSelected: UIImage!
     
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passTextField: UITextField!
@@ -39,6 +41,49 @@ class EditProfileViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func resizeImage(image: UIImage) -> UIImage {
+        
+        var actualHeight:Float = Float(image.size.height)
+        var actualWidth:Float = Float(image.size.width)
+        
+        let maxHeight:Float = 200.0 //your choose height
+        let maxWidth:Float = 200.0  //your choose width
+        
+        var imgRatio:Float = actualWidth/actualHeight
+        let maxRatio:Float = maxWidth/maxHeight
+        
+        if (actualHeight > maxHeight) || (actualWidth > maxWidth)
+        {
+            if(imgRatio < maxRatio)
+            {
+                imgRatio = maxHeight / actualHeight;
+                actualWidth = imgRatio * actualWidth;
+                actualHeight = maxHeight;
+            }
+            else if(imgRatio > maxRatio)
+            {
+                imgRatio = maxWidth / actualWidth;
+                actualHeight = imgRatio * actualHeight;
+                actualWidth = maxWidth;
+            }
+            else
+            {
+                actualHeight = maxHeight;
+                actualWidth = maxWidth;
+            }
+        }
+        
+        let rect: CGRect = CGRect(x: 0.0, y: 0.0, width: CGFloat(actualWidth), height: CGFloat(actualHeight))
+        UIGraphicsBeginImageContext(rect.size)
+        image.draw(in: rect)
+        
+        let img:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        let imageData:NSData = UIImageJPEGRepresentation(img, 1.0)! as NSData
+        UIGraphicsEndImageContext()
+        
+        return UIImage(data: imageData as Data)!
     }
     
     func isValidEmail(testStr:String) -> Bool {
@@ -75,20 +120,19 @@ class EditProfileViewController: UIViewController {
             present(alertController, animated: true, completion: nil)
             
         }
-        else if self.isValidEmail(testStr: self.emailTextField.text as! String) == false {
-            
-            let alertController = UIAlertController(title: "Error", message: "Please enter a valid email", preferredStyle: .alert)
-            
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            
-            self.present(alertController, animated: true, completion: nil)
-        }
         else {
             
             let alert = UIAlertController(title: "Confermare le modifiche?", message: nil, preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                
+                self.activityIndicator.center = self.view.center
+                self.activityIndicator.hidesWhenStopped = true
+                self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+                self.view.addSubview(self.activityIndicator)
+                
+                self.activityIndicator.startAnimating()
+                UIApplication.shared.beginIgnoringInteractionEvents()
                 
                 let ref = Database.database().reference()
                 
@@ -108,7 +152,18 @@ class EditProfileViewController: UIViewController {
                 }
                 if self.emailTextField.text != "" {
                     
+                    if self.isValidEmail(testStr: self.emailTextField.text as! String) == false {
+                        
+                        let alertController = UIAlertController(title: "Error", message: "Please enter a valid email", preferredStyle: .alert)
+                        
+                        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                        alertController.addAction(defaultAction)
+                        
+                        self.present(alertController, animated: true, completion: nil)
+                    }
+                    
                     Auth.auth().currentUser?.updateEmail(to: "\(self.emailTextField.text as! String)", completion: nil)
+                    ref.child("Players").child("\(MainViewController.user.nickName)").child("email").setValue("\(self.emailTextField.text as! String)")
                     
                 }
                 
@@ -119,25 +174,39 @@ class EditProfileViewController: UIViewController {
                 
                 if EditProfileViewController.imageSelected != nil {
                     
+                    let uploadData = UIImagePNGRepresentation(self.resizeImage(image: EditProfileViewController.imageSelected))!
+                    
+                    let base64ImageString = uploadData.base64EncodedString()
+                    
+                    ref.child("Players").child("\(MainViewController.user.nickName)").child("image").setValue(base64ImageString)
+                    
+                    /*
                     let sRef = Storage.storage().reference()
                     
                     let uploadData = UIImagePNGRepresentation(EditProfileViewController.imageSelected)
                     
                     sRef.child("Images").child("\(MainViewController.user.nickName)").child("myImage.png").putData(uploadData!)
+                    */
                     
+                    MainViewController.user.image = EditProfileViewController.imageSelected
+                    self.activityIndicator.stopAnimating()
+                    UIApplication.shared.endIgnoringInteractionEvents()
+                    self.dismiss(animated: true, completion: nil)
+                    
+                    /*
                     sRef.child("Images").child("\(MainViewController.user.nickName)").child("myImage.png") .getData(maxSize: 20 * 1024 * 1024) { data, error in
                         if error != nil {
                             print(error as Any)
                         }
                         else {
                             MainViewController.user.image = UIImage(data: data!)
+                            self.activityIndicator.stopAnimating()
+                            UIApplication.shared.endIgnoringInteractionEvents()
+                            self.dismiss(animated: true, completion: nil)
                         }
                     }
+                    */
                 }
-                
-                
-                self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
-                
             }))
             
             self.present(alert, animated: true)
