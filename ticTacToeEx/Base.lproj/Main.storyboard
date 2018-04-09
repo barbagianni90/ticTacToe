@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,14 +20,14 @@
             <objects>
                 <viewController storyboardIdentifier="mainView" id="BYZ-38-t0r" customClass="MainViewController" customModule="ticTacToeEx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cherryTree" translatesAutoresizingMaskIntoConstraints="NO" id="1EI-R5-x26">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDn-w2-xMD">
-                                <rect key="frame" x="150.66666666666666" y="710" width="74" height="35"/>
+                                <rect key="frame" x="123" y="410" width="74" height="35"/>
                                 <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="17"/>
                                 <size key="titleShadowOffset" width="0.0" height="2"/>
                                 <state key="normal" title="Sign in">
@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwO-M9-pEi">
-                                <rect key="frame" x="56.666666666666657" y="261" width="262" height="70"/>
+                                <rect key="frame" x="29" y="135" width="262" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="NhW-oy-9yF"/>
                                 </constraints>
@@ -53,8 +53,29 @@
                                     <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vCd-H4-gBB"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Hb-Vd-dNN">
+                                <rect key="frame" x="87" y="230" width="147" height="50"/>
+                                <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="28"/>
+                                <size key="titleShadowOffset" width="0.0" height="2"/>
+                                <state key="normal" title="Ranking">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ranking:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jRd-UV-bQx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePS-Wg-ri0">
+                                <rect key="frame" x="88" y="305" width="144" height="50"/>
+                                <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="28"/>
+                                <size key="titleShadowOffset" width="0.0" height="2"/>
+                                <state key="normal" title="Options">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ode-OO-V6w">
-                                <rect key="frame" x="38" y="69" width="273" height="40"/>
+                                <rect key="frame" x="38" y="45" width="218" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Iey-KF-kd8"/>
                                     <constraint firstAttribute="width" constant="218" id="xgs-2p-dcq"/>
@@ -64,7 +85,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q17-lu-dXO">
-                                <rect key="frame" x="319" y="65" width="45" height="45"/>
+                                <rect key="frame" x="264" y="43" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="OlU-dh-vGN"/>
                                     <constraint firstAttribute="height" constant="45" id="cae-0S-PGH"/>
@@ -77,30 +98,34 @@
                                     <action selector="showProfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WAr-hO-wec"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Hb-Vd-dNN">
-                                <rect key="frame" x="114" y="381" width="147" height="50"/>
-                                <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="28"/>
-                                <size key="titleShadowOffset" width="0.0" height="2"/>
-                                <state key="normal" title="Ranking">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5SM-Cs-gbs">
+                                <rect key="frame" x="117.5" y="480" width="86" height="35"/>
+                                <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="17"/>
+                                <state key="normal" title="Log out">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="ranking:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jRd-UV-bQx"/>
+                                    <action selector="logOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AxT-3e-ScE"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="q17-lu-dXO" firstAttribute="leading" secondItem="ode-OO-V6w" secondAttribute="trailing" constant="8" id="3UI-lc-AaY"/>
-                            <constraint firstItem="6Hb-Vd-dNN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9ka-lE-3ve"/>
-                            <constraint firstItem="6Hb-Vd-dNN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="BoZ-un-K73"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IDn-w2-xMD" secondAttribute="bottom" constant="33" id="CCp-QC-zj6"/>
+                            <constraint firstItem="5SM-Cs-gbs" firstAttribute="top" secondItem="IDn-w2-xMD" secondAttribute="bottom" constant="35" id="9hT-ga-jwO"/>
                             <constraint firstItem="1EI-R5-x26" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="F2F-8H-Wjf"/>
+                            <constraint firstItem="ePS-Wg-ri0" firstAttribute="top" secondItem="6Hb-Vd-dNN" secondAttribute="bottom" constant="25" id="Iw1-Qy-2Ty"/>
+                            <constraint firstItem="6Hb-Vd-dNN" firstAttribute="top" secondItem="BwO-M9-pEi" secondAttribute="bottom" constant="25" id="Jjr-kE-Hwe"/>
                             <constraint firstItem="1EI-R5-x26" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KkZ-Qf-E8w"/>
-                            <constraint firstItem="6Hb-Vd-dNN" firstAttribute="top" secondItem="BwO-M9-pEi" secondAttribute="bottom" constant="50" id="OTq-Qm-Z0J"/>
+                            <constraint firstItem="5SM-Cs-gbs" firstAttribute="centerX" secondItem="IDn-w2-xMD" secondAttribute="centerX" id="Okl-4z-qd2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5SM-Cs-gbs" secondAttribute="bottom" constant="53" id="Q48-Nl-kSd"/>
+                            <constraint firstItem="BwO-M9-pEi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="115" id="Twb-LS-eUl"/>
+                            <constraint firstItem="BwO-M9-pEi" firstAttribute="top" secondItem="ode-OO-V6w" secondAttribute="bottom" constant="50" id="VxS-WT-1cl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="q17-lu-dXO" secondAttribute="trailing" constant="11" id="aC3-BN-bdV"/>
-                            <constraint firstItem="q17-lu-dXO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="21" id="dQh-pL-0un"/>
+                            <constraint firstItem="q17-lu-dXO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="23" id="dQh-pL-0un"/>
+                            <constraint firstItem="BwO-M9-pEi" firstAttribute="top" secondItem="q17-lu-dXO" secondAttribute="bottom" constant="47" id="lec-l4-BCg"/>
+                            <constraint firstItem="ePS-Wg-ri0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="paL-LM-yTT"/>
                             <constraint firstItem="6Hb-Vd-dNN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s4V-n5-ny6"/>
                             <constraint firstItem="1EI-R5-x26" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="s9V-Tf-lIM"/>
                             <constraint firstItem="BwO-M9-pEi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vqy-yc-uVy"/>
@@ -114,7 +139,6 @@
                     <connections>
                         <outlet property="avatarButton" destination="q17-lu-dXO" id="GGS-5Y-jN9"/>
                         <outlet property="nickNameLabel" destination="ode-OO-V6w" id="Uu3-u5-7A4"/>
-                        <outlet property="signInButton" destination="IDn-w2-xMD" id="5dL-w7-nuu"/>
                         <outlet property="startButton" destination="BwO-M9-pEi" id="lK5-0D-VCk"/>
                     </connections>
                 </viewController>
