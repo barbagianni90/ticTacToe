@@ -19,6 +19,10 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var lobbyTable: UITableView!
     
+    
+    
+    
+ 
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +53,11 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
             self.lobbyTable.reloadData()
         })
+       
+        
     }
+    
+   
     
     override func viewWillAppear(_ animated: Bool) {
         

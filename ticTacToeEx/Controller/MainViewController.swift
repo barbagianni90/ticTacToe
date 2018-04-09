@@ -32,29 +32,13 @@ class MainViewController: UIViewController {
     
     static var user = User()
     
-    @IBOutlet weak var signOutButton: UIButton!
     
     @IBOutlet weak var avatarButton: UIButton!
     @IBOutlet weak var nickNameLabel: UILabel!
     
     
     
-    @IBAction func signOut(_ sender: Any) {
-        
-        do {
-            try Auth.auth().signOut()
-            
-           
-            self.present(ChooseGameViewController(), animated: true, completion: nil)
-            
-        } catch let error {
-            
-            print(error)
-            
-        }
-        
-    }
-    
+//
     @IBOutlet weak var startButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,14 +63,12 @@ class MainViewController: UIViewController {
         if MainViewController.user.nickName == "" {
             self.avatarButton.isHidden = true
             self.nickNameLabel.isHidden = true
-            self.signOutButton.isHidden = true
         }
         else{
             self.avatarButton.isHidden = false
             self.nickNameLabel.isHidden = false
             self.startButton.isEnabled = true
-           self.signInButton.isHidden = true
-            self.signOutButton.isHidden = false
+            self.signInButton.isHidden = true
             self.avatarButton.setImage(MainViewController.user.image, for: .normal)
             self.avatarButton.transform = CGAffineTransform(rotationAngle: (90.0 * .pi) / 180.0)
             self.avatarButton.layer.cornerRadius = self.avatarButton.frame.width / 2
