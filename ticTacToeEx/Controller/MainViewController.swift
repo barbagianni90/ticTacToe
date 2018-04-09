@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 extension UIViewController {
     
@@ -92,6 +93,19 @@ class MainViewController: UIViewController {
         
         let startGameView = UIStoryboard(name: "LobbyANDGame", bundle: nil).instantiateViewController(withIdentifier: "lobby")
         self.present(startGameView, animated: true, completion: nil)
+    }
+    @IBAction func logOut(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            self.avatarButton.isHidden = true
+            self.nickNameLabel.isHidden = true
+            self.startButton.isEnabled = false
+            MainViewController.user = User()
+            
+        }
+        catch {
+            print("Log out failed")
+        }
     }
 }
 
