@@ -36,7 +36,6 @@
 		FE4D55342069024000ABF6C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE4D55332069024000ABF6C1 /* Assets.xcassets */; };
 		FE4D55372069024000ABF6C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE4D55352069024000ABF6C1 /* LaunchScreen.storyboard */; };
 		FE53694E20764FD300908759 /* startView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE53694D20764FD300908759 /* startView.storyboard */; };
-		FE53695020764FE800908759 /* StartViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE53694F20764FE800908759 /* StartViewViewController.swift */; };
 		FE5369522076501800908759 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5369512076501800908759 /* CollectionViewCell.swift */; };
 		FE6BF157206D0F1500BA7800 /* Shojumaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE6BF156206D0F1400BA7800 /* Shojumaru-Regular.ttf */; };
 		FE6BF159206D113900BA7800 /* CatCafe.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE6BF158206D113800BA7800 /* CatCafe.ttf */; };
@@ -83,7 +82,6 @@
 		FE4D55362069024000ABF6C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE4D55382069024000ABF6C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE53694D20764FD300908759 /* startView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = startView.storyboard; sourceTree = "<group>"; };
-		FE53694F20764FE800908759 /* StartViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewViewController.swift; sourceTree = "<group>"; };
 		FE5369512076501800908759 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		FE6BF156206D0F1400BA7800 /* Shojumaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Shojumaru-Regular.ttf"; sourceTree = "<group>"; };
 		FE6BF158206D113800BA7800 /* CatCafe.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CatCafe.ttf; sourceTree = "<group>"; };
@@ -224,8 +222,6 @@
 				FEC8A085206B84D60031001B /* Controller */,
 				FE4D55302069024000ABF6C1 /* Main.storyboard */,
 				FE53694D20764FD300908759 /* startView.storyboard */,
-				FE5369512076501800908759 /* CollectionViewCell.swift */,
-				FE53694F20764FE800908759 /* StartViewViewController.swift */,
 				C41036EE206E35E600423D7D /* GameIamges */,
 				FE4D55332069024000ABF6C1 /* Assets.xcassets */,
 				FE4D55352069024000ABF6C1 /* LaunchScreen.storyboard */,
@@ -242,6 +238,7 @@
 			children = (
 				FE931DC3207BAAA400A77B25 /* Start.storyboard */,
 				FE931DC5207BAAB700A77B25 /* StartViewController.swift */,
+				FE5369512076501800908759 /* CollectionViewCell.swift */,
 			);
 			path = Start;
 			sourceTree = "<group>";
@@ -441,7 +438,6 @@
 				FEC8A089206B87AA0031001B /* SignUpViewController.swift in Sources */,
 				C445E5742074CE7400241182 /* CustomUserChatCell.swift in Sources */,
 				FE931DC6207BAAB700A77B25 /* StartViewController.swift in Sources */,
-				FE53695020764FE800908759 /* StartViewViewController.swift in Sources */,
 				C445E5762074D00B00241182 /* Message.swift in Sources */,
 				C41036EB206E277C00423D7D /* CustomLobbyCell.swift in Sources */,
 				C445E5722074CE5C00241182 /* CustomEnemyChatCell.swift in Sources */,
