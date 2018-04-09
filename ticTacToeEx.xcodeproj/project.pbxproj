@@ -40,6 +40,8 @@
 		FE5369522076501800908759 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5369512076501800908759 /* CollectionViewCell.swift */; };
 		FE6BF157206D0F1500BA7800 /* Shojumaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE6BF156206D0F1400BA7800 /* Shojumaru-Regular.ttf */; };
 		FE6BF159206D113900BA7800 /* CatCafe.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE6BF158206D113800BA7800 /* CatCafe.ttf */; };
+		FE931DC4207BAAA400A77B25 /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE931DC3207BAAA400A77B25 /* Start.storyboard */; };
+		FE931DC6207BAAB700A77B25 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE931DC5207BAAB700A77B25 /* StartViewController.swift */; };
 		FEC8A084206B849C0031001B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A083206B849C0031001B /* SignInViewController.swift */; };
 		FEC8A089206B87AA0031001B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A088206B87AA0031001B /* SignUpViewController.swift */; };
 		FEC8A08B206B89380031001B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A08A206B89380031001B /* ProfileViewController.swift */; };
@@ -85,6 +87,8 @@
 		FE5369512076501800908759 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		FE6BF156206D0F1400BA7800 /* Shojumaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Shojumaru-Regular.ttf"; sourceTree = "<group>"; };
 		FE6BF158206D113800BA7800 /* CatCafe.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CatCafe.ttf; sourceTree = "<group>"; };
+		FE931DC3207BAAA400A77B25 /* Start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
+		FE931DC5207BAAB700A77B25 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		FEC8A083206B849C0031001B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		FEC8A088206B87AA0031001B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FEC8A08A206B89380031001B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -233,9 +237,19 @@
 			path = ticTacToeEx;
 			sourceTree = "<group>";
 		};
+		FE931DC2207BAA9900A77B25 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				FE931DC3207BAAA400A77B25 /* Start.storyboard */,
+				FE931DC5207BAAB700A77B25 /* StartViewController.swift */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
 		FEC8A085206B84D60031001B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FE931DC2207BAA9900A77B25 /* Start */,
 				C41036E7206E268200423D7D /* LobbyANDGame */,
 				C433A573206D394E00C2888F /* Profile */,
 				C433A56F206D32B800C2888F /* Ranking */,
@@ -339,6 +353,7 @@
 				FE6BF157206D0F1500BA7800 /* Shojumaru-Regular.ttf in Resources */,
 				C433A575206D399300C2888F /* Profile.storyboard in Resources */,
 				FE6BF159206D113900BA7800 /* CatCafe.ttf in Resources */,
+				FE931DC4207BAAA400A77B25 /* Start.storyboard in Resources */,
 				C48477A5206D1843002B6E18 /* GoogleService-Info.plist in Resources */,
 				C41036E9206E26BA00423D7D /* LobbyANDGame.storyboard in Resources */,
 			);
@@ -425,6 +440,7 @@
 				FEC8A084206B849C0031001B /* SignInViewController.swift in Sources */,
 				FEC8A089206B87AA0031001B /* SignUpViewController.swift in Sources */,
 				C445E5742074CE7400241182 /* CustomUserChatCell.swift in Sources */,
+				FE931DC6207BAAB700A77B25 /* StartViewController.swift in Sources */,
 				FE53695020764FE800908759 /* StartViewViewController.swift in Sources */,
 				C445E5762074D00B00241182 /* Message.swift in Sources */,
 				C41036EB206E277C00423D7D /* CustomLobbyCell.swift in Sources */,
