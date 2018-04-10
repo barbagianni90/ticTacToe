@@ -27,9 +27,11 @@
 		C445E5782075057100241182 /* PhotoProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E5772075057100241182 /* PhotoProfile.swift */; };
 		C445E57C20750AED00241182 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = C445E57B20750AED00241182 /* camera.png */; };
 		C48477A1206D15C8002B6E18 /* SignInANDSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48477A0206D15C8002B6E18 /* SignInANDSignUp.storyboard */; };
-		C48477A5206D1843002B6E18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C48477A4206D1843002B6E18 /* GoogleService-Info.plist */; };
 		C4E2E64D2077C1A9005CDD72 /* croce.png in Resources */ = {isa = PBXBuildFile; fileRef = C4E2E64B2077C1A9005CDD72 /* croce.png */; };
 		C4E2E64E2077C1A9005CDD72 /* cerchio.png in Resources */ = {isa = PBXBuildFile; fileRef = C4E2E64C2077C1A9005CDD72 /* cerchio.png */; };
+		F3CEB719207CAAFF00B4D772 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3CEB718207CAAFF00B4D772 /* GoogleService-Info.plist */; };
+		F3CEB71C207CABD200B4D772 /* MainCheckers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3CEB71B207CABD200B4D772 /* MainCheckers.storyboard */; };
+		F3CEB71E207CABF500B4D772 /* MainCheckersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CEB71D207CABF500B4D772 /* MainCheckersViewController.swift */; };
 		FE4D552D2069023F00ABF6C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4D552C2069023F00ABF6C1 /* AppDelegate.swift */; };
 		FE4D552F2069024000ABF6C1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4D552E2069024000ABF6C1 /* MainViewController.swift */; };
 		FE4D55322069024000ABF6C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE4D55302069024000ABF6C1 /* Main.storyboard */; };
@@ -71,9 +73,11 @@
 		C445E5772075057100241182 /* PhotoProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoProfile.swift; sourceTree = "<group>"; };
 		C445E57B20750AED00241182 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		C48477A0206D15C8002B6E18 /* SignInANDSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInANDSignUp.storyboard; sourceTree = "<group>"; };
-		C48477A4206D1843002B6E18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C4E2E64B2077C1A9005CDD72 /* croce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = croce.png; sourceTree = "<group>"; };
 		C4E2E64C2077C1A9005CDD72 /* cerchio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cerchio.png; sourceTree = "<group>"; };
+		F3CEB718207CAAFF00B4D772 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F3CEB71B207CABD200B4D772 /* MainCheckers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainCheckers.storyboard; sourceTree = "<group>"; };
+		F3CEB71D207CABF500B4D772 /* MainCheckersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCheckersViewController.swift; sourceTree = "<group>"; };
 		FE4D55292069023F00ABF6C1 /* ticTacToeEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ticTacToeEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE4D552C2069023F00ABF6C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE4D552E2069024000ABF6C1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +198,15 @@
 			path = SignInANDSignUp;
 			sourceTree = "<group>";
 		};
+		F3CEB71A207CAB6B00B4D772 /* MainCheckers */ = {
+			isa = PBXGroup;
+			children = (
+				F3CEB71B207CABD200B4D772 /* MainCheckers.storyboard */,
+				F3CEB71D207CABF500B4D772 /* MainCheckersViewController.swift */,
+			);
+			path = MainCheckers;
+			sourceTree = "<group>";
+		};
 		FE4D55202069023F00ABF6C1 = {
 			isa = PBXGroup;
 			children = (
@@ -225,8 +238,8 @@
 				C41036EE206E35E600423D7D /* GameIamges */,
 				FE4D55332069024000ABF6C1 /* Assets.xcassets */,
 				FE4D55352069024000ABF6C1 /* LaunchScreen.storyboard */,
-				C48477A4206D1843002B6E18 /* GoogleService-Info.plist */,
 				FE4D55382069024000ABF6C1 /* Info.plist */,
+				F3CEB718207CAAFF00B4D772 /* GoogleService-Info.plist */,
 				FEC8A0A3206B9AC20031001B /* Fonts */,
 				C433A572206D356B00C2888F /* Avatar */,
 			);
@@ -246,6 +259,7 @@
 		FEC8A085206B84D60031001B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F3CEB71A207CAB6B00B4D772 /* MainCheckers */,
 				FE931DC2207BAA9900A77B25 /* Start */,
 				C41036E7206E268200423D7D /* LobbyANDGame */,
 				C433A573206D394E00C2888F /* Profile */,
@@ -342,6 +356,7 @@
 				C4E2E64E2077C1A9005CDD72 /* cerchio.png in Resources */,
 				C445E57C20750AED00241182 /* camera.png in Resources */,
 				C41036FC206E6C5900423D7D /* avatar2.png in Resources */,
+				F3CEB71C207CABD200B4D772 /* MainCheckers.storyboard in Resources */,
 				FE4D55342069024000ABF6C1 /* Assets.xcassets in Resources */,
 				C41036FB206E6C5900423D7D /* avatar5.png in Resources */,
 				C433A571206D32DD00C2888F /* Ranking.storyboard in Resources */,
@@ -350,8 +365,8 @@
 				FE6BF157206D0F1500BA7800 /* Shojumaru-Regular.ttf in Resources */,
 				C433A575206D399300C2888F /* Profile.storyboard in Resources */,
 				FE6BF159206D113900BA7800 /* CatCafe.ttf in Resources */,
+				F3CEB719207CAAFF00B4D772 /* GoogleService-Info.plist in Resources */,
 				FE931DC4207BAAA400A77B25 /* Start.storyboard in Resources */,
-				C48477A5206D1843002B6E18 /* GoogleService-Info.plist in Resources */,
 				C41036E9206E26BA00423D7D /* LobbyANDGame.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +441,7 @@
 				FEC8A08B206B89380031001B /* ProfileViewController.swift in Sources */,
 				C41036FE206E6EE400423D7D /* CustomCellRanking.swift in Sources */,
 				FE5369522076501800908759 /* CollectionViewCell.swift in Sources */,
+				F3CEB71E207CABF500B4D772 /* MainCheckersViewController.swift in Sources */,
 				C41036ED206E284E00423D7D /* LobbyViewController.swift in Sources */,
 				FE4D552F2069024000ABF6C1 /* MainViewController.swift in Sources */,
 				FE4D552D2069023F00ABF6C1 /* AppDelegate.swift in Sources */,
