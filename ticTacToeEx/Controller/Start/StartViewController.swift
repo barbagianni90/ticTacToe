@@ -69,8 +69,12 @@ class StartViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainView")
-        self.present(storyboard, animated: true, completion: nil)
+        if indexPath.section == 0{
+            let storyboard = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainView")
+            self.present(storyboard, animated: true, completion: nil)
+        }else if indexPath.section == 1{
+            let storyboard = UIStoryboard(name: "MainCheckers", bundle: nil).instantiateViewController(withIdentifier: "MainCheckersID")
+            self.present(storyboard, animated: true, completion: nil)
+        }
     }
 }

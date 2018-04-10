@@ -112,5 +112,10 @@ class MainViewController: UIViewController {
             print("Log out failed")
         }
     }
+    
+    @IBAction func homeButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 

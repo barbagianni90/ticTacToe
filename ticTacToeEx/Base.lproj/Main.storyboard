@@ -109,6 +109,15 @@
                                     <action selector="logOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AxT-3e-ScE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jM4-3b-EON">
+                                <rect key="frame" x="20" y="20" width="41" height="30"/>
+                                <state key="normal" title="Home">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="homeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mpo-UE-WVq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -120,6 +129,8 @@
                             <constraint firstItem="1EI-R5-x26" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KkZ-Qf-E8w"/>
                             <constraint firstItem="5SM-Cs-gbs" firstAttribute="centerX" secondItem="IDn-w2-xMD" secondAttribute="centerX" id="Okl-4z-qd2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5SM-Cs-gbs" secondAttribute="bottom" constant="53" id="Q48-Nl-kSd"/>
+                            <constraint firstItem="jM4-3b-EON" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ROK-Og-MeP"/>
+                            <constraint firstItem="jM4-3b-EON" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="T5O-Ne-nvh"/>
                             <constraint firstItem="BwO-M9-pEi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="115" id="Twb-LS-eUl"/>
                             <constraint firstItem="BwO-M9-pEi" firstAttribute="top" secondItem="ode-OO-V6w" secondAttribute="bottom" constant="50" id="VxS-WT-1cl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="q17-lu-dXO" secondAttribute="trailing" constant="11" id="aC3-BN-bdV"/>
