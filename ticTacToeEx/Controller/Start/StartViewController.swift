@@ -9,7 +9,18 @@
 import UIKit
 
 class StartViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
+    
+    
+    
+    @IBAction func menuButton(_ sender: Any) {
+        
+        NotificationCenter.default.post(name: NSNotification.Name("toggleSideMenu"), object: nil)
+        
+    }
+    
+    
+    var sideMenuOpen = false
+    
     @IBOutlet weak var signInButton: UIButton!
     
     
@@ -19,8 +30,10 @@ class StartViewController: UIViewController, UICollectionViewDelegate, UICollect
         self.present(signInView, animated: true, completion: nil)
     }
     
-    var images = ["iconTris", "SecondoAvatar"]
+    var images = ["iconTris", "checkIcon2"]
     
+
+
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -35,11 +48,18 @@ class StartViewController: UIViewController, UICollectionViewDelegate, UICollect
         collectionViewFlowLayout.minimumInteritemSpacing = 0
         collectionViewFlowLayout.minimumLineSpacing = 60
         
-        collectionView.backgroundColor = UIColor.darkGray
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+    
+        
     }
+    
+    
+
+    
+    
     
     //UICollectionView Data Source
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

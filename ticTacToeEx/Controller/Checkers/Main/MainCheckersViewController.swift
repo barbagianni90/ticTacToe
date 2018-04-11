@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class MainCheckersViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -17,6 +18,16 @@ class MainCheckersViewController: UIViewController {
     @IBAction func homeButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+    
+
+    @IBAction func rankingButton(_ sender: Any) {
+
+        let storyboard = UIStoryboard(name: "RankingDama", bundle: nil).instantiateViewController(withIdentifier: "RankingDama")
+        self.present(storyboard, animated: true, completion: nil)
+        
+    }
+    
+    
     
     
 }
