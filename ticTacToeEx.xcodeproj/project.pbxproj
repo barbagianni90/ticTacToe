@@ -30,6 +30,7 @@
 		C48477A5206D1843002B6E18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C48477A4206D1843002B6E18 /* GoogleService-Info.plist */; };
 		C4E2E64D2077C1A9005CDD72 /* croce.png in Resources */ = {isa = PBXBuildFile; fileRef = C4E2E64B2077C1A9005CDD72 /* croce.png */; };
 		C4E2E64E2077C1A9005CDD72 /* cerchio.png in Resources */ = {isa = PBXBuildFile; fileRef = C4E2E64C2077C1A9005CDD72 /* cerchio.png */; };
+		C4ED73F7207F68C700099716 /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C4ED73F6207F68C700099716 /* default.jpg */; };
 		FE4D552D2069023F00ABF6C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4D552C2069023F00ABF6C1 /* AppDelegate.swift */; };
 		FE4D552F2069024000ABF6C1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4D552E2069024000ABF6C1 /* MainViewController.swift */; };
 		FE4D55322069024000ABF6C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE4D55302069024000ABF6C1 /* Main.storyboard */; };
@@ -70,6 +71,7 @@
 		C48477A4206D1843002B6E18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C4E2E64B2077C1A9005CDD72 /* croce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = croce.png; sourceTree = "<group>"; };
 		C4E2E64C2077C1A9005CDD72 /* cerchio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cerchio.png; sourceTree = "<group>"; };
+		C4ED73F6207F68C700099716 /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
 		FE4D55292069023F00ABF6C1 /* ticTacToeEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ticTacToeEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE4D552C2069023F00ABF6C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE4D552E2069024000ABF6C1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				C41036F3206E6C5700423D7D /* avatar3.png */,
 				C41036F5206E6C5800423D7D /* avatar4.png */,
 				C41036F6206E6C5800423D7D /* avatar5.png */,
+				C4ED73F6207F68C700099716 /* default.jpg */,
 			);
 			path = Avatar;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				FE6BF157206D0F1500BA7800 /* Shojumaru-Regular.ttf in Resources */,
 				C433A575206D399300C2888F /* Profile.storyboard in Resources */,
 				FE6BF159206D113900BA7800 /* CatCafe.ttf in Resources */,
+				C4ED73F7207F68C700099716 /* default.jpg in Resources */,
 				C48477A5206D1843002B6E18 /* GoogleService-Info.plist in Resources */,
 				C41036E9206E26BA00423D7D /* LobbyANDGame.storyboard in Resources */,
 			);
