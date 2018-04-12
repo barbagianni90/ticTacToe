@@ -87,6 +87,7 @@ class SignUpViewController: UIViewController {
                                     "sconfitte" : "0",
                                     "invitatoDa" : "",
                                     "invitoAccettato" : ""])
+                            
                             if SignUpViewController.imageProfileSelected != nil {
                                 
                                 let uploadData = UIImagePNGRepresentation(self.resizeImage(image: SignUpViewController.imageProfileSelected))!
@@ -94,6 +95,8 @@ class SignUpViewController: UIViewController {
                                 let base64ImageString = uploadData.base64EncodedString()
                                 
                                 ref.child("Players").child("\(MainViewController.user.nickName)").child("image").setValue(base64ImageString)
+                                
+                                MainViewController.user.image = SignUpViewController.imageProfileSelected
                             }
                             
                             else {
@@ -103,6 +106,8 @@ class SignUpViewController: UIViewController {
                                 let base64ImageString = uploadData.base64EncodedString()
                                 
                                 ref.child("Players").child("\(MainViewController.user.nickName)").child("image").setValue(base64ImageString)
+                                
+                                MainViewController.user.image = UIImage(named: "default.jpg")
                             }
                             
                         }
