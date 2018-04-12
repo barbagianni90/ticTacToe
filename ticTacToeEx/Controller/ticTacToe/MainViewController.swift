@@ -28,12 +28,17 @@ class MainViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var avatarImage: UIImageView!
     
+    @IBOutlet weak var signInButton: UIButton!
     
     static var user = User()
+    
     
     @IBOutlet weak var avatarButton: UIButton!
     @IBOutlet weak var nickNameLabel: UILabel!
     
+    
+    
+//
     @IBOutlet weak var startButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +68,6 @@ class MainViewController: UIViewController {
             self.avatarButton.isHidden = false
             self.nickNameLabel.isHidden = false
             self.startButton.isEnabled = true
-            
             self.avatarButton.setImage(MainViewController.user.image, for: .normal)
             //self.avatarButton.transform = CGAffineTransform(rotationAngle: (90.0 * .pi) / 180.0)
             self.avatarButton.layer.cornerRadius = self.avatarButton.frame.width / 2
@@ -107,5 +111,10 @@ class MainViewController: UIViewController {
             print("Log out failed")
         }
     }
+    
+    @IBAction func homeButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 

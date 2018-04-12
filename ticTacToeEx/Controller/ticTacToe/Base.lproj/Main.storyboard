@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="CatCafe.ttf">
+            <string>CatCafe</string>
+        </array>
         <array key="Shojumaru-Regular.ttf">
             <string>Shojumaru-Regular</string>
         </array>
@@ -26,23 +29,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cherryTree" translatesAutoresizingMaskIntoConstraints="NO" id="1EI-R5-x26">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDn-w2-xMD">
-                                <rect key="frame" x="123" y="410" width="74" height="35"/>
-                                <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="17"/>
-                                <size key="titleShadowOffset" width="0.0" height="2"/>
-                                <state key="normal" title="Sign in">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="signIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jt2-uW-75B"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwO-M9-pEi">
-                                <rect key="frame" x="29" y="135" width="262" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="NhW-oy-9yF"/>
-                                </constraints>
+                                <rect key="frame" x="29" y="170" width="262" height="59"/>
                                 <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="35"/>
                                 <size key="titleShadowOffset" width="0.0" height="2"/>
                                 <state key="normal" title="Start Game">
@@ -54,7 +42,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Hb-Vd-dNN">
-                                <rect key="frame" x="87" y="230" width="147" height="50"/>
+                                <rect key="frame" x="87" y="279" width="147" height="50"/>
                                 <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="28"/>
                                 <size key="titleShadowOffset" width="0.0" height="2"/>
                                 <state key="normal" title="Ranking">
@@ -65,27 +53,19 @@
                                     <action selector="ranking:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jRd-UV-bQx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePS-Wg-ri0">
-                                <rect key="frame" x="88" y="305" width="144" height="50"/>
-                                <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="28"/>
-                                <size key="titleShadowOffset" width="0.0" height="2"/>
-                                <state key="normal" title="Options">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ode-OO-V6w">
-                                <rect key="frame" x="38" y="45" width="218" height="40"/>
+                                <rect key="frame" x="180.5" y="50" width="56.5" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Iey-KF-kd8"/>
-                                    <constraint firstAttribute="width" constant="218" id="xgs-2p-dcq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="CatCafe" family="CatCafe" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q17-lu-dXO">
-                                <rect key="frame" x="264" y="43" width="45" height="45"/>
+                                <rect key="frame" x="245" y="50" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="OlU-dh-vGN"/>
                                     <constraint firstAttribute="height" constant="45" id="cae-0S-PGH"/>
@@ -98,41 +78,36 @@
                                     <action selector="showProfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WAr-hO-wec"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5SM-Cs-gbs">
-                                <rect key="frame" x="117.5" y="480" width="86" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jM4-3b-EON">
+                                <rect key="frame" x="20" y="50" width="58" height="35"/>
                                 <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="17"/>
-                                <state key="normal" title="Log out">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="titleShadowOffset" width="0.0" height="1"/>
+                                <state key="normal" title="Home">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="logOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AxT-3e-ScE"/>
+                                    <action selector="homeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mpo-UE-WVq"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="q17-lu-dXO" firstAttribute="leading" secondItem="ode-OO-V6w" secondAttribute="trailing" constant="8" id="3UI-lc-AaY"/>
-                            <constraint firstItem="5SM-Cs-gbs" firstAttribute="top" secondItem="IDn-w2-xMD" secondAttribute="bottom" constant="35" id="9hT-ga-jwO"/>
                             <constraint firstItem="1EI-R5-x26" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="F2F-8H-Wjf"/>
-                            <constraint firstItem="ePS-Wg-ri0" firstAttribute="top" secondItem="6Hb-Vd-dNN" secondAttribute="bottom" constant="25" id="Iw1-Qy-2Ty"/>
-                            <constraint firstItem="6Hb-Vd-dNN" firstAttribute="top" secondItem="BwO-M9-pEi" secondAttribute="bottom" constant="25" id="Jjr-kE-Hwe"/>
+                            <constraint firstItem="q17-lu-dXO" firstAttribute="leading" secondItem="ode-OO-V6w" secondAttribute="trailing" constant="8" id="H4Q-SM-fTu"/>
+                            <constraint firstItem="6Hb-Vd-dNN" firstAttribute="top" secondItem="BwO-M9-pEi" secondAttribute="bottom" constant="50" id="Jjr-kE-Hwe"/>
                             <constraint firstItem="1EI-R5-x26" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KkZ-Qf-E8w"/>
-                            <constraint firstItem="5SM-Cs-gbs" firstAttribute="centerX" secondItem="IDn-w2-xMD" secondAttribute="centerX" id="Okl-4z-qd2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5SM-Cs-gbs" secondAttribute="bottom" constant="53" id="Q48-Nl-kSd"/>
-                            <constraint firstItem="BwO-M9-pEi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="115" id="Twb-LS-eUl"/>
-                            <constraint firstItem="BwO-M9-pEi" firstAttribute="top" secondItem="ode-OO-V6w" secondAttribute="bottom" constant="50" id="VxS-WT-1cl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="q17-lu-dXO" secondAttribute="trailing" constant="11" id="aC3-BN-bdV"/>
-                            <constraint firstItem="q17-lu-dXO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="23" id="dQh-pL-0un"/>
-                            <constraint firstItem="BwO-M9-pEi" firstAttribute="top" secondItem="q17-lu-dXO" secondAttribute="bottom" constant="47" id="lec-l4-BCg"/>
-                            <constraint firstItem="ePS-Wg-ri0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="paL-LM-yTT"/>
+                            <constraint firstItem="jM4-3b-EON" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ROK-Og-MeP"/>
+                            <constraint firstItem="BwO-M9-pEi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="Twb-LS-eUl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="q17-lu-dXO" secondAttribute="trailing" constant="30" id="aC3-BN-bdV"/>
+                            <constraint firstItem="ode-OO-V6w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="aJ6-Zq-AaD"/>
+                            <constraint firstItem="q17-lu-dXO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="dQh-pL-0un"/>
+                            <constraint firstItem="jM4-3b-EON" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="gzG-Bi-QmO"/>
                             <constraint firstItem="6Hb-Vd-dNN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s4V-n5-ny6"/>
                             <constraint firstItem="1EI-R5-x26" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="s9V-Tf-lIM"/>
                             <constraint firstItem="BwO-M9-pEi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vqy-yc-uVy"/>
-                            <constraint firstItem="ode-OO-V6w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="wIL-CC-aI8"/>
-                            <constraint firstItem="ode-OO-V6w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="38" id="xHO-vD-sU1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1EI-R5-x26" secondAttribute="bottom" id="yF6-R3-DI4"/>
-                            <constraint firstItem="IDn-w2-xMD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zUB-iT-oKs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
