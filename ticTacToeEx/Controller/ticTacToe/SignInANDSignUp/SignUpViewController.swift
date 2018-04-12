@@ -88,12 +88,27 @@ class SignUpViewController: UIViewController {
                                     "invitatoDa" : "",
                                     "invitoAccettato" : ""])
                             
-                            let uploadData = UIImagePNGRepresentation(self.resizeImage(image: SignUpViewController.imageProfileSelected))!
+                            if SignUpViewController.imageProfileSelected != nil {
+                                
+                                let uploadData = UIImagePNGRepresentation(self.resizeImage(image: SignUpViewController.imageProfileSelected))!
+                                
+                                let base64ImageString = uploadData.base64EncodedString()
+                                
+                                ref.child("Players").child("\(MainViewController.user.nickName)").child("image").setValue(base64ImageString)
+                                
+                                MainViewController.user.image = SignUpViewController.imageProfileSelected
+                            }
                             
-                            let base64ImageString = uploadData.base64EncodedString()
-                            
-                            ref.child("Players").child("\(MainViewController.user.nickName)").child("image").setValue(base64ImageString)
-                            
+                            else {
+                                
+                                let uploadData = UIImagePNGRepresentation(self.resizeImage(image:UIImage(named: "default.jpg")!))!
+                                
+                                let base64ImageString = uploadData.base64EncodedString()
+                                
+                                ref.child("Players").child("\(MainViewController.user.nickName)").child("image").setValue(base64ImageString)
+                                
+                                MainViewController.user.image = UIImage(named: "default.jpg")
+                            }
                             
                         }
                         /*
@@ -104,9 +119,7 @@ class SignUpViewController: UIViewController {
                         let base64Image = uploadData.base64EncodedData()
                         
                         sRef.child("Images").child("\(MainViewController.user.nickName)").child("myImage").putData(base64Image)
-                        */
-                        MainViewController.user.image = SignUpViewController.imageProfileSelected
-                        
+                        */                        
                         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
                         
                     }))
