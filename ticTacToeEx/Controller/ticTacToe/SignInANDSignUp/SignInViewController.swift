@@ -93,7 +93,7 @@ class SignInViewController: UIViewController {
                             let datiPlayer = value as! [String : Any]
                             
                             if datiPlayer["email"] as! String == emailCurrentUser {
-                                MainViewController.user.nickName = key
+                                MainViewController.user.nickName = datiPlayer["nickname"] as! String
                                 MainViewController.user.email = datiPlayer["email"] as! String
                                 MainViewController.user.vittorie = Int(datiPlayer["vittorie"] as! String)!
                                 MainViewController.user.sconfitte = Int(datiPlayer["sconfitte"] as! String)!
@@ -107,7 +107,7 @@ class SignInViewController: UIViewController {
                                 
                                 MainViewController.user.image = UIImage(data: imagePNG!)
                                 
-                                ref.child("Players").child("\(MainViewController.user.nickName)").child("stato").setValue("online")
+                                ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
                                 
                                 self.activityIndicator.stopAnimating()
                                 UIApplication.shared.endIgnoringInteractionEvents()

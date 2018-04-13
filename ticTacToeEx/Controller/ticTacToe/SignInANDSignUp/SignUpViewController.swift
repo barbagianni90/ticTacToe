@@ -74,19 +74,21 @@ class SignUpViewController: UIViewController {
                         
                         if let name = alert.textFields?.first?.text {
                             
+                            MainViewController.user.id = (user?.uid)!
                             MainViewController.user.nickName = name
                             MainViewController.user.stato = "online"
                             MainViewController.user.email = "\(self.emailTextField.text as! String)"
                             
                             let ref = Database.database().reference()
                             
-                            ref.child("Players").child("\(MainViewController.user.nickName)").setValue(
-                                ["email" : "\(self.emailTextField.text as! String)",
-                                    "stato" : "online",
-                                    "vittorie" : "0",
-                                    "sconfitte" : "0",
-                                    "invitatoDa" : "",
-                                    "invitoAccettato" : ""])
+                            ref.child("Players").child("\(MainViewController.user.id)").setValue(
+                                    [   "nickname" : "\(name)",
+                                        "email" : "\(self.emailTextField.text as! String)",
+                                        "stato" : "online",
+                                        "vittorie" : "0",
+                                        "sconfitte" : "0",
+                                        "invitatoDa" : "",
+                                        "invitoAccettato" : ""  ])
                             
                             if SignUpViewController.imageProfileSelected != nil {
                                 
@@ -94,7 +96,7 @@ class SignUpViewController: UIViewController {
                                 
                                 let base64ImageString = uploadData.base64EncodedString()
                                 
-                                ref.child("Players").child("\(MainViewController.user.nickName)").child("image").setValue(base64ImageString)
+                                ref.child("Players").child("\(MainViewController.user.id)").child("image").setValue(base64ImageString)
                                 
                                 MainViewController.user.image = SignUpViewController.imageProfileSelected
                             }
@@ -105,7 +107,7 @@ class SignUpViewController: UIViewController {
                                 
                                 let base64ImageString = uploadData.base64EncodedString()
                                 
-                                ref.child("Players").child("\(MainViewController.user.nickName)").child("image").setValue(base64ImageString)
+                                ref.child("Players").child("\(MainViewController.user.id)").child("image").setValue(base64ImageString)
                                 
                                 MainViewController.user.image = UIImage(named: "default.jpg")
                             }

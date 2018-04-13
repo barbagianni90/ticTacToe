@@ -208,11 +208,11 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if fPlayer == true && sPlayer == false {
             
-            nomeTabella = "\(MainViewController.user.nickName)VS\(self.enemy.nickName)"
+            nomeTabella = "\(MainViewController.user.id)VS\(self.enemy.id)"
         }
         else if fPlayer == false && sPlayer == true {
             
-            nomeTabella = "\(self.enemy.nickName)VS\(MainViewController.user.nickName)"
+            nomeTabella = "\(self.enemy.id)VS\(MainViewController.user.id)"
         }
         
         for i in 0...2 {
@@ -337,11 +337,11 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
                     let winner = self.getWinner()
                     if winner == "Hai vinto" {
                         
-                        ref.child("Players").child("\(MainViewController.user.nickName)").child("vittorie").setValue("\(MainViewController.user.vittorie + 1)")
+                        ref.child("Players").child("\(MainViewController.user.id)").child("vittorie").setValue("\(MainViewController.user.vittorie + 1)")
                         
-                        ref.child("Players").child("\(MainViewController.user.nickName)").child("invitatoDa").setValue("")
-                        ref.child("Players").child("\(MainViewController.user.nickName)").child("invitoAccettato").setValue("")
-                        ref.child("Players").child("\(MainViewController.user.nickName)").child("stato").setValue("online")
+                        ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
+                        ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
+                        ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
                         
                         ref.child("\(self.nomeTabella)").removeAllObservers()
                         ref.child("Utility\(self.nomeTabella)").removeAllObservers()
@@ -359,10 +359,10 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
                     }
                     else if winner == "Hai perso" {
                         
-                        ref.child("Players").child("\(MainViewController.user.nickName)").child("sconfitte").setValue("\(MainViewController.user.sconfitte + 1)")
-                        ref.child("Players").child("\(MainViewController.user.nickName)").child("invitatoDa").setValue("")
-                        ref.child("Players").child("\(MainViewController.user.nickName)").child("invitoAccettato").setValue("")
-                        ref.child("Players").child("\(MainViewController.user.nickName)").child("stato").setValue("online")
+                        ref.child("Players").child("\(MainViewController.user.id)").child("sconfitte").setValue("\(MainViewController.user.sconfitte + 1)")
+                        ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
+                        ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
+                        ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
                         
                         ref.child("\(self.nomeTabella)").removeAllObservers()
                         ref.child("Utility\(self.nomeTabella)").removeAllObservers()
@@ -391,17 +391,20 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let ref = Database.database().reference()
         
-        ref.child("Players").child("\(self.enemy.nickName)").child("image").observeSingleEvent(of: .value, with: { (snap) in
+        ref.child("Players").child("\(self.enemy.id)").observeSingleEvent(of: .value, with: { (snap) in
             
-            let value = snap.value as! String
+            let value = snap.value as! [String : Any]
             
-            let decodeString = Data(base64Encoded: value)
+            let decodeString = Data(base64Encoded: value["image"] as! String)
             
             let image = UIImage(data: decodeString!)
             
             let imagePNG = UIImagePNGRepresentation(image!)
             
             self.enemy.image = UIImage(data: imagePNG!)
+            
+            self.enemy.nickName = value["nickname"] as! String
+            
         })
     }
     
