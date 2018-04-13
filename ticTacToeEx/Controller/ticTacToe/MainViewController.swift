@@ -37,11 +37,95 @@ class MainViewController: UIViewController {
     @IBOutlet weak var nickNameLabel: UILabel!
     
     
-    
-//
     @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var rankingButton: UIButton!
+    @IBOutlet weak var homeButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //set constraints start button
+        
+        startButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        startButton.layer.borderWidth = 0.5
+        startButton.layer.borderColor = UIColor.black.cgColor
+        
+        NSLayoutConstraint(item: startButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        
+        NSLayoutConstraint(item: startButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 3).isActive = true
+        
+        NSLayoutConstraint(item: startButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width - 50).isActive = true
+        
+        NSLayoutConstraint(item: startButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: (UIScreen.main.bounds.width - 50) / 4).isActive = true
+        
+        startButton.titleLabel?.adjustsFontSizeToFitWidth = true
+    
+        startButton.titleLabel?.baselineAdjustment = .alignCenters
+        
+        //set contraints ranking button
+        
+        rankingButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        rankingButton.layer.borderWidth = 0.5
+        rankingButton.layer.borderColor = UIColor.black.cgColor
+        
+        NSLayoutConstraint(item: rankingButton, attribute: .top, relatedBy: .equal, toItem: startButton, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 10).isActive = true
+        
+        NSLayoutConstraint(item: rankingButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        
+        NSLayoutConstraint(item: rankingButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width - 150).isActive = true
+        
+        NSLayoutConstraint(item: rankingButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: (UIScreen.main.bounds.width - 150) / 4).isActive = true
+        rankingButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        rankingButton.titleLabel?.baselineAdjustment = .alignCenters
+        rankingButton.titleLabel?.numberOfLines = 1
+        
+        //set constraints home button
+        homeButton.translatesAutoresizingMaskIntoConstraints = false
+        homeButton.layer.borderWidth = 0.5
+        homeButton.layer.borderColor = UIColor.black.cgColor
+        
+        NSLayoutConstraint(item: homeButton, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: UIScreen.main.bounds.width / 10).isActive = true
+        NSLayoutConstraint(item: homeButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 10).isActive = true
+        NSLayoutConstraint(item: homeButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 5).isActive = true
+        NSLayoutConstraint(item: homeButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: (UIScreen.main.bounds.width / 5) / 2).isActive = true
+        
+        homeButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        homeButton.titleLabel?.baselineAdjustment = .alignCenters
+        
+        //Set constraints avatar button
+        avatarButton.translatesAutoresizingMaskIntoConstraints = false
+        avatarButton.layer.borderWidth = 1
+        avatarButton.layer.borderColor = UIColor.blue.cgColor
+        
+        NSLayoutConstraint(item: avatarButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 10).isActive = true
+        
+        NSLayoutConstraint(item: avatarButton, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: (UIScreen.main.bounds.width / 10)*8).isActive = true
+
+        NSLayoutConstraint(item: avatarButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 10).isActive = true
+        
+        NSLayoutConstraint(item: avatarButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 10).isActive = true
+        
+        //set constraits nickname label
+        
+        nickNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        nickNameLabel.layer.borderWidth = 0.5
+        nickNameLabel.layer.borderColor = UIColor.black.cgColor
+        
+        NSLayoutConstraint(item: nickNameLabel, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 10).isActive = true
+        
+        NSLayoutConstraint(item: nickNameLabel, attribute: .right, relatedBy: .equal, toItem: avatarButton, attribute: .left, multiplier: 1, constant: -10).isActive = true
+        
+        NSLayoutConstraint(item: nickNameLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 4).isActive = true
+        
+        NSLayoutConstraint(item: nickNameLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: (UIScreen.main.bounds.width / 4) / 2).isActive = true
+        
+        nickNameLabel.adjustsFontSizeToFitWidth = true
+        nickNameLabel.minimumScaleFactor = 0.5
+        nickNameLabel.adjustsFontForContentSizeCategory = true
+        nickNameLabel.baselineAdjustment = .alignCenters
         
         if MainViewController.user.nickName == "" {
             
@@ -70,7 +154,7 @@ class MainViewController: UIViewController {
             self.startButton.isEnabled = true
             self.avatarButton.setImage(MainViewController.user.image, for: .normal)
             //self.avatarButton.transform = CGAffineTransform(rotationAngle: (90.0 * .pi) / 180.0)
-            self.avatarButton.layer.cornerRadius = self.avatarButton.frame.width / 2
+            self.avatarButton.layer.cornerRadius = UIScreen.main.bounds.width / 20
             self.avatarButton.layer.masksToBounds = true
             
             self.nickNameLabel.text = MainViewController.user.nickName

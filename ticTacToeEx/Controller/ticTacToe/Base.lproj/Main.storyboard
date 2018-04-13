@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -23,15 +23,16 @@
             <objects>
                 <viewController storyboardIdentifier="mainView" id="BYZ-38-t0r" customClass="MainViewController" customModule="ticTacToeEx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cherryTree" translatesAutoresizingMaskIntoConstraints="NO" id="1EI-R5-x26">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwO-M9-pEi">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwO-M9-pEi">
                                 <rect key="frame" x="29" y="170" width="262" height="59"/>
-                                <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="70"/>
                                 <size key="titleShadowOffset" width="0.0" height="2"/>
                                 <state key="normal" title="Start Game">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -41,9 +42,10 @@
                                     <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vCd-H4-gBB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Hb-Vd-dNN">
-                                <rect key="frame" x="87" y="279" width="147" height="50"/>
-                                <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="28"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Hb-Vd-dNN">
+                                <rect key="frame" x="-22.5" y="279" width="366" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="70"/>
                                 <size key="titleShadowOffset" width="0.0" height="2"/>
                                 <state key="normal" title="Ranking">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -53,34 +55,19 @@
                                     <action selector="ranking:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jRd-UV-bQx"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ode-OO-V6w">
-                                <rect key="frame" x="180.5" y="50" width="56.5" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Iey-KF-kd8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="CatCafe" family="CatCafe" pointSize="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ode-OO-V6w">
+                                <rect key="frame" x="10.5" y="8" width="56.5" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="CatCafe" family="CatCafe" pointSize="70"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q17-lu-dXO">
-                                <rect key="frame" x="245" y="50" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="OlU-dh-vGN"/>
-                                    <constraint firstAttribute="height" constant="45" id="cae-0S-PGH"/>
-                                </constraints>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button" image="avatar3.png" backgroundImage="avatar2.png">
-                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="showProfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WAr-hO-wec"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jM4-3b-EON">
-                                <rect key="frame" x="20" y="50" width="58" height="35"/>
-                                <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="17"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jM4-3b-EON">
+                                <rect key="frame" x="-117" y="-1" width="337" height="144"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="99"/>
                                 <size key="titleShadowOffset" width="0.0" height="1"/>
                                 <state key="normal" title="Home">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -90,41 +77,42 @@
                                     <action selector="homeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mpo-UE-WVq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q17-lu-dXO">
+                                <rect key="frame" x="142" y="35" width="217" height="184"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showProfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WAr-hO-wec"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="q17-lu-dXO" firstAttribute="leading" secondItem="ode-OO-V6w" secondAttribute="trailing" constant="8" id="3UI-lc-AaY"/>
                             <constraint firstItem="1EI-R5-x26" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="F2F-8H-Wjf"/>
-                            <constraint firstItem="q17-lu-dXO" firstAttribute="leading" secondItem="ode-OO-V6w" secondAttribute="trailing" constant="8" id="H4Q-SM-fTu"/>
-                            <constraint firstItem="6Hb-Vd-dNN" firstAttribute="top" secondItem="BwO-M9-pEi" secondAttribute="bottom" constant="50" id="Jjr-kE-Hwe"/>
                             <constraint firstItem="1EI-R5-x26" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KkZ-Qf-E8w"/>
-                            <constraint firstItem="jM4-3b-EON" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ROK-Og-MeP"/>
-                            <constraint firstItem="BwO-M9-pEi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="Twb-LS-eUl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="q17-lu-dXO" secondAttribute="trailing" constant="30" id="aC3-BN-bdV"/>
-                            <constraint firstItem="ode-OO-V6w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="aJ6-Zq-AaD"/>
-                            <constraint firstItem="q17-lu-dXO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="dQh-pL-0un"/>
-                            <constraint firstItem="jM4-3b-EON" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="gzG-Bi-QmO"/>
-                            <constraint firstItem="6Hb-Vd-dNN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s4V-n5-ny6"/>
                             <constraint firstItem="1EI-R5-x26" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="s9V-Tf-lIM"/>
-                            <constraint firstItem="BwO-M9-pEi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vqy-yc-uVy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1EI-R5-x26" secondAttribute="bottom" id="yF6-R3-DI4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="avatarButton" destination="q17-lu-dXO" id="GGS-5Y-jN9"/>
+                        <outlet property="homeButton" destination="jM4-3b-EON" id="mAA-Ug-btT"/>
                         <outlet property="nickNameLabel" destination="ode-OO-V6w" id="Uu3-u5-7A4"/>
+                        <outlet property="rankingButton" destination="6Hb-Vd-dNN" id="Tg7-xH-tLj"/>
                         <outlet property="startButton" destination="BwO-M9-pEi" id="lK5-0D-VCk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="669.375" y="30.633802816901408"/>
+            <point key="canvasLocation" x="668" y="30.134932533733135"/>
         </scene>
     </scenes>
     <resources>
-        <image name="avatar2.png" width="128" height="128"/>
-        <image name="avatar3.png" width="512" height="512"/>
         <image name="cherryTree" width="375" height="608"/>
     </resources>
 </document>
