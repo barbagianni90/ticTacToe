@@ -47,13 +47,13 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let ref = Database.database().reference()
         
-        ref.child("Players").child("\(MainViewController.user.nickName)").child("invitatoDa").observe(.value) { (snap) in
+        ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").observe(.value) { (snap) in
             
             let value = snap.value as! String
             
             if value != "" {
                 
-                ref.child("Players").child("\(MainViewController.user.nickName)").child("stato").setValue("occupato")
+                ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("occupato")
                 
                 let alert = UIAlertController(title: "\(value) ti ha invitato a giocare", message: nil, preferredStyle: .alert)
                 
@@ -64,7 +64,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         let segue =  UIStoryboard(name:"LobbyANDGame",bundle:nil).instantiateViewController(withIdentifier: "Gioco") as! GameViewController
                         
                         let enemy = User()
-                        enemy.nickName = "\(value)"
+                        enemy.id = "\(value)"
                         segue.enemy = enemy
                         
                         segue.fPlayer = false
@@ -84,7 +84,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
         
-        ref.child("Players").child("\(MainViewController.user.nickName)").child("invitoAccettato").observe(.value) { (snap) in
+        ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").observe(.value) { (snap) in
             
             let value = snap.value as! String
             
@@ -137,9 +137,15 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         if currentCell.stateLabel.text == "online" {
             
-            ref.child("Players").child("\(MainViewController.user.nickName)").child("stato").setValue("occupato")
+            ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("occupato")
             
-            ref.child("Players").child("\(currentCell.nickNameLabel.text as! String)").child("invitatoDa").setValue("\(MainViewController.user.nickName)")
+            for user in players {
+                
+                if user.nickName == currentCell.nickNameLabel.text as! String {
+                    
+                    ref.child("Players").child("\(user.id)").child("invitatoDa").setValue("\(MainViewController.user.id)")
+                }
+            }
             
             self.nickNameSfidato = currentCell.nickNameLabel.text as! String
             
@@ -188,10 +194,11 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
                 let datiSinglePlayer = value as! [String : Any]
                 
-                if key != MainViewController.user.nickName {
+                if key != MainViewController.user.id {
                     
                     let player = User()
-                    player.nickName = key
+                    player.id = key
+                    player.nickName = datiSinglePlayer["nickname"] as! String
                     player.stato = datiSinglePlayer["stato"] as! String
                     
                     if player.stato == "online" || player.stato == "occupato" {

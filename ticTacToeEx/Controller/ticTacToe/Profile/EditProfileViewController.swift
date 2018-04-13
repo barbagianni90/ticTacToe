@@ -138,13 +138,7 @@ class EditProfileViewController: UIViewController {
                 
                 if self.nickNameTextField.text != "" {
                     
-                    ref.child("Players").child("\(MainViewController.user.nickName)").removeValue()
-                    ref.child("Players").child("\(self.nickNameTextField.text as! String)").setValue(["email" : "\(MainViewController.user.email)",
-                        "stato" : "online",
-                        "vittorie" : "\(String(MainViewController.user.vittorie))",
-                        "sconfitte" : "\(String(MainViewController.user.sconfitte))",
-                        "invitatoDa" : "",
-                        "invitoAccettato" : ""])
+                    ref.child("Players").child("\(MainViewController.user.id)").child("nickname").setValue("\(self.nickNameTextField.text as! String)")
                     
                     MainViewController.user.nickName = self.nickNameTextField.text as! String
                     MainViewController.user.stato = "online"
@@ -163,7 +157,7 @@ class EditProfileViewController: UIViewController {
                     }
                     
                     Auth.auth().currentUser?.updateEmail(to: "\(self.emailTextField.text as! String)", completion: nil)
-                    ref.child("Players").child("\(MainViewController.user.nickName)").child("email").setValue("\(self.emailTextField.text as! String)")
+                    ref.child("Players").child("\(MainViewController.user.id)").child("email").setValue("\(self.emailTextField.text as! String)")
                     
                 }
                 
@@ -178,7 +172,7 @@ class EditProfileViewController: UIViewController {
                     
                     let base64ImageString = uploadData.base64EncodedString()
                     
-                    ref.child("Players").child("\(MainViewController.user.nickName)").child("image").setValue(base64ImageString)
+                    ref.child("Players").child("\(MainViewController.user.id)").child("image").setValue(base64ImageString)
                     
                     /*
                     let sRef = Storage.storage().reference()

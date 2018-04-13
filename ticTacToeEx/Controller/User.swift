@@ -11,6 +11,7 @@ import UIKit
 
 class User {
     
+    var id: String = ""
     var nickName: String = ""
     var email: String = ""
     var vittorie: Int = 0
