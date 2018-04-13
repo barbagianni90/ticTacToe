@@ -22,35 +22,20 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.tableRanking.delegate = self
         self.tableRanking.dataSource = self
         
-        let ref = Database.database().reference()
+        refresh()
         
-        ref.child("Players").observe(.value, with: { (snap) in
+        let refreshControl: UIRefreshControl = {
             
-            let players = snap.value as! [String : Any]
+            let refreshControl = UIRefreshControl()
+            refreshControl.addTarget(self, action:
+                #selector(LobbyViewController.handleRefresh(_:)),
+                                     for: UIControlEvents.valueChanged)
+            refreshControl.tintColor = UIColor.red
             
-            for(key, value) in players{
-                
-                let datiSinglePlayer = value as! [String : Any]
-                
-                let player = User()
-                
-                player.nickName = key
-                player.vittorie = Int(datiSinglePlayer["vittorie"] as! String)!
-                
-                let decodeString = Data(base64Encoded: datiSinglePlayer["image"] as! String)
-                
-                let image = UIImage(data: decodeString!)
-                
-                let imagePNG = UIImagePNGRepresentation(image!)
-                
-                player.image = UIImage(data: imagePNG!)
-                                
-                self.players.append(player)
-                
-            }
-            self.players.sort(by: {$0.vittorie > $1.vittorie})
-            self.tableRanking.reloadData()
-        })
+            return refreshControl
+        }()
+        
+        self.tableRanking.addSubview(refreshControl)
     }
     
     
@@ -78,5 +63,46 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBAction func goHome(_ sender: Any) {
         
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        
+        refresh()
+        refreshControl.endRefreshing()
+        
+    }
+    
+    func refresh() {
+        
+        let ref = Database.database().reference()
+        
+        ref.child("Players").observeSingleEvent(of: .value, with: { (snap) in
+            
+            let players = snap.value as! [String : Any]
+            
+            for(key, value) in players{
+                
+                let datiSinglePlayer = value as! [String : Any]
+                
+                let player = User()
+                
+                player.id = key
+                player.nickName = datiSinglePlayer["nickname"] as! String
+                player.vittorie = Int(datiSinglePlayer["vittorie"] as! String)!
+                
+                let decodeString = Data(base64Encoded: datiSinglePlayer["image"] as! String)
+                
+                let image = UIImage(data: decodeString!)
+                
+                let imagePNG = UIImagePNGRepresentation(image!)
+                
+                player.image = UIImage(data: imagePNG!)
+                
+                self.players.append(player)
+                
+            }
+            self.players.sort(by: {$0.vittorie > $1.vittorie})
+            self.tableRanking.reloadData()
+        })
     }
 }
