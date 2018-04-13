@@ -93,6 +93,7 @@ class SignInViewController: UIViewController {
                             let datiPlayer = value as! [String : Any]
                             
                             if datiPlayer["email"] as! String == emailCurrentUser {
+                                MainViewController.user.id = key
                                 MainViewController.user.nickName = datiPlayer["nickname"] as! String
                                 MainViewController.user.email = datiPlayer["email"] as! String
                                 MainViewController.user.vittorie = Int(datiPlayer["vittorie"] as! String)!

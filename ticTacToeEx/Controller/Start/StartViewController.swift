@@ -21,14 +21,6 @@ class StartViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     var sideMenuOpen = false
     
-    @IBOutlet weak var signInButton: UIButton!
-    
-    
-    @IBAction func signInButton(_ sender: Any) {
-        
-        let signInView = UIStoryboard(name: "SignInANDSignUp", bundle: nil).instantiateViewController(withIdentifier: "signIn")
-        self.present(signInView, animated: true, completion: nil)
-    }
     
     var images = ["iconTris", "checkIcon2"]
 
