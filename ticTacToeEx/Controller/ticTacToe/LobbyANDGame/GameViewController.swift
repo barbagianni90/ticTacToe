@@ -135,6 +135,19 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     //----------------------Game-------------------------
     
+    
+    
+    
+    @IBOutlet weak var stackView: UIStackView!
+    
+    @IBOutlet weak var trisImage: UIImageView!
+    
+    
+    
+    
+    
+    
+    
     var enemy = User()
     
     var fPlayer = false
@@ -162,6 +175,34 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //setting stack view
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint(item: stackView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 8).isActive = true
+        
+        NSLayoutConstraint(item: stackView, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        
+        NSLayoutConstraint(item: stackView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width - 70).isActive = true
+        
+        NSLayoutConstraint(item: stackView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width - 70).isActive = true
+        
+        stackView.distribution = .fillEqually
+        
+        //setting tris image
+        trisImage.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint(item: trisImage, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 15).isActive = true
+        
+        NSLayoutConstraint(item: trisImage, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        
+        NSLayoutConstraint(item: trisImage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width).isActive = true
+        
+        NSLayoutConstraint(item: trisImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width).isActive = true
+        
+        trisImage.contentMode = .scaleAspectFill
+        
+        
         
         let ref = Database.database().reference()
         
