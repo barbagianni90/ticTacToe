@@ -196,6 +196,9 @@
                             <outlet property="delegate" destination="h27-PW-iBG" id="w7V-hy-f71"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="labelSignIn" destination="Aj0-Yi-why" id="Oqc-BV-ZmG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y3y-ag-u5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class SideMenuViewController: UITableViewController {
 
+    @IBOutlet weak var labelSignIn: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +26,17 @@ class SideMenuViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        
+        if MainViewController.user.nickName == "" {
+            
+            self.labelSignIn.text = "Sign In"
+        }
+        else {
+            
+            self.labelSignIn.text = "Log out"
+        }
     }
 
     // MARK: - Table view data source
@@ -44,11 +58,22 @@ class SideMenuViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
         
-        if indexPath.row == 2 {
+        if indexPath.row == 2 && self.labelSignIn.text as! String == "Sign In"  {
             
             let signInView = UIStoryboard(name: "SignInANDSignUp", bundle: nil).instantiateViewController(withIdentifier: "signIn")
             self.present(signInView, animated: true, completion: nil)
+        }
+        else if indexPath.row == 2 && self.labelSignIn.text as! String == "Log out" {
             
+            do {
+                try Auth.auth().signOut()
+                MainViewController.user = User()
+                self.labelSignIn.text = "Sign In"
+            }
+            catch {
+                
+                print("error")
+            }
         }
     }
    
