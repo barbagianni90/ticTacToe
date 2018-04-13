@@ -79,10 +79,10 @@
 		C445E5772075057100241182 /* PhotoProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoProfile.swift; sourceTree = "<group>"; };
 		C445E57B20750AED00241182 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		C48477A0206D15C8002B6E18 /* SignInANDSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInANDSignUp.storyboard; sourceTree = "<group>"; };
-		C4E2ABF72080AC71006DC25B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C4E2ABF72080AC71006DC25B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C4E2E64B2077C1A9005CDD72 /* croce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = croce.png; sourceTree = "<group>"; };
 		C4E2E64C2077C1A9005CDD72 /* cerchio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cerchio.png; sourceTree = "<group>"; };
-		C4ED73FA207F6CB000099716 /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = default.jpg; path = ../../../default.jpg; sourceTree = "<group>"; };
+		C4ED73FA207F6CB000099716 /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
 		F3CEB71B207CABD200B4D772 /* MainCheckers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainCheckers.storyboard; sourceTree = "<group>"; };
 		F3CEB71D207CABF500B4D772 /* MainCheckersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCheckersViewController.swift; sourceTree = "<group>"; };
 		FE159E20207E077C0075C533 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
