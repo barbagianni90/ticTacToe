@@ -50,6 +50,7 @@
 		FE6BF157206D0F1500BA7800 /* Shojumaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE6BF156206D0F1400BA7800 /* Shojumaru-Regular.ttf */; };
 		FE6BF159206D113900BA7800 /* CatCafe.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE6BF158206D113800BA7800 /* CatCafe.ttf */; };
 		FE931DC6207BAAB700A77B25 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE931DC5207BAAB700A77B25 /* StartViewController.swift */; };
+		FEAD0F752080F13D00646F80 /* cielo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FEAD0F742080F13D00646F80 /* cielo.jpg */; };
 		FEC8A084206B849C0031001B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A083206B849C0031001B /* SignInViewController.swift */; };
 		FEC8A089206B87AA0031001B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A088206B87AA0031001B /* SignUpViewController.swift */; };
 		FEC8A08B206B89380031001B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A08A206B89380031001B /* ProfileViewController.swift */; };
@@ -82,7 +83,7 @@
 		C4E2E64B2077C1A9005CDD72 /* croce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = croce.png; sourceTree = "<group>"; };
 		C4E2E64C2077C1A9005CDD72 /* cerchio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cerchio.png; sourceTree = "<group>"; };
 		C4ED73FA207F6CB000099716 /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
-		F34B8C44207F8BFF007D2908 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F34B8C44207F8BFF007D2908 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F3CEB71B207CABD200B4D772 /* MainCheckers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainCheckers.storyboard; sourceTree = "<group>"; };
 		F3CEB71D207CABF500B4D772 /* MainCheckersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCheckersViewController.swift; sourceTree = "<group>"; };
 		FE159E20207E077C0075C533 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +111,7 @@
 		FE6BF156206D0F1400BA7800 /* Shojumaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Shojumaru-Regular.ttf"; sourceTree = "<group>"; };
 		FE6BF158206D113800BA7800 /* CatCafe.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CatCafe.ttf; sourceTree = "<group>"; };
 		FE931DC5207BAAB700A77B25 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		FEAD0F742080F13D00646F80 /* cielo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cielo.jpg; sourceTree = "<group>"; };
 		FEC8A083206B849C0031001B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		FEC8A088206B87AA0031001B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FEC8A08A206B89380031001B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				C41036F5206E6C5800423D7D /* avatar4.png */,
 				C41036F6206E6C5800423D7D /* avatar5.png */,
 				C4ED73FA207F6CB000099716 /* default.jpg */,
+				FEAD0F742080F13D00646F80 /* cielo.jpg */,
 			);
 			path = Avatar;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				F3CEB71C207CABD200B4D772 /* MainCheckers.storyboard in Resources */,
 				FE4D55342069024000ABF6C1 /* Assets.xcassets in Resources */,
 				C41036FB206E6C5900423D7D /* avatar5.png in Resources */,
+				FEAD0F752080F13D00646F80 /* cielo.jpg in Resources */,
 				C433A571206D32DD00C2888F /* Ranking.storyboard in Resources */,
 				C41036F9206E6C5900423D7D /* avatar1.png in Resources */,
 				FE1B8AA0207CB3D700960EEB /* Raleway-Light.ttf in Resources */,
