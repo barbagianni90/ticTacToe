@@ -27,6 +27,11 @@ class MainCheckersViewController: UIViewController {
         
     }
     
+    @IBAction func startGameAction(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "GameCheckers", bundle: nil).instantiateViewController(withIdentifier: "GameCheckID")
+        self.present(storyboard, animated: true, completion: nil)
+    }
+    
     
     
     
