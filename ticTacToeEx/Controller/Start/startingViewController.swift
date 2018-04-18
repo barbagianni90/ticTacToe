@@ -58,8 +58,11 @@ class startingViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         //flowLayout
         let collectionViewFlowLayout = UICollectionViewFlowLayout()
+        
         collectionView?.setCollectionViewLayout(collectionViewFlowLayout, animated: true)
+        
         collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: UIScreen.main.bounds.width / 2 - 50, bottom: (UIScreen.main.bounds.height - (UIScreen.main.bounds.height / 5 + 320))/2, right: UIScreen.main.bounds.width/2 - 50)
+        
         collectionViewFlowLayout.minimumInteritemSpacing = 0
         collectionViewFlowLayout.minimumLineSpacing = 60
         
@@ -82,9 +85,13 @@ class startingViewController: UIViewController, UICollectionViewDelegate, UIColl
         //conteiner view constrains
         
         conteinerView.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint(item: conteinerView, attribute: .top, relatedBy: .equal, toItem: sideMenuView, attribute: .top, multiplier: 1, constant: 0).isActive = true
+        
         NSLayoutConstraint(item: conteinerView, attribute: .bottom, relatedBy: .equal, toItem: sideMenuView, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+        
         NSLayoutConstraint(item: conteinerView, attribute: .left, relatedBy: .equal, toItem: sideMenuView, attribute: .left, multiplier: 1, constant: 0).isActive = true
+        
         NSLayoutConstraint(item: conteinerView, attribute: .right, relatedBy: .equal, toItem: sideMenuView, attribute: .right, multiplier: 1, constant: 0).isActive = true
         
     }
