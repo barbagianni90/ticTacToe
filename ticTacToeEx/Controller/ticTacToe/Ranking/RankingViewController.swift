@@ -74,6 +74,8 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func refresh() {
         
+        self.players.removeAll()
+        
         let ref = Database.database().reference()
         
         ref.child("Players").observeSingleEvent(of: .value, with: { (snap) in
