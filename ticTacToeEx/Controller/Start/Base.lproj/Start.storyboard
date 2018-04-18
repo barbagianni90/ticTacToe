@@ -120,6 +120,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="dgP-Z0-T8n" firstAttribute="top" secondItem="Dtx-2D-Vn1" secondAttribute="topMargin" id="QkG-0D-FJL"/>
                                                 <constraint firstItem="dgP-Z0-T8n" firstAttribute="bottom" secondItem="Dtx-2D-Vn1" secondAttribute="bottomMargin" id="VTT-z9-WEx"/>
@@ -127,6 +128,7 @@
                                                 <constraint firstItem="dgP-Z0-T8n" firstAttribute="leading" secondItem="Dtx-2D-Vn1" secondAttribute="leadingMargin" id="jS4-wF-e59"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="e9Y-vu-gb6" customClass="TableViewCell" customModule="ticTacToeEx" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="79" width="240" height="44"/>

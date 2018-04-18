@@ -141,7 +141,7 @@ class SignInViewController: UIViewController {
         
         NSLayoutConstraint(item: emailTextField, attribute: .top, relatedBy: .equal, toItem: emailLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 50).isActive = true
         
-        NSLayoutConstraint(item: emailTextField, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 2).isActive = true
+        NSLayoutConstraint(item: emailTextField, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / (3/2)).isActive = true
         
         
         // CONSTRAINTS PASS LABEL
@@ -183,7 +183,7 @@ class SignInViewController: UIViewController {
         
         NSLayoutConstraint(item: passTextField, attribute: .top, relatedBy: .equal, toItem: passLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 50).isActive = true
         
-        NSLayoutConstraint(item: passTextField, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 2).isActive = true
+        NSLayoutConstraint(item: passTextField, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / (3/2)).isActive = true
         
         
         // CONSTRAINTS REGISTER BUTTON
@@ -198,7 +198,7 @@ class SignInViewController: UIViewController {
         NSLayoutConstraint(item: registerButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         
         
-        NSLayoutConstraint(item: registerButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 4).isActive = true
+        NSLayoutConstraint(item: registerButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 6).isActive = true
         
         NSLayoutConstraint(item: registerButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height / 30 ).isActive = true
         
@@ -207,7 +207,7 @@ class SignInViewController: UIViewController {
         registerButton.titleLabel?.baselineAdjustment = .alignCenters
         
         registerButton.setTitle("Register!", for: .normal)
-        registerButton.titleLabel?.font = UIFont(name: "catCafe", size: registerButton.frame.width)
+        registerButton.titleLabel?.font = UIFont(name: "catCafe", size: UIScreen.main.bounds.width / 6)
         
         
         // CONSTRAINTS REGISTER LABEL
@@ -228,7 +228,7 @@ class SignInViewController: UIViewController {
         registerLabel.adjustsFontSizeToFitWidth = true
         registerLabel.baselineAdjustment = .alignCenters
         
-        let attrRegister = [NSAttributedStringKey.font: UIFont(name: "catCafe", size: 17)]
+        let attrRegister = [NSAttributedStringKey.font: UIFont(name: "catCafe", size: UIScreen.main.bounds.width / 2)]
         let registerLabelText = "Don't you have an account yet?"
         let attRegisterLabel = NSMutableAttributedString(string: registerLabelText, attributes: attrRegister)
         registerLabel.attributedText = attRegisterLabel
