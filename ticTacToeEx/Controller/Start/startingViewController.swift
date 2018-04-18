@@ -20,12 +20,16 @@ class startingViewController: UIViewController, UICollectionViewDelegate, UIColl
     var sideMenuConstraint: NSLayoutConstraint!
     var isSlideMenuHidden = true
     
+    static var first: Bool!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        startingViewController.first = true
+        
         //background
         let background: UIImageView!
-        background = UIImageView(frame: view.bounds)
+        background = UIImageView(frame: view.frame)
         background.contentMode = .scaleAspectFill
         background.clipsToBounds = true
         background.image = UIImage(named: "start")
@@ -38,7 +42,7 @@ class startingViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         view.addSubview(background)
         view.sendSubview(toBack: background)
-        
+         //-------------------------
         //sideMenuConstraints
         sideMenuView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -46,6 +50,8 @@ class startingViewController: UIViewController, UICollectionViewDelegate, UIColl
         NSLayoutConstraint(item: sideMenuView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
         NSLayoutConstraint(item: sideMenuView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: (UIScreen.main.bounds.width / 2) + 50).isActive = true
         SMConstraint.constant = -(UIScreen.main.bounds.width / 2) - 50
+        
+        sideMenuView.backgroundColor = UIColor.clear
         
         //collection view constraints
         
@@ -59,8 +65,11 @@ class startingViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         //flowLayout
         let collectionViewFlowLayout = UICollectionViewFlowLayout()
+        
         collectionView?.setCollectionViewLayout(collectionViewFlowLayout, animated: true)
+        
         collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: UIScreen.main.bounds.width / 2 - 50, bottom: (UIScreen.main.bounds.height - (UIScreen.main.bounds.height / 5 + 320))/2, right: UIScreen.main.bounds.width/2 - 50)
+        
         collectionViewFlowLayout.minimumInteritemSpacing = 0
         collectionViewFlowLayout.minimumLineSpacing = 60
         
@@ -74,35 +83,59 @@ class startingViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         NSLayoutConstraint(item: menuButton, attribute: .left, relatedBy: .equal, toItem: sideMenuView, attribute: .right, multiplier: 1, constant: UIScreen.main.bounds.width / 15).isActive = true
         NSLayoutConstraint(item: menuButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 10).isActive = true
-        NSLayoutConstraint(item: menuButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 5).isActive = true
-        NSLayoutConstraint(item: menuButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: (UIScreen.main.bounds.width / 5) / 2).isActive = true
+        NSLayoutConstraint(item: menuButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 8).isActive = true
+        NSLayoutConstraint(item: menuButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 8).isActive = true
         
-        menuButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        menuButton.titleLabel?.baselineAdjustment = .alignCenters
+        menuButton.setImage(UIImage(named: "menuButton"), for: .normal)
+        menuButton.tintColor = UIColor.white
+        
+        
+//        menuButton.titleLabel?.adjustsFontSizeToFitWidth = true
+//        menuButton.titleLabel?.baselineAdjustment = .alignCenters
         
         //conteiner view constrains
         
         conteinerView.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint(item: conteinerView, attribute: .top, relatedBy: .equal, toItem: sideMenuView, attribute: .top, multiplier: 1, constant: 0).isActive = true
+        
         NSLayoutConstraint(item: conteinerView, attribute: .bottom, relatedBy: .equal, toItem: sideMenuView, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+        
         NSLayoutConstraint(item: conteinerView, attribute: .left, relatedBy: .equal, toItem: sideMenuView, attribute: .left, multiplier: 1, constant: 0).isActive = true
+        
         NSLayoutConstraint(item: conteinerView, attribute: .right, relatedBy: .equal, toItem: sideMenuView, attribute: .right, multiplier: 1, constant: 0).isActive = true
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if !startingViewController.first && MainViewController.user.nickName != ""{
+            hideSideMenu()
+            isSlideMenuHidden = true
+        }
+       startingViewController.first = false
+    }
+    
     @IBAction func menuButtonAction(_ sender: UIButton) {
         if isSlideMenuHidden{
-            SMConstraint.constant = 0
-            UIView.animate(withDuration: 0.3, animations: {
-                self.view.layoutIfNeeded()
-            })
+            showSideMenu()
         }else{
-            SMConstraint.constant = -(UIScreen.main.bounds.width / 2) - 50
-            UIView.animate(withDuration: 0.3, animations: {
-                self.view.layoutIfNeeded()
-            })
+            hideSideMenu()
         }
         isSlideMenuHidden = !isSlideMenuHidden 
+    }
+    
+    func showSideMenu(){
+        SMConstraint.constant = 0
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    func hideSideMenu(){
+        SMConstraint.constant = -(UIScreen.main.bounds.width / 2) - 50
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+        })
     }
     
     

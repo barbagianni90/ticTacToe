@@ -489,11 +489,12 @@ class EditProfileViewController: UIViewController {
                     ref.child("Players").child("\(MainViewController.user.id)").child("image").setValue(base64ImageString)
                     
                     MainViewController.user.image = EditProfileViewController.imageSelected
-                    self.activityIndicator.stopAnimating()
-                    UIApplication.shared.endIgnoringInteractionEvents()
                     self.dismiss(animated: true, completion: nil)
                 }
             }))
+            
+            self.activityIndicator.stopAnimating()
+            UIApplication.shared.endIgnoringInteractionEvents()
             
             self.present(alert, animated: true)
         }

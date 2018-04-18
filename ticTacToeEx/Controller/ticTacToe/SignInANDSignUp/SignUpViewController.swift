@@ -13,14 +13,10 @@
 import Foundation
 import UIKit
 import Firebase
-import FirebaseAuth
-import FirebaseDatabase
-import FirebaseStorage
+import Alamofire
 
 
-class SignUpViewController: UIViewController, URLSessionDataDelegate{
-    
-    let url = "http://10.0.101.6:8081/api/jsonws/add-user-portlet.appuser/get-users"
+class SignUpViewController: UIViewController{
     
     static var imageProfileSelected: UIImage!
     
@@ -152,11 +148,7 @@ class SignUpViewController: UIViewController, URLSessionDataDelegate{
                     self.present(alertController, animated: true, completion: nil)
                 }
             }
-            
-            let URLSessionConfig = URLSessionConfiguration.default
-            let session = URLSession(configuration: URLSessionConfig, delegate: self, delegateQueue: OperationQueue.main)
-            session.dataTask(with: URL(string: self.url)!)
-            
+            self.getData()
         }
     }
     
@@ -540,20 +532,91 @@ class SignUpViewController: UIViewController, URLSessionDataDelegate{
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
-    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
+    func getData() {
         
-        let jsonObj: Array<[String : Any]> = try! JSONSerialization.jsonObject(with: data, options: .allowFragments) as! Array<[String : Any]>
+        let url = URL(string: "http://10.0.101.6:8081/api/jsonws/add-user-portlet.appuser/get-users")
         
-        for obj in jsonObj {
+        URLSession.shared.dataTask(with: url!) { (data, response, error) in
             
-             if obj["password"] as! String == self.passTextField.text as! String && obj["email"] as! String == self.emailTextField.text as! String {
+            let jsonObj: Array<[String : Any]> = try! JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! Array<[String : Any]>
+            
+            for obj in jsonObj {
                 
-                if obj["confirm"] as! Int == 0  {
+                if obj["password"] as! String == self.passTextField.text as! String && obj["email"] as! String == self.emailTextField.text as! String {
                     
-                    
+                    if obj["confirm"] as! Int == 0  {
+                        
+                        self.postData(self.emailTextField.text as! String)
+                    }
                 }
             }
+        }.resume()
+    }
+    func postData(_ email: String) {
+        
+        let url = URL(string: "http://10.0.101.6:8081/api/jsonws/add-user-portlet.appuser/conf-user/-email")
+        
+        Alamofire.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append((email.data(using: String.Encoding.utf8, allowLossyConversion: false))!, withName: "email")
+            
+        }, to: url!,
+           
+           encodingCompletion: { encodingResult in
+            switch encodingResult {
+            case .success(let upload, _, _):
+                upload.responseData { response in
+                    debugPrint(response)
+                }
+            case .failure(let encodingError):
+                print(encodingError)
+            }
+        })
+        
+        /*
+        let headers = [
+            "content-type": "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW",
+        ]
+        let parameters = [
+            ["name": "email",
+             "value": "\(email)"]]
+        
+        let boundary = "----WebKitFormBoundary7MA4YWxkTrZu0gW"
+        
+        var body: Data = Data()
+        for param in parameters {
+            let paramName = param["name"]!
+            body.appendString(string: "--\(boundary)\r\n")
+            body.appendString(string: "Content-Disposition:form-data; name=\"\(paramName)\"")
+            if let paramValue = param["value"] {
+                body.appendString(string: "\r\n\r\n\(paramValue)")
+            }
         }
+        
+        var request = URLRequest(url: url!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+        
+        request.httpMethod = "POST"
+        request.allHTTPHeaderFields = headers
+        request.httpBody = body
+        
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
+            if (error != nil) {
+                print(error!)
+            } else {
+                let httpResponse = response as? HTTPURLResponse
+                print(httpResponse!)
+                print(data)
+            }
+        })
+        dataTask.resume()
+        */
+    }
+}
+extension Data {
+    
+    mutating func appendString(string: String) {
+        let data = string.data(using: String.Encoding.utf8, allowLossyConversion: true)
+        append(data!)
     }
 }
 

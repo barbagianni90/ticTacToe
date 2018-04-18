@@ -10,9 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Raleway-ExtraLight.ttf">
-            <string>Raleway-ExtraLight</string>
-        </array>
         <array key="Raleway-Light.ttf">
             <string>Raleway-Light</string>
         </array>
@@ -26,11 +23,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="woodBack" translatesAutoresizingMaskIntoConstraints="NO" id="Diz-3t-5tb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="woodBack" translatesAutoresizingMaskIntoConstraints="NO" id="Diz-3t-5tb">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q64-hW-z9Q">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q64-hW-z9Q">
                                 <rect key="frame" x="0.0" y="170" width="375" height="497"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,15 +48,17 @@
                                     <outlet property="delegate" destination="IKQ-tM-D9I" id="fGi-Jx-Qq1"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ranking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEd-Zq-DBe">
-                                <rect key="frame" x="121.5" y="90" width="132.5" height="42"/>
-                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ranking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEd-Zq-DBe">
+                                <rect key="frame" x="121.5" y="90" width="294" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="80"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wb5-Dx-2mc">
-                                <rect key="frame" x="20" y="40" width="48" height="32"/>
-                                <fontDescription key="fontDescription" name="Raleway-ExtraLight" family="Raleway" pointSize="17"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wb5-Dx-2mc">
+                                <rect key="frame" x="-22" y="26" width="139" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="49"/>
                                 <state key="normal" title="Home">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -67,22 +68,14 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="wb5-Dx-2mc" firstAttribute="leading" secondItem="9mQ-Wx-lyh" secondAttribute="leading" constant="20" id="21J-CB-bI5"/>
-                            <constraint firstItem="Q64-hW-z9Q" firstAttribute="top" secondItem="9mQ-Wx-lyh" secondAttribute="top" constant="150" id="2hb-er-gCN"/>
-                            <constraint firstItem="DEd-Zq-DBe" firstAttribute="centerX" secondItem="Ahu-54-BVb" secondAttribute="centerX" id="3iz-nE-UM0"/>
-                            <constraint firstItem="9mQ-Wx-lyh" firstAttribute="trailing" secondItem="Q64-hW-z9Q" secondAttribute="trailing" id="9re-Ma-7aM"/>
-                            <constraint firstItem="Diz-3t-5tb" firstAttribute="leading" secondItem="9mQ-Wx-lyh" secondAttribute="leading" id="ROn-Bn-Pbq"/>
-                            <constraint firstItem="wb5-Dx-2mc" firstAttribute="top" secondItem="9mQ-Wx-lyh" secondAttribute="top" constant="20" id="VK1-tG-Wcf"/>
-                            <constraint firstItem="DEd-Zq-DBe" firstAttribute="top" secondItem="9mQ-Wx-lyh" secondAttribute="top" constant="70" id="ayc-U3-KC5"/>
-                            <constraint firstItem="Q64-hW-z9Q" firstAttribute="leading" secondItem="9mQ-Wx-lyh" secondAttribute="leading" id="iHV-6Q-i5K"/>
-                            <constraint firstItem="Diz-3t-5tb" firstAttribute="trailing" secondItem="9mQ-Wx-lyh" secondAttribute="trailing" id="s2G-IN-Rc2"/>
-                            <constraint firstItem="Diz-3t-5tb" firstAttribute="bottom" secondItem="9mQ-Wx-lyh" secondAttribute="bottom" id="uqQ-hn-GTF"/>
-                            <constraint firstItem="Diz-3t-5tb" firstAttribute="top" secondItem="Ahu-54-BVb" secondAttribute="top" id="w2S-lP-Phh"/>
-                            <constraint firstItem="9mQ-Wx-lyh" firstAttribute="bottom" secondItem="Q64-hW-z9Q" secondAttribute="bottom" id="zKW-H6-tjb"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9mQ-Wx-lyh"/>
                     </view>
+                    <connections>
+                        <outlet property="background" destination="Diz-3t-5tb" id="hIZ-T7-wdB"/>
+                        <outlet property="homeButton" destination="wb5-Dx-2mc" id="0Df-Nk-JLv"/>
+                        <outlet property="rankingLabel" destination="DEd-Zq-DBe" id="cT0-PO-ebG"/>
+                        <outlet property="rankingTable" destination="Q64-hW-z9Q" id="kjc-5P-ajT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCi-Ei-uaK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
