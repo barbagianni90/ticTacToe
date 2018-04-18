@@ -114,18 +114,18 @@ class ProfileViewController: UIViewController {
         
         avatarImage.translatesAutoresizingMaskIntoConstraints = false
         
-        avatarImage.layer.borderColor = UIColor.black.cgColor
-        avatarImage.layer.borderWidth = 0.5
+//        avatarImage.layer.borderColor = UIColor.black.cgColor
+//        avatarImage.layer.borderWidth = 0.5
         
         NSLayoutConstraint(item: avatarImage, attribute: .top, relatedBy: .equal, toItem: profileLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 40).isActive = true
         
         NSLayoutConstraint(item: avatarImage, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         
-        NSLayoutConstraint(item: avatarImage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 1.25).isActive = true
+        NSLayoutConstraint(item: avatarImage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 2).isActive = true
 
         NSLayoutConstraint(item: avatarImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 2).isActive = true
         
-        avatarImage.layer.cornerRadius = (UIScreen.main.bounds.width / 1.25) / 2
+        avatarImage.layer.cornerRadius = (UIScreen.main.bounds.width / 2) / 2
         avatarImage.contentMode = .scaleAspectFill
         
         

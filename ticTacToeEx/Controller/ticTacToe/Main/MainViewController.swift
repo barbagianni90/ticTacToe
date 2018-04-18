@@ -118,6 +118,9 @@ class MainViewController: UIViewController {
         avatarButton.imageView?.contentMode = .scaleAspectFill
         avatarButton.imageView?.layer.cornerRadius = (UIScreen.main.bounds.width / 8) / 2
         
+        avatarButton.backgroundColor = UIColor.clear
+        
+        
         
         
         
