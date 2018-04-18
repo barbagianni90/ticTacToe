@@ -25,13 +25,13 @@
 		C445E5762074D00B00241182 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E5752074D00B00241182 /* Message.swift */; };
 		C445E5782075057100241182 /* PhotoProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E5772075057100241182 /* PhotoProfile.swift */; };
 		C445E57C20750AED00241182 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = C445E57B20750AED00241182 /* camera.png */; };
+		C46A2E992087730200DD38B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C46A2E982087730200DD38B6 /* GoogleService-Info.plist */; };
 		C48477A1206D15C8002B6E18 /* SignInANDSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48477A0206D15C8002B6E18 /* SignInANDSignUp.storyboard */; };
 		C4E2E64D2077C1A9005CDD72 /* croce.png in Resources */ = {isa = PBXBuildFile; fileRef = C4E2E64B2077C1A9005CDD72 /* croce.png */; };
 		C4E2E64E2077C1A9005CDD72 /* cerchio.png in Resources */ = {isa = PBXBuildFile; fileRef = C4E2E64C2077C1A9005CDD72 /* cerchio.png */; };
 		C4ED73FB207F6CB000099716 /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C4ED73FA207F6CB000099716 /* default.jpg */; };
 		F31876302085E90C00482CAD /* GameCheckers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F318762F2085E90C00482CAD /* GameCheckers.storyboard */; };
 		F31876322085EBEE00482CAD /* GameCheckersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31876312085EBEE00482CAD /* GameCheckersViewController.swift */; };
-		F39440332084DBC900B60697 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F39440322084DBC900B60697 /* GoogleService-Info.plist */; };
 		F3CEB71C207CABD200B4D772 /* MainCheckers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3CEB71B207CABD200B4D772 /* MainCheckers.storyboard */; };
 		F3CEB71E207CABF500B4D772 /* MainCheckersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CEB71D207CABF500B4D772 /* MainCheckersViewController.swift */; };
 		F3F62E962084E2A100A674BE /* startingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F62E952084E2A100A674BE /* startingViewController.swift */; };
@@ -79,13 +79,13 @@
 		C445E5752074D00B00241182 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		C445E5772075057100241182 /* PhotoProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoProfile.swift; sourceTree = "<group>"; };
 		C445E57B20750AED00241182 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		C46A2E982087730200DD38B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C48477A0206D15C8002B6E18 /* SignInANDSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInANDSignUp.storyboard; sourceTree = "<group>"; };
 		C4E2E64B2077C1A9005CDD72 /* croce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = croce.png; sourceTree = "<group>"; };
 		C4E2E64C2077C1A9005CDD72 /* cerchio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cerchio.png; sourceTree = "<group>"; };
 		C4ED73FA207F6CB000099716 /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
 		F318762F2085E90C00482CAD /* GameCheckers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameCheckers.storyboard; sourceTree = "<group>"; };
 		F31876312085EBEE00482CAD /* GameCheckersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCheckersViewController.swift; sourceTree = "<group>"; };
-		F39440322084DBC900B60697 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F3CEB71B207CABD200B4D772 /* MainCheckers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainCheckers.storyboard; sourceTree = "<group>"; };
 		F3CEB71D207CABF500B4D772 /* MainCheckersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCheckersViewController.swift; sourceTree = "<group>"; };
 		F3F62E952084E2A100A674BE /* startingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startingViewController.swift; sourceTree = "<group>"; };
@@ -298,7 +298,7 @@
 				FEC8A085206B84D60031001B /* Controller */,
 				FE4D55332069024000ABF6C1 /* Assets.xcassets */,
 				FE4D55352069024000ABF6C1 /* LaunchScreen.storyboard */,
-				F39440322084DBC900B60697 /* GoogleService-Info.plist */,
+				C46A2E982087730200DD38B6 /* GoogleService-Info.plist */,
 				FE4D55382069024000ABF6C1 /* Info.plist */,
 				FEC8A0A3206B9AC20031001B /* Fonts */,
 				C433A572206D356B00C2888F /* Avatar */,
@@ -411,7 +411,6 @@
 			files = (
 				C41036FA206E6C5900423D7D /* avatar4.png in Resources */,
 				C41036F8206E6C5900423D7D /* avatar3.png in Resources */,
-				F39440332084DBC900B60697 /* GoogleService-Info.plist in Resources */,
 				FE4D55372069024000ABF6C1 /* LaunchScreen.storyboard in Resources */,
 				FE1B8A9D207CB35D00960EEB /* Kalam-Light.ttf in Resources */,
 				C4ED73FB207F6CB000099716 /* default.jpg in Resources */,
@@ -423,6 +422,7 @@
 				C41036FC206E6C5900423D7D /* avatar2.png in Resources */,
 				F3CEB71C207CABD200B4D772 /* MainCheckers.storyboard in Resources */,
 				FE4D55342069024000ABF6C1 /* Assets.xcassets in Resources */,
+				C46A2E992087730200DD38B6 /* GoogleService-Info.plist in Resources */,
 				C41036FB206E6C5900423D7D /* avatar5.png in Resources */,
 				C433A571206D32DD00C2888F /* Ranking.storyboard in Resources */,
 				C41036F9206E6C5900423D7D /* avatar1.png in Resources */,
@@ -448,6 +448,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ticTacToeEx/Pods-ticTacToeEx-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -455,6 +456,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
