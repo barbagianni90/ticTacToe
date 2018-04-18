@@ -85,7 +85,7 @@
 		C4ED73FA207F6CB000099716 /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
 		F318762F2085E90C00482CAD /* GameCheckers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameCheckers.storyboard; sourceTree = "<group>"; };
 		F31876312085EBEE00482CAD /* GameCheckersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCheckersViewController.swift; sourceTree = "<group>"; };
-		F39440322084DBC900B60697 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F39440322084DBC900B60697 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F3CEB71B207CABD200B4D772 /* MainCheckers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainCheckers.storyboard; sourceTree = "<group>"; };
 		F3CEB71D207CABF500B4D772 /* MainCheckersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCheckersViewController.swift; sourceTree = "<group>"; };
 		F3F62E952084E2A100A674BE /* startingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startingViewController.swift; sourceTree = "<group>"; };
@@ -242,12 +242,11 @@
 		FE159E35207E40F80075C533 /* ticTacToe */ = {
 			isa = PBXGroup;
 			children = (
+				FE46455720862C3600FBF4D3 /* Main */,
 				C41036E7206E268200423D7D /* LobbyANDGame */,
 				C433A573206D394E00C2888F /* Profile */,
 				C433A56F206D32B800C2888F /* Ranking */,
 				C48477A6206D1B69002B6E18 /* SignInANDSignUp */,
-				FE4D552E2069024000ABF6C1 /* MainViewController.swift */,
-				FE4D55302069024000ABF6C1 /* Main.storyboard */,
 			);
 			path = ticTacToe;
 			sourceTree = "<group>";
@@ -268,6 +267,15 @@
 				FE1B8AA6207CEC6000960EEB /* RankingDamaViewController.swift */,
 			);
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		FE46455720862C3600FBF4D3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FE4D552E2069024000ABF6C1 /* MainViewController.swift */,
+				FE4D55302069024000ABF6C1 /* Main.storyboard */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		FE4D55202069023F00ABF6C1 = {
