@@ -26,51 +26,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cherryTree" translatesAutoresizingMaskIntoConstraints="NO" id="Quu-LL-nfP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cherryTree" translatesAutoresizingMaskIntoConstraints="NO" id="Quu-LL-nfP">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Oyc-Xm-9E9">
-                                <rect key="frame" x="100" y="114" width="176" height="50"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24i-Qf-DmL">
-                                        <rect key="frame" x="0.0" y="0.0" width="176" height="50"/>
-                                        <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="36"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <size key="shadowOffset" width="0.0" height="2"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="24i-Qf-DmL" secondAttribute="trailing" id="Z0r-Vf-PEZ"/>
-                                    <constraint firstAttribute="bottom" secondItem="24i-Qf-DmL" secondAttribute="bottom" id="bT3-Eb-a8c"/>
-                                    <constraint firstItem="24i-Qf-DmL" firstAttribute="leading" secondItem="Oyc-Xm-9E9" secondAttribute="leading" id="bx5-Di-FQK"/>
-                                    <constraint firstItem="24i-Qf-DmL" firstAttribute="top" secondItem="Oyc-Xm-9E9" secondAttribute="top" id="ryO-AH-nvD"/>
-                                </constraints>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Chv-e2-twy">
-                                <rect key="frame" x="30" y="74" width="58" height="35"/>
-                                <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="17"/>
-                                <size key="titleShadowOffset" width="0.0" height="1"/>
-                                <state key="normal" title="Home">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="goHome:" destination="Kyp-9A-6zI" eventType="touchUpInside" id="VqA-jw-T5h"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SrW-1U-p5c">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24i-Qf-DmL">
+                                <rect key="frame" x="100" y="99" width="176" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="0.0" height="2"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SrW-1U-p5c">
                                 <rect key="frame" x="161" y="484.66666666666669" width="53.333333333333343" height="28.000000000000057"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="CatCafe" family="CatCafe" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tN-cm-QZc">
-                                <rect key="frame" x="301" y="74" width="44" height="35"/>
-                                <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="17"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tN-cm-QZc">
+                                <rect key="frame" x="309" y="77" width="30" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <size key="titleShadowOffset" width="0.0" height="1"/>
                                 <state key="normal" title="Edit">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -80,40 +61,34 @@
                                     <segue destination="819-g1-KOZ" kind="show" id="WJE-ux-Wuh"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DV-dB-ViT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DV-dB-ViT">
                                 <rect key="frame" x="121" y="380" width="134" height="34.666666666666686"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="CatCafe" family="CatCafe" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bYl-jj-dZj">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bYl-jj-dZj">
                                 <rect key="frame" x="87" y="172" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="6KC-mf-n1F"/>
-                                    <constraint firstAttribute="width" constant="200" id="cwD-4o-Z7Y"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Chv-e2-twy">
+                                <rect key="frame" x="37" y="75" width="46" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <size key="titleShadowOffset" width="0.0" height="1"/>
+                                <state key="normal" title="Home">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="goHome:" destination="Kyp-9A-6zI" eventType="touchUpInside" id="VqA-jw-T5h"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Chv-e2-twy" firstAttribute="leading" secondItem="K59-b7-4OJ" secondAttribute="leading" constant="30" id="2az-Dj-cgi"/>
-                            <constraint firstItem="5tN-cm-QZc" firstAttribute="top" secondItem="K59-b7-4OJ" secondAttribute="top" constant="30" id="4gk-Si-cv6"/>
-                            <constraint firstItem="Quu-LL-nfP" firstAttribute="top" secondItem="zu9-tj-OZt" secondAttribute="top" id="AOh-sT-EyV"/>
-                            <constraint firstItem="Chv-e2-twy" firstAttribute="top" secondItem="K59-b7-4OJ" secondAttribute="top" constant="30" id="M3a-xW-ovU"/>
-                            <constraint firstItem="Quu-LL-nfP" firstAttribute="bottom" secondItem="K59-b7-4OJ" secondAttribute="bottom" id="Pew-kE-MQs"/>
-                            <constraint firstItem="Oyc-Xm-9E9" firstAttribute="centerX" secondItem="9DV-dB-ViT" secondAttribute="centerX" id="ZRk-hN-fyw"/>
-                            <constraint firstItem="9DV-dB-ViT" firstAttribute="centerX" secondItem="zu9-tj-OZt" secondAttribute="centerX" id="cUd-mE-yRz"/>
-                            <constraint firstItem="K59-b7-4OJ" firstAttribute="trailing" secondItem="5tN-cm-QZc" secondAttribute="trailing" constant="30" id="hMk-w8-qdi"/>
-                            <constraint firstItem="bYl-jj-dZj" firstAttribute="top" secondItem="Oyc-Xm-9E9" secondAttribute="bottom" constant="8" id="hlH-Mk-BWx"/>
-                            <constraint firstItem="SrW-1U-p5c" firstAttribute="top" secondItem="9DV-dB-ViT" secondAttribute="bottom" constant="70.000000000000057" id="jG1-xb-2kL"/>
-                            <constraint firstItem="Oyc-Xm-9E9" firstAttribute="top" secondItem="K59-b7-4OJ" secondAttribute="top" constant="70" id="m4U-t5-Vzw"/>
-                            <constraint firstItem="9DV-dB-ViT" firstAttribute="top" secondItem="bYl-jj-dZj" secondAttribute="bottom" constant="8" id="mJ6-aA-C8C"/>
-                            <constraint firstItem="SrW-1U-p5c" firstAttribute="centerX" secondItem="zu9-tj-OZt" secondAttribute="centerX" id="nid-vG-5rt"/>
-                            <constraint firstItem="Quu-LL-nfP" firstAttribute="leading" secondItem="zu9-tj-OZt" secondAttribute="leading" id="wDU-AA-qja"/>
-                            <constraint firstItem="bYl-jj-dZj" firstAttribute="centerX" secondItem="zu9-tj-OZt" secondAttribute="centerX" id="zoo-QL-QMI"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="K59-b7-4OJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="G3j-mL-9P0">
@@ -122,7 +97,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="avatarImage" destination="bYl-jj-dZj" id="j4j-K9-CrV"/>
+                        <outlet property="backgroundImage" destination="Quu-LL-nfP" id="ofD-Ig-XbH"/>
+                        <outlet property="editButton" destination="5tN-cm-QZc" id="KQf-tU-CbE"/>
+                        <outlet property="homeButton" destination="Chv-e2-twy" id="ycR-aF-Sh0"/>
                         <outlet property="nickNameLabel" destination="9DV-dB-ViT" id="wrP-BQ-oeM"/>
+                        <outlet property="profileLabel" destination="24i-Qf-DmL" id="cwg-sX-Z6O"/>
                         <outlet property="stateLabel" destination="SrW-1U-p5c" id="aHM-NG-izc"/>
                     </connections>
                 </viewController>

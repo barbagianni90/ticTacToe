@@ -23,6 +23,9 @@ class StartViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     
     var images = ["iconTris", "checkIcon2"]
+
+    
+    @IBOutlet weak var backgroundImage: UIImageView!
     
 
 
@@ -44,6 +47,29 @@ class StartViewController: UIViewController, UICollectionViewDelegate, UICollect
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        
+        
+        // background image constraints
+        
+        backgroundImage.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint(item: backgroundImage, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 0).isActive = true
+        
+        NSLayoutConstraint(item: backgroundImage, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+        
+        NSLayoutConstraint(item: backgroundImage, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 0).isActive = true
+        
+        NSLayoutConstraint(item: backgroundImage, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: 0).isActive = true
+        
+        NSLayoutConstraint(item: backgroundImage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: collectionView.frame.width).isActive = true
+        
+        NSLayoutConstraint(item: backgroundImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: collectionView.frame.height).isActive = true
+        
+        backgroundImage.contentMode = .scaleAspectFill
+        
+
+
+
     
         
     }
