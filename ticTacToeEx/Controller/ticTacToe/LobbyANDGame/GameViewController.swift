@@ -380,26 +380,6 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-        let ref = Database.database().reference()
-        
-        ref.child("Players").child("\(self.enemy.id)").observeSingleEvent(of: .value, with: { (snap) in
-            
-            let value = snap.value as! [String : Any]
-            
-            let decodeString = Data(base64Encoded: value["image"] as! String)
-            
-            let image = UIImage(data: decodeString!)
-            
-            let imagePNG = UIImagePNGRepresentation(image!)
-            
-            self.enemy.image = UIImage(data: imagePNG!)
-            
-            self.enemy.nickName = value["nickname"] as! String
-            
-        })
-    }
     
     @IBAction func mossa(_ sender: UIButton) {
         

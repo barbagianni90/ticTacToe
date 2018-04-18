@@ -75,8 +75,16 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         
                         let enemy = User()
                         enemy.nickName = "\(value)"
-                        segue.enemy = enemy
+                    
+                        for user in self.players {
                         
+                            if user.nickName == value {
+                            
+                                enemy.image = user.image
+                            }
+                        }
+                        segue.enemy = enemy
+                    
                         segue.fPlayer = false
                         segue.sPlayer = true
                         
@@ -109,8 +117,16 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     
                     let enemy = User()
                     enemy.nickName = "\(self.nickNameSfidato)"
-                    segue.enemy = enemy
+                    
+                    for user in self.players {
                         
+                        if user.nickName == self.nickNameSfidato {
+                            
+                            enemy.image = user.image
+                        }
+                    }
+                    segue.enemy = enemy
+                    
                     segue.fPlayer = true
                     segue.sPlayer = false
                         
