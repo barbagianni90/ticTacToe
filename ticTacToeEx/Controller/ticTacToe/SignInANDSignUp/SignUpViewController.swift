@@ -18,7 +18,9 @@ import FirebaseDatabase
 import FirebaseStorage
 
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, URLSessionDataDelegate{
+    
+    let url = "http://10.0.101.6:8081/api/jsonws/add-user-portlet.appuser/get-users"
     
     static var imageProfileSelected: UIImage!
     
@@ -56,6 +58,7 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func submitButton(_ sender: Any) {
+        
         
         if emailTextField.text == "" || passTextField.text == "" {
             let alertController = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
@@ -102,13 +105,13 @@ class SignUpViewController: UIViewController {
                             let ref = Database.database().reference()
                             
                             ref.child("Players").child("\(MainViewController.user.id)").setValue(
-                                    [   "nickname" : "\(name)",
-                                        "email" : "\(self.emailTextField.text as! String)",
-                                        "stato" : "online",
-                                        "vittorie" : "0",
-                                        "sconfitte" : "0",
-                                        "invitatoDa" : "",
-                                        "invitoAccettato" : ""  ])
+                                [   "nickname" : "\(name)",
+                                    "email" : "\(self.emailTextField.text as! String)",
+                                    "stato" : "online",
+                                    "vittorie" : "0",
+                                    "sconfitte" : "0",
+                                    "invitatoDa" : "",
+                                    "invitoAccettato" : ""  ])
                             
                             if SignUpViewController.imageProfileSelected != nil {
                                 
@@ -120,7 +123,7 @@ class SignUpViewController: UIViewController {
                                 
                                 MainViewController.user.image = SignUpViewController.imageProfileSelected
                             }
-                            
+                                
                             else {
                                 
                                 let uploadData = UIImagePNGRepresentation(self.resizeImage(image:UIImage(named: "default.jpg")!))!
@@ -133,15 +136,7 @@ class SignUpViewController: UIViewController {
                             }
                             
                         }
-                        /*
-                        let sRef = Storage.storage().reference()
                         
-                        let uploadData = UIImagePNGRepresentation(SignUpViewController.imageProfileSelected)!
-                        
-                        let base64Image = uploadData.base64EncodedData()
-                        
-                        sRef.child("Images").child("\(MainViewController.user.nickName)").child("myImage").putData(base64Image)
-                        */                        
                         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
                         
                     }))
@@ -157,6 +152,11 @@ class SignUpViewController: UIViewController {
                     self.present(alertController, animated: true, completion: nil)
                 }
             }
+            
+            let URLSessionConfig = URLSessionConfiguration.default
+            let session = URLSession(configuration: URLSessionConfig, delegate: self, delegateQueue: OperationQueue.main)
+            session.dataTask(with: URL(string: self.url)!)
+            
         }
     }
     
@@ -534,6 +534,22 @@ class SignUpViewController: UIViewController {
     @IBAction func goHome(_ sender: Any) {
         
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
+        
+        let jsonObj: Array<[String : Any]> = try! JSONSerialization.jsonObject(with: data, options: .allowFragments) as! Array<[String : Any]>
+        
+        for obj in jsonObj {
+            
+             if obj["password"] as! String == self.passTextField.text as! String && obj["email"] as! String == self.emailTextField.text as! String {
+                
+                if obj["confirm"] as! Int == 0  {
+                    
+                    
+                }
+            }
+        }
     }
 }
 
