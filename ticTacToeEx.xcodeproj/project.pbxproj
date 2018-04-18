@@ -159,9 +159,9 @@
 			children = (
 				C41036EA206E277C00423D7D /* CustomLobbyCell.swift */,
 				C41036EC206E284E00423D7D /* LobbyViewController.swift */,
-				FEC8A0A4206BA0A40031001B /* GameViewController.swift */,
 				C445E5712074CE5C00241182 /* CustomEnemyChatCell.swift */,
 				C445E5732074CE7400241182 /* CustomUserChatCell.swift */,
+				FEC8A0A4206BA0A40031001B /* GameViewController.swift */,
 				FE159E38207E47960075C533 /* LobbyANDGame.storyboard */,
 			);
 			path = LobbyANDGame;
