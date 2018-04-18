@@ -111,6 +111,16 @@ class EditProfileViewController: UIViewController {
     
     @IBAction func done(_ sender: Any) {
         
+        self.activityIndicator.center = self.view.center
+        self.activityIndicator.topAnchor
+        self.activityIndicator.addConstraint(NSLayoutConstraint(item: self.activityIndicator, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 6))
+        self.activityIndicator.hidesWhenStopped = true
+        self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        self.view.addSubview(self.activityIndicator)
+        
+        self.activityIndicator.startAnimating()
+        
+        
         if nickNameTextField.text == "" && emailTextField.text == "" && passTextField.text == "" && EditProfileViewController.imageSelected == nil {
             let alertController = UIAlertController(title: "Error", message: "Nessuna modifica effettuata", preferredStyle: .alert)
             
@@ -125,14 +135,6 @@ class EditProfileViewController: UIViewController {
             let alert = UIAlertController(title: "Confermare le modifiche?", message: nil, preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-                
-                self.activityIndicator.center = self.view.center
-                self.activityIndicator.hidesWhenStopped = true
-                self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-                self.view.addSubview(self.activityIndicator)
-                
-                self.activityIndicator.startAnimating()
-                UIApplication.shared.beginIgnoringInteractionEvents()
                 
                 let ref = Database.database().reference()
                 
@@ -177,10 +179,11 @@ class EditProfileViewController: UIViewController {
                     MainViewController.user.image = EditProfileViewController.imageSelected
                     self.dismiss(animated: true, completion: nil)
                 }
+                
+                self.activityIndicator.stopAnimating()
+                UIApplication.shared.endIgnoringInteractionEvents()
+                
             }))
-            
-            self.activityIndicator.stopAnimating()
-            UIApplication.shared.endIgnoringInteractionEvents()
             
             self.present(alert, animated: true)
         }
