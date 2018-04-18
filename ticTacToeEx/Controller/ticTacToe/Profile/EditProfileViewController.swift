@@ -174,32 +174,10 @@ class EditProfileViewController: UIViewController {
                     
                     ref.child("Players").child("\(MainViewController.user.id)").child("image").setValue(base64ImageString)
                     
-                    /*
-                    let sRef = Storage.storage().reference()
-                    
-                    let uploadData = UIImagePNGRepresentation(EditProfileViewController.imageSelected)
-                    
-                    sRef.child("Images").child("\(MainViewController.user.nickName)").child("myImage.png").putData(uploadData!)
-                    */
-                    
                     MainViewController.user.image = EditProfileViewController.imageSelected
                     self.activityIndicator.stopAnimating()
                     UIApplication.shared.endIgnoringInteractionEvents()
                     self.dismiss(animated: true, completion: nil)
-                    
-                    /*
-                    sRef.child("Images").child("\(MainViewController.user.nickName)").child("myImage.png") .getData(maxSize: 20 * 1024 * 1024) { data, error in
-                        if error != nil {
-                            print(error as Any)
-                        }
-                        else {
-                            MainViewController.user.image = UIImage(data: data!)
-                            self.activityIndicator.stopAnimating()
-                            UIApplication.shared.endIgnoringInteractionEvents()
-                            self.dismiss(animated: true, completion: nil)
-                        }
-                    }
-                    */
                 }
             }))
             

@@ -208,11 +208,11 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if fPlayer == true && sPlayer == false {
             
-            nomeTabella = "\(MainViewController.user.id)VS\(self.enemy.id)"
+            nomeTabella = "\(MainViewController.user.nickName)VS\(self.enemy.nickName)"
         }
         else if fPlayer == false && sPlayer == true {
             
-            nomeTabella = "\(self.enemy.id)VS\(MainViewController.user.id)"
+            nomeTabella = "\(self.enemy.nickName)VS\(MainViewController.user.nickName)"
         }
         
         for i in 0...2 {
@@ -298,13 +298,6 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         ref.child("\(nomeTabella)").observe(.value) { (snap) in
             
             let celle = snap.value as! [String : Any]
-            
-            if self.fPlayer == true {
-                print("--------Sono \(MainViewController.user.nickName) e sono il primo giocatore----------")
-            }
-            else {
-                print("--------Sono \(MainViewController.user.nickName) e sono il secondo giocatore----------")
-            }
             
             for(key, value) in celle {
                 

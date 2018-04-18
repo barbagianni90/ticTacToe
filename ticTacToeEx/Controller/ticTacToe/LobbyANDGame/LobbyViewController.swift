@@ -55,16 +55,26 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
                 ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("occupato")
                 
+                var idNickInvito = ""
+                
+                for user in self.players {
+                    
+                    if user.nickName == value {
+                        
+                        idNickInvito = user.id
+                    }
+                }
+                
                 let alert = UIAlertController(title: "\(value) ti ha invitato a giocare", message: nil, preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "Accetto", style: .default, handler: { action in
                     
-                    ref.child("Players").child("\(value)").child("invitoAccettato").setValue("Si")
+                    ref.child("Players").child("\(idNickInvito)").child("invitoAccettato").setValue("Si")
                         
                         let segue =  UIStoryboard(name:"LobbyANDGame",bundle:nil).instantiateViewController(withIdentifier: "Gioco") as! GameViewController
                         
                         let enemy = User()
-                        enemy.id = "\(value)"
+                        enemy.nickName = "\(value)"
                         segue.enemy = enemy
                         
                         segue.fPlayer = false
@@ -76,8 +86,8 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
                 alert.addAction(UIAlertAction(title: "Rifiuto", style: .default, handler: { action in
                     
-                    ref.child("Players").child("\(value)").child("invitoAccettato").setValue("No")
-                    ref.child("Players").child("\(MainViewController.user.nickName)").child("stato").setValue("online")
+                    ref.child("Players").child("\(idNickInvito)").child("invitoAccettato").setValue("No")
+                    ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
                 }))
                 
                 self.present(alert, animated: true)
@@ -107,7 +117,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     self.present(segue, animated: true, completion: nil)
                 }
                 else {
-                    ref.child("Players").child("\(MainViewController.user.nickName)").child("stato").setValue("online")
+                    ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
                 }
             }
         }
@@ -143,7 +153,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
                 if user.nickName == currentCell.nickNameLabel.text as! String {
                     
-                    ref.child("Players").child("\(user.id)").child("invitatoDa").setValue("\(MainViewController.user.id)")
+                    ref.child("Players").child("\(user.id)").child("invitatoDa").setValue("\(MainViewController.user.nickName)")
                 }
             }
             
