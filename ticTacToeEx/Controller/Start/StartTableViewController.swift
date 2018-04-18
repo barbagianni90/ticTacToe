@@ -44,6 +44,8 @@ class StartTableViewController: UITableViewController {
             }else{
                 let profile = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "profileInfo")
                 self.present(profile,animated: true,completion: nil)
+                
+                startingViewController.first = true
             }
         }else if indexPath.row == 1{
             if MainViewController.user.nickName == ""{
