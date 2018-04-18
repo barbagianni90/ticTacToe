@@ -422,9 +422,9 @@ class SignUpViewController: UIViewController, URLSessionDataDelegate{
         
         NSLayoutConstraint(item: stackView, attribute: .top, relatedBy: .equal, toItem: avatarLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 120).isActive = true
         
-        NSLayoutConstraint(item: stackView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width - 40).isActive = true
+        NSLayoutConstraint(item: stackView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 1.25).isActive = true
         
-        NSLayoutConstraint(item: stackView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height / 17).isActive = true
+        NSLayoutConstraint(item: stackView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 7.25).isActive = true
         
         
         stackView.distribution = .fillEqually
@@ -436,17 +436,21 @@ class SignUpViewController: UIViewController, URLSessionDataDelegate{
         
         cameraButton.translatesAutoresizingMaskIntoConstraints = false
         
+//        cameraButton.layer.borderColor = UIColor.black.cgColor
+//        cameraButton.layer.borderWidth = 0.5
+        
         NSLayoutConstraint(item: cameraButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         
-        NSLayoutConstraint(item: cameraButton, attribute: .top, relatedBy: .equal, toItem: stackView, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 30).isActive = true
+        NSLayoutConstraint(item: cameraButton, attribute: .top, relatedBy: .equal, toItem: stackView, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 50).isActive = true
         
         NSLayoutConstraint(item: cameraButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 6).isActive = true
         
-        NSLayoutConstraint(item: cameraButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 6).isActive = true
+        NSLayoutConstraint(item: cameraButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height / 12).isActive = true
         
-        cameraButton.setImage(UIImage(named: "camera.png"), for: .normal)
+        cameraButton.setImage(UIImage(named: "camera"), for: .normal)
         
         cameraButton.contentMode = .scaleAspectFill
+        
         
         
         
@@ -501,8 +505,8 @@ class SignUpViewController: UIViewController, URLSessionDataDelegate{
         
         submitButton.translatesAutoresizingMaskIntoConstraints = false
         
-//        submitButton.layer.borderWidth = 0.5
-//        submitButton.layer.borderColor = UIColor.black.cgColor
+        submitButton.layer.borderWidth = 0.5
+        submitButton.layer.borderColor = UIColor.black.cgColor
         
         NSLayoutConstraint(item: submitButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         
@@ -510,14 +514,14 @@ class SignUpViewController: UIViewController, URLSessionDataDelegate{
         
         NSLayoutConstraint(item: submitButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 3).isActive = true
         
-        NSLayoutConstraint(item: submitButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height / 8).isActive = true
+        NSLayoutConstraint(item: submitButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height / 6).isActive = true
         
         submitButton.setTitle( "Submit", for: .normal)
         
         submitButton.titleLabel?.adjustsFontSizeToFitWidth = true
         submitButton.titleLabel?.baselineAdjustment = .alignCenters
         
-        submitButton.titleLabel?.font = UIFont(name: "shojumaru", size: UIScreen.main.bounds.width / 3)
+        submitButton.titleLabel?.font = UIFont(name: "shojumaru", size: UIScreen.main.bounds.height / 6)
         
         
         

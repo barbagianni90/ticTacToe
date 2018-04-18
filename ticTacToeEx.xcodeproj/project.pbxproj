@@ -24,7 +24,6 @@
 		C445E5742074CE7400241182 /* CustomUserChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E5732074CE7400241182 /* CustomUserChatCell.swift */; };
 		C445E5762074D00B00241182 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E5752074D00B00241182 /* Message.swift */; };
 		C445E5782075057100241182 /* PhotoProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E5772075057100241182 /* PhotoProfile.swift */; };
-		C445E57C20750AED00241182 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = C445E57B20750AED00241182 /* camera.png */; };
 		C48477A1206D15C8002B6E18 /* SignInANDSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48477A0206D15C8002B6E18 /* SignInANDSignUp.storyboard */; };
 		C4E2E64D2077C1A9005CDD72 /* croce.png in Resources */ = {isa = PBXBuildFile; fileRef = C4E2E64B2077C1A9005CDD72 /* croce.png */; };
 		C4E2E64E2077C1A9005CDD72 /* cerchio.png in Resources */ = {isa = PBXBuildFile; fileRef = C4E2E64C2077C1A9005CDD72 /* cerchio.png */; };
@@ -78,7 +77,6 @@
 		C445E5732074CE7400241182 /* CustomUserChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserChatCell.swift; sourceTree = "<group>"; };
 		C445E5752074D00B00241182 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		C445E5772075057100241182 /* PhotoProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoProfile.swift; sourceTree = "<group>"; };
-		C445E57B20750AED00241182 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		C48477A0206D15C8002B6E18 /* SignInANDSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInANDSignUp.storyboard; sourceTree = "<group>"; };
 		C4E2E64B2077C1A9005CDD72 /* croce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = croce.png; sourceTree = "<group>"; };
 		C4E2E64C2077C1A9005CDD72 /* cerchio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cerchio.png; sourceTree = "<group>"; };
@@ -302,7 +300,6 @@
 				FE4D552C2069023F00ABF6C1 /* AppDelegate.swift */,
 				C433A56D206D2D1400C2888F /* User.swift */,
 				C445E5752074D00B00241182 /* Message.swift */,
-				C445E57B20750AED00241182 /* camera.png */,
 				FEC8A085206B84D60031001B /* Controller */,
 				FE4D55332069024000ABF6C1 /* Assets.xcassets */,
 				FE4D55352069024000ABF6C1 /* LaunchScreen.storyboard */,
@@ -427,7 +424,6 @@
 				C4E2E64D2077C1A9005CDD72 /* croce.png in Resources */,
 				C4E2E64E2077C1A9005CDD72 /* cerchio.png in Resources */,
 				FE1B8AA1207CB3D700960EEB /* Raleway-ExtraLight.ttf in Resources */,
-				C445E57C20750AED00241182 /* camera.png in Resources */,
 				C41036FC206E6C5900423D7D /* avatar2.png in Resources */,
 				F3CEB71C207CABD200B4D772 /* MainCheckers.storyboard in Resources */,
 				FE4D55342069024000ABF6C1 /* Assets.xcassets in Resources */,

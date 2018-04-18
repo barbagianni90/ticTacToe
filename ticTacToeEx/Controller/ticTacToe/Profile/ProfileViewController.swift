@@ -26,12 +26,12 @@ class ProfileViewController: UIViewController {
         
         
         homeButton.translatesAutoresizingMaskIntoConstraints = false
-                homeButton.layer.borderWidth = 0.5
-                homeButton.layer.borderColor = UIColor.black.cgColor
+//                homeButton.layer.borderWidth = 0.5
+//                homeButton.layer.borderColor = UIColor.black.cgColor
         
         NSLayoutConstraint(item: homeButton, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: UIScreen.main.bounds.width / 15).isActive = true
         
-        NSLayoutConstraint(item: homeButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 20).isActive = true
+        NSLayoutConstraint(item: homeButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 15).isActive = true
         
         NSLayoutConstraint(item: homeButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 7).isActive = true
         
@@ -56,7 +56,7 @@ class ProfileViewController: UIViewController {
         
         NSLayoutConstraint(item: editButton, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: UIScreen.main.bounds.width / -15).isActive = true
         
-        NSLayoutConstraint(item: editButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 20).isActive = true
+        NSLayoutConstraint(item: editButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 15).isActive = true
         
         NSLayoutConstraint(item: editButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 7).isActive = true
         
@@ -98,12 +98,13 @@ class ProfileViewController: UIViewController {
         
         NSLayoutConstraint(item: profileLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 2).isActive = true
         
-        NSLayoutConstraint(item: profileLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height / 8).isActive = true
+        NSLayoutConstraint(item: profileLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height / 6).isActive = true
         
         profileLabel.adjustsFontSizeToFitWidth = true
         profileLabel.baselineAdjustment = .alignCenters
+        profileLabel.textAlignment = .center
         
-        let attTitleLabel = [NSAttributedStringKey.font: UIFont(name: "shojumaru", size: UIScreen.main.bounds.width / 2)]
+        let attTitleLabel = [NSAttributedStringKey.font: UIFont(name: "shojumaru", size: UIScreen.main.bounds.height / 6)]
         let profileLabelText = "Profile"
         let attStr = NSMutableAttributedString(string: profileLabelText, attributes: attTitleLabel)
         profileLabel.attributedText = attStr
@@ -121,11 +122,11 @@ class ProfileViewController: UIViewController {
         
         NSLayoutConstraint(item: avatarImage, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         
-        NSLayoutConstraint(item: avatarImage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 2).isActive = true
+        NSLayoutConstraint(item: avatarImage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 4).isActive = true
 
-        NSLayoutConstraint(item: avatarImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 2).isActive = true
+        NSLayoutConstraint(item: avatarImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 4).isActive = true
         
-        avatarImage.layer.cornerRadius = (UIScreen.main.bounds.width / 2) / 2
+        avatarImage.layer.cornerRadius = (UIScreen.main.bounds.width / 4) / 2
         avatarImage.contentMode = .scaleAspectFill
         
         
@@ -142,14 +143,14 @@ class ProfileViewController: UIViewController {
         
         NSLayoutConstraint(item: nickNameLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 3).isActive = true
         
-        NSLayoutConstraint(item: nickNameLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height / 20).isActive = true
+        NSLayoutConstraint(item: nickNameLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height / 10).isActive = true
         
         nickNameLabel.adjustsFontSizeToFitWidth = true
         nickNameLabel.baselineAdjustment = .alignCenters
         nickNameLabel.textAlignment = .center
         
         
-        let attUserLabel = [NSAttributedStringKey.font: UIFont(name: "catCafe", size: UIScreen.main.bounds.width / 3)]
+        let attUserLabel = [NSAttributedStringKey.font: UIFont(name: "catCafe", size: UIScreen.main.bounds.height / 10)]
         let nickLabelText = ""
         let attNick = NSMutableAttributedString(string: nickLabelText, attributes: attUserLabel)
         nickNameLabel.attributedText = attNick
@@ -167,13 +168,13 @@ class ProfileViewController: UIViewController {
         NSLayoutConstraint(item: stateLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         
         NSLayoutConstraint(item: stateLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 4).isActive = true
-        NSLayoutConstraint(item: stateLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 20).isActive = true
+        NSLayoutConstraint(item: stateLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 15).isActive = true
         
         stateLabel.adjustsFontSizeToFitWidth = true
         stateLabel.baselineAdjustment = .alignCenters
         stateLabel.textAlignment = .center
         
-        let attStateLabel = [NSAttributedStringKey.font: UIFont(name: "catCafe", size: UIScreen.main.bounds.width / 4)]
+        let attStateLabel = [NSAttributedStringKey.font: UIFont(name: "catCafe", size: UIScreen.main.bounds.size.height / 15)]
         let stateLabelText = ""
         let attState = NSMutableAttributedString(string: stateLabelText, attributes: attStateLabel)
         nickNameLabel.attributedText = attState

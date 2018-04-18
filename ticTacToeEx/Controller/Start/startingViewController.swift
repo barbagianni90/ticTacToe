@@ -30,6 +30,7 @@ class startingViewController: UIViewController, UICollectionViewDelegate, UIColl
         background.clipsToBounds = true
         background.image = UIImage(named: "start")
         background.center = view.center
+        
         //blur effect
         let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.light))
         blurEffect.frame = background.bounds

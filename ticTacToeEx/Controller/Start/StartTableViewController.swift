@@ -21,6 +21,9 @@ class StartTableViewController: UITableViewController {
             label.text = "Log out"
         }
         label.adjustsFontForContentSizeCategory = true
+        
+        tableView.backgroundColor = UIColor.clear
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
