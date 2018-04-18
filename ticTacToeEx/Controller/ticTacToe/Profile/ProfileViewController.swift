@@ -11,12 +11,154 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var profileLabel: UILabel!
+    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var stateLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // HOME BUTTON
+        
+        
+        homeButton.translatesAutoresizingMaskIntoConstraints = false
+                homeButton.layer.borderWidth = 0.5
+                homeButton.layer.borderColor = UIColor.black.cgColor
+        
+        NSLayoutConstraint(item: homeButton, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: UIScreen.main.bounds.width / 15).isActive = true
+        
+        NSLayoutConstraint(item: homeButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 20).isActive = true
+        
+        NSLayoutConstraint(item: homeButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 7).isActive = true
+        
+        NSLayoutConstraint(item: homeButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 7).isActive = true
+        
+        
+        homeButton.setTitle("Home", for: .normal)
+        homeButton.titleLabel?.font = UIFont(name: "shojumaru", size: UIScreen.main.bounds.width / 7)
+        
+        
+        homeButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        homeButton.titleLabel?.baselineAdjustment = .alignCenters
+        
+        
+        
+        // EDIT BUTTON
+        
+        
+        editButton.translatesAutoresizingMaskIntoConstraints = false
+        editButton.layer.borderWidth = 0.5
+        editButton.layer.borderColor = UIColor.black.cgColor
+        
+        NSLayoutConstraint(item: editButton, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: UIScreen.main.bounds.width / -15).isActive = true
+        
+        NSLayoutConstraint(item: editButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 20).isActive = true
+        
+        NSLayoutConstraint(item: editButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 7).isActive = true
+        
+        NSLayoutConstraint(item: editButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 7).isActive = true
+        
+        
+        editButton.setTitle("Edit", for: .normal)
+        editButton.titleLabel?.font = UIFont(name: "shojumaru", size: UIScreen.main.bounds.width / 7)
+        
+        
+        editButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        editButton.titleLabel?.baselineAdjustment = .alignCenters
+        
+        
+        // BACKGROUND
+        
+        backgroundImage.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint(item: backgroundImage, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        
+        NSLayoutConstraint(item: backgroundImage, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
+        
+        
+        NSLayoutConstraint(item: backgroundImage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width).isActive = true
+        
+        NSLayoutConstraint(item: backgroundImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height).isActive = true
+        
+        backgroundImage.contentMode = .scaleAspectFill
+        
+        
+        
+        // PROFILE LABEL
+        
+        profileLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint(item: profileLabel, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 6).isActive = true
+        
+        NSLayoutConstraint(item: profileLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        
+        NSLayoutConstraint(item: profileLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 2).isActive = true
+        
+        NSLayoutConstraint(item: profileLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height / 8).isActive = true
+        
+        profileLabel.adjustsFontSizeToFitWidth = true
+        profileLabel.baselineAdjustment = .alignCenters
+        
+        let attTitleLabel = [NSAttributedStringKey.font: UIFont(name: "shojumaru", size: profileLabel.frame.width)]
+        let profileLabelText = "Profile"
+        let attStr = NSMutableAttributedString(string: profileLabelText, attributes: attTitleLabel)
+        profileLabel.attributedText = attStr
+        
+        
+        
+        // AVATAR IMAGE
+        
+        avatarImage.translatesAutoresizingMaskIntoConstraints = false
+        
+        avatarImage.layer.borderColor = UIColor.black.cgColor
+        avatarImage.layer.borderWidth = 0.5
+        
+        NSLayoutConstraint(item: avatarImage, attribute: .top, relatedBy: .equal, toItem: profileLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 40).isActive = true
+        
+        NSLayoutConstraint(item: avatarImage, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        
+//        NSLayoutConstraint(item: avatarImage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: (UIScreen.main.bounds.width / 3)*2).isActive = true
+//
+//        NSLayoutConstraint(item: avatarImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: (UIScreen.main.bounds.width / 3)*2).isActive = true
+        
+        avatarImage.contentMode = .scaleAspectFill
+        
+        
+        // NICKNAME LABEL
+        
+        nickNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        NSLayoutConstraint(item: nickNameLabel, attribute: .top, relatedBy: .equal, toItem: avatarImage, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 60).isActive = true
+        
+        NSLayoutConstraint(item: nickNameLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        
+        NSLayoutConstraint(item: nickNameLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 3).isActive = true
+        
+        NSLayoutConstraint(item: nickNameLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height / 20).isActive = true
+        
+        nickNameLabel.adjustsFontSizeToFitWidth = true
+        nickNameLabel.baselineAdjustment = .alignCenters
+        
+        
+        let attUserLabel = [NSAttributedStringKey.font: UIFont(name: "shojumaru", size: nickNameLabel.frame.width)]
+        let nickLabelText = ""
+        let attNick = NSMutableAttributedString(string: nickLabelText, attributes: attUserLabel)
+        nickNameLabel.attributedText = attNick
+        
+        
+        
+        
+        
+        // status label
+        
+        
+        
+        
         
     }
     
