@@ -233,7 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				F318762E2085E85100482CAD /* Game */,
-				FE1B8AA3207CEC3700960EEB /* New Group */,
+				FE1B8AA3207CEC3700960EEB /* Ranking */,
 				FE1B8AA2207CE47400960EEB /* Main */,
 			);
 			path = Checkers;
@@ -261,13 +261,13 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		FE1B8AA3207CEC3700960EEB /* New Group */ = {
+		FE1B8AA3207CEC3700960EEB /* Ranking */ = {
 			isa = PBXGroup;
 			children = (
 				FE159E2D207E3D3B0075C533 /* RankingDama.storyboard */,
 				FE1B8AA6207CEC6000960EEB /* RankingDamaViewController.swift */,
 			);
-			path = "New Group";
+			path = Ranking;
 			sourceTree = "<group>";
 		};
 		FE4D55202069023F00ABF6C1 = {
