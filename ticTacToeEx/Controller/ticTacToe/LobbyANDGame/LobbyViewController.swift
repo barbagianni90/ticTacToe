@@ -17,6 +17,10 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var nickNameSfidato: String = ""
     
+    var statePlayerSelected: String = ""
+    
+    var selectedRow = -1
+    
     @IBOutlet weak var lobbyTable: UITableView!
     
 
@@ -41,6 +45,33 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }()
         
         self.lobbyTable.addSubview(refreshControl)
+        
+        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue:"MyNotification"), object: nil, queue: nil, using: goToGameSelected)
+    }
+    
+    func goToGameSelected(notification: Notification) {
+        
+        let ref = Database.database().reference()
+        
+        if self.statePlayerSelected == "online" {
+            
+            ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("occupato")
+            
+            for user in players {
+                
+                if user.nickName == self.nickNameSfidato{
+                    
+                    ref.child("Players").child("\(user.id)").child("invitatoDa").setValue("\(MainViewController.user.nickName)")
+                }
+            }
+            self.activityIndicator.center = self.view.center
+            self.activityIndicator.hidesWhenStopped = true
+            self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+            self.view.addSubview(self.activityIndicator)
+            
+            activityIndicator.startAnimating()
+            UIApplication.shared.beginIgnoringInteractionEvents()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -154,35 +185,27 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Pass the selected object to the new view controller.
     }
     */
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        let currentCell = tableView.cellForRow(at: indexPath) as! CustomLobbyCell
-        
-        let ref = Database.database().reference()
-        
-        if currentCell.stateLabel.text == "online" {
-            
-            ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("occupato")
-            
-            for user in players {
-                
-                if user.nickName == currentCell.nickNameLabel.text as! String {
-                    
-                    ref.child("Players").child("\(user.id)").child("invitatoDa").setValue("\(MainViewController.user.nickName)")
-                }
-            }
-            
-            self.nickNameSfidato = currentCell.nickNameLabel.text as! String
-            
-            self.activityIndicator.center = self.view.center
-            self.activityIndicator.hidesWhenStopped = true
-            self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-            self.view.addSubview(self.activityIndicator)
-            
-            activityIndicator.startAnimating()
-            UIApplication.shared.beginIgnoringInteractionEvents()
+        if self.selectedRow == indexPath.row {
+            return 115.0
         }
+        else{
+            return 45.0
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+        tableView.beginUpdates()
+        self.selectedRow = indexPath.row
+        tableView.endUpdates()
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let cell = tableView.cellForRow(at: indexPath) as! CustomLobbyCell
+        
+        self.nickNameSfidato = ConvertOptionalString.convert(cell.nickNameLabel.text!)
+        self.statePlayerSelected = ConvertOptionalString.convert(cell.stateLabel.text!)
         
     }
     
@@ -202,6 +225,19 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //cell.imageCell.transform =  CGAffineTransform(rotationAngle: (90.0 * .pi) / 180.0)
         cell.imageCell.layer.cornerRadius = cell.imageCell.frame.size.width / 2
         cell.imageCell.layer.masksToBounds = true
+        
+        cell.button1.layer.cornerRadius = cell.button1.frame.size.width / 2
+        cell.button2.layer.cornerRadius = cell.button2.frame.size.width / 2
+        cell.button3.layer.cornerRadius = cell.button3.frame.size.width / 2
+        
+        cell.button1.setBackgroundImage(UIImage(named: "iconTris"), for: .normal)
+        cell.button2.setBackgroundImage(UIImage(named: "checkIcon"), for: .normal)
+        cell.button3.setBackgroundImage(UIImage(named: "chessIcon"), for: .normal)
+        
+        cell.button3.isEnabled = false
+        cell.button3.alpha = 0.5
+        
+        tableView.rowHeight = CGFloat(45.0)
         
         return cell
     }

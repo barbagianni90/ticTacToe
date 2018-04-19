@@ -425,9 +425,7 @@ class EditProfileViewController: UIViewController {
     
     @IBAction func done(_ sender: Any) {
         
-        self.activityIndicator.center = self.view.center
-        self.activityIndicator.topAnchor
-        self.activityIndicator.addConstraint(NSLayoutConstraint(item: self.activityIndicator, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 6))
+        self.activityIndicator.center = CGPoint(x: self.view.center.x, y: UIScreen.main.bounds.height / 6)
         self.activityIndicator.hidesWhenStopped = true
         self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         self.view.addSubview(self.activityIndicator)
@@ -454,15 +452,15 @@ class EditProfileViewController: UIViewController {
                 
                 if self.nickNameTextField.text != "" {
                     
-                    ref.child("Players").child("\(MainViewController.user.id)").child("nickname").setValue("\(self.nickNameTextField.text as! String)")
+                    ref.child("Players").child("\(MainViewController.user.id)").child("nickname").setValue("\(ConvertOptionalString.convert(self.nickNameTextField.text!))")
                     
-                    MainViewController.user.nickName = self.nickNameTextField.text as! String
+                    MainViewController.user.nickName = ConvertOptionalString.convert(self.nickNameTextField.text!)
                     MainViewController.user.stato = "online"
                     
                 }
                 if self.emailTextField.text != "" {
                     
-                    if self.isValidEmail(testStr: self.emailTextField.text as! String) == false {
+                    if self.isValidEmail(testStr: ConvertOptionalString.convert(self.emailTextField.text!)) == false {
                         
                         let alertController = UIAlertController(title: "Error", message: "Please enter a valid email", preferredStyle: .alert)
                         
@@ -472,14 +470,14 @@ class EditProfileViewController: UIViewController {
                         self.present(alertController, animated: true, completion: nil)
                     }
                     
-                    Auth.auth().currentUser?.updateEmail(to: "\(self.emailTextField.text as! String)", completion: nil)
-                    ref.child("Players").child("\(MainViewController.user.id)").child("email").setValue("\(self.emailTextField.text as! String)")
+                    Auth.auth().currentUser?.updateEmail(to: "\(ConvertOptionalString.convert(self.emailTextField.text!))", completion: nil)
+                    ref.child("Players").child("\(MainViewController.user.id)").child("email").setValue("\(ConvertOptionalString.convert(self.emailTextField.text!))")
                     
                 }
                 
                 if self.passTextField.text != "" {
                     
-                    Auth.auth().currentUser?.updatePassword(to: "\(self.passTextField.text as! String)", completion: nil)
+                    Auth.auth().currentUser?.updatePassword(to: "\(ConvertOptionalString.convert(self.passTextField.text!))", completion: nil)
                 }
                 
                 if EditProfileViewController.imageSelected != nil {

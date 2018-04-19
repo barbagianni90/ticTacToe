@@ -124,7 +124,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func performAction() {
         let ref = Database.database().reference()
-        let messageText = self.textFieldTouched.text as! String
+        let messageText = ConvertOptionalString.convert(self.textFieldTouched.text!)
         let message = [
             "Message" : "\(messageText)",
             "Nickname" : "\(MainViewController.user.nickName)"
@@ -306,8 +306,8 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
                 let dati = value as! [String : String]
                 
-                let toccata = dati["toccata"] as! String
-                let daChi = dati["daChi"] as! String
+                let toccata = ConvertOptionalString.convert(dati["toccata"]!)
+                let daChi = ConvertOptionalString.convert(dati["daChi"]!)
                 
                 if toccata == "Si" {
                     if daChi == MainViewController.user.nickName && self.fPlayer == true {
@@ -392,7 +392,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.matrice[x][y] = "x"
                 
                 let ref = Database.database().reference()
-                ref.child("\(nomeTabella)").child("\(sender.titleLabel?.text as! String)").setValue(["daChi":"\(MainViewController.user.nickName)","toccata":"Si"])
+                ref.child("\(nomeTabella)").child("\(ConvertOptionalString.convert(sender.titleLabel?.text!))").setValue(["daChi":"\(MainViewController.user.nickName)","toccata":"Si"])
                 ref.child("Utility\(nomeTabella)").child("buttonEnabled").setValue("\(buttonEnabled - 1)")
             }
         }
@@ -402,7 +402,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.matrice[x][y] = "o"
                 
                 let ref = Database.database().reference()
-                ref.child("\(nomeTabella)").child("\(sender.titleLabel?.text as! String)").setValue(["daChi":"\(MainViewController.user.nickName)","toccata":"Si"])
+                ref.child("\(nomeTabella)").child("\(ConvertOptionalString.convert(sender.titleLabel?.text!))").setValue(["daChi":"\(MainViewController.user.nickName)","toccata":"Si"])
                 ref.child("Utility\(nomeTabella)").child("buttonEnabled").setValue("\(buttonEnabled - 1)")
             }
         }

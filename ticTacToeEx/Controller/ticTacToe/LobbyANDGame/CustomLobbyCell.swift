@@ -7,8 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
 class CustomLobbyCell: UITableViewCell {
+    
+    @IBOutlet weak var button1: UIButton!
+    
+    @IBOutlet weak var button2: UIButton!
+    
+    @IBOutlet weak var button3: UIButton!
     
     @IBOutlet weak var nickNameLabel: UILabel!
     
@@ -26,4 +33,9 @@ class CustomLobbyCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func selectGame(_ sender: UIButton) {
+        
+        NotificationCenter.default.post(name: Notification.Name(rawValue:"MyNotification"), object: nil)
+        
+    }
 }

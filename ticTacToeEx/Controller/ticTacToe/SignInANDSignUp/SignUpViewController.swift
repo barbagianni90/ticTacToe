@@ -19,6 +19,7 @@ import Alamofire
 class SignUpViewController: UIViewController{
     
     static var imageProfileSelected: UIImage!
+    var nicknameChose = ""
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
@@ -65,7 +66,7 @@ class SignUpViewController: UIViewController{
             present(alertController, animated: true, completion: nil)
             
         }
-        else if self.isValidEmail(testStr: self.emailTextField.text as! String) == false {
+        else if self.isValidEmail(testStr: ConvertOptionalString.convert(self.emailTextField.text)) == false {
             
             let alertController = UIAlertController(title: "Error", message: "Please enter a valid email", preferredStyle: .alert)
             
@@ -95,14 +96,15 @@ class SignUpViewController: UIViewController{
                             
                             MainViewController.user.id = (user?.uid)!
                             MainViewController.user.nickName = name
+                            self.nicknameChose = name
                             MainViewController.user.stato = "online"
-                            MainViewController.user.email = "\(self.emailTextField.text as! String)"
+                            MainViewController.user.email = "\(ConvertOptionalString.convert(self.emailTextField.text))"
                             
                             let ref = Database.database().reference()
                             
                             ref.child("Players").child("\(MainViewController.user.id)").setValue(
                                 [   "nickname" : "\(name)",
-                                    "email" : "\(self.emailTextField.text as! String)",
+                                    "email" : "\(ConvertOptionalString.convert(self.emailTextField.text))",
                                     "stato" : "online",
                                     "vittorie" : "0",
                                     "sconfitte" : "0",
@@ -132,7 +134,7 @@ class SignUpViewController: UIViewController{
                             }
                             
                         }
-                        
+                        self.getData()
                         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
                         
                     }))
@@ -148,7 +150,6 @@ class SignUpViewController: UIViewController{
                     self.present(alertController, animated: true, completion: nil)
                 }
             }
-            self.getData()
         }
     }
     
@@ -540,19 +541,27 @@ class SignUpViewController: UIViewController{
             
             let jsonObj: Array<[String : Any]> = try! JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! Array<[String : Any]>
             
+            var newUser = true
+            
             for obj in jsonObj {
                 
-                if obj["password"] as! String == self.passTextField.text as! String && obj["email"] as! String == self.emailTextField.text as! String {
+                if  ConvertOptionalString.convert(obj["password"]!) == ConvertOptionalString.convert(self.passTextField.text!) && ConvertOptionalString.convert(obj["email"]!) == ConvertOptionalString.convert(self.emailTextField.text!) {
                     
                     if obj["confirm"] as! Int == 0  {
                         
-                        self.postData(self.emailTextField.text as! String)
+                        newUser = false
+                        self.postCompleteUser(ConvertOptionalString.convert(self.emailTextField.text!))
                     }
                 }
             }
+            if newUser == true {
+                
+                self.postNewUser(self.nicknameChose, ConvertOptionalString.convert(self.emailTextField.text!), ConvertOptionalString.convert(self.passTextField.text!))
+            }
+            
         }.resume()
     }
-    func postData(_ email: String) {
+    func postCompleteUser(_ email: String) {
         
         let url = URL(string: "http://10.0.101.6:8081/api/jsonws/add-user-portlet.appuser/conf-user/-email")
         
@@ -571,52 +580,27 @@ class SignUpViewController: UIViewController{
                 print(encodingError)
             }
         })
+    }
+    func postNewUser(_ nickname: String, _ email: String, _ password: String) {
         
-        /*
-        let headers = [
-            "content-type": "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW",
-        ]
-        let parameters = [
-            ["name": "email",
-             "value": "\(email)"]]
+        let url = URL(string: "http://10.0.101.6:8081/api/jsonws/add-user-portlet.appuser/add-app-user/-tag/-email/-password")
         
-        let boundary = "----WebKitFormBoundary7MA4YWxkTrZu0gW"
-        
-        var body: Data = Data()
-        for param in parameters {
-            let paramName = param["name"]!
-            body.appendString(string: "--\(boundary)\r\n")
-            body.appendString(string: "Content-Disposition:form-data; name=\"\(paramName)\"")
-            if let paramValue = param["value"] {
-                body.appendString(string: "\r\n\r\n\(paramValue)")
-            }
-        }
-        
-        var request = URLRequest(url: url!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
-        
-        request.httpMethod = "POST"
-        request.allHTTPHeaderFields = headers
-        request.httpBody = body
-        
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
-            if (error != nil) {
-                print(error!)
-            } else {
-                let httpResponse = response as? HTTPURLResponse
-                print(httpResponse!)
-                print(data)
+        Alamofire.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append((nickname.data(using: .utf8))!, withName: "tag")
+            multipartFormData.append((email.data(using: .utf8))!, withName: "email")
+            multipartFormData.append((password.data(using: .utf8))!, withName: "password")
+            
+        }, to: url!,
+           
+           encodingCompletion: { encodingResult in
+            switch encodingResult {
+            case .success(let upload, _, _):
+                upload.responseData { response in
+                    debugPrint(response)
+                }
+            case .failure(let encodingError):
+                print(encodingError)
             }
         })
-        dataTask.resume()
-        */
     }
 }
-extension Data {
-    
-    mutating func appendString(string: String) {
-        let data = string.data(using: String.Encoding.utf8, allowLossyConversion: true)
-        append(data!)
-    }
-}
-

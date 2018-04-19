@@ -299,7 +299,7 @@ class SignInViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
             
         }
-        else if self.isValidEmail(testStr: self.emailTextField.text as! String) == false {
+        else if self.isValidEmail(testStr: ConvertOptionalString.convert(self.emailTextField.text!)) == false {
             
             let alertController = UIAlertController(title: "Error", message: "Please enter a valid email", preferredStyle: .alert)
             
@@ -317,7 +317,7 @@ class SignInViewController: UIViewController {
                     //Print into the console if successfully logged in
                     print("You have successfully logged in")
                     
-                    let emailCurrentUser = Auth.auth().currentUser?.email as! String
+                    let emailCurrentUser = ConvertOptionalString.convert(Auth.auth().currentUser?.email!)
                     
                     let ref = Database.database().reference()
                     
