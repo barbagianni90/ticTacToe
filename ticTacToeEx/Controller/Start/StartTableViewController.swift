@@ -67,7 +67,9 @@ class StartTableViewController: UITableViewController {
                 }
             }
         }
+        
         tableView.deselectRow(at: indexPath, animated: true)
+
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

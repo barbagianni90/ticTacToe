@@ -69,8 +69,15 @@
                                 <rect key="frame" x="25" y="519" width="271" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CfJ-FP-n8P">
+                                <rect key="frame" x="172" y="126" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="trisButton:" destination="ZNW-wX-8rr" eventType="touchUpInside" id="yUg-Ka-Nsk"/>
+                                </connections>
+                            </button>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kus-Lq-ifL">
-                                <rect key="frame" x="0.0" y="213" width="240" height="128"/>
+                                <rect key="frame" x="0.0" y="407" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="Hub-pI-QDi" kind="embed" id="gHj-zk-TTe"/>
@@ -89,6 +96,7 @@
                         <outlet property="conteinerView" destination="kus-Lq-ifL" id="SlH-GY-9YS"/>
                         <outlet property="menuButton" destination="taP-Ma-GJW" id="6gR-2p-JcZ"/>
                         <outlet property="sideMenuView" destination="q3R-pz-PUd" id="ELc-dP-cS3"/>
+                        <outlet property="trisButton" destination="CfJ-FP-n8P" id="5DC-Hm-wSc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bfe-1A-jNm" userLabel="First Responder" sceneMemberID="firstResponder"/>

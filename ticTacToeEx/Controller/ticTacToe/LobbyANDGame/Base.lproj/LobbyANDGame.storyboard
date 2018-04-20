@@ -164,7 +164,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GqZ-MV-b0S">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GqZ-MV-b0S">
                                 <rect key="frame" x="20" y="341" width="335" height="326"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bqb-IH-KKW">
@@ -287,21 +287,16 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="c4g-lZ-Noh" firstAttribute="leading" secondItem="GqZ-MV-b0S" secondAttribute="leading" constant="-9" id="A9q-qw-8mG"/>
-                                    <constraint firstAttribute="bottom" secondItem="bqb-IH-KKW" secondAttribute="bottom" constant="46" id="VJu-wb-bQS"/>
-                                    <constraint firstAttribute="bottom" secondItem="c4g-lZ-Noh" secondAttribute="bottom" constant="8" id="VKu-co-NqS"/>
+                                    <constraint firstAttribute="width" constant="335" id="HwV-b5-cOt"/>
+                                    <constraint firstAttribute="height" constant="326" id="Osg-np-GSE"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="335" id="baN-z1-hWU"/>
                                     <constraint firstItem="bqb-IH-KKW" firstAttribute="leading" secondItem="GqZ-MV-b0S" secondAttribute="leading" constant="-9" id="cLh-6g-48x"/>
                                     <constraint firstAttribute="trailing" secondItem="bqb-IH-KKW" secondAttribute="trailing" constant="-9" id="gDu-DG-86c"/>
                                     <constraint firstAttribute="trailing" secondItem="c4g-lZ-Noh" secondAttribute="trailing" constant="-9" id="sDX-9Y-mHH"/>
-                                    <constraint firstItem="bqb-IH-KKW" firstAttribute="top" secondItem="GqZ-MV-b0S" secondAttribute="top" constant="-9" id="xmm-Kb-eVz"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trisAgain" translatesAutoresizingMaskIntoConstraints="NO" id="O7n-ik-XJi">
-                                <rect key="frame" x="0.0" y="30" width="375" height="303"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fAQ-Cn-CPp">
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fAQ-Cn-CPp">
                                 <rect key="frame" x="20" y="52" width="90" height="102"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DXq-Bq-ypg">
                                         <rect key="frame" x="0.0" y="0.0" width="90" height="34"/>
@@ -412,14 +407,18 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8kd-hr-BYy" firstAttribute="trailing" secondItem="GqZ-MV-b0S" secondAttribute="trailing" constant="20" id="7Bp-l8-K9l"/>
+                            <constraint firstItem="GqZ-MV-b0S" firstAttribute="bottom" secondItem="8kd-hr-BYy" secondAttribute="bottom" id="YZx-Cb-vkH"/>
+                            <constraint firstItem="GqZ-MV-b0S" firstAttribute="leading" secondItem="8kd-hr-BYy" secondAttribute="leading" constant="20" id="jJu-Y3-iDR"/>
+                            <constraint firstItem="GqZ-MV-b0S" firstAttribute="top" secondItem="fAQ-Cn-CPp" secondAttribute="bottom" constant="187" id="sm6-kH-juS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8kd-hr-BYy"/>
                     </view>
                     <connections>
-                        <outlet property="bottomTextField" destination="VKu-co-NqS" id="Ocs-lU-MVb"/>
                         <outlet property="chatTable" destination="bqb-IH-KKW" id="bQO-Ju-fys"/>
                         <outlet property="stackView" destination="fAQ-Cn-CPp" id="SQW-8j-IWC"/>
                         <outlet property="textFieldMessage" destination="c4g-lZ-Noh" id="vne-g2-WpH"/>
-                        <outlet property="trisImage" destination="O7n-ik-XJi" id="2NM-7L-L6G"/>
                         <outletCollection property="buttons" destination="bFH-js-ame" collectionClass="NSMutableArray" id="2LE-ed-A8h"/>
                         <outletCollection property="buttons" destination="Xgi-7L-RzA" collectionClass="NSMutableArray" id="m56-0e-fMI"/>
                         <outletCollection property="buttons" destination="yQI-ax-sTb" collectionClass="NSMutableArray" id="MSZ-56-0br"/>
@@ -438,6 +437,5 @@
     </scenes>
     <resources>
         <image name="cherryTree" width="375" height="608"/>
-        <image name="trisAgain" width="930" height="914"/>
     </resources>
 </document>

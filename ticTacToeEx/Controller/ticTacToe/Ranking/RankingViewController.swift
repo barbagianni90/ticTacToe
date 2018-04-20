@@ -16,6 +16,7 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var tableRanking: UITableView!
 
+    @IBOutlet weak var segmented: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
         

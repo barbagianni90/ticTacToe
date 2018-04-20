@@ -51,8 +51,8 @@ class ProfileViewController: UIViewController {
         
         
         editButton.translatesAutoresizingMaskIntoConstraints = false
-        editButton.layer.borderWidth = 0.5
-        editButton.layer.borderColor = UIColor.black.cgColor
+//        editButton.layer.borderWidth = 0.5
+//        editButton.layer.borderColor = UIColor.black.cgColor
         
         NSLayoutConstraint(item: editButton, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: UIScreen.main.bounds.width / -15).isActive = true
         

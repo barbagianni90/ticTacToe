@@ -8,7 +8,14 @@
 
 import UIKit
 
-class startingViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+class startingViewController: UIViewController{
+    
+    @IBAction func trisButton(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainView")
+        self.present(storyboard, animated: true, completion: nil)
+        
+    }
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var sideMenuView: UIView!
@@ -16,6 +23,7 @@ class startingViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var SMConstraint: NSLayoutConstraint!
     @IBOutlet weak var conteinerView: UIView!
     
+    @IBOutlet weak var trisButton: UIButton!
     var images = ["iconTris", "checkIcon2"]
     var sideMenuConstraint: NSLayoutConstraint!
     var isSlideMenuHidden = true
@@ -73,8 +81,8 @@ class startingViewController: UIViewController, UICollectionViewDelegate, UIColl
         collectionViewFlowLayout.minimumInteritemSpacing = 0
         collectionViewFlowLayout.minimumLineSpacing = 60
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
+//        collectionView.delegate = self
+//        collectionView.dataSource = self
         
         collectionView.backgroundColor = UIColor.clear
         
@@ -104,6 +112,27 @@ class startingViewController: UIViewController, UICollectionViewDelegate, UIColl
         NSLayoutConstraint(item: conteinerView, attribute: .left, relatedBy: .equal, toItem: sideMenuView, attribute: .left, multiplier: 1, constant: 0).isActive = true
         
         NSLayoutConstraint(item: conteinerView, attribute: .right, relatedBy: .equal, toItem: sideMenuView, attribute: .right, multiplier: 1, constant: 0).isActive = true
+        
+        // TRIS BUTTON
+        
+        trisButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint(item: trisButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.size.height / 4).isActive = true
+        
+        NSLayoutConstraint(item: trisButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        
+        NSLayoutConstraint(item: trisButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 1.25).isActive = true
+        
+         NSLayoutConstraint(item: trisButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 8).isActive = true
+        
+        trisButton.setTitle("Start", for: .normal)
+        trisButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 12)
+        
+        trisButton.setTitleColor(UIColor.white, for: .normal)
+        
+        trisButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        trisButton.titleLabel?.baselineAdjustment = .alignCenters
+        
         
     }
     
@@ -139,37 +168,37 @@ class startingViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     
-    //UICollectionView Data Source
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
-        
-        cell.iconImage.image = UIImage(named: images[indexPath.section])
-        
-        return cell
-        
-    }
-    
-    //UICollectionView Flow Delegate
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 100)
-    }
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return images.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.section == 0{
-            let storyboard = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainView")
-            self.present(storyboard, animated: true, completion: nil)
-        }else if indexPath.section == 1{
-            let storyboard = UIStoryboard(name: "MainCheckers", bundle: nil).instantiateViewController(withIdentifier: "MainCheckersID")
-            self.present(storyboard, animated: true, completion: nil)
-        }
-    }
+//    //UICollectionView Data Source
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return 1
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
+//
+//        cell.iconImage.image = UIImage(named: images[indexPath.section])
+//
+//        return cell
+//
+//    }
+//
+//    //UICollectionView Flow Delegate
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: 100, height: 100)
+//    }
+//
+//    func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        return images.count
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        if indexPath.section == 0{
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainView")
+//            self.present(storyboard, animated: true, completion: nil)
+//        }else if indexPath.section == 1{
+//            let storyboard = UIStoryboard(name: "MainCheckers", bundle: nil).instantiateViewController(withIdentifier: "MainCheckersID")
+//            self.present(storyboard, animated: true, completion: nil)
+//        }
+//    }
 
 }

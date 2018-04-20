@@ -186,6 +186,8 @@ class SignInViewController: UIViewController {
         NSLayoutConstraint(item: passTextField, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / (3/2)).isActive = true
         
         
+        
+        
         // CONSTRAINTS REGISTER BUTTON
         
         registerButton.translatesAutoresizingMaskIntoConstraints = false
