@@ -20,6 +20,8 @@
 		C433A56E206D2D1400C2888F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C433A56D206D2D1400C2888F /* User.swift */; };
 		C433A571206D32DD00C2888F /* Ranking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C433A570206D32DD00C2888F /* Ranking.storyboard */; };
 		C433A575206D399300C2888F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C433A574206D399300C2888F /* Profile.storyboard */; };
+		C4413CA420887A0500286EF2 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = C4413CA320887A0500286EF2 /* camera.png */; };
+		C4413CA62088815700286EF2 /* ConvertOptionalString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4413CA52088815700286EF2 /* ConvertOptionalString.swift */; };
 		C445E5722074CE5C00241182 /* CustomEnemyChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E5712074CE5C00241182 /* CustomEnemyChatCell.swift */; };
 		C445E5742074CE7400241182 /* CustomUserChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E5732074CE7400241182 /* CustomUserChatCell.swift */; };
 		C445E5762074D00B00241182 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E5752074D00B00241182 /* Message.swift */; };
@@ -73,6 +75,8 @@
 		C433A56D206D2D1400C2888F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Controller/User.swift; sourceTree = "<group>"; };
 		C433A570206D32DD00C2888F /* Ranking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ranking.storyboard; sourceTree = "<group>"; };
 		C433A574206D399300C2888F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		C4413CA320887A0500286EF2 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		C4413CA52088815700286EF2 /* ConvertOptionalString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertOptionalString.swift; sourceTree = "<group>"; };
 		C445E5712074CE5C00241182 /* CustomEnemyChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEnemyChatCell.swift; sourceTree = "<group>"; };
 		C445E5732074CE7400241182 /* CustomUserChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserChatCell.swift; sourceTree = "<group>"; };
 		C445E5752074D00B00241182 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -88,7 +92,7 @@
 		F3CEB71D207CABF500B4D772 /* MainCheckersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCheckersViewController.swift; sourceTree = "<group>"; };
 		F3F62E952084E2A100A674BE /* startingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startingViewController.swift; sourceTree = "<group>"; };
 		F3F62E9B2084FC8000A674BE /* StartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTableViewController.swift; sourceTree = "<group>"; };
-		FE159E24207E182B0075C533 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
+		FE159E24207E182B0075C533 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = Main/it.lproj/Main.strings; sourceTree = "<group>"; };
 		FE159E25207E182B0075C533 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FE159E27207E219F0075C533 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Start.storyboard; sourceTree = "<group>"; };
 		FE159E2A207E3C350075C533 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Start.strings; sourceTree = "<group>"; };
@@ -103,7 +107,7 @@
 		FE4D55292069023F00ABF6C1 /* ticTacToeEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ticTacToeEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE4D552C2069023F00ABF6C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE4D552E2069024000ABF6C1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Main/MainViewController.swift; sourceTree = "<group>"; };
-		FE4D55312069024000ABF6C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FE4D55312069024000ABF6C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE4D55332069024000ABF6C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE4D55362069024000ABF6C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE4D55382069024000ABF6C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -292,6 +296,8 @@
 				FE4D552C2069023F00ABF6C1 /* AppDelegate.swift */,
 				C433A56D206D2D1400C2888F /* User.swift */,
 				C445E5752074D00B00241182 /* Message.swift */,
+				C4413CA52088815700286EF2 /* ConvertOptionalString.swift */,
+				C4413CA320887A0500286EF2 /* camera.png */,
 				FEC8A085206B84D60031001B /* Controller */,
 				FE4D55332069024000ABF6C1 /* Assets.xcassets */,
 				FE4D55352069024000ABF6C1 /* LaunchScreen.storyboard */,
@@ -412,6 +418,7 @@
 				FE1B8A9D207CB35D00960EEB /* Kalam-Light.ttf in Resources */,
 				C4ED73FB207F6CB000099716 /* default.jpg in Resources */,
 				C48477A1206D15C8002B6E18 /* SignInANDSignUp.storyboard in Resources */,
+				C4413CA420887A0500286EF2 /* camera.png in Resources */,
 				C4E2E64D2077C1A9005CDD72 /* croce.png in Resources */,
 				C4E2E64E2077C1A9005CDD72 /* cerchio.png in Resources */,
 				FE1B8AA1207CB3D700960EEB /* Raleway-ExtraLight.ttf in Resources */,
@@ -517,6 +524,7 @@
 				FEC8A0A5206BA0A40031001B /* GameViewController.swift in Sources */,
 				C433A56E206D2D1400C2888F /* User.swift in Sources */,
 				C445E5782075057100241182 /* PhotoProfile.swift in Sources */,
+				C4413CA62088815700286EF2 /* ConvertOptionalString.swift in Sources */,
 				C4103700206E84DE00423D7D /* EditProfileViewController.swift in Sources */,
 				FEC8A084206B849C0031001B /* SignInViewController.swift in Sources */,
 				F31876322085EBEE00482CAD /* GameCheckersViewController.swift in Sources */,
@@ -565,7 +573,6 @@
 				FE159E24207E182B0075C533 /* it */,
 			);
 			name = Main.storyboard;
-			path = Main;
 			sourceTree = "<group>";
 		};
 		FE4D55352069024000ABF6C1 /* LaunchScreen.storyboard */ = {
