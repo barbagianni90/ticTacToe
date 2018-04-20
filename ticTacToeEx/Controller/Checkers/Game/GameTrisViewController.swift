@@ -34,7 +34,6 @@ class Utils{
 class GameTrisViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate{
     
     //----------------------Chat-------------------------
-    @IBOutlet weak var background: UIImageView!
     
     @IBOutlet weak var chatTable: UITableView!
     

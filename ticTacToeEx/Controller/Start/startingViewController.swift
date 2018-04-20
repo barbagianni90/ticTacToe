@@ -14,37 +14,36 @@ class startingViewController: UIViewController{
     @IBOutlet weak var nickNameLabel: UILabel!
     
     @IBOutlet weak var rankingButton: UIButton!
+    
+    
     @IBAction func trisButton(_ sender: Any) {
-        
-        let storyboard = UIStoryboard(name: "Lobby", bundle: nil).instantiateViewController(withIdentifier: "lobby")
-        self.present(storyboard, animated: true, completion: nil)
-        
+        if MainViewController.user.nickName != ""{
+            let storyboard = UIStoryboard(name: "Lobby", bundle: nil).instantiateViewController(withIdentifier: "lobby")
+            self.present(storyboard, animated: true, completion: nil)
+        }else{
+            let alertController = UIAlertController(title: "Ops...", message: "Devi prima fare il login", preferredStyle: .alert)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            
+            let defaultAction = UIAlertAction(title: "Sign In", style: .default, handler: { _ in
+                let storyboard = UIStoryboard(name: "SignInANDSignUp", bundle: nil).instantiateViewController(withIdentifier: "signIn")
+                self.present(storyboard, animated: true, completion: nil)
+            })
+            
+            alertController.addAction(defaultAction)
+            alertController.addAction(cancelAction)
+            
+            present(alertController, animated: true, completion: nil)
+            print("\n\nConnettiti\n\n")
+        }
     }
     
-    @IBAction func avatarButton(_ sender: Any) {
-        
-        let profile = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "profileInfo")
-        self.present(profile,animated: true,completion: nil)
-    }
-    
-    
-    @IBAction func rankingButton(_ sender: Any) {
-        
-        let rankingView = UIStoryboard(name: "Ranking", bundle: nil).instantiateViewController(withIdentifier: "rankingList")
-        self.present(rankingView, animated: true, completion: nil)
-    }
-    
-    
-    
-    
-    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var sideMenuView: UIView!
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var SMConstraint: NSLayoutConstraint!
     @IBOutlet weak var conteinerView: UIView!
     
     @IBOutlet weak var trisButton: UIButton!
-    var images = ["iconTris", "checkIcon2"]
     var sideMenuConstraint: NSLayoutConstraint!
     var isSlideMenuHidden = true
     
@@ -53,7 +52,6 @@ class startingViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        trisButton.isEnabled = false
         startingViewController.first = true
         
         //background
@@ -81,31 +79,6 @@ class startingViewController: UIViewController{
         SMConstraint.constant = -(UIScreen.main.bounds.width / 2) - 50
         
         sideMenuView.backgroundColor = UIColor.clear
-        
-        //collection view constraints
-        
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint(item: collectionView, attribute: .top, relatedBy: .equal, toItem: menuButton, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
-        NSLayoutConstraint(item: collectionView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
-        NSLayoutConstraint(item: collectionView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width).isActive = true
-        NSLayoutConstraint(item: collectionView, attribute: .left, relatedBy: .equal, toItem: sideMenuView, attribute: .right, multiplier: 1, constant: 0).isActive = true
-        
-        
-        //flowLayout
-        let collectionViewFlowLayout = UICollectionViewFlowLayout()
-        
-        collectionView?.setCollectionViewLayout(collectionViewFlowLayout, animated: true)
-        
-        collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: UIScreen.main.bounds.width / 2 - 50, bottom: (UIScreen.main.bounds.height - (UIScreen.main.bounds.height / 5 + 320))/2, right: UIScreen.main.bounds.width/2 - 50)
-        
-        collectionViewFlowLayout.minimumInteritemSpacing = 0
-        collectionViewFlowLayout.minimumLineSpacing = 60
-        
-//        collectionView.delegate = self
-//        collectionView.dataSource = self
-        
-        collectionView.backgroundColor = UIColor.clear
         
         //menu button constraints
         menuButton.translatesAutoresizingMaskIntoConstraints = false
@@ -136,7 +109,7 @@ class startingViewController: UIViewController{
         NSLayoutConstraint(item: conteinerView, attribute: .left, relatedBy: .equal, toItem: sideMenuView, attribute: .left, multiplier: 1, constant: 0).isActive = true
         
         NSLayoutConstraint(item: conteinerView, attribute: .right, relatedBy: .equal, toItem: sideMenuView, attribute: .right, multiplier: 1, constant: 0).isActive = true
-        
+ 
         // TRIS BUTTON
         
         trisButton.translatesAutoresizingMaskIntoConstraints = false
@@ -146,7 +119,11 @@ class startingViewController: UIViewController{
         
         NSLayoutConstraint(item: trisButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.size.height / 3).isActive = true
         
-        NSLayoutConstraint(item: trisButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+//        NSLayoutConstraint(item: trisButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        
+        NSLayoutConstraint(item: trisButton, attribute: .left, relatedBy: .equal, toItem: sideMenuView, attribute: .right, multiplier: 1, constant: (UIScreen.main.bounds.width - (UIScreen.main.bounds.width / 1.25)) / 2).isActive = true
+        
+        
         
         NSLayoutConstraint(item: trisButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 1.25).isActive = true
         
@@ -169,7 +146,10 @@ class startingViewController: UIViewController{
         
         NSLayoutConstraint(item: rankingButton, attribute: .top, relatedBy: .equal, toItem: trisButton, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 10).isActive = true
         
-        NSLayoutConstraint(item: rankingButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+//        NSLayoutConstraint(item: rankingButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        
+        NSLayoutConstraint(item: rankingButton, attribute: .left, relatedBy: .equal, toItem: sideMenuView, attribute: .right, multiplier: 1, constant: UIScreen.main.bounds.width / 4).isActive = true
+        
         
         NSLayoutConstraint(item: rankingButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 2).isActive = true
         
@@ -182,17 +162,10 @@ class startingViewController: UIViewController{
         rankingButton.titleLabel?.adjustsFontSizeToFitWidth = true
         rankingButton.titleLabel?.baselineAdjustment = .alignCenters
         
+
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
         
         
         // constraints avatar button
@@ -203,7 +176,7 @@ class startingViewController: UIViewController{
         
         NSLayoutConstraint(item: avatarButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 9).isActive = true
         
-        NSLayoutConstraint(item: avatarButton, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: (UIScreen.main.bounds.width / 10)*8).isActive = true
+        NSLayoutConstraint(item: avatarButton, attribute: .left, relatedBy: .equal, toItem: sideMenuView, attribute: .right, multiplier: 1, constant: (UIScreen.main.bounds.width / 10)*8).isActive = true
         
         NSLayoutConstraint(item: avatarButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 10).isActive = true
         
@@ -217,17 +190,12 @@ class startingViewController: UIViewController{
         
         
         
-        
-        
-        
-        
-        
         //set constraits nickname label
         
         nickNameLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        //        nickNameLabel.layer.borderWidth = 0.5
-        //        nickNameLabel.layer.borderColor = UIColor.black.cgColor
+//                nickNameLabel.layer.borderWidth = 0.5
+//                nickNameLabel.layer.borderColor = UIColor.black.cgColor
         
         NSLayoutConstraint(item: nickNameLabel, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 10.5).isActive = true
         
@@ -249,12 +217,6 @@ class startingViewController: UIViewController{
         nickNameLabel.font = UIFont(name: "Raleway-Light", size: UIScreen.main.bounds.height / 23)
         nickNameLabel.textColor = UIColor.white
         
-        
-        
-        
-        
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -274,8 +236,20 @@ class startingViewController: UIViewController{
         isSlideMenuHidden = !isSlideMenuHidden 
     }
     
+    @IBAction func rankingAction(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Ranking", bundle: nil).instantiateViewController(withIdentifier: "rankingList")
+        self.present(storyboard, animated: true, completion: nil)
+    }
+    
+    
     func showSideMenu(){
         SMConstraint.constant = 0
+        
+        trisButton.isHidden = true
+        rankingButton.isHidden = true
+        
+        nickNameLabel.isHidden = true
+        
         UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()
         })
@@ -283,6 +257,11 @@ class startingViewController: UIViewController{
     
     func hideSideMenu(){
         SMConstraint.constant = -(UIScreen.main.bounds.width / 2) - 50
+        
+        trisButton.isHidden = false
+        rankingButton.isHidden = false
+        nickNameLabel.isHidden = false
+        
         UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()
         })
@@ -299,7 +278,6 @@ class startingViewController: UIViewController{
         else{
             self.avatarButton.isHidden = false
             self.nickNameLabel.isHidden = false
-            self.trisButton.isEnabled = true
             self.avatarButton.setBackgroundImage(MainViewController.user.image, for: .normal)
             //self.avatarButton.transform = CGAffineTransform(rotationAngle: (90.0 * .pi) / 180.0)
             self.avatarButton.layer.cornerRadius = UIScreen.main.bounds.width / 20
@@ -307,42 +285,6 @@ class startingViewController: UIViewController{
             
             self.nickNameLabel.text = MainViewController.user.nickName
         }
-        
-        
     }
-    
-    
-//    //UICollectionView Data Source
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 1
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
-//
-//        cell.iconImage.image = UIImage(named: images[indexPath.section])
-//
-//        return cell
-//
-//    }
-//
-//    //UICollectionView Flow Delegate
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 100, height: 100)
-//    }
-//
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return images.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if indexPath.section == 0{
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainView")
-//            self.present(storyboard, animated: true, completion: nil)
-//        }else if indexPath.section == 1{
-//            let storyboard = UIStoryboard(name: "MainCheckers", bundle: nil).instantiateViewController(withIdentifier: "MainCheckersID")
-//            self.present(storyboard, animated: true, completion: nil)
-//        }
-//    }
 
 }
