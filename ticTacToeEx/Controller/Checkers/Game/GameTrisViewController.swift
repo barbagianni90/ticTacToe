@@ -67,8 +67,24 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             cell.imageProfile.layer.masksToBounds = true
             
             cell.nickNameLabel.text = MainViewController.user.nickName
+//            cell.nickNameLabel.layer.borderWidth = 0.5
+//            cell.nickNameLabel.layer.borderColor = UIColor.white.cgColor
+            cell.nickNameLabel.textColor = UIColor.white
+
+            cell.nickNameLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 30)
+            cell.nickNameLabel.adjustsFontSizeToFitWidth = true
+
             
             cell.messageLabel.text = messages[indexPath.row].message
+            cell.messageLabel.textColor = UIColor.white
+//            cell.messageLabel.layer.borderWidth = 0.5
+//            cell.messageLabel.layer.borderColor = UIColor.white.cgColor
+            
+            cell.messageLabel.textAlignment = .right
+            
+            cell.messageLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 30)
+            cell.messageLabel.adjustsFontSizeToFitWidth = true
+
             
             return cell
         }
@@ -84,8 +100,20 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             cell.imageProfile.layer.masksToBounds = true
             
             cell.nickNameLabel.text = self.enemy.nickName
+            cell.nickNameLabel.textColor = UIColor.white
+            
+            cell.nickNameLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 30)
+            
+            cell.nickNameLabel.adjustsFontSizeToFitWidth = true
             
             cell.messageLabel.text = messages[indexPath.row].message
+            cell.messageLabel.textColor = UIColor.white
+
+            cell.messageLabel.textAlignment = .left
+            
+            cell.messageLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 30)
+            
+            cell.messageLabel.adjustsFontSizeToFitWidth = true
             
             return cell
         }
@@ -170,6 +198,26 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //background
+        let background: UIImageView!
+        background = UIImageView(frame: view.frame)
+        background.contentMode = .scaleAspectFill
+        background.clipsToBounds = true
+        background.image = UIImage(named: "start")
+        background.center = view.center
+        
+        //blur effect
+        let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.light))
+        blurEffect.frame = background.bounds
+        background.addSubview(blurEffect)
+        
+        view.addSubview(background)
+        view.sendSubview(toBack: background)
+        
+        
+        
         
         //setting stack view
         stackView.translatesAutoresizingMaskIntoConstraints = false
