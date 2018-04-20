@@ -19,15 +19,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cherryTree" translatesAutoresizingMaskIntoConstraints="NO" id="1u9-I2-hFs">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cherryTree" translatesAutoresizingMaskIntoConstraints="NO" id="1u9-I2-hFs">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="trisAgain" translatesAutoresizingMaskIntoConstraints="NO" id="qlR-ic-FoJ">
+                                <rect key="frame" x="67" y="109" width="240" height="128"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3te-MT-eJQ">
-                                <rect key="frame" x="20" y="341" width="335" height="326"/>
+                                <rect key="frame" x="20" y="353" width="339" height="262"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GMk-9C-SLb">
-                                        <rect key="frame" x="-9" y="-9" width="353" height="289"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GMk-9C-SLb">
+                                        <rect key="frame" x="-9" y="8" width="353" height="272"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellEnemy" rowHeight="130" id="qnH-ec-8rG" customClass="CustomEnemyChatCell" customModule="ticTacToeEx" customModuleProvider="target">
@@ -132,30 +134,20 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WIR-ph-Cwh">
-                                        <rect key="frame" x="-9" y="288" width="353" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="8UH-kh-tiL"/>
-                                            <constraint firstAttribute="width" constant="353" id="hIC-Dh-Ld2"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="WIR-ph-Cwh" firstAttribute="leading" secondItem="3te-MT-eJQ" secondAttribute="leading" constant="-9" id="BV5-Il-MWc"/>
-                                    <constraint firstAttribute="height" constant="326" id="LEQ-Xo-eGa"/>
-                                    <constraint firstAttribute="trailing" secondItem="WIR-ph-Cwh" secondAttribute="trailing" constant="-9" id="Mkh-fW-rHX"/>
-                                    <constraint firstAttribute="trailing" secondItem="GMk-9C-SLb" secondAttribute="trailing" constant="-9" id="P3j-GT-oGo"/>
+                                    <constraint firstItem="GMk-9C-SLb" firstAttribute="top" secondItem="3te-MT-eJQ" secondAttribute="top" constant="8" id="6gq-nr-2xW"/>
+                                    <constraint firstAttribute="height" constant="262" id="LEQ-Xo-eGa"/>
+                                    <constraint firstAttribute="trailing" secondItem="GMk-9C-SLb" secondAttribute="trailing" constant="-5" id="P3j-GT-oGo"/>
+                                    <constraint firstAttribute="bottom" secondItem="GMk-9C-SLb" secondAttribute="bottom" constant="-18" id="TR8-Ly-ofw"/>
                                     <constraint firstItem="GMk-9C-SLb" firstAttribute="leading" secondItem="3te-MT-eJQ" secondAttribute="leading" constant="-9" id="c7y-aC-WN6"/>
-                                    <constraint firstAttribute="width" constant="335" id="kUD-dP-BZr"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="335" id="rzc-Py-xgs"/>
+                                    <constraint firstAttribute="width" constant="339" id="kUD-dP-BZr"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Sqx-HX-UXv">
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Sqx-HX-UXv">
                                 <rect key="frame" x="20" y="52" width="90" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="04s-h2-TYJ">
                                         <rect key="frame" x="0.0" y="0.0" width="90" height="34"/>
@@ -264,20 +256,39 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WIR-ph-Cwh">
+                                <rect key="frame" x="13" y="633" width="353" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8UH-kh-tiL"/>
+                                    <constraint firstAttribute="width" constant="353" id="hIC-Dh-Ld2"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="1u9-I2-hFs" firstAttribute="top" secondItem="pUn-i0-XWl" secondAttribute="top" id="1vb-gG-zLF"/>
+                            <constraint firstItem="3te-MT-eJQ" firstAttribute="top" relation="lessThanOrEqual" secondItem="qlR-ic-FoJ" secondAttribute="bottom" constant="116" id="7tG-Fz-1Sy"/>
                             <constraint firstItem="3te-MT-eJQ" firstAttribute="leading" secondItem="pjX-wr-omw" secondAttribute="leading" constant="20" id="8X9-tY-thO"/>
-                            <constraint firstItem="pjX-wr-omw" firstAttribute="trailing" secondItem="3te-MT-eJQ" secondAttribute="trailing" constant="20" id="IKy-eS-qIw"/>
-                            <constraint firstItem="3te-MT-eJQ" firstAttribute="top" secondItem="Sqx-HX-UXv" secondAttribute="bottom" constant="187" id="ayp-L2-lY2"/>
-                            <constraint firstItem="3te-MT-eJQ" firstAttribute="bottom" secondItem="pjX-wr-omw" secondAttribute="bottom" id="oa7-go-mXN"/>
+                            <constraint firstAttribute="bottom" secondItem="WIR-ph-Cwh" secondAttribute="bottom" constant="4" id="E08-Gl-7yW"/>
+                            <constraint firstItem="pjX-wr-omw" firstAttribute="trailing" secondItem="3te-MT-eJQ" secondAttribute="trailing" constant="16" id="IKy-eS-qIw"/>
+                            <constraint firstItem="WIR-ph-Cwh" firstAttribute="leading" secondItem="pUn-i0-XWl" secondAttribute="leading" constant="13" id="YxB-TD-UGP"/>
+                            <constraint firstItem="1u9-I2-hFs" firstAttribute="leading" secondItem="pjX-wr-omw" secondAttribute="leading" id="a3c-Ou-gaA"/>
+                            <constraint firstAttribute="bottom" secondItem="1u9-I2-hFs" secondAttribute="bottom" id="lt2-Ob-AEE"/>
+                            <constraint firstAttribute="trailing" secondItem="WIR-ph-Cwh" secondAttribute="trailing" constant="9" id="mTH-mh-8cF"/>
+                            <constraint firstItem="3te-MT-eJQ" firstAttribute="bottom" secondItem="pjX-wr-omw" secondAttribute="bottom" constant="-52" id="oa7-go-mXN"/>
+                            <constraint firstItem="1u9-I2-hFs" firstAttribute="trailing" secondItem="pjX-wr-omw" secondAttribute="trailing" id="zuS-Dv-1lI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pjX-wr-omw"/>
                     </view>
                     <connections>
+                        <outlet property="bottomTextField" destination="E08-Gl-7yW" id="ZDd-Ku-RPt"/>
                         <outlet property="chatTable" destination="GMk-9C-SLb" id="f9R-Ol-NYI"/>
                         <outlet property="stackView" destination="Sqx-HX-UXv" id="kot-9r-HXH"/>
                         <outlet property="textFieldMessage" destination="WIR-ph-Cwh" id="18B-t1-7zF"/>
+                        <outlet property="trisImage" destination="qlR-ic-FoJ" id="WM0-Qr-Adu"/>
                         <outletCollection property="buttons" destination="YoO-c1-JsF" collectionClass="NSMutableArray" id="Iz4-C9-5GE"/>
                         <outletCollection property="buttons" destination="9lL-7Y-S4Q" collectionClass="NSMutableArray" id="qt8-Te-H1J"/>
                         <outletCollection property="buttons" destination="xik-As-qr0" collectionClass="NSMutableArray" id="4ru-3T-Ciw"/>
@@ -296,5 +307,6 @@
     </scenes>
     <resources>
         <image name="cherryTree" width="375" height="608"/>
+        <image name="trisAgain" width="930" height="914"/>
     </resources>
 </document>

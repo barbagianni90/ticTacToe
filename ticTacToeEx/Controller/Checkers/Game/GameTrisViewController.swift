@@ -143,11 +143,6 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var trisImage: UIImageView!
     
     
-    
-    
-    
-    
-    
     var enemy = User()
     
     var fPlayer = false

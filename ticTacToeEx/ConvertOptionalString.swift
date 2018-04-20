@@ -19,17 +19,17 @@ class ConvertOptionalString {
         
         let string = string as! String
         
-        if string.range(of: "Tris") != nil {
+        if string.range(of: "tris") != nil {
             
-            return "Tris"
+            return "tris"
         }
-        if string.range(of: "Dama") != nil {
+        if string.range(of: "dama") != nil {
             
-            return "Dama"
+            return "dama"
         }
-        if string.range(of: "Scacchi") != nil {
+        if string.range(of: "scacchi") != nil {
             
-            return "Scacchi"
+            return "scacchi"
         }
         
         return ""
@@ -39,21 +39,21 @@ class ConvertOptionalString {
         
         let string = string as! String
                 
-        if string.range(of: "Tris") != nil {
+        if string.range(of: "tris") != nil {
             
-            let indexStartStringGame = (string.range(of: "Tris")?.upperBound)!
-            
-            return String(string.prefix(upTo: indexStartStringGame))
-        }
-        if string.range(of: "Dama") != nil {
-            
-            let indexStartStringGame = (string.range(of: "Dama")?.upperBound)!
+            let indexStartStringGame = (string.range(of: "tris")?.lowerBound)!
             
             return String(string.prefix(upTo: indexStartStringGame))
         }
-        if string.range(of: "Scacchi") != nil {
+        if string.range(of: "dama") != nil {
             
-            let indexStartStringGame = (string.range(of: "Scacchi")?.upperBound)!
+            let indexStartStringGame = (string.range(of: "dama")?.lowerBound)!
+            
+            return String(string.prefix(upTo: indexStartStringGame))
+        }
+        if string.range(of: "scacchi") != nil {
+            
+            let indexStartStringGame = (string.range(of: "scacchi")?.lowerBound)!
             
             return String(string.prefix(upTo: indexStartStringGame))
         }

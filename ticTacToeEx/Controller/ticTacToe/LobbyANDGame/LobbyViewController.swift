@@ -108,9 +108,9 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     
                     ref.child("Players").child("\(idNickInvito)").child("invitoAccettato").setValue("Si")
                     
-                    if LobbyViewController.gameSelected == "Tris" {
+                    if LobbyViewController.gameSelected == "tris" {
                         
-                        let segue = UIStoryboard(name:"Lobby",bundle:nil).instantiateViewController(withIdentifier: "GameTrisID") as! GameTrisViewController
+                        let segue = UIStoryboard(name:"GameTris",bundle:nil).instantiateViewController(withIdentifier: "GameTrisID") as! GameTrisViewController
                         
                         let enemy = User()
                         enemy.nickName = "\(enemyNickName)"
@@ -130,9 +130,9 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         self.present(segue, animated: true, completion: nil)
                     }
                     
-                    if LobbyViewController.gameSelected == "Dama" {
+                    if LobbyViewController.gameSelected == "dama" {
                         
-                        let segue = UIStoryboard(name:"Lobby",bundle:nil).instantiateViewController(withIdentifier: "GameCheckID") as! GameTrisViewController
+                        let segue = UIStoryboard(name:"GameCheckers",bundle:nil).instantiateViewController(withIdentifier: "GameCheckID") as! GameCheckersViewController
                         
                         let enemy = User()
                         enemy.nickName = "\(enemyNickName)"
@@ -174,24 +174,49 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
                 if value == "Si" {
                     
-                    let segue =  UIStoryboard(name:"Lobby",bundle:nil).instantiateViewController(withIdentifier: "Gioco") as! GameTrisViewController
-                    
-                    let enemy = User()
-                    enemy.nickName = "\(self.nickNameSfidato)"
-                    
-                    for user in self.players {
+                    if LobbyViewController.gameSelected == "tris" {
                         
-                        if user.nickName == self.nickNameSfidato {
+                        let segue = UIStoryboard(name:"GameTris",bundle:nil).instantiateViewController(withIdentifier: "GameTrisID") as! GameTrisViewController
+                        
+                        let enemy = User()
+                        enemy.nickName = "\(self.nickNameSfidato)"
+                        
+                        for user in self.players {
                             
-                            enemy.image = user.image
+                            if user.nickName == self.nickNameSfidato {
+                                
+                                enemy.image = user.image
+                            }
                         }
-                    }
-                    segue.enemy = enemy
-                    
-                    segue.fPlayer = true
-                    segue.sPlayer = false
+                        segue.enemy = enemy
                         
-                    self.present(segue, animated: true, completion: nil)
+                        segue.fPlayer = true
+                        segue.sPlayer = false
+                        
+                        self.present(segue, animated: true, completion: nil)
+                    }
+                    
+                    if LobbyViewController.gameSelected == "dama" {
+                        
+                        let segue = UIStoryboard(name:"GameCheckers",bundle:nil).instantiateViewController(withIdentifier: "GameCheckID") as! GameCheckersViewController
+                        
+                        let enemy = User()
+                        enemy.nickName = "\(self.nickNameSfidato)"
+                        
+                        for user in self.players {
+                            
+                            if user.nickName == self.nickNameSfidato {
+                                
+                                enemy.image = user.image
+                            }
+                        }
+                        segue.enemy = enemy
+                        
+                        segue.fPlayer = true
+                        segue.sPlayer = false
+                        
+                        self.present(segue, animated: true, completion: nil)
+                    }
                 }
                 else {
                     ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")

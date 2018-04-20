@@ -27,56 +27,72 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" restorationIdentifier="Dama" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPs-kv-VOa">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="0:0"/>
+                                                <state key="normal" title="0:0">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="WxP-FF-Gx9"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TzD-1c-zsL">
                                                 <rect key="frame" x="30" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="0:1"/>
+                                                <state key="normal" title="0:1">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="luO-Ts-NJn"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7f-8f-k6w">
                                                 <rect key="frame" x="60" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="0:2"/>
+                                                <state key="normal" title="0:2">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="dRS-WM-DyV"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8s-9N-QnC">
                                                 <rect key="frame" x="90" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="0:3"/>
+                                                <state key="normal" title="0:3">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="ujb-ZN-Z7R"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MsL-gC-q1Y">
                                                 <rect key="frame" x="120" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="0:4"/>
+                                                <state key="normal" title="0:4">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="dFG-K3-Thh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lo8-st-X0z">
                                                 <rect key="frame" x="150" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="0:5"/>
+                                                <state key="normal" title="0:5">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="FCf-ce-mXD"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcn-IB-aAN">
                                                 <rect key="frame" x="180" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="0:6"/>
+                                                <state key="normal" title="0:6">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="HJE-IC-uIf"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hcg-Ef-Zd3">
                                                 <rect key="frame" x="210" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="0:7"/>
+                                                <state key="normal" title="0:7">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="qIV-Fu-8mZ"/>
                                                 </connections>
@@ -88,56 +104,72 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iK0-Qs-gad">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="1:0"/>
+                                                <state key="normal" title="1:0">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="Dyp-su-EWZ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wl9-jZ-ELV">
                                                 <rect key="frame" x="30" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="1:1"/>
+                                                <state key="normal" title="1:1">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="Yrf-ZR-j2I"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QeQ-67-iQP">
                                                 <rect key="frame" x="60" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="1:2"/>
+                                                <state key="normal" title="1:2">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="q2N-JA-M68"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZy-mr-nNy" userLabel="1:3">
                                                 <rect key="frame" x="90" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="1:3"/>
+                                                <state key="normal" title="1:3">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="3Cq-JF-N0P"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Wb-a8-OQW">
                                                 <rect key="frame" x="120" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="1:4"/>
+                                                <state key="normal" title="1:4">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="Mxz-5g-jI9"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHv-a9-IZg">
                                                 <rect key="frame" x="150" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="1:5"/>
+                                                <state key="normal" title="1:5">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="B0H-Sf-z1m"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYw-bo-yFV">
                                                 <rect key="frame" x="180" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="1:6"/>
+                                                <state key="normal" title="1:6">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="HT2-Da-ttS"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JqV-Xs-Uc8">
                                                 <rect key="frame" x="210" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="1:7"/>
+                                                <state key="normal" title="1:7">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="ATh-uX-g4v"/>
                                                 </connections>
@@ -149,56 +181,72 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5y-bm-aFk">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="2:0"/>
+                                                <state key="normal" title="2:0">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="3xF-df-Ac2"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQs-np-SZv">
                                                 <rect key="frame" x="30" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="2:1"/>
+                                                <state key="normal" title="2:1">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="7XV-Np-S56"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yz-aH-tbD">
                                                 <rect key="frame" x="60" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="2:2"/>
+                                                <state key="normal" title="2:2">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="yVM-Qj-Umx"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPg-hb-NwZ">
                                                 <rect key="frame" x="90" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="2:3"/>
+                                                <state key="normal" title="2:3">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="sak-ll-3xN"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkB-WD-hCU">
                                                 <rect key="frame" x="120" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="2:4"/>
+                                                <state key="normal" title="2:4">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="HnP-3v-oEM"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J9W-IT-I9Y">
                                                 <rect key="frame" x="150" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="2:5"/>
+                                                <state key="normal" title="2:5">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="gpn-5o-J9f"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wBi-4M-1Yd">
                                                 <rect key="frame" x="180" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="2:6"/>
+                                                <state key="normal" title="2:6">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="FcM-QB-J4S"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNv-Zx-1oG">
                                                 <rect key="frame" x="210" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="2:7"/>
+                                                <state key="normal" title="2:7">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="JCs-OM-o2N"/>
                                                 </connections>
@@ -210,56 +258,72 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Md2-zN-PiE">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="3:0"/>
+                                                <state key="normal" title="3:0">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="ExA-VP-hgh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIT-0a-KCc">
                                                 <rect key="frame" x="30" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="3:1"/>
+                                                <state key="normal" title="3:1">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="SEX-n9-8IW"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2Q-OH-8Cr">
                                                 <rect key="frame" x="60" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="3:2"/>
+                                                <state key="normal" title="3:2">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="o4k-qs-Waa"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PqQ-rm-9IR">
                                                 <rect key="frame" x="90" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="3:3"/>
+                                                <state key="normal" title="3:3">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="YtY-el-brc"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4z-LR-gPv">
                                                 <rect key="frame" x="120" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="3:4"/>
+                                                <state key="normal" title="3:4">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="jkX-wL-QXb"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgB-tq-dTs">
                                                 <rect key="frame" x="150" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="3:5"/>
+                                                <state key="normal" title="3:5">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="bPN-7S-qr0"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPZ-Lb-aHo">
                                                 <rect key="frame" x="180" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="3:6"/>
+                                                <state key="normal" title="3:6">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="b5h-gs-myQ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6r-aP-m4I">
                                                 <rect key="frame" x="210" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="3:7"/>
+                                                <state key="normal" title="3:7">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="mzO-j0-0qy"/>
                                                 </connections>
@@ -271,56 +335,72 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrl-67-iM6">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="4:0"/>
+                                                <state key="normal" title="4:0">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="1UB-Se-n55"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kpb-5G-1i4">
                                                 <rect key="frame" x="30" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="4:1"/>
+                                                <state key="normal" title="4:1">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="Fbt-pt-mot"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpd-cE-yS1">
                                                 <rect key="frame" x="60" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="4:2"/>
+                                                <state key="normal" title="4:2">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="N5d-cn-aNU"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8If-dp-x7C">
                                                 <rect key="frame" x="90" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="4:3"/>
+                                                <state key="normal" title="4:3">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="E0b-xA-mQu"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wa5-3M-2L6">
                                                 <rect key="frame" x="120" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="4:4"/>
+                                                <state key="normal" title="4:4">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="qKM-ql-uBc"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZy-UZ-cTb">
                                                 <rect key="frame" x="150" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="4:5"/>
+                                                <state key="normal" title="4:5">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="kME-op-Bai"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tci-pC-7bS">
                                                 <rect key="frame" x="180" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="4:6"/>
+                                                <state key="normal" title="4:6">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="f9c-R1-RPk"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7I-zI-QQG">
                                                 <rect key="frame" x="210" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="4:7"/>
+                                                <state key="normal" title="4:7">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="kiH-7a-acV"/>
                                                 </connections>
@@ -332,56 +412,72 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPv-8A-67G">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="5:0"/>
+                                                <state key="normal" title="5:0">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="4Ju-Vb-4S4"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkj-TH-tn1">
                                                 <rect key="frame" x="30" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="5:1"/>
+                                                <state key="normal" title="5:1">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="ueS-NI-qib"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFt-xB-2CH">
                                                 <rect key="frame" x="60" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="5:2"/>
+                                                <state key="normal" title="5:2">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="NwB-bd-yHn"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4t-IV-jFa">
                                                 <rect key="frame" x="90" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="5:3"/>
+                                                <state key="normal" title="5:3">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="kWg-U1-gQW"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2d-4y-aeb">
                                                 <rect key="frame" x="120" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="5:4"/>
+                                                <state key="normal" title="5:4">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="Hc4-Ft-Nn7"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cm-2m-1Rm">
                                                 <rect key="frame" x="150" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="5:5"/>
+                                                <state key="normal" title="5:5">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="RLE-vZ-8Hd"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfS-lX-Mv8">
                                                 <rect key="frame" x="180" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="5:6"/>
+                                                <state key="normal" title="5:6">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="MVb-6f-Qrg"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LL9-LV-9GF">
                                                 <rect key="frame" x="210" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="5:7"/>
+                                                <state key="normal" title="5:7">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="reY-pd-g3v"/>
                                                 </connections>
@@ -393,56 +489,72 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wJ-hn-Gok">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="6:0"/>
+                                                <state key="normal" title="6:0">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="SU7-3A-X98"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uph-Ah-Al0">
                                                 <rect key="frame" x="30" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="6:1"/>
+                                                <state key="normal" title="6:1">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="vda-EA-1EN"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oio-qZ-8ZO">
                                                 <rect key="frame" x="60" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="6:2"/>
+                                                <state key="normal" title="6:2">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="Gjh-uW-ySv"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4om-Yl-SFQ">
                                                 <rect key="frame" x="90" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="6:3"/>
+                                                <state key="normal" title="6:3">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="t8M-xX-tRk"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G29-GK-eTx">
                                                 <rect key="frame" x="120" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="6:4"/>
+                                                <state key="normal" title="6:4">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="nWO-aH-heF"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzS-Xj-myy">
                                                 <rect key="frame" x="150" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="6:5"/>
+                                                <state key="normal" title="6:5">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="bZ9-O6-aab"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdE-vB-ZXX">
                                                 <rect key="frame" x="180" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="6:6"/>
+                                                <state key="normal" title="6:6">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="OtI-d8-Kob"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahK-Pc-A2a">
                                                 <rect key="frame" x="210" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="6:7"/>
+                                                <state key="normal" title="6:7">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="bh3-lf-CkR"/>
                                                 </connections>
@@ -454,56 +566,72 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYC-lX-nul">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="7:0"/>
+                                                <state key="normal" title="7:0">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="6PS-km-qyW"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5J-Ot-LBD">
                                                 <rect key="frame" x="30" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="7:1"/>
+                                                <state key="normal" title="7:1">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="PWJ-aC-GP8"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ex8-In-wGX">
                                                 <rect key="frame" x="60" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="7:2"/>
+                                                <state key="normal" title="7:2">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="nOy-zV-UU6"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gY5-Pb-2L7">
                                                 <rect key="frame" x="90" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="7:3"/>
+                                                <state key="normal" title="7:3">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="udo-qF-6C8"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="So9-Gy-smd">
                                                 <rect key="frame" x="120" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="7:4"/>
+                                                <state key="normal" title="7:4">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="oEo-YU-GNR"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbG-wc-dLW">
                                                 <rect key="frame" x="150" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="7:5"/>
+                                                <state key="normal" title="7:5">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="ojK-hR-g8Q"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jV-tQ-cSw">
                                                 <rect key="frame" x="180" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="7:6"/>
+                                                <state key="normal" title="7:6">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="ZYh-5i-O3b"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXN-QC-y7r">
                                                 <rect key="frame" x="210" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="7:7"/>
+                                                <state key="normal" title="7:7">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="1MR-id-ZkT"/>
                                                 </connections>
