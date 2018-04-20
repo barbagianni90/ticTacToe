@@ -26,10 +26,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cherryTree" translatesAutoresizingMaskIntoConstraints="NO" id="Quu-LL-nfP">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24i-Qf-DmL">
                                 <rect key="frame" x="100" y="99" width="176" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -62,9 +58,9 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DV-dB-ViT">
-                                <rect key="frame" x="121" y="380" width="134" height="34.666666666666686"/>
+                                <rect key="frame" x="121" y="380" width="133" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="CatCafe" family="CatCafe" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -97,7 +93,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="avatarImage" destination="bYl-jj-dZj" id="j4j-K9-CrV"/>
-                        <outlet property="backgroundImage" destination="Quu-LL-nfP" id="ofD-Ig-XbH"/>
                         <outlet property="editButton" destination="5tN-cm-QZc" id="KQf-tU-CbE"/>
                         <outlet property="homeButton" destination="Chv-e2-twy" id="ycR-aF-Sh0"/>
                         <outlet property="nickNameLabel" destination="9DV-dB-ViT" id="wrP-BQ-oeM"/>
@@ -117,10 +112,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cherryTree" translatesAutoresizingMaskIntoConstraints="NO" id="zR6-76-GpX">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vrf-iY-s2F">
                                 <rect key="frame" x="160" y="184" width="55.333333333333343" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -288,7 +279,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="avatarLabel" destination="cyj-jk-t4O" id="miS-jY-O3h"/>
-                        <outlet property="backgroundImage" destination="zR6-76-GpX" id="LKp-eM-NRK"/>
                         <outlet property="cameraButton" destination="dVv-ns-Atw" id="tYg-XI-Kdg"/>
                         <outlet property="doneButton" destination="P2y-D3-web" id="hK4-aj-oWd"/>
                         <outlet property="editLabel" destination="9Nb-bM-Gk1" id="zvy-ET-Maa"/>
@@ -313,7 +303,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="camera.png" width="50" height="44"/>
-        <image name="cherryTree" width="375" height="608"/>
+        <image name="camera.png" width="800" height="544"/>
     </resources>
 </document>
