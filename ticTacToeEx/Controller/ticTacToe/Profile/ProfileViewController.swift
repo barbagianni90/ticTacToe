@@ -147,7 +147,7 @@ class ProfileViewController: UIViewController {
         nickNameLabel.textAlignment = .center
         
         
-        let attUserLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 8)]
+        let attUserLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)]
         let nickLabelText = ""
         let attNick = NSMutableAttributedString(string: nickLabelText, attributes: attUserLabel)
         nickNameLabel.attributedText = attNick
@@ -165,17 +165,18 @@ class ProfileViewController: UIViewController {
         NSLayoutConstraint(item: stateLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         
         NSLayoutConstraint(item: stateLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 3).isActive = true
-        NSLayoutConstraint(item: stateLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 12).isActive = true
+        NSLayoutConstraint(item: stateLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 8).isActive = true
         
-        stateLabel.adjustsFontSizeToFitWidth = true
-        stateLabel.baselineAdjustment = .alignCenters
-        stateLabel.textAlignment = .center
         
-        let attStateLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 12)]
+        let attStateLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 8)]
         let stateLabelText = ""
         let attState = NSMutableAttributedString(string: stateLabelText, attributes: attStateLabel)
         nickNameLabel.attributedText = attState
         
+        
+        stateLabel.adjustsFontSizeToFitWidth = true
+        stateLabel.baselineAdjustment = .alignCenters
+        stateLabel.textAlignment = .center
         
         
         
@@ -202,8 +203,10 @@ class ProfileViewController: UIViewController {
         self.avatarImage.layer.masksToBounds = true
         
         self.nickNameLabel.text = MainViewController.user.nickName
+        self.nickNameLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)
         
         self.stateLabel.text = MainViewController.user.stato
+        self.stateLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 8)
     }
    
     /*

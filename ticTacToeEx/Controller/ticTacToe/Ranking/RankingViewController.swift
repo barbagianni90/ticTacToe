@@ -219,6 +219,10 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.scoreLabel.text = String(players[indexPath.row].vittorie)
         cell.imagePlayer.image = players[indexPath.row].image
         
+        cell.imagePlayer.layer.cornerRadius = cell.imagePlayer.frame.size.width / 2
+        cell.imagePlayer.layer.masksToBounds = true
+        
+        
         return cell
     }
     

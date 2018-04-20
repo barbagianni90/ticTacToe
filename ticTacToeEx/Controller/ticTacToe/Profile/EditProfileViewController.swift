@@ -93,12 +93,11 @@ class EditProfileViewController: UIViewController {
         
         
         profileButton.setTitle("Back", for: .normal)
-        profileButton.titleLabel?.font = UIFont(name: "shojumaru", size: UIScreen.main.bounds.width / 7)
-        
+        profileButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)
+        profileButton.setTitleColor(UIColor.white, for: .normal)
         
         profileButton.titleLabel?.adjustsFontSizeToFitWidth = true
         profileButton.titleLabel?.baselineAdjustment = .alignCenters
-        profileButton.titleLabel?.textAlignment = .left
         
         // DONE BUTTON
         
@@ -117,7 +116,7 @@ class EditProfileViewController: UIViewController {
         
         
         doneButton.setTitle("Done", for: .normal)
-        doneButton.titleLabel?.font = UIFont(name: "shojumaru", size: UIScreen.main.bounds.width / 7)
+        doneButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)
         
         
         doneButton.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -143,7 +142,7 @@ class EditProfileViewController: UIViewController {
         editLabel.adjustsFontSizeToFitWidth = true
         editLabel.baselineAdjustment = .alignCenters
         
-        let attEditLabel = [NSAttributedStringKey.font: UIFont(name: "shojumaru", size: UIScreen.main.bounds.height / 8)]
+        let attEditLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 8)]
         let editLabelText = "Edit Profile"
         let attEdit = NSMutableAttributedString(string: editLabelText, attributes: attEditLabel)
         editLabel.attributedText = attEdit
@@ -170,7 +169,7 @@ class EditProfileViewController: UIViewController {
         
         
         
-        let emailLabelAttribute = [NSAttributedStringKey.font: UIFont(name: "catCafe", size: UIScreen.main.bounds.height / 26)]
+        let emailLabelAttribute = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 26)]
         let emailLabelText = "Email"
         let AttributeEmailLabel = NSMutableAttributedString(string: emailLabelText, attributes: emailLabelAttribute)
         emailLabel.attributedText = AttributeEmailLabel
@@ -220,7 +219,7 @@ class EditProfileViewController: UIViewController {
         passLabel.textAlignment = .center
         
         
-        let passLabelAttribute = [NSAttributedStringKey.font: UIFont(name: "catCafe", size: UIScreen.main.bounds.height / 26)]
+        let passLabelAttribute = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 26)]
         let passLabelText = "Password"
         let AttributePassLabel = NSMutableAttributedString(string: passLabelText, attributes: passLabelAttribute)
         passLabel.attributedText = AttributePassLabel
@@ -265,7 +264,7 @@ class EditProfileViewController: UIViewController {
         nameLabel.baselineAdjustment = .alignCenters
         nameLabel.textAlignment = .center
         
-        let nameLabelAttribute = [NSAttributedStringKey.font: UIFont(name: "catCafe", size: UIScreen.main.bounds.height / 26)]
+        let nameLabelAttribute = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 26)]
         let nameLabelText = "Username"
         let AttributeNameLabel = NSMutableAttributedString(string: nameLabelText, attributes: nameLabelAttribute)
         nameLabel.attributedText = AttributeNameLabel
@@ -308,7 +307,7 @@ class EditProfileViewController: UIViewController {
         avatarLabel.textAlignment = .center
         
         
-        let avatarLabelAttribute = [NSAttributedStringKey.font: UIFont(name: "catCafe", size: UIScreen.main.bounds.height / 26)]
+        let avatarLabelAttribute = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 26)]
         let avatarLabelText = "Avatar"
         let AttributeAvatarLabel = NSMutableAttributedString(string: avatarLabelText, attributes: avatarLabelAttribute)
         avatarLabel.attributedText = AttributeAvatarLabel
@@ -336,8 +335,8 @@ class EditProfileViewController: UIViewController {
         
         cameraButton.translatesAutoresizingMaskIntoConstraints = false
         
-        cameraButton.layer.borderWidth = 0.5
-        cameraButton.layer.borderColor = UIColor.black.cgColor
+//        cameraButton.layer.borderWidth = 0.5
+//        cameraButton.layer.borderColor = UIColor.black.cgColor
         
         NSLayoutConstraint(item: cameraButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         

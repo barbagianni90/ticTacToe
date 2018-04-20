@@ -15,6 +15,12 @@ class startingViewController: UIViewController{
     
     @IBOutlet weak var rankingButton: UIButton!
     
+    @IBAction func avatarButton(_ sender: Any) {
+        
+        let profile = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "profileInfo")
+        self.present(profile,animated: true,completion: nil)
+        
+    }
     
     @IBAction func trisButton(_ sender: Any) {
         if MainViewController.user.nickName != ""{
