@@ -76,6 +76,20 @@
                                     <action selector="trisButton:" destination="ZNW-wX-8rr" eventType="touchUpInside" id="yUg-Ka-Nsk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zD3-2P-n5d" userLabel="avatar">
+                                <rect key="frame" x="306" y="31" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daQ-gZ-xDc" userLabel="name">
+                                <rect key="frame" x="256" y="36" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kus-Lq-ifL">
                                 <rect key="frame" x="0.0" y="407" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -92,9 +106,11 @@
                     </view>
                     <connections>
                         <outlet property="SMConstraint" destination="7Of-2R-LYa" id="66d-CI-SSL"/>
+                        <outlet property="avatarButton" destination="zD3-2P-n5d" id="D3p-6G-WSl"/>
                         <outlet property="collectionView" destination="0S0-vH-Ff5" id="K9F-2m-y5b"/>
                         <outlet property="conteinerView" destination="kus-Lq-ifL" id="SlH-GY-9YS"/>
                         <outlet property="menuButton" destination="taP-Ma-GJW" id="6gR-2p-JcZ"/>
+                        <outlet property="nickNameLabel" destination="daQ-gZ-xDc" id="ZxA-kU-mVp"/>
                         <outlet property="sideMenuView" destination="q3R-pz-PUd" id="ELc-dP-cS3"/>
                         <outlet property="trisButton" destination="CfJ-FP-n8P" id="5DC-Hm-wSc"/>
                     </connections>

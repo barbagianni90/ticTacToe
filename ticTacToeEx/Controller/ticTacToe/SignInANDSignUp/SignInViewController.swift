@@ -67,7 +67,7 @@ class SignInViewController: UIViewController {
   
         
         homeButton.setTitle("Home", for: .normal)
-        homeButton.titleLabel?.font = UIFont(name: "shojumaru", size: UIScreen.main.bounds.width / 7)
+        homeButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.width / 7)
         
         
         homeButton.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -92,7 +92,7 @@ class SignInViewController: UIViewController {
         
         // create text label
         
-        let attTitleLabel = [NSAttributedStringKey.font: UIFont(name: "shojumaru", size: UIScreen.main.bounds.width / 2)]
+        let attTitleLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 10)]
         
         let signinLabelText = "Sign In"
         let attStr = NSMutableAttributedString(string: signinLabelText, attributes: attTitleLabel)
@@ -125,7 +125,7 @@ class SignInViewController: UIViewController {
         emailLabel.adjustsFontSizeToFitWidth = true
         emailLabel.baselineAdjustment = .alignCenters
         
-        let emailLabelAttribute = [NSAttributedStringKey.font: UIFont(name: "catCafe", size: UIScreen.main.bounds.width / 5)]
+        let emailLabelAttribute = [NSAttributedStringKey.font: UIFont(name: "catCafe", size: UIScreen.main.bounds.height / 20)]
         let emailLabelText = "Email"
         let AttributeEmailLabel = NSMutableAttributedString(string: emailLabelText, attributes: emailLabelAttribute)
         emailLabel.attributedText = AttributeEmailLabel
@@ -272,7 +272,7 @@ class SignInViewController: UIViewController {
         loginButton.titleLabel?.baselineAdjustment = .alignCenters
         
         loginButton.setTitle("Login", for: .normal)
-        loginButton.titleLabel?.font = UIFont(name: "shojumaru", size: UIScreen.main.bounds.width / 2)
+        loginButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.width / 2)
         
         
         

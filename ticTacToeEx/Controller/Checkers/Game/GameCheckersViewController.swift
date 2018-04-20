@@ -7,15 +7,135 @@
 //
 
 import UIKit
+import Firebase
 
 class GameCheckersViewController: UIViewController {
 
     
+    
+    @IBOutlet var buttons: [UIButton]!
+    
+    enum Error {
+        case impossible, mangiataObbligatoria, turnoAvversario
+    }
+    
+    var buttons2D: [[UIButton]]!
+    
+    var fPlayer = false
+    var sPlayer = false
+    
+    var mioTurno: Bool = false
+    
+    var user = User()
+    
+    var enemy = User()
+    
+    var myImage: UIImage!
+    
+    var enemyImage: UIImage!
+    
+    var myImageDama: UIImage!
+    
+    var enemyImageDama: UIImage!
+    
+    var nomeTabella = ""
+    
+    var caselleOccupabili: [String] = []
+    
+    var cellaToccata: String!
+    
+    var primoTocco: Bool = true
+    
+    var cellsMustEat: [String : [String]] = [:]
+    
+    
+    // Grafica
     @IBOutlet weak var damieraImage: UIImageView!
     @IBOutlet weak var damieraStackView: UIStackView!
+    // end
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if fPlayer == true {
+            myImage = UIImage(named: "pedinaBianca")
+            myImageDama = UIImage(named: "damaBianca")
+            
+            enemyImage = UIImage(named: "pedinaRossa")
+            enemyImageDama = UIImage(named: "damaRossa")
+        }
+        else if sPlayer == true {
+            myImage = UIImage(named: "pedinaRossa")
+            myImageDama = UIImage(named: "damaRossa")
+            
+            enemyImage = UIImage(named: "pedinaBianca")
+            enemyImageDama = UIImage(named: "damaBianca")
+        }
+        
+        self.setNomeTabella()
+        
+        buttons2D = Utils.collectionToArray2D(arr: buttons, size: 8)
+        
+        self.popolaTabellaIniziale()
+        
+        self.creaTabellaDB()
+        
+        let ref = Database.database().reference()
+        
+        ref.child("Utility\(nomeTabella)").observe(.value, with: { (snap) in
+            
+            let dict = snap.value as! [String : Any]
+            
+            let turno = dict["TurnoDi"] as! String
+            
+            if (turno == "PrimoGiocatore" && self.fPlayer == true) || (turno == "SecondoGiocatore" && self.sPlayer == true)  {
+                
+                self.mioTurno = true
+                for button in self.buttons {
+                    if button.backgroundImage(for: .normal) == self.myImage || button.backgroundImage(for: .normal) == self.myImageDama {
+                        self.mangiateObbligatorie(button)
+                    }
+                }
+            }
+            else {
+                self.mioTurno = false
+            }
+        })
+        
+        ref.child("\(self.user.nickName)Damiera").child("Mossa").observe(.value, with: { (snap) in
+            
+            let dict = snap.value as! [String : String]
+            
+            if dict["GiocoIniziato"] == "Ok"{
+                return
+            }
+            
+            for (key, value) in dict {
+                
+                if value != "" {
+                    
+                    let x = Int(String((key.first)!))!
+                    let y = Int(String((key.last)!))!
+                    
+                    if value.range(of: "Dama") != nil {
+                        self.buttons2D[x][y].setBackgroundImage(self.enemyImageDama, for: .normal)
+                    }
+                    else {
+                        self.buttons2D[x][y].setBackgroundImage(self.enemyImage, for: .normal)
+                    }
+                }
+                else {
+                    
+                    let x = Int(String((key.first)!))!
+                    let y = Int(String((key.last)!))!
+                    
+                    self.buttons2D[x][y].setBackgroundImage(nil, for: .normal)
+                }
+            }
+            self.getWinner()
+        })
+        
+        
         
         // set image damiera
         damieraImage.translatesAutoresizingMaskIntoConstraints = false
@@ -57,6 +177,528 @@ class GameCheckersViewController: UIViewController {
         
     }
 
+    func setNomeTabella() {
+        
+        self.nomeTabella = "\(self.user.nickName)Damiera"
+    }
     
+    func popolaTabellaIniziale() {
+        
+        for x in 5...7 {
+            
+            if x%2 != 0 {
+                for y in 0...7 {
+                    if y%2 != 0 {
+                        buttons2D[x][y].setBackgroundImage(self.myImage, for: .normal)
+                        buttons2D[x][y].setBackgroundImage(self.myImage, for: .disabled)
+                    }
+                }
+            }
+            else {
+                for y in 0...7 {
+                    if y%2 == 0 {
+                        buttons2D[x][y].setBackgroundImage(self.myImage, for: .normal)
+                        buttons2D[x][y].setBackgroundImage(self.myImage, for: .disabled)
+                    }
+                }
+            }
+        }
+        
+        for x in 0...2 {
+            
+            if x%2 != 0 {
+                for y in 0...7 {
+                    if y%2 != 0 {
+                        buttons2D[x][y].setBackgroundImage(self.enemyImage, for: .normal)
+                        buttons2D[x][y].setBackgroundImage(self.enemyImage, for: .disabled)
+                    }
+                }
+            }
+            else {
+                for y in 0...7 {
+                    if y%2 == 0{
+                        buttons2D[x][y].setBackgroundImage(self.enemyImage, for: .normal)
+                        buttons2D[x][y].setBackgroundImage(self.enemyImage, for: .disabled)
+                    }
+                }
+            }
+        }
+        
+    }
+    
+    func creaTabellaDB() {
+        
+        let ref = Database.database().reference()
+        
+        ref.child("\(self.user.nickName)Damiera").child("Mossa").child("GiocoIniziato").setValue("Ok")
+        
+        ref.child("Utility\(self.nomeTabella)").child("TurnoDi").setValue("PrimoGiocatore")
+    }
+    
+    func mangiateObbligatorie(_ casella: UIButton) {
+        
+        let x = Int(String((casella.titleLabel?.text?.first)!))!
+        let y = Int(String((casella.titleLabel?.text?.last)!))!
+        
+        if casella.backgroundImage(for: .normal) == self.myImage {
+            
+            self.mangiateObbligatoriePedina(casella, x, y)
+        }
+            
+        else if casella.backgroundImage(for: .normal) == self.myImageDama {
+            
+            self.mangiateObbligatorieDama(casella, x, y)
+        }
+    }
+    
+    func mangiateObbligatoriePedina(_ casella: UIButton, _ x: Int, _ y: Int) {
+        
+        if x - 2 >= 0 && y - 2 >= 0 && y + 2 <= 7 {
+            
+            var tmpFinalCells: [String] = []
+            
+            if (buttons2D[x - 1][y + 1].backgroundImage(for: .normal) == enemyImage || buttons2D[x - 1][y + 1].backgroundImage(for: .normal) == enemyImageDama) &&  buttons2D[x - 2][y + 2].backgroundImage(for: .normal) == nil{
+                
+                tmpFinalCells.append(buttons2D[x - 2][y + 2].titleLabel?.text as! String)
+            }
+            if (buttons2D[x - 1][y - 1].backgroundImage(for: .normal) == enemyImage || buttons2D[x - 1][y - 1].backgroundImage(for: .normal) == enemyImageDama) &&  buttons2D[x - 2][y - 2].backgroundImage(for: .normal) == nil{
+                
+                tmpFinalCells.append(buttons2D[x - 2][y - 2].titleLabel?.text as! String)
+            }
+            if tmpFinalCells.isEmpty == false {
+                self.cellsMustEat.updateValue(tmpFinalCells, forKey: casella.titleLabel?.text as! String)
+            }
+        }
+        else if x - 2 >= 0 && y - 2 <= 0 && y + 2 <= 7 {
+            
+            var tmpFinalCells: [String] = []
+            
+            if (buttons2D[x - 1][y + 1].backgroundImage(for: .normal) == enemyImage || buttons2D[x - 1][y + 1].backgroundImage(for: .normal) == enemyImageDama) &&  buttons2D[x - 2][y + 2].backgroundImage(for: .normal) == nil{
+                
+                tmpFinalCells.append(buttons2D[x - 2][y + 2].titleLabel?.text as! String)
+            }
+            
+            if tmpFinalCells.isEmpty == false {
+                self.cellsMustEat.updateValue(tmpFinalCells, forKey: casella.titleLabel?.text as! String)
+            }
+        }
+        else if x - 2 >= 0 && y - 2 >= 0 && y + 2 >= 7 {
+            
+            var tmpFinalCells: [String] = []
+            
+            if (buttons2D[x - 1][y - 1].backgroundImage(for: .normal) == enemyImage || buttons2D[x - 1][y - 1].backgroundImage(for: .normal) == enemyImageDama) &&  buttons2D[x - 2][y - 2].backgroundImage(for: .normal) == nil{
+                
+                tmpFinalCells.append(buttons2D[x - 2][y - 2].titleLabel?.text as! String)
+            }
+            if tmpFinalCells.isEmpty == false {
+                self.cellsMustEat.updateValue(tmpFinalCells, forKey: casella.titleLabel?.text as! String)
+            }
+        }
+    }
+    
+    func mangiateObbligatorieDama(_ casella: UIButton,_ x: Int,_ y: Int) {
+        
+        if x - 2 >= 0 && y - 2 >= 0 && y + 2 <= 7 {
+            
+            var tmpFinalCells: [String] = []
+            
+            if (buttons2D[x - 1][y + 1].backgroundImage(for: .normal) == enemyImage || buttons2D[x - 1][y + 1].backgroundImage(for: .normal) == enemyImageDama) &&  buttons2D[x - 2][y + 2].backgroundImage(for: .normal) == nil{
+                
+                tmpFinalCells.append(buttons2D[x - 2][y + 2].titleLabel?.text as! String)
+            }
+            if (buttons2D[x - 1][y - 1].backgroundImage(for: .normal) == enemyImage || buttons2D[x - 1][y - 1].backgroundImage(for: .normal) == enemyImage) &&  buttons2D[x - 2][y - 2].backgroundImage(for: .normal) == nil{
+                
+                tmpFinalCells.append(buttons2D[x - 2][y - 2].titleLabel?.text as! String)
+            }
+            if tmpFinalCells.isEmpty == false {
+                self.cellsMustEat.updateValue(tmpFinalCells, forKey: casella.titleLabel?.text as! String)
+            }
+        }
+        else if x - 2 >= 0 && y - 2 <= 0 && y + 2 <= 7 {
+            
+            var tmpFinalCells: [String] = []
+            
+            if (buttons2D[x - 1][y + 1].backgroundImage(for: .normal) == enemyImage || buttons2D[x - 1][y + 1].backgroundImage(for: .normal) == enemyImageDama) &&  buttons2D[x - 2][y + 2].backgroundImage(for: .normal) == nil{
+                
+                tmpFinalCells.append(buttons2D[x - 2][y + 2].titleLabel?.text as! String)
+            }
+            
+            if tmpFinalCells.isEmpty == false {
+                self.cellsMustEat.updateValue(tmpFinalCells, forKey: casella.titleLabel?.text as! String)
+            }
+        }
+        else if x - 2 >= 0 && y - 2 >= 0 && y + 2 >= 7 {
+            
+            var tmpFinalCells: [String] = []
+            
+            if (buttons2D[x - 1][y - 1].backgroundImage(for: .normal) == enemyImage || buttons2D[x - 1][y - 1].backgroundImage(for: .normal) == enemyImage) &&  buttons2D[x - 2][y - 2].backgroundImage(for: .normal) == nil{
+                
+                tmpFinalCells.append(buttons2D[x - 2][y - 2].titleLabel?.text as! String)
+            }
+            if tmpFinalCells.isEmpty == false {
+                self.cellsMustEat.updateValue(tmpFinalCells, forKey: casella.titleLabel?.text as! String)
+            }
+        }
+            
+            
+            
+            
+        else if x + 2 <= 7 && y - 2 >= 0 && y + 2 <= 7 {
+            
+            var tmpFinalCells: [String] = []
+            
+            if (buttons2D[x + 1][y + 1].backgroundImage(for: .normal) == enemyImage || buttons2D[x + 1][y + 1].backgroundImage(for: .normal) == enemyImageDama) &&  buttons2D[x + 2][y + 2].backgroundImage(for: .normal) == nil{
+                
+                tmpFinalCells.append(buttons2D[x + 2][y + 2].titleLabel?.text as! String)
+            }
+            if (buttons2D[x + 1][y - 1].backgroundImage(for: .normal) == enemyImage || buttons2D[x + 1][y - 1].backgroundImage(for: .normal) == enemyImageDama) && buttons2D[x + 2][y - 2].backgroundImage(for: .normal) == nil{
+                
+                tmpFinalCells.append(buttons2D[x + 2][y - 2].titleLabel?.text as! String)
+            }
+            if tmpFinalCells.isEmpty == false {
+                self.cellsMustEat.updateValue(tmpFinalCells, forKey: casella.titleLabel?.text as! String)
+            }
+        }
+            
+        else if x + 2 >= 0 && y - 2 <= 0 && y + 2 <= 7 {
+            
+            var tmpFinalCells: [String] = []
+            
+            if (buttons2D[x + 1][y + 1].backgroundImage(for: .normal) == enemyImage || buttons2D[x + 1][y + 1].backgroundImage(for: .normal) == enemyImageDama) &&  buttons2D[x + 2][y + 2].backgroundImage(for: .normal) == nil{
+                
+                tmpFinalCells.append(buttons2D[x + 2][y + 2].titleLabel?.text as! String)
+            }
+            
+            if tmpFinalCells.isEmpty == false {
+                self.cellsMustEat.updateValue(tmpFinalCells, forKey: casella.titleLabel?.text as! String)
+            }
+        }
+            
+        else if x + 2 >= 0 && y - 2 >= 0 && y + 2 >= 7 {
+            
+            var tmpFinalCells: [String] = []
+            
+            if (buttons2D[x + 1][y - 1].backgroundImage(for: .normal) == enemyImage || buttons2D[x + 1][y - 1].backgroundImage(for: .normal) == enemyImageDama) &&  buttons2D[x + 2][y - 2].backgroundImage(for: .normal) == nil{
+                
+                tmpFinalCells.append(buttons2D[x + 2][y - 2].titleLabel?.text as! String)
+            }
+            if tmpFinalCells.isEmpty == false {
+                self.cellsMustEat.updateValue(tmpFinalCells, forKey: casella.titleLabel?.text as! String)
+            }
+        }
+    }
+    
+    func ribaltoMossa(_ mossa: String) -> String {
+        
+        let x = Int(String(mossa.first!))!
+        let y = Int(String(mossa.last!))!
+        
+        let newX = 7 - x
+        let newY = 7 - y
+        
+        let newString = "\(newX):\(newY)"
+        
+        return newString
+        
+    }
+    
+    func impostaTurno() {
+        
+        let ref = Database.database().reference()
+        
+        if fPlayer == true {
+            ref.child("Utility\(self.nomeTabella)").child("TurnoDi").setValue("SecondoGiocatore")
+        }
+        else if sPlayer == true {
+            ref.child("Utility\(self.nomeTabella)").child("TurnoDi").setValue("PrimoGiocatore")
+        }
+    }
+    
+    
+    
+    @IBAction func mossa(_ sender: UIButton) {
+        
+        if self.mioTurno == true {
+            
+            if self.cellsMustEat.isEmpty == false && primoTocco == true {
+                
+                self.cellaToccata = sender.titleLabel?.text as! String
+                
+                for(key, value) in self.cellsMustEat {
+                    
+                    if key == sender.titleLabel?.text as! String {
+                        
+                        self.caselleOccupabili = value
+                        
+                        self.primoTocco = false
+                    }
+                }
+            }
+                
+            else if self.cellsMustEat.isEmpty == false && primoTocco == false {
+                
+                if self.caselleOccupabili.contains(sender.titleLabel?.text as! String) {
+                    
+                    if Int(String((sender.titleLabel?.text?.first!)!))! == 0 || buttons2D[Int(String(self.cellaToccata.first!))!][Int(String(self.cellaToccata.last!))!].backgroundImage(for: .normal) == self.myImageDama {
+                        
+                        sender.setBackgroundImage(self.myImageDama, for: .normal)
+                    }
+                    else {
+                        sender.setBackgroundImage(self.myImage, for: .normal)
+                    }
+                    
+                    var yMangiata = 0
+                    var xMangiata = 0
+                    
+                    if Int(String(self.cellaToccata.last!))! < Int(String((sender.titleLabel?.text?.last)!))! {
+                        
+                        yMangiata = Int(String(self.cellaToccata.last!))! + 1
+                    }
+                    else {
+                        yMangiata = Int(String(self.cellaToccata.last!))! - 1
+                    }
+                    
+                    if Int(String(self.cellaToccata.first!))! < Int(String((sender.titleLabel?.text?.first)!))! {
+                        
+                        xMangiata = Int(String(self.cellaToccata.first!))! + 1
+                    }
+                    else {
+                        
+                        xMangiata = Int(String(self.cellaToccata.first!))! - 1
+                    }
+                    
+                    buttons2D[xMangiata][yMangiata].setBackgroundImage(nil, for: .normal)
+                    
+                    self.caselleOccupabili.removeAll()
+                    
+                    self.cellsMustEat.removeAll()
+                    
+                    let cellaTocRib = self.ribaltoMossa(self.cellaToccata)
+                    let cellEated = self.ribaltoMossa("\(xMangiata):\(yMangiata)")
+                    let senderTitleRib = self.ribaltoMossa(sender.titleLabel?.text as! String)
+                    
+                    let ref = Database.database().reference()
+                    
+                    var mossa: [String : String] = [:]
+                    
+                    if buttons2D[Int(String(self.cellaToccata.first!))!][Int(String(self.cellaToccata.last!))!].backgroundImage(for: .normal) == self.myImageDama || Int(String((sender.titleLabel?.text?.first!)!))! == 0 {
+                        
+                        mossa = [
+                            "\(cellaTocRib)" : "",
+                            "\(cellEated)" : "",
+                            "\(senderTitleRib)" : "\(self.user.nickName):Dama"
+                        ]
+                    }
+                        
+                    else {
+                        mossa = [
+                            "\(cellaTocRib)" : "",
+                            "\(cellEated)" : "",
+                            "\(senderTitleRib)" : "\(self.user.nickName)"
+                        ]
+                    }
+                    
+                    buttons2D[Int(String(self.cellaToccata.first!))!][Int(String(self.cellaToccata.last!))!].setBackgroundImage(nil, for: .normal)
+                    
+                    self.cellaToccata = ""
+                    
+                    self.getWinner()
+                    
+                    ref.child("\(self.enemy.nickName)Damiera").child("Mossa").setValue(mossa)
+                    
+                    self.mangiateObbligatorie(sender)
+                    
+                    if cellsMustEat.isEmpty == true {
+                        self.impostaTurno()
+                    }
+                }
+                else {
+                    
+                    self.segnaliErrori(.impossible)
+                }
+                self.primoTocco = true
+            }
+                
+            else {
+                
+                if primoTocco == true {
+                    
+                    self.cellaToccata = sender.titleLabel?.text as! String
+                    
+                    let x = Int(String((sender.titleLabel?.text?.first)!))!
+                    let y = Int(String((sender.titleLabel?.text?.last)!))!
+                    
+                    if sender.backgroundImage(for: .normal) == self.myImage {
+                        
+                        if x > 0 && y + 1 <= 7 {
+                            if buttons2D[x - 1][y + 1].backgroundImage(for: .normal) == nil && y + 1 <= 7 {
+                                self.caselleOccupabili.append(buttons2D[x - 1][y + 1].titleLabel?.text as! String)
+                            }
+                        }
+                        if x > 0 && y - 1 >= 0 {
+                            if buttons2D[x - 1][y - 1].backgroundImage(for: .normal) == nil {
+                                self.caselleOccupabili.append(buttons2D[x - 1][y - 1].titleLabel?.text as! String)
+                            }
+                        }
+                    }
+                        
+                    else if sender.backgroundImage(for: .normal) == self.myImageDama {
+                        
+                        if x > 0 && y + 1 <= 7 {
+                            if buttons2D[x - 1][y + 1].backgroundImage(for: .normal) == nil {
+                                self.caselleOccupabili.append(buttons2D[x - 1][y + 1].titleLabel?.text as! String)
+                            }
+                        }
+                        if x > 0 && y - 1 >= 0 {
+                            if buttons2D[x - 1][y - 1].backgroundImage(for: .normal) == nil {
+                                self.caselleOccupabili.append(buttons2D[x - 1][y - 1].titleLabel?.text as! String)
+                            }
+                        }
+                        if x < 7 && y + 1 <= 7 {
+                            if buttons2D[x + 1][y + 1].backgroundImage(for: .normal) == nil {
+                                self.caselleOccupabili.append(buttons2D[x + 1][y + 1].titleLabel?.text as! String)
+                            }
+                        }
+                        if x < 7 && y - 1 >= 0 {
+                            if buttons2D[x + 1][y + 1].backgroundImage(for: .normal) == nil {
+                                self.caselleOccupabili.append(buttons2D[x + 1][y - 1].titleLabel?.text as! String)
+                            }
+                        }
+                        
+                    }
+                    self.primoTocco = false
+                }
+                else {
+                    
+                    if self.caselleOccupabili.contains(sender.titleLabel?.text as! String) {
+                        
+                        if Int(String((sender.titleLabel?.text?.first!)!))! == 0 ||  buttons2D[Int(String(self.cellaToccata.first!))!][Int(String(self.cellaToccata.last!))!].backgroundImage(for: .normal) == self.myImageDama {
+                            
+                            sender.setBackgroundImage(self.myImageDama, for: .normal)
+                        }
+                        else {
+                            sender.setBackgroundImage(self.myImage, for: .normal)
+                        }
+                        
+                        self.caselleOccupabili.removeAll()
+                        
+                        let ref = Database.database().reference()
+                        
+                        let cellaTocRib = self.ribaltoMossa(self.cellaToccata)
+                        let senderTitleRib = self.ribaltoMossa(sender.titleLabel?.text as! String)
+                        
+                        var mossa: [String : String] = [:]
+                        
+                        if buttons2D[Int(String(self.cellaToccata.first!))!][Int(String(self.cellaToccata.last!))!].backgroundImage(for: .normal) == self.myImageDama || Int(String((sender.titleLabel?.text?.first!)!))! == 0 {
+                            
+                            mossa = [
+                                "\(cellaTocRib)" : "",
+                                "\(senderTitleRib)" : "\(self.user.nickName):Dama"
+                            ]
+                        }
+                            
+                        else {
+                            
+                            mossa = [
+                                "\(cellaTocRib)" : "",
+                                "\(senderTitleRib)" : "\(self.user.nickName)"
+                            ]
+                            
+                        }
+                        
+                        buttons2D[Int(String(self.cellaToccata.first!))!][Int(String(self.cellaToccata.last!))!].setBackgroundImage(nil, for: .normal)
+                        
+                        self.cellaToccata = ""
+                        
+                        self.getWinner()
+                        
+                        ref.child("\(self.enemy.nickName)Damiera").child("Mossa").setValue(mossa)
+                        
+                        self.impostaTurno()
+                    }
+                    else{
+                        self.segnaliErrori(.impossible)
+                    }
+                    self.primoTocco = true
+                }
+            }
+        }
+        else {
+            
+            self.segnaliErrori(.turnoAvversario)
+        }
+    }
+    func getWinner() {
+        
+        var myCount = 0
+        var enemyCount = 0
+        
+        for button in buttons {
+            if button.backgroundImage(for: .normal) == self.myImage || button.backgroundImage(for: .normal) == self.myImageDama {
+                myCount += 1
+            }
+            else if button.backgroundImage(for: .normal) == self.enemyImage || button.backgroundImage(for: .normal) == self.enemyImageDama {
+                enemyCount += 1
+            }
+        }
+        
+        if myCount == 0 {
+            
+            let alert = UIAlertController(title: "Hai perso", message: "Mi spiace", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                
+            }))
+            
+            self.present(alert, animated: true)
+        }
+        else if enemyCount == 0 {
+            
+            let alert = UIAlertController(title: "Hai vinto", message: "bravo", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                
+            }))
+            
+            self.present(alert, animated: true)
+        }
+    }
+    
+    func segnaliErrori(_ error: Error) {
+        
+        switch error {
+            
+        case .turnoAvversario :
+            
+            let alert = UIAlertController(title: "Non è il tuo turno", message: "aspetta", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                
+            }))
+            
+            self.present(alert, animated: true)
+            
+        case .impossible:
+            
+            let alert = UIAlertController(title: "Mossa nn legale", message: "riprova", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                
+            }))
+            
+            self.present(alert, animated: true)
+            
+        case .mangiataObbligatoria:
+            
+            let alert = UIAlertController(title: "Mangiata obbligatoria", message: "Impossibile muovere la pedina selezionata", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                
+            }))
+            
+            self.present(alert, animated: true)
+            
+        }
+    }
 
 }
