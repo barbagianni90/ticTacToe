@@ -241,7 +241,7 @@ class MainViewController: UIViewController {
     }
     @IBAction func startGame(_ sender: Any) {
         
-        let startGameView = UIStoryboard(name: "LobbyANDGame", bundle: nil).instantiateViewController(withIdentifier: "lobby")
+        let startGameView = UIStoryboard(name: "Lobby", bundle: nil).instantiateViewController(withIdentifier: "lobby")
         self.present(startGameView, animated: true, completion: nil)
     }
     @IBAction func logOut(_ sender: Any) {

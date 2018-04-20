@@ -19,6 +19,8 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var statePlayerSelected: String = ""
     
+    static var gameSelected: String = ""
+    
     var selectedRow = -1
     
     @IBOutlet weak var lobbyTable: UITableView!
@@ -46,10 +48,10 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         self.lobbyTable.addSubview(refreshControl)
         
-        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue:"MyNotification"), object: nil, queue: nil, using: goToGameSelected)
+        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue:"MyNotification"), object: nil, queue: nil, using: invite)
     }
     
-    func goToGameSelected(notification: Notification) {
+    func invite(notification: Notification) {
         
         let ref = Database.database().reference()
         
@@ -61,7 +63,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
                 if user.nickName == self.nickNameSfidato{
                     
-                    ref.child("Players").child("\(user.id)").child("invitatoDa").setValue("\(MainViewController.user.nickName)")
+                    ref.child("Players").child("\(user.id)").child("invitatoDa").setValue("\(MainViewController.user.nickName)\(LobbyViewController.gameSelected)")
                 }
             }
             self.activityIndicator.center = self.view.center
@@ -84,44 +86,72 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             if value != "" {
                 
+                LobbyViewController.gameSelected = ConvertOptionalString.extractNameGame(value)
+                
+                let enemyNickName = ConvertOptionalString.extractNickname(value)
+                
                 ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("occupato")
                 
                 var idNickInvito = ""
                 
                 for user in self.players {
                     
-                    if user.nickName == value {
+                    if user.nickName == enemyNickName {
                         
                         idNickInvito = user.id
                     }
                 }
                 
-                let alert = UIAlertController(title: "\(value) ti ha invitato a giocare", message: nil, preferredStyle: .alert)
+                let alert = UIAlertController(title: "\(enemyNickName) ti ha invitato a giocare a \(LobbyViewController.gameSelected)", message: nil, preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "Accetto", style: .default, handler: { action in
                     
                     ref.child("Players").child("\(idNickInvito)").child("invitoAccettato").setValue("Si")
+                    
+                    if LobbyViewController.gameSelected == "Tris" {
                         
-                        let segue =  UIStoryboard(name:"LobbyANDGame",bundle:nil).instantiateViewController(withIdentifier: "Gioco") as! GameViewController
+                        let segue = UIStoryboard(name:"Lobby",bundle:nil).instantiateViewController(withIdentifier: "GameTrisID") as! GameTrisViewController
                         
                         let enemy = User()
-                        enemy.nickName = "\(value)"
-                    
-                        for user in self.players {
+                        enemy.nickName = "\(enemyNickName)"
                         
-                            if user.nickName == value {
+                        for user in self.players {
                             
+                            if user.nickName == enemyNickName {
+                                
                                 enemy.image = user.image
                             }
                         }
                         segue.enemy = enemy
-                    
+                        
                         segue.fPlayer = false
                         segue.sPlayer = true
                         
                         self.present(segue, animated: true, completion: nil)
-                    })
-                )
+                    }
+                    
+                    if LobbyViewController.gameSelected == "Dama" {
+                        
+                        let segue = UIStoryboard(name:"Lobby",bundle:nil).instantiateViewController(withIdentifier: "GameCheckID") as! GameTrisViewController
+                        
+                        let enemy = User()
+                        enemy.nickName = "\(enemyNickName)"
+                        
+                        for user in self.players {
+                            
+                            if user.nickName == enemyNickName {
+                                
+                                enemy.image = user.image
+                            }
+                        }
+                        segue.enemy = enemy
+                        
+                        segue.fPlayer = false
+                        segue.sPlayer = true
+                        
+                        self.present(segue, animated: true, completion: nil)
+                    }
+                }))
                 
                 alert.addAction(UIAlertAction(title: "Rifiuto", style: .default, handler: { action in
                     
@@ -144,7 +174,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 
                 if value == "Si" {
                     
-                    let segue =  UIStoryboard(name:"LobbyANDGame",bundle:nil).instantiateViewController(withIdentifier: "Gioco") as! GameViewController
+                    let segue =  UIStoryboard(name:"Lobby",bundle:nil).instantiateViewController(withIdentifier: "Gioco") as! GameTrisViewController
                     
                     let enemy = User()
                     enemy.nickName = "\(self.nickNameSfidato)"
@@ -222,7 +252,6 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.nickNameLabel.text = players[indexPath.row].nickName
         cell.stateLabel.text = players[indexPath.row].stato
         cell.imageCell.image = players[indexPath.row].image
-        //cell.imageCell.transform =  CGAffineTransform(rotationAngle: (90.0 * .pi) / 180.0)
         cell.imageCell.layer.cornerRadius = cell.imageCell.frame.size.width / 2
         cell.imageCell.layer.masksToBounds = true
         
