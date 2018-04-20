@@ -22,6 +22,12 @@
 		C433A575206D399300C2888F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C433A574206D399300C2888F /* Profile.storyboard */; };
 		C4413CA420887A0500286EF2 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = C4413CA320887A0500286EF2 /* camera.png */; };
 		C4413CA62088815700286EF2 /* ConvertOptionalString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4413CA52088815700286EF2 /* ConvertOptionalString.swift */; };
+		C4413CA82089DDAF00286EF2 /* GameTris.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4413CA72089DDAF00286EF2 /* GameTris.storyboard */; };
+		C4413CAA2089FC7B00286EF2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4413CA92089FC7B00286EF2 /* Alamofire.framework */; };
+		C4413CAC2089FC7B00286EF2 /* GoogleToolboxForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4413CAB2089FC7B00286EF2 /* GoogleToolboxForMac.framework */; };
+		C4413CAE2089FC7B00286EF2 /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4413CAD2089FC7B00286EF2 /* GTMSessionFetcher.framework */; };
+		C4413CB02089FC7B00286EF2 /* leveldb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4413CAF2089FC7B00286EF2 /* leveldb.framework */; };
+		C4413CB22089FC7B00286EF2 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4413CB12089FC7B00286EF2 /* nanopb.framework */; };
 		C445E5722074CE5C00241182 /* CustomEnemyChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E5712074CE5C00241182 /* CustomEnemyChatCell.swift */; };
 		C445E5742074CE7400241182 /* CustomUserChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E5732074CE7400241182 /* CustomUserChatCell.swift */; };
 		C445E5762074D00B00241182 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E5752074D00B00241182 /* Message.swift */; };
@@ -39,7 +45,7 @@
 		F3F62E9C2084FC8000A674BE /* StartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F62E9B2084FC8000A674BE /* StartTableViewController.swift */; };
 		FE159E26207E219F0075C533 /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE159E28207E219F0075C533 /* Start.storyboard */; };
 		FE159E2B207E3D3B0075C533 /* RankingDama.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE159E2D207E3D3B0075C533 /* RankingDama.storyboard */; };
-		FE159E36207E47960075C533 /* LobbyANDGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE159E38207E47960075C533 /* LobbyANDGame.storyboard */; };
+		FE159E36207E47960075C533 /* Lobby.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE159E38207E47960075C533 /* Lobby.storyboard */; };
 		FE1B8A9D207CB35D00960EEB /* Kalam-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE1B8A9C207CB35D00960EEB /* Kalam-Light.ttf */; };
 		FE1B8AA0207CB3D700960EEB /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE1B8A9E207CB3D700960EEB /* Raleway-Light.ttf */; };
 		FE1B8AA1207CB3D700960EEB /* Raleway-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE1B8A9F207CB3D700960EEB /* Raleway-ExtraLight.ttf */; };
@@ -58,7 +64,7 @@
 		FEC8A089206B87AA0031001B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A088206B87AA0031001B /* SignUpViewController.swift */; };
 		FEC8A08B206B89380031001B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A08A206B89380031001B /* ProfileViewController.swift */; };
 		FEC8A08D206B899D0031001B /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A08C206B899D0031001B /* RankingViewController.swift */; };
-		FEC8A0A5206BA0A40031001B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A0A4206BA0A40031001B /* GameViewController.swift */; };
+		FEC8A0A5206BA0A40031001B /* GameTrisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A0A4206BA0A40031001B /* GameTrisViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +85,12 @@
 		C433A574206D399300C2888F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		C4413CA320887A0500286EF2 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		C4413CA52088815700286EF2 /* ConvertOptionalString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertOptionalString.swift; sourceTree = "<group>"; };
+		C4413CA72089DDAF00286EF2 /* GameTris.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameTris.storyboard; sourceTree = "<group>"; };
+		C4413CA92089FC7B00286EF2 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4413CAB2089FC7B00286EF2 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4413CAD2089FC7B00286EF2 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4413CAF2089FC7B00286EF2 /* leveldb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = leveldb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4413CB12089FC7B00286EF2 /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C445E5712074CE5C00241182 /* CustomEnemyChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEnemyChatCell.swift; sourceTree = "<group>"; };
 		C445E5732074CE7400241182 /* CustomUserChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserChatCell.swift; sourceTree = "<group>"; };
 		C445E5752074D00B00241182 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -100,8 +112,8 @@
 		FE159E2A207E3C350075C533 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Start.strings; sourceTree = "<group>"; };
 		FE159E2C207E3D3B0075C533 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RankingDama.storyboard; sourceTree = "<group>"; };
 		FE159E2F207E3D410075C533 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/RankingDama.strings; sourceTree = "<group>"; };
-		FE159E37207E47960075C533 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LobbyANDGame.storyboard; sourceTree = "<group>"; };
-		FE159E3A207E479B0075C533 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LobbyANDGame.strings; sourceTree = "<group>"; };
+		FE159E37207E47960075C533 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Lobby.storyboard; sourceTree = "<group>"; };
+		FE159E3A207E479B0075C533 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Lobby.strings; sourceTree = "<group>"; };
 		FE1B8A9C207CB35D00960EEB /* Kalam-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kalam-Light.ttf"; sourceTree = "<group>"; };
 		FE1B8A9E207CB3D700960EEB /* Raleway-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Light.ttf"; sourceTree = "<group>"; };
 		FE1B8A9F207CB3D700960EEB /* Raleway-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -128,7 +140,7 @@
 		FEC8A0A0206B9AB50031001B /* SanFranciscoDisplay-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Medium.otf"; sourceTree = "<group>"; };
 		FEC8A0A1206B9AB60031001B /* SanFranciscoDisplay-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Light.otf"; sourceTree = "<group>"; };
 		FEC8A0A2206B9AB60031001B /* SanFranciscoDisplay-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoDisplay-Thin.otf"; sourceTree = "<group>"; };
-		FEC8A0A4206BA0A40031001B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		FEC8A0A4206BA0A40031001B /* GameTrisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTrisViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +148,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4413CAA2089FC7B00286EF2 /* Alamofire.framework in Frameworks */,
+				C4413CAC2089FC7B00286EF2 /* GoogleToolboxForMac.framework in Frameworks */,
+				C4413CAE2089FC7B00286EF2 /* GTMSessionFetcher.framework in Frameworks */,
+				C4413CB02089FC7B00286EF2 /* leveldb.framework in Frameworks */,
+				C4413CB22089FC7B00286EF2 /* nanopb.framework in Frameworks */,
 				2B1467CBB5A5A1BE6F82CFDE /* Pods_ticTacToeEx.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,6 +172,11 @@
 		2C00B40422DF1077882A6838 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C4413CA92089FC7B00286EF2 /* Alamofire.framework */,
+				C4413CAB2089FC7B00286EF2 /* GoogleToolboxForMac.framework */,
+				C4413CAD2089FC7B00286EF2 /* GTMSessionFetcher.framework */,
+				C4413CAF2089FC7B00286EF2 /* leveldb.framework */,
+				C4413CB12089FC7B00286EF2 /* nanopb.framework */,
 				43D9F084CFCF052BA4C562CB /* Pods_ticTacToeEx.framework */,
 			);
 			name = Frameworks;
@@ -167,8 +189,7 @@
 				C41036EC206E284E00423D7D /* LobbyViewController.swift */,
 				C445E5712074CE5C00241182 /* CustomEnemyChatCell.swift */,
 				C445E5732074CE7400241182 /* CustomUserChatCell.swift */,
-				FEC8A0A4206BA0A40031001B /* GameViewController.swift */,
-				FE159E38207E47960075C533 /* LobbyANDGame.storyboard */,
+				FE159E38207E47960075C533 /* Lobby.storyboard */,
 			);
 			path = LobbyANDGame;
 			sourceTree = "<group>";
@@ -229,7 +250,9 @@
 		F318762E2085E85100482CAD /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				C4413CA72089DDAF00286EF2 /* GameTris.storyboard */,
 				F318762F2085E90C00482CAD /* GameCheckers.storyboard */,
+				FEC8A0A4206BA0A40031001B /* GameTrisViewController.swift */,
 				F31876312085EBEE00482CAD /* GameCheckersViewController.swift */,
 			);
 			path = Game;
@@ -437,6 +460,7 @@
 				C41036FB206E6C5900423D7D /* avatar5.png in Resources */,
 				C433A571206D32DD00C2888F /* Ranking.storyboard in Resources */,
 				C41036F9206E6C5900423D7D /* avatar1.png in Resources */,
+				C4413CA82089DDAF00286EF2 /* GameTris.storyboard in Resources */,
 				FE1B8AA0207CB3D700960EEB /* Raleway-Light.ttf in Resources */,
 				FE4D55322069024000ABF6C1 /* Main.storyboard in Resources */,
 				FE6BF157206D0F1500BA7800 /* Shojumaru-Regular.ttf in Resources */,
@@ -445,7 +469,7 @@
 				FE6BF159206D113900BA7800 /* CatCafe.ttf in Resources */,
 				FE159E26207E219F0075C533 /* Start.storyboard in Resources */,
 				F31876302085E90C00482CAD /* GameCheckers.storyboard in Resources */,
-				FE159E36207E47960075C533 /* LobbyANDGame.storyboard in Resources */,
+				FE159E36207E47960075C533 /* Lobby.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,7 +553,7 @@
 				FE1B8AA7207CEC6000960EEB /* RankingDamaViewController.swift in Sources */,
 				FE4D552D2069023F00ABF6C1 /* AppDelegate.swift in Sources */,
 				FEC8A08D206B899D0031001B /* RankingViewController.swift in Sources */,
-				FEC8A0A5206BA0A40031001B /* GameViewController.swift in Sources */,
+				FEC8A0A5206BA0A40031001B /* GameTrisViewController.swift in Sources */,
 				C433A56E206D2D1400C2888F /* User.swift in Sources */,
 				C445E5782075057100241182 /* PhotoProfile.swift in Sources */,
 				C4413CA62088815700286EF2 /* ConvertOptionalString.swift in Sources */,
@@ -565,13 +589,13 @@
 			name = RankingDama.storyboard;
 			sourceTree = "<group>";
 		};
-		FE159E38207E47960075C533 /* LobbyANDGame.storyboard */ = {
+		FE159E38207E47960075C533 /* Lobby.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FE159E37207E47960075C533 /* Base */,
 				FE159E3A207E479B0075C533 /* it */,
 			);
-			name = LobbyANDGame.storyboard;
+			name = Lobby.storyboard;
 			sourceTree = "<group>";
 		};
 		FE4D55302069024000ABF6C1 /* Main.storyboard */ = {
@@ -710,7 +734,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZAJLT4BRY8;
+				DEVELOPMENT_TEAM = V2CAC79V4J;
 				INFOPLIST_FILE = ticTacToeEx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -727,7 +751,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZAJLT4BRY8;
+				DEVELOPMENT_TEAM = V2CAC79V4J;
 				INFOPLIST_FILE = ticTacToeEx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -1,5 +1,5 @@
 //
-//  GameViewController.swift
+//  GameTrisViewController.swift
 //  ticTacToeEx
 //
 //  Created by Stefano Apuzzo on 28/03/18.
@@ -31,7 +31,7 @@ class Utils{
     
 }
 
-class GameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate{
+class GameTrisViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate{
     
     //----------------------Chat-------------------------
     @IBOutlet weak var background: UIImageView!

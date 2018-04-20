@@ -35,6 +35,8 @@ class CustomLobbyCell: UITableViewCell {
 
     @IBAction func selectGame(_ sender: UIButton) {
         
+        LobbyViewController.gameSelected = ConvertOptionalString.convert(sender.titleLabel?.text!)
+        
         NotificationCenter.default.post(name: Notification.Name(rawValue:"MyNotification"), object: nil)
         
     }
