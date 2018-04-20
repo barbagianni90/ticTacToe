@@ -2,15 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>for image profile</string>
-	<key>NSCameraUsageDescription</key>
-	<string>for image profile</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -29,8 +20,21 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>for image profile</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>for image profile</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Raleway-ExtraLight</string>
+		<string>Raleway-Light</string>
+		<string>Roboto-Regular</string>
+		<string>Lato-Regular</string>
 		<string>SanFranciscoDisplay-Semibold.otf</string>
 		<string>SanFranciscoDisplay-Thin.otf</string>
 		<string>SanFranciscoDisplay-Regular.otf</string>

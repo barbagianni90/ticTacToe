@@ -56,6 +56,8 @@
 		FE4D55342069024000ABF6C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE4D55332069024000ABF6C1 /* Assets.xcassets */; };
 		FE4D55372069024000ABF6C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE4D55352069024000ABF6C1 /* LaunchScreen.storyboard */; };
 		FE5369522076501800908759 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5369512076501800908759 /* CollectionViewCell.swift */; };
+		FE588B262089DA14005E5657 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE588B252089DA14005E5657 /* Roboto-Regular.ttf */; };
+		FE588B282089DEE3005E5657 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE588B272089DEE3005E5657 /* Lato-Regular.ttf */; };
 		FE6BF157206D0F1500BA7800 /* Shojumaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE6BF156206D0F1400BA7800 /* Shojumaru-Regular.ttf */; };
 		FE6BF159206D113900BA7800 /* CatCafe.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE6BF158206D113800BA7800 /* CatCafe.ttf */; };
 		FEC8A084206B849C0031001B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A083206B849C0031001B /* SignInViewController.swift */; };
@@ -124,6 +126,8 @@
 		FE4D55362069024000ABF6C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE4D55382069024000ABF6C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE5369512076501800908759 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		FE588B252089DA14005E5657 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		FE588B272089DEE3005E5657 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		FE6BF156206D0F1400BA7800 /* Shojumaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Shojumaru-Regular.ttf"; sourceTree = "<group>"; };
 		FE6BF158206D113800BA7800 /* CatCafe.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CatCafe.ttf; sourceTree = "<group>"; };
 		FEC8A083206B849C0031001B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -368,6 +372,8 @@
 				FE1B8A9C207CB35D00960EEB /* Kalam-Light.ttf */,
 				FE1B8A9F207CB3D700960EEB /* Raleway-ExtraLight.ttf */,
 				FE1B8A9E207CB3D700960EEB /* Raleway-Light.ttf */,
+				FE588B252089DA14005E5657 /* Roboto-Regular.ttf */,
+				FE588B272089DEE3005E5657 /* Lato-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -440,10 +446,12 @@
 				FE1B8A9D207CB35D00960EEB /* Kalam-Light.ttf in Resources */,
 				C4ED73FB207F6CB000099716 /* default.jpg in Resources */,
 				C48477A1206D15C8002B6E18 /* SignInANDSignUp.storyboard in Resources */,
+				FE588B262089DA14005E5657 /* Roboto-Regular.ttf in Resources */,
 				C4413CA420887A0500286EF2 /* camera.png in Resources */,
 				C4E2E64D2077C1A9005CDD72 /* croce.png in Resources */,
 				C4E2E64E2077C1A9005CDD72 /* cerchio.png in Resources */,
 				FE1B8AA1207CB3D700960EEB /* Raleway-ExtraLight.ttf in Resources */,
+				FE588B282089DEE3005E5657 /* Lato-Regular.ttf in Resources */,
 				C41036FC206E6C5900423D7D /* avatar2.png in Resources */,
 				F3CEB71C207CABD200B4D772 /* MainCheckers.storyboard in Resources */,
 				FE4D55342069024000ABF6C1 /* Assets.xcassets in Resources */,
@@ -710,7 +718,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V2CAC79V4J;
+				DEVELOPMENT_TEAM = ZAJLT4BRY8;
 				INFOPLIST_FILE = ticTacToeEx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -727,7 +735,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V2CAC79V4J;
+				DEVELOPMENT_TEAM = ZAJLT4BRY8;
 				INFOPLIST_FILE = ticTacToeEx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
