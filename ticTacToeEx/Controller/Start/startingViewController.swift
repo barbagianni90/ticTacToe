@@ -59,6 +59,14 @@ class startingViewController: UIViewController{
         super.viewDidLoad()
         
         startingViewController.first = true
+        //swipe
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
+        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
+        self.view.addGestureRecognizer(swipeLeft)
         
         //background
         let background: UIImageView!
@@ -293,4 +301,16 @@ class startingViewController: UIViewController{
         }
     }
 
+    @objc func swipeAction(swipe: UISwipeGestureRecognizer){
+        if swipe.direction == .right && isSlideMenuHidden{
+            showSideMenu()
+            isSlideMenuHidden = !isSlideMenuHidden
+            
+        }else if swipe.direction == .left && !isSlideMenuHidden{
+            hideSideMenu()
+            isSlideMenuHidden = !isSlideMenuHidden
+        }
+        
+    }
+    
 }
