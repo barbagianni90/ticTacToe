@@ -15,7 +15,7 @@ class startingViewController: UIViewController{
     
     @IBAction func trisButton(_ sender: Any) {
         
-        let storyboard = UIStoryboard(name: "LobbyANDGame", bundle: nil).instantiateViewController(withIdentifier: "lobby")
+        let storyboard = UIStoryboard(name: "Lobby", bundle: nil).instantiateViewController(withIdentifier: "lobby")
         self.present(storyboard, animated: true, completion: nil)
         
     }

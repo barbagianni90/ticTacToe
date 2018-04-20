@@ -19,302 +19,494 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Cbb-LD-JEz">
-                                <rect key="frame" x="3" y="51" width="368" height="240"/>
+                                <rect key="frame" x="3" y="51" width="240" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0Tp-JL-SmB">
-                                        <rect key="frame" x="0.0" y="0.0" width="368" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" restorationIdentifier="Dama" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPs-kv-VOa">
-                                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="0:0"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="WxP-FF-Gx9"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TzD-1c-zsL">
-                                                <rect key="frame" x="46" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="30" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="0:1"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="luO-Ts-NJn"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7f-8f-k6w">
-                                                <rect key="frame" x="92" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="60" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="0:2"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="dRS-WM-DyV"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8s-9N-QnC">
-                                                <rect key="frame" x="138" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="90" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="0:3"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="ujb-ZN-Z7R"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MsL-gC-q1Y">
-                                                <rect key="frame" x="184" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="0:4"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="dFG-K3-Thh"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lo8-st-X0z">
-                                                <rect key="frame" x="230" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="150" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="0:5"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="FCf-ce-mXD"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcn-IB-aAN">
-                                                <rect key="frame" x="276" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="180" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="0:6"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="HJE-IC-uIf"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hcg-Ef-Zd3">
-                                                <rect key="frame" x="322" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="210" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="0:7"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="qIV-Fu-8mZ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Vl1-58-B3s">
-                                        <rect key="frame" x="0.0" y="30" width="368" height="30"/>
+                                        <rect key="frame" x="0.0" y="30" width="240" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iK0-Qs-gad">
-                                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="1:0"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="Dyp-su-EWZ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wl9-jZ-ELV">
-                                                <rect key="frame" x="46" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="30" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="1:1"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="Yrf-ZR-j2I"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QeQ-67-iQP">
-                                                <rect key="frame" x="92" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="60" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="1:2"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="q2N-JA-M68"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZy-mr-nNy">
-                                                <rect key="frame" x="138" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZy-mr-nNy" userLabel="1:3">
+                                                <rect key="frame" x="90" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="1:3"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="3Cq-JF-N0P"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Wb-a8-OQW">
-                                                <rect key="frame" x="184" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="1:4"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="Mxz-5g-jI9"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHv-a9-IZg">
-                                                <rect key="frame" x="230" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="150" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="1:5"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="B0H-Sf-z1m"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYw-bo-yFV">
-                                                <rect key="frame" x="276" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="180" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="1:6"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="HT2-Da-ttS"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JqV-Xs-Uc8">
-                                                <rect key="frame" x="322" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="210" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="1:7"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="ATh-uX-g4v"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="erj-Cs-cvc">
-                                        <rect key="frame" x="0.0" y="60" width="368" height="30"/>
+                                        <rect key="frame" x="0.0" y="60" width="240" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5y-bm-aFk">
-                                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="2:0"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="3xF-df-Ac2"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQs-np-SZv">
-                                                <rect key="frame" x="46" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="30" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="2:1"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="7XV-Np-S56"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yz-aH-tbD">
-                                                <rect key="frame" x="92" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="60" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="2:2"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="yVM-Qj-Umx"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPg-hb-NwZ">
-                                                <rect key="frame" x="138" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="90" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="2:3"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="sak-ll-3xN"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkB-WD-hCU">
-                                                <rect key="frame" x="184" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="2:4"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="HnP-3v-oEM"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J9W-IT-I9Y">
-                                                <rect key="frame" x="230" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="150" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="2:5"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="gpn-5o-J9f"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wBi-4M-1Yd">
-                                                <rect key="frame" x="276" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="180" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="2:6"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="FcM-QB-J4S"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNv-Zx-1oG">
-                                                <rect key="frame" x="322" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="210" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="2:7"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="JCs-OM-o2N"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="akz-x6-zly">
-                                        <rect key="frame" x="0.0" y="90" width="368" height="30"/>
+                                        <rect key="frame" x="0.0" y="90" width="240" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Md2-zN-PiE">
-                                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="3:0"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="ExA-VP-hgh"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIT-0a-KCc">
-                                                <rect key="frame" x="46" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="30" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="3:1"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="SEX-n9-8IW"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2Q-OH-8Cr">
-                                                <rect key="frame" x="92" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="60" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="3:2"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="o4k-qs-Waa"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PqQ-rm-9IR">
-                                                <rect key="frame" x="138" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="90" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="3:3"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="YtY-el-brc"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4z-LR-gPv">
-                                                <rect key="frame" x="184" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="3:4"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="jkX-wL-QXb"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgB-tq-dTs">
-                                                <rect key="frame" x="230" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="150" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="3:5"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="bPN-7S-qr0"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPZ-Lb-aHo">
-                                                <rect key="frame" x="276" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="180" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="3:6"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="b5h-gs-myQ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6r-aP-m4I">
-                                                <rect key="frame" x="322" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="210" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="3:7"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="mzO-j0-0qy"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="90Y-mb-t8s">
-                                        <rect key="frame" x="0.0" y="120" width="368" height="30"/>
+                                        <rect key="frame" x="0.0" y="120" width="240" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrl-67-iM6">
-                                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="4:0"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="1UB-Se-n55"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kpb-5G-1i4">
-                                                <rect key="frame" x="46" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="30" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="4:1"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="Fbt-pt-mot"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpd-cE-yS1">
-                                                <rect key="frame" x="92" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="60" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="4:2"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="N5d-cn-aNU"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8If-dp-x7C">
-                                                <rect key="frame" x="138" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="90" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="4:3"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="E0b-xA-mQu"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wa5-3M-2L6">
-                                                <rect key="frame" x="184" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="4:4"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="qKM-ql-uBc"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZy-UZ-cTb">
-                                                <rect key="frame" x="230" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="150" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="4:5"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="kME-op-Bai"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tci-pC-7bS">
-                                                <rect key="frame" x="276" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="180" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="4:6"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="f9c-R1-RPk"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7I-zI-QQG">
-                                                <rect key="frame" x="322" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="210" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="4:7"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="kiH-7a-acV"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7b4-55-qKh">
-                                        <rect key="frame" x="0.0" y="150" width="368" height="30"/>
+                                        <rect key="frame" x="0.0" y="150" width="240" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPv-8A-67G">
-                                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="5:0"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="4Ju-Vb-4S4"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkj-TH-tn1">
-                                                <rect key="frame" x="46" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="30" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="5:1"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="ueS-NI-qib"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFt-xB-2CH">
-                                                <rect key="frame" x="92" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="60" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="5:2"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="NwB-bd-yHn"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4t-IV-jFa">
-                                                <rect key="frame" x="138" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="90" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="5:3"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="kWg-U1-gQW"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2d-4y-aeb">
-                                                <rect key="frame" x="184" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="5:4"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="Hc4-Ft-Nn7"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cm-2m-1Rm">
-                                                <rect key="frame" x="230" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="150" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="5:5"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="RLE-vZ-8Hd"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfS-lX-Mv8">
-                                                <rect key="frame" x="276" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="180" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="5:6"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="MVb-6f-Qrg"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LL9-LV-9GF">
-                                                <rect key="frame" x="322" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="210" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="5:7"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="reY-pd-g3v"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0Jh-od-7UY">
-                                        <rect key="frame" x="0.0" y="180" width="368" height="30"/>
+                                        <rect key="frame" x="0.0" y="180" width="240" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wJ-hn-Gok">
-                                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="6:0"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="SU7-3A-X98"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uph-Ah-Al0">
-                                                <rect key="frame" x="46" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="30" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="6:1"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="vda-EA-1EN"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oio-qZ-8ZO">
-                                                <rect key="frame" x="92" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="60" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="6:2"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="Gjh-uW-ySv"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4om-Yl-SFQ">
-                                                <rect key="frame" x="138" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="90" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="6:3"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="t8M-xX-tRk"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G29-GK-eTx">
-                                                <rect key="frame" x="184" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="6:4"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="nWO-aH-heF"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzS-Xj-myy">
-                                                <rect key="frame" x="230" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="150" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="6:5"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="bZ9-O6-aab"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdE-vB-ZXX">
-                                                <rect key="frame" x="276" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="180" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="6:6"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="OtI-d8-Kob"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahK-Pc-A2a">
-                                                <rect key="frame" x="322" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="210" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="6:7"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="bh3-lf-CkR"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dkc-De-tqw">
-                                        <rect key="frame" x="0.0" y="210" width="368" height="30"/>
+                                        <rect key="frame" x="0.0" y="210" width="240" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYC-lX-nul">
-                                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="7:0"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="6PS-km-qyW"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5J-Ot-LBD">
-                                                <rect key="frame" x="46" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="30" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="7:1"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="PWJ-aC-GP8"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ex8-In-wGX">
-                                                <rect key="frame" x="92" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="60" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="7:2"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="nOy-zV-UU6"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gY5-Pb-2L7">
-                                                <rect key="frame" x="138" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="90" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="7:3"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="udo-qF-6C8"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="So9-Gy-smd">
-                                                <rect key="frame" x="184" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="7:4"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="oEo-YU-GNR"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbG-wc-dLW">
-                                                <rect key="frame" x="230" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="150" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="7:5"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="ojK-hR-g8Q"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jV-tQ-cSw">
-                                                <rect key="frame" x="276" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="180" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="7:6"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="ZYh-5i-O3b"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXN-QC-y7r">
-                                                <rect key="frame" x="322" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="210" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="7:7"/>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="1MR-id-ZkT"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -333,6 +525,70 @@
                     <connections>
                         <outlet property="damieraImage" destination="Ocm-Gz-vdt" id="j0V-Vj-KXI"/>
                         <outlet property="damieraStackView" destination="Cbb-LD-JEz" id="ZH3-ds-4bP"/>
+                        <outletCollection property="buttons" destination="vPs-kv-VOa" collectionClass="NSMutableArray" id="FCP-lH-NgA"/>
+                        <outletCollection property="buttons" destination="TzD-1c-zsL" collectionClass="NSMutableArray" id="0IN-lP-0VW"/>
+                        <outletCollection property="buttons" destination="I7f-8f-k6w" collectionClass="NSMutableArray" id="qB4-QO-eeF"/>
+                        <outletCollection property="buttons" destination="O8s-9N-QnC" collectionClass="NSMutableArray" id="Pod-tl-LyX"/>
+                        <outletCollection property="buttons" destination="MsL-gC-q1Y" collectionClass="NSMutableArray" id="nk6-YF-B4x"/>
+                        <outletCollection property="buttons" destination="Lo8-st-X0z" collectionClass="NSMutableArray" id="ZZY-2m-b13"/>
+                        <outletCollection property="buttons" destination="Fcn-IB-aAN" collectionClass="NSMutableArray" id="l0x-cz-s4T"/>
+                        <outletCollection property="buttons" destination="Hcg-Ef-Zd3" collectionClass="NSMutableArray" id="pYb-9v-cKU"/>
+                        <outletCollection property="buttons" destination="iK0-Qs-gad" collectionClass="NSMutableArray" id="aKI-pS-0hc"/>
+                        <outletCollection property="buttons" destination="wl9-jZ-ELV" collectionClass="NSMutableArray" id="dAD-iX-klg"/>
+                        <outletCollection property="buttons" destination="QeQ-67-iQP" collectionClass="NSMutableArray" id="rBA-nc-fJ5"/>
+                        <outletCollection property="buttons" destination="CZy-mr-nNy" collectionClass="NSMutableArray" id="y7L-4o-xco"/>
+                        <outletCollection property="buttons" destination="6Wb-a8-OQW" collectionClass="NSMutableArray" id="bBp-9i-svb"/>
+                        <outletCollection property="buttons" destination="qHv-a9-IZg" collectionClass="NSMutableArray" id="6Ms-iM-acS"/>
+                        <outletCollection property="buttons" destination="rYw-bo-yFV" collectionClass="NSMutableArray" id="zA0-dP-2WE"/>
+                        <outletCollection property="buttons" destination="JqV-Xs-Uc8" collectionClass="NSMutableArray" id="3U8-xT-7Nh"/>
+                        <outletCollection property="buttons" destination="k5y-bm-aFk" collectionClass="NSMutableArray" id="WVD-c2-fCf"/>
+                        <outletCollection property="buttons" destination="cQs-np-SZv" collectionClass="NSMutableArray" id="jts-ro-kG5"/>
+                        <outletCollection property="buttons" destination="6yz-aH-tbD" collectionClass="NSMutableArray" id="1Pd-Mx-1d4"/>
+                        <outletCollection property="buttons" destination="mPg-hb-NwZ" collectionClass="NSMutableArray" id="qHU-Ir-QDe"/>
+                        <outletCollection property="buttons" destination="rkB-WD-hCU" collectionClass="NSMutableArray" id="59z-Bx-9ws"/>
+                        <outletCollection property="buttons" destination="J9W-IT-I9Y" collectionClass="NSMutableArray" id="uOL-4o-LBR"/>
+                        <outletCollection property="buttons" destination="wBi-4M-1Yd" collectionClass="NSMutableArray" id="EFG-uy-Uvj"/>
+                        <outletCollection property="buttons" destination="jNv-Zx-1oG" collectionClass="NSMutableArray" id="shg-nl-UVo"/>
+                        <outletCollection property="buttons" destination="Md2-zN-PiE" collectionClass="NSMutableArray" id="Dbn-VO-bBc"/>
+                        <outletCollection property="buttons" destination="rIT-0a-KCc" collectionClass="NSMutableArray" id="4oP-x9-lvW"/>
+                        <outletCollection property="buttons" destination="i2Q-OH-8Cr" collectionClass="NSMutableArray" id="rjo-Ld-hgZ"/>
+                        <outletCollection property="buttons" destination="PqQ-rm-9IR" collectionClass="NSMutableArray" id="aCi-Qz-Qj5"/>
+                        <outletCollection property="buttons" destination="O4z-LR-gPv" collectionClass="NSMutableArray" id="QsP-Ab-pmu"/>
+                        <outletCollection property="buttons" destination="LgB-tq-dTs" collectionClass="NSMutableArray" id="jKf-B3-aex"/>
+                        <outletCollection property="buttons" destination="fPZ-Lb-aHo" collectionClass="NSMutableArray" id="6BY-s1-SND"/>
+                        <outletCollection property="buttons" destination="G6r-aP-m4I" collectionClass="NSMutableArray" id="aJY-AC-33x"/>
+                        <outletCollection property="buttons" destination="hrl-67-iM6" collectionClass="NSMutableArray" id="VbH-md-F0s"/>
+                        <outletCollection property="buttons" destination="Kpb-5G-1i4" collectionClass="NSMutableArray" id="lvP-Uo-L0L"/>
+                        <outletCollection property="buttons" destination="cpd-cE-yS1" collectionClass="NSMutableArray" id="VC9-dH-gd9"/>
+                        <outletCollection property="buttons" destination="8If-dp-x7C" collectionClass="NSMutableArray" id="nq1-MA-qyN"/>
+                        <outletCollection property="buttons" destination="wa5-3M-2L6" collectionClass="NSMutableArray" id="xQH-YF-LdW"/>
+                        <outletCollection property="buttons" destination="hZy-UZ-cTb" collectionClass="NSMutableArray" id="eIo-gc-zbe"/>
+                        <outletCollection property="buttons" destination="tci-pC-7bS" collectionClass="NSMutableArray" id="EeP-lY-WYs"/>
+                        <outletCollection property="buttons" destination="o7I-zI-QQG" collectionClass="NSMutableArray" id="sm6-dt-NLY"/>
+                        <outletCollection property="buttons" destination="ZPv-8A-67G" collectionClass="NSMutableArray" id="dxm-Di-tE6"/>
+                        <outletCollection property="buttons" destination="kkj-TH-tn1" collectionClass="NSMutableArray" id="fWc-aY-4Cl"/>
+                        <outletCollection property="buttons" destination="fFt-xB-2CH" collectionClass="NSMutableArray" id="3Wn-6q-nKU"/>
+                        <outletCollection property="buttons" destination="M4t-IV-jFa" collectionClass="NSMutableArray" id="s5U-Jt-6jx"/>
+                        <outletCollection property="buttons" destination="g2d-4y-aeb" collectionClass="NSMutableArray" id="VLi-hr-wwK"/>
+                        <outletCollection property="buttons" destination="5cm-2m-1Rm" collectionClass="NSMutableArray" id="4dL-cS-dua"/>
+                        <outletCollection property="buttons" destination="mfS-lX-Mv8" collectionClass="NSMutableArray" id="zbg-PE-vyS"/>
+                        <outletCollection property="buttons" destination="LL9-LV-9GF" collectionClass="NSMutableArray" id="Boj-qX-QTO"/>
+                        <outletCollection property="buttons" destination="0wJ-hn-Gok" collectionClass="NSMutableArray" id="a0E-Kr-SQo"/>
+                        <outletCollection property="buttons" destination="uph-Ah-Al0" collectionClass="NSMutableArray" id="wXK-nk-GdB"/>
+                        <outletCollection property="buttons" destination="oio-qZ-8ZO" collectionClass="NSMutableArray" id="8TS-ct-lDc"/>
+                        <outletCollection property="buttons" destination="4om-Yl-SFQ" collectionClass="NSMutableArray" id="2sz-Ih-tZx"/>
+                        <outletCollection property="buttons" destination="G29-GK-eTx" collectionClass="NSMutableArray" id="bRK-rv-1Wr"/>
+                        <outletCollection property="buttons" destination="xzS-Xj-myy" collectionClass="NSMutableArray" id="ehJ-J0-gYL"/>
+                        <outletCollection property="buttons" destination="xdE-vB-ZXX" collectionClass="NSMutableArray" id="zjY-1N-ZXd"/>
+                        <outletCollection property="buttons" destination="ahK-Pc-A2a" collectionClass="NSMutableArray" id="6Fp-xQ-kyD"/>
+                        <outletCollection property="buttons" destination="UYC-lX-nul" collectionClass="NSMutableArray" id="opK-GT-ZSV"/>
+                        <outletCollection property="buttons" destination="z5J-Ot-LBD" collectionClass="NSMutableArray" id="QBg-JG-dUZ"/>
+                        <outletCollection property="buttons" destination="ex8-In-wGX" collectionClass="NSMutableArray" id="c6P-XF-jmY"/>
+                        <outletCollection property="buttons" destination="gY5-Pb-2L7" collectionClass="NSMutableArray" id="Yot-CA-i2F"/>
+                        <outletCollection property="buttons" destination="So9-Gy-smd" collectionClass="NSMutableArray" id="qic-aj-OQ6"/>
+                        <outletCollection property="buttons" destination="DbG-wc-dLW" collectionClass="NSMutableArray" id="udp-mR-diU"/>
+                        <outletCollection property="buttons" destination="1jV-tQ-cSw" collectionClass="NSMutableArray" id="j6U-gJ-Gfe"/>
+                        <outletCollection property="buttons" destination="AXN-QC-y7r" collectionClass="NSMutableArray" id="QhC-N8-VWn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NOl-7q-IJ0" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -23,6 +23,11 @@
 		C4413CA420887A0500286EF2 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = C4413CA320887A0500286EF2 /* camera.png */; };
 		C4413CA62088815700286EF2 /* ConvertOptionalString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4413CA52088815700286EF2 /* ConvertOptionalString.swift */; };
 		C4413CA82089DDAF00286EF2 /* GameTris.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4413CA72089DDAF00286EF2 /* GameTris.storyboard */; };
+		C4413CAA2089FC7B00286EF2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4413CA92089FC7B00286EF2 /* Alamofire.framework */; };
+		C4413CAC2089FC7B00286EF2 /* GoogleToolboxForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4413CAB2089FC7B00286EF2 /* GoogleToolboxForMac.framework */; };
+		C4413CAE2089FC7B00286EF2 /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4413CAD2089FC7B00286EF2 /* GTMSessionFetcher.framework */; };
+		C4413CB02089FC7B00286EF2 /* leveldb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4413CAF2089FC7B00286EF2 /* leveldb.framework */; };
+		C4413CB22089FC7B00286EF2 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4413CB12089FC7B00286EF2 /* nanopb.framework */; };
 		C445E5722074CE5C00241182 /* CustomEnemyChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E5712074CE5C00241182 /* CustomEnemyChatCell.swift */; };
 		C445E5742074CE7400241182 /* CustomUserChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E5732074CE7400241182 /* CustomUserChatCell.swift */; };
 		C445E5762074D00B00241182 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E5752074D00B00241182 /* Message.swift */; };
@@ -79,6 +84,11 @@
 		C4413CA320887A0500286EF2 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		C4413CA52088815700286EF2 /* ConvertOptionalString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertOptionalString.swift; sourceTree = "<group>"; };
 		C4413CA72089DDAF00286EF2 /* GameTris.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameTris.storyboard; sourceTree = "<group>"; };
+		C4413CA92089FC7B00286EF2 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4413CAB2089FC7B00286EF2 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4413CAD2089FC7B00286EF2 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4413CAF2089FC7B00286EF2 /* leveldb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = leveldb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4413CB12089FC7B00286EF2 /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C445E5712074CE5C00241182 /* CustomEnemyChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEnemyChatCell.swift; sourceTree = "<group>"; };
 		C445E5732074CE7400241182 /* CustomUserChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserChatCell.swift; sourceTree = "<group>"; };
 		C445E5752074D00B00241182 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -134,6 +144,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4413CAA2089FC7B00286EF2 /* Alamofire.framework in Frameworks */,
+				C4413CAC2089FC7B00286EF2 /* GoogleToolboxForMac.framework in Frameworks */,
+				C4413CAE2089FC7B00286EF2 /* GTMSessionFetcher.framework in Frameworks */,
+				C4413CB02089FC7B00286EF2 /* leveldb.framework in Frameworks */,
+				C4413CB22089FC7B00286EF2 /* nanopb.framework in Frameworks */,
 				2B1467CBB5A5A1BE6F82CFDE /* Pods_ticTacToeEx.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +168,11 @@
 		2C00B40422DF1077882A6838 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C4413CA92089FC7B00286EF2 /* Alamofire.framework */,
+				C4413CAB2089FC7B00286EF2 /* GoogleToolboxForMac.framework */,
+				C4413CAD2089FC7B00286EF2 /* GTMSessionFetcher.framework */,
+				C4413CAF2089FC7B00286EF2 /* leveldb.framework */,
+				C4413CB12089FC7B00286EF2 /* nanopb.framework */,
 				43D9F084CFCF052BA4C562CB /* Pods_ticTacToeEx.framework */,
 			);
 			name = Frameworks;
@@ -706,7 +726,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZAJLT4BRY8;
+				DEVELOPMENT_TEAM = V2CAC79V4J;
 				INFOPLIST_FILE = ticTacToeEx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -723,7 +743,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZAJLT4BRY8;
+				DEVELOPMENT_TEAM = V2CAC79V4J;
 				INFOPLIST_FILE = ticTacToeEx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
