@@ -10,9 +10,12 @@ import UIKit
 
 class startingViewController: UIViewController{
     
+    @IBOutlet weak var avatarButton: UIButton!
+    @IBOutlet weak var nickNameLabel: UILabel!
+    
     @IBAction func trisButton(_ sender: Any) {
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainView")
+        let storyboard = UIStoryboard(name: "LobbyANDGame", bundle: nil).instantiateViewController(withIdentifier: "lobby")
         self.present(storyboard, animated: true, completion: nil)
         
     }
@@ -33,6 +36,7 @@ class startingViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        trisButton.isEnabled = false
         startingViewController.first = true
         
         //background
@@ -134,6 +138,65 @@ class startingViewController: UIViewController{
         trisButton.titleLabel?.baselineAdjustment = .alignCenters
         
         
+        // constraints avatar button
+        
+        avatarButton.translatesAutoresizingMaskIntoConstraints = false
+        //        avatarButton.layer.borderWidth = 1
+        //        avatarButton.layer.borderColor = UIColor.blue.cgColor
+        
+        NSLayoutConstraint(item: avatarButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 12.5).isActive = true
+        
+        NSLayoutConstraint(item: avatarButton, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: (UIScreen.main.bounds.width / 10)*8).isActive = true
+        
+        NSLayoutConstraint(item: avatarButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 10).isActive = true
+        
+        NSLayoutConstraint(item: avatarButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 10).isActive = true
+        
+        
+        avatarButton.imageView?.contentMode = .scaleAspectFill
+        avatarButton.imageView?.layer.cornerRadius = (UIScreen.main.bounds.width / 7) / 2
+        
+        avatarButton.backgroundColor = UIColor.clear
+        
+        
+        
+        
+        
+        
+        
+        
+        //set constraits nickname label
+        
+        nickNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        //        nickNameLabel.layer.borderWidth = 0.5
+        //        nickNameLabel.layer.borderColor = UIColor.black.cgColor
+        
+        NSLayoutConstraint(item: nickNameLabel, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 15).isActive = true
+        
+        NSLayoutConstraint(item: nickNameLabel, attribute: .right, relatedBy: .equal, toItem: avatarButton, attribute: .left, multiplier: 1, constant: -10).isActive = true
+        
+        NSLayoutConstraint(item: nickNameLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 2).isActive = true
+        
+        nickNameLabel.adjustsFontSizeToFitWidth = true
+        nickNameLabel.textAlignment = .right
+        
+        //
+        
+        //        NSLayoutConstraint(item: nickNameLabel, attribute: .centerY, relatedBy: .equal, toItem: avatarButton, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
+        
+        NSLayoutConstraint(item: nickNameLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 7).isActive = true
+        
+        nickNameLabel.baselineAdjustment = .alignCenters
+        
+        nickNameLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 23)
+        
+        
+        
+        
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -165,6 +228,29 @@ class startingViewController: UIViewController{
         UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()
         })
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if MainViewController.user.nickName == "" {
+            self.avatarButton.isHidden = true
+            self.nickNameLabel.isHidden = true
+        }
+        else{
+            self.avatarButton.isHidden = false
+            self.nickNameLabel.isHidden = false
+            self.trisButton.isEnabled = true
+            self.avatarButton.setBackgroundImage(MainViewController.user.image, for: .normal)
+            //self.avatarButton.transform = CGAffineTransform(rotationAngle: (90.0 * .pi) / 180.0)
+            self.avatarButton.layer.cornerRadius = UIScreen.main.bounds.width / 20
+            self.avatarButton.layer.masksToBounds = true
+            
+            self.nickNameLabel.text = MainViewController.user.nickName
+        }
+        
+        
     }
     
     
