@@ -224,42 +224,41 @@ class SignUpViewController: UIViewController{
         
         
         
-        // BACKGROUND
+        //background
+        let background: UIImageView!
+        background = UIImageView(frame: view.frame)
+        background.contentMode = .scaleAspectFill
+        background.clipsToBounds = true
+        background.image = UIImage(named: "start")
+        background.center = view.center
         
-        backgroundImage.translatesAutoresizingMaskIntoConstraints = false
+        //blur effect
+        let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.light))
+        blurEffect.frame = background.bounds
+        background.addSubview(blurEffect)
         
-        NSLayoutConstraint(item: backgroundImage, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
-        
-        NSLayoutConstraint(item: backgroundImage, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
-        
-        NSLayoutConstraint(item: backgroundImage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width).isActive = true
-        
-        NSLayoutConstraint(item: backgroundImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute , multiplier: 1, constant: UIScreen.main.bounds.height).isActive = true
-        
-        backgroundImage.image = UIImage(named: "cherryTree")
-        backgroundImage.contentMode = .scaleAspectFill
+        view.addSubview(background)
+        view.sendSubview(toBack: background)
         
         
         
         // HOME BUTTON
-        
         homeButton.translatesAutoresizingMaskIntoConstraints = false
         //        homeButton.layer.borderWidth = 0.5
         //        homeButton.layer.borderColor = UIColor.black.cgColor
         
         NSLayoutConstraint(item: homeButton, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: UIScreen.main.bounds.width / 15).isActive = true
-        
         NSLayoutConstraint(item: homeButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 28).isActive = true
-        
         NSLayoutConstraint(item: homeButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 7).isActive = true
-        
         NSLayoutConstraint(item: homeButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 7).isActive = true
+        
+        
+        homeButton.setTitle("Home", for: .normal)
+        homeButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)
+        
         
         homeButton.titleLabel?.adjustsFontSizeToFitWidth = true
         homeButton.titleLabel?.baselineAdjustment = .alignCenters
-        
-        homeButton.setTitle("Home", for: .normal)
-        homeButton.titleLabel?.font = UIFont(name: "shojumaru", size: UIScreen.main.bounds.width / 7)
         
         
         
@@ -272,14 +271,14 @@ class SignUpViewController: UIViewController{
         
         NSLayoutConstraint(item: signupLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         
-        NSLayoutConstraint(item: signupLabel, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 10).isActive = true
+        NSLayoutConstraint(item: signupLabel, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 8).isActive = true
         
         NSLayoutConstraint(item: signupLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 2).isActive = true
         
         NSLayoutConstraint(item: signupLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height / 10).isActive = true
         
    
-        let attTitleLabel = [NSAttributedStringKey.font: UIFont(name: "shojumaru", size: UIScreen.main.bounds.width / 2)]
+        let attTitleLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 12)]
         let signupLabelText = "Sign Up"
         let attStr = NSMutableAttributedString(string: signupLabelText, attributes: attTitleLabel)
         signupLabel.attributedText = attStr
@@ -287,6 +286,7 @@ class SignUpViewController: UIViewController{
         signupLabel.adjustsFontSizeToFitWidth = true
         
         signupLabel.baselineAdjustment = .alignCenters
+        signupLabel.textAlignment = .center
         
         
         
@@ -313,7 +313,7 @@ class SignUpViewController: UIViewController{
         
         
         
-        let emailLabelAttribute = [NSAttributedStringKey.font: UIFont(name: "catCafe", size: UIScreen.main.bounds.width / 5)]
+        let emailLabelAttribute = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.width / 5)]
         let emailLabelText = "Email"
         let AttributeEmailLabel = NSMutableAttributedString(string: emailLabelText, attributes: emailLabelAttribute)
         emailLabel.attributedText = AttributeEmailLabel
@@ -358,7 +358,7 @@ class SignUpViewController: UIViewController{
         passLabel.baselineAdjustment = .alignCenters
         
         
-        let passLabelAttribute = [NSAttributedStringKey.font: UIFont(name: "catCafe", size: UIScreen.main.bounds.width / 3)]
+        let passLabelAttribute = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.width / 3)]
         let passLabelText = "Password"
         let AttributePassLabel = NSMutableAttributedString(string: passLabelText, attributes: passLabelAttribute)
         passLabel.attributedText = AttributePassLabel
@@ -400,7 +400,7 @@ class SignUpViewController: UIViewController{
         avatarLabel.baselineAdjustment = .alignCenters
         
         
-        let avatarLabelAttribute = [NSAttributedStringKey.font: UIFont(name: "catCafe", size: UIScreen.main.bounds.width / 5)]
+        let avatarLabelAttribute = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.width / 5)]
         let avatarLabelText = "Avatar"
         let AttributeAvatarLabel = NSMutableAttributedString(string: avatarLabelText, attributes: avatarLabelAttribute)
         avatarLabel.attributedText = AttributeAvatarLabel
@@ -415,9 +415,9 @@ class SignUpViewController: UIViewController{
         
         NSLayoutConstraint(item: stackView, attribute: .top, relatedBy: .equal, toItem: avatarLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 120).isActive = true
         
-        NSLayoutConstraint(item: stackView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 1.25).isActive = true
+        NSLayoutConstraint(item: stackView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 2).isActive = true
         
-        NSLayoutConstraint(item: stackView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 7.25).isActive = true
+        NSLayoutConstraint(item: stackView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 11).isActive = true
         
         
         stackView.distribution = .fillEqually
@@ -465,7 +465,7 @@ class SignUpViewController: UIViewController{
         signinButton.titleLabel?.baselineAdjustment = .alignCenters
         
         signinButton.setTitle("Sign in!", for: .normal)
-        signinButton.titleLabel?.font = UIFont(name: "catCafe", size: UIScreen.main.bounds.width / 6)
+        signinButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 4)
         
         
         
@@ -486,7 +486,7 @@ class SignUpViewController: UIViewController{
         signinLabel.adjustsFontSizeToFitWidth = true
         signinLabel.baselineAdjustment = .alignCenters
         
-        let attrSignin = [NSAttributedStringKey.font: UIFont(name: "catCafe", size: UIScreen.main.bounds.width / 2)]
+        let attrSignin = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.width / 2)]
         let signinLabelText = "Do you already have an account?"
         let attSigninLabel = NSMutableAttributedString(string: signinLabelText, attributes: attrSignin)
         signinLabel.attributedText = attSigninLabel
@@ -498,23 +498,23 @@ class SignUpViewController: UIViewController{
         
         submitButton.translatesAutoresizingMaskIntoConstraints = false
         
-        submitButton.layer.borderWidth = 0.5
-        submitButton.layer.borderColor = UIColor.black.cgColor
+//        submitButton.layer.borderWidth = 0.5
+//        submitButton.layer.borderColor = UIColor.black.cgColor
         
         NSLayoutConstraint(item: submitButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         
-        NSLayoutConstraint(item: submitButton, attribute: .top, relatedBy: .equal, toItem: cameraButton, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 200).isActive = true
+        NSLayoutConstraint(item: submitButton, attribute: .top, relatedBy: .equal, toItem: cameraButton, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 50).isActive = true
         
         NSLayoutConstraint(item: submitButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 3).isActive = true
         
-        NSLayoutConstraint(item: submitButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height / 6).isActive = true
+        NSLayoutConstraint(item: submitButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height / 10).isActive = true
         
         submitButton.setTitle( "Submit", for: .normal)
         
         submitButton.titleLabel?.adjustsFontSizeToFitWidth = true
         submitButton.titleLabel?.baselineAdjustment = .alignCenters
         
-        submitButton.titleLabel?.font = UIFont(name: "shojumaru", size: UIScreen.main.bounds.height / 6)
+        submitButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 10)
         
         
         

@@ -21,6 +21,11 @@ class startingViewController: UIViewController{
         
     }
     
+    @IBAction func rankingButton(_ sender: Any) {
+        
+        let rankingView = UIStoryboard(name: "Ranking", bundle: nil).instantiateViewController(withIdentifier: "rankingList")
+        self.present(rankingView, animated: true, completion: nil)
+    }
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var sideMenuView: UIView!
     @IBOutlet weak var menuButton: UIButton!
