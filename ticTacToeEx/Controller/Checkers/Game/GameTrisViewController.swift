@@ -171,6 +171,23 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //background
+        
+        let background: UIImageView!
+        background = UIImageView(frame: view.frame)
+        background.contentMode = .scaleAspectFill
+        background.clipsToBounds = true
+        background.image = UIImage(named: "start")
+        background.center = view.center
+        
+        //blur effect
+        let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.light))
+        blurEffect.frame = background.bounds
+        background.addSubview(blurEffect)
+        
+        view.addSubview(background)
+        view.sendSubview(toBack: background)
+        
         //setting stack view
         stackView.translatesAutoresizingMaskIntoConstraints = false
         //top

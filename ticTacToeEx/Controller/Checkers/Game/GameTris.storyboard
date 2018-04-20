@@ -19,9 +19,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cherryTree" translatesAutoresizingMaskIntoConstraints="NO" id="1u9-I2-hFs">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="trisAgain" translatesAutoresizingMaskIntoConstraints="NO" id="qlR-ic-FoJ">
                                 <rect key="frame" x="67" y="109" width="240" height="128"/>
                             </imageView>
@@ -269,17 +266,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="1u9-I2-hFs" firstAttribute="top" secondItem="pUn-i0-XWl" secondAttribute="top" id="1vb-gG-zLF"/>
                             <constraint firstItem="3te-MT-eJQ" firstAttribute="top" relation="lessThanOrEqual" secondItem="qlR-ic-FoJ" secondAttribute="bottom" constant="116" id="7tG-Fz-1Sy"/>
                             <constraint firstItem="3te-MT-eJQ" firstAttribute="leading" secondItem="pjX-wr-omw" secondAttribute="leading" constant="20" id="8X9-tY-thO"/>
                             <constraint firstAttribute="bottom" secondItem="WIR-ph-Cwh" secondAttribute="bottom" constant="4" id="E08-Gl-7yW"/>
                             <constraint firstItem="pjX-wr-omw" firstAttribute="trailing" secondItem="3te-MT-eJQ" secondAttribute="trailing" constant="16" id="IKy-eS-qIw"/>
                             <constraint firstItem="WIR-ph-Cwh" firstAttribute="leading" secondItem="pUn-i0-XWl" secondAttribute="leading" constant="13" id="YxB-TD-UGP"/>
-                            <constraint firstItem="1u9-I2-hFs" firstAttribute="leading" secondItem="pjX-wr-omw" secondAttribute="leading" id="a3c-Ou-gaA"/>
-                            <constraint firstAttribute="bottom" secondItem="1u9-I2-hFs" secondAttribute="bottom" id="lt2-Ob-AEE"/>
                             <constraint firstAttribute="trailing" secondItem="WIR-ph-Cwh" secondAttribute="trailing" constant="9" id="mTH-mh-8cF"/>
                             <constraint firstItem="3te-MT-eJQ" firstAttribute="bottom" secondItem="pjX-wr-omw" secondAttribute="bottom" constant="-52" id="oa7-go-mXN"/>
-                            <constraint firstItem="1u9-I2-hFs" firstAttribute="trailing" secondItem="pjX-wr-omw" secondAttribute="trailing" id="zuS-Dv-1lI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pjX-wr-omw"/>
                     </view>
@@ -306,7 +299,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cherryTree" width="375" height="608"/>
         <image name="trisAgain" width="930" height="914"/>
     </resources>
 </document>
