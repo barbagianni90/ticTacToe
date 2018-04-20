@@ -27,9 +27,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cherryTree" translatesAutoresizingMaskIntoConstraints="NO" id="sPR-Ut-klH">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hvi-fI-Tc1">
                                 <rect key="frame" x="0.0" y="105" width="375" height="562"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -175,13 +172,9 @@
                             <constraint firstItem="vix-zq-BBQ" firstAttribute="trailing" secondItem="72u-cO-2eZ" secondAttribute="trailing" constant="20" id="AGr-uD-LgP"/>
                             <constraint firstItem="hvi-fI-Tc1" firstAttribute="leading" secondItem="vix-zq-BBQ" secondAttribute="leading" id="ERy-fc-nuG"/>
                             <constraint firstItem="i6O-PV-O4j" firstAttribute="top" secondItem="vix-zq-BBQ" secondAttribute="top" id="GlZ-SO-bRi"/>
-                            <constraint firstItem="sPR-Ut-klH" firstAttribute="bottom" secondItem="vix-zq-BBQ" secondAttribute="bottom" id="ITg-3L-0Y9"/>
                             <constraint firstItem="vix-zq-BBQ" firstAttribute="bottom" secondItem="hvi-fI-Tc1" secondAttribute="bottom" id="K6Q-K6-AFg"/>
                             <constraint firstItem="i6O-PV-O4j" firstAttribute="leading" secondItem="vix-zq-BBQ" secondAttribute="leading" constant="10" id="Nxq-Pg-HuT"/>
-                            <constraint firstItem="sPR-Ut-klH" firstAttribute="top" secondItem="8OI-Aa-Wx6" secondAttribute="top" id="Wdo-2F-7ai"/>
                             <constraint firstItem="vix-zq-BBQ" firstAttribute="trailing" secondItem="hvi-fI-Tc1" secondAttribute="trailing" id="X1e-VX-Bew"/>
-                            <constraint firstItem="sPR-Ut-klH" firstAttribute="trailing" secondItem="vix-zq-BBQ" secondAttribute="trailing" id="Zxb-fh-FCe"/>
-                            <constraint firstItem="sPR-Ut-klH" firstAttribute="leading" secondItem="vix-zq-BBQ" secondAttribute="leading" id="e3W-1Y-WUg"/>
                             <constraint firstItem="hvi-fI-Tc1" firstAttribute="top" secondItem="vix-zq-BBQ" secondAttribute="top" constant="85" id="ocQ-Ub-x1w"/>
                             <constraint firstItem="72u-cO-2eZ" firstAttribute="top" secondItem="vix-zq-BBQ" secondAttribute="top" constant="55" id="xb9-qR-cdu"/>
                         </constraints>
@@ -203,7 +196,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cherryTree" translatesAutoresizingMaskIntoConstraints="NO" id="XsT-BA-raY">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XsT-BA-raY">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -459,6 +452,7 @@
                         <viewLayoutGuide key="safeArea" id="8kd-hr-BYy"/>
                     </view>
                     <connections>
+                        <outlet property="background" destination="XsT-BA-raY" id="n78-RX-yia"/>
                         <outlet property="chatTable" destination="bqb-IH-KKW" id="bQO-Ju-fys"/>
                         <outlet property="stackView" destination="fAQ-Cn-CPp" id="SQW-8j-IWC"/>
                         <outlet property="textFieldMessage" destination="c4g-lZ-Noh" id="vne-g2-WpH"/>
@@ -478,7 +472,4 @@
             <point key="canvasLocation" x="2413.5999999999999" y="31.03448275862069"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="cherryTree" width="375" height="608"/>
-    </resources>
 </document>

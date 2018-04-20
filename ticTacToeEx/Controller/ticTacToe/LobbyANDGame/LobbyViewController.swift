@@ -47,6 +47,27 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.lobbyTable.addSubview(refreshControl)
         
         NotificationCenter.default.addObserver(forName: Notification.Name(rawValue:"MyNotification"), object: nil, queue: nil, using: goToGameSelected)
+        
+        //background
+        let background: UIImageView!
+        background = UIImageView(frame: view.frame)
+        background.contentMode = .scaleAspectFill
+        background.clipsToBounds = true
+        background.image = UIImage(named: "start")
+        background.center = view.center
+        
+        //blur effect
+        let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.light))
+        blurEffect.frame = background.bounds
+        background.addSubview(blurEffect)
+        
+        view.addSubview(background)
+        view.sendSubview(toBack: background)
+        
+        
+        
+        
+        
     }
     
     func goToGameSelected(notification: Notification) {

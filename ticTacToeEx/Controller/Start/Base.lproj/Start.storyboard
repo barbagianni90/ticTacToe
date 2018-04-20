@@ -77,9 +77,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zD3-2P-n5d" userLabel="avatar">
-                                <rect key="frame" x="306" y="31" width="46" height="30"/>
+                                <rect key="frame" x="314" y="31" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daQ-gZ-xDc" userLabel="name">
                                 <rect key="frame" x="256" y="36" width="42" height="21"/>
@@ -95,6 +94,10 @@
                                     <segue destination="Hub-pI-QDi" kind="embed" id="gHj-zk-TTe"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukG-hP-h5U" userLabel="ranking">
+                                <rect key="frame" x="164" y="213" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -109,6 +112,7 @@
                         <outlet property="conteinerView" destination="kus-Lq-ifL" id="SlH-GY-9YS"/>
                         <outlet property="menuButton" destination="taP-Ma-GJW" id="6gR-2p-JcZ"/>
                         <outlet property="nickNameLabel" destination="daQ-gZ-xDc" id="ZxA-kU-mVp"/>
+                        <outlet property="rankingButton" destination="ukG-hP-h5U" id="n1W-Ou-bdj"/>
                         <outlet property="sideMenuView" destination="q3R-pz-PUd" id="ELc-dP-cS3"/>
                         <outlet property="trisButton" destination="CfJ-FP-n8P" id="5DC-Hm-wSc"/>
                     </connections>

@@ -67,7 +67,7 @@ class SignInViewController: UIViewController {
   
         
         homeButton.setTitle("Home", for: .normal)
-        homeButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.width / 7)
+        homeButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)
         
         
         homeButton.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -92,7 +92,7 @@ class SignInViewController: UIViewController {
         
         // create text label
         
-        let attTitleLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 10)]
+        let attTitleLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 12)]
         
         let signinLabelText = "Sign In"
         let attStr = NSMutableAttributedString(string: signinLabelText, attributes: attTitleLabel)
@@ -125,7 +125,7 @@ class SignInViewController: UIViewController {
         emailLabel.adjustsFontSizeToFitWidth = true
         emailLabel.baselineAdjustment = .alignCenters
         
-        let emailLabelAttribute = [NSAttributedStringKey.font: UIFont(name: "catCafe", size: UIScreen.main.bounds.height / 20)]
+        let emailLabelAttribute = [NSAttributedStringKey.font: UIFont(name: "Raleway-Light", size: UIScreen.main.bounds.height / 20)]
         let emailLabelText = "Email"
         let AttributeEmailLabel = NSMutableAttributedString(string: emailLabelText, attributes: emailLabelAttribute)
         emailLabel.attributedText = AttributeEmailLabel
@@ -166,7 +166,7 @@ class SignInViewController: UIViewController {
         passLabel.baselineAdjustment = .alignCenters
         
         
-        let passLabelAttribute = [NSAttributedStringKey.font: UIFont(name: "catCafe", size: passLabel.frame.width)]
+        let passLabelAttribute = [NSAttributedStringKey.font: UIFont(name: "Raleway-Light", size: passLabel.frame.width)]
         let passLabelText = "Password"
         let AttributePassLabel = NSMutableAttributedString(string: passLabelText, attributes: passLabelAttribute)
         passLabel.attributedText = AttributePassLabel
@@ -209,7 +209,7 @@ class SignInViewController: UIViewController {
         registerButton.titleLabel?.baselineAdjustment = .alignCenters
         
         registerButton.setTitle("Register!", for: .normal)
-        registerButton.titleLabel?.font = UIFont(name: "catCafe", size: UIScreen.main.bounds.width / 6)
+        registerButton.titleLabel?.font = UIFont(name: "Raleway-Light", size: UIScreen.main.bounds.height / 4)
         
         
         // CONSTRAINTS REGISTER LABEL
@@ -230,7 +230,7 @@ class SignInViewController: UIViewController {
         registerLabel.adjustsFontSizeToFitWidth = true
         registerLabel.baselineAdjustment = .alignCenters
         
-        let attrRegister = [NSAttributedStringKey.font: UIFont(name: "catCafe", size: UIScreen.main.bounds.width / 2)]
+        let attrRegister = [NSAttributedStringKey.font: UIFont(name: "Raleway-Light", size: UIScreen.main.bounds.width / 2)]
         let registerLabelText = "Don't you have an account yet?"
         let attRegisterLabel = NSMutableAttributedString(string: registerLabelText, attributes: attrRegister)
         registerLabel.attributedText = attRegisterLabel
@@ -239,19 +239,36 @@ class SignInViewController: UIViewController {
         
         // CONSTRAINTS BACKGROUND
         
-        backgroundImage.translatesAutoresizingMaskIntoConstraints = false
+//        backgroundImage.translatesAutoresizingMaskIntoConstraints = false
+//
+//        NSLayoutConstraint(item: backgroundImage, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+//
+//        NSLayoutConstraint(item: backgroundImage, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
+//
+//        NSLayoutConstraint(item: backgroundImage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width).isActive = true
+//
+//        NSLayoutConstraint(item: backgroundImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute , multiplier: 1, constant: UIScreen.main.bounds.height).isActive = true
+//
+//        backgroundImage.image = UIImage(named: "start")
+//        backgroundImage.contentMode = .scaleAspectFill
         
-        NSLayoutConstraint(item: backgroundImage, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         
-        NSLayoutConstraint(item: backgroundImage, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
         
-        NSLayoutConstraint(item: backgroundImage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width).isActive = true
+        //background
+        let background: UIImageView!
+        background = UIImageView(frame: view.frame)
+        background.contentMode = .scaleAspectFill
+        background.clipsToBounds = true
+        background.image = UIImage(named: "start")
+        background.center = view.center
         
-        NSLayoutConstraint(item: backgroundImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute , multiplier: 1, constant: UIScreen.main.bounds.height).isActive = true
+        //blur effect
+        let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.light))
+        blurEffect.frame = background.bounds
+        background.addSubview(blurEffect)
         
-        backgroundImage.image = UIImage(named: "cherryTree")
-        backgroundImage.contentMode = .scaleAspectFill
-        
+        view.addSubview(background)
+        view.sendSubview(toBack: background)
         
         // CONSTRAINTS LOGIN BUTTON
         

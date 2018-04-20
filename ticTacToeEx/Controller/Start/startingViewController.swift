@@ -13,6 +13,7 @@ class startingViewController: UIViewController{
     @IBOutlet weak var avatarButton: UIButton!
     @IBOutlet weak var nickNameLabel: UILabel!
     
+    @IBOutlet weak var rankingButton: UIButton!
     @IBAction func trisButton(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "LobbyANDGame", bundle: nil).instantiateViewController(withIdentifier: "lobby")
@@ -93,6 +94,9 @@ class startingViewController: UIViewController{
         //menu button constraints
         menuButton.translatesAutoresizingMaskIntoConstraints = false
         
+//        menuButton.layer.borderColor = UIColor.white.cgColor
+//        menuButton.layer.borderWidth = 0.5
+        
         NSLayoutConstraint(item: menuButton, attribute: .left, relatedBy: .equal, toItem: sideMenuView, attribute: .right, multiplier: 1, constant: UIScreen.main.bounds.width / 15).isActive = true
         NSLayoutConstraint(item: menuButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 10).isActive = true
         NSLayoutConstraint(item: menuButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 8).isActive = true
@@ -121,7 +125,10 @@ class startingViewController: UIViewController{
         
         trisButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint(item: trisButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.size.height / 4).isActive = true
+//        trisButton.layer.borderWidth = 0.5
+//        trisButton.layer.borderColor = UIColor.white.cgColor
+        
+        NSLayoutConstraint(item: trisButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.size.height / 3).isActive = true
         
         NSLayoutConstraint(item: trisButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         
@@ -129,8 +136,8 @@ class startingViewController: UIViewController{
         
          NSLayoutConstraint(item: trisButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 8).isActive = true
         
-        trisButton.setTitle("Start", for: .normal)
-        trisButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 12)
+        trisButton.setTitle("Start Game", for: .normal)
+        trisButton.titleLabel?.font = UIFont(name: "Raleway-Light", size: UIScreen.main.bounds.size.height / 8)
         
         trisButton.setTitleColor(UIColor.white, for: .normal)
         
@@ -138,13 +145,47 @@ class startingViewController: UIViewController{
         trisButton.titleLabel?.baselineAdjustment = .alignCenters
         
         
+        
+        
+        // RANKING BUTTON
+        
+        rankingButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint(item: rankingButton, attribute: .top, relatedBy: .equal, toItem: trisButton, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 10).isActive = true
+        
+        NSLayoutConstraint(item: rankingButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        
+        NSLayoutConstraint(item: rankingButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 2).isActive = true
+        
+        NSLayoutConstraint(item: rankingButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 9).isActive = true
+        
+        rankingButton.setTitle("Ranking", for: .normal)
+        rankingButton.setTitleColor(UIColor.white, for: .normal)
+        rankingButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 9)
+        
+        rankingButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        rankingButton.titleLabel?.baselineAdjustment = .alignCenters
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         // constraints avatar button
         
         avatarButton.translatesAutoresizingMaskIntoConstraints = false
-        //        avatarButton.layer.borderWidth = 1
-        //        avatarButton.layer.borderColor = UIColor.blue.cgColor
+//                avatarButton.layer.borderWidth = 1
+//                avatarButton.layer.borderColor = UIColor.white.cgColor
         
-        NSLayoutConstraint(item: avatarButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 12.5).isActive = true
+        NSLayoutConstraint(item: avatarButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 9).isActive = true
         
         NSLayoutConstraint(item: avatarButton, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: (UIScreen.main.bounds.width / 10)*8).isActive = true
         
@@ -172,7 +213,7 @@ class startingViewController: UIViewController{
         //        nickNameLabel.layer.borderWidth = 0.5
         //        nickNameLabel.layer.borderColor = UIColor.black.cgColor
         
-        NSLayoutConstraint(item: nickNameLabel, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 15).isActive = true
+        NSLayoutConstraint(item: nickNameLabel, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 10.5).isActive = true
         
         NSLayoutConstraint(item: nickNameLabel, attribute: .right, relatedBy: .equal, toItem: avatarButton, attribute: .left, multiplier: 1, constant: -10).isActive = true
         
@@ -189,7 +230,8 @@ class startingViewController: UIViewController{
         
         nickNameLabel.baselineAdjustment = .alignCenters
         
-        nickNameLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 23)
+        nickNameLabel.font = UIFont(name: "Raleway-Light", size: UIScreen.main.bounds.height / 23)
+        nickNameLabel.textColor = UIColor.white
         
         
         
