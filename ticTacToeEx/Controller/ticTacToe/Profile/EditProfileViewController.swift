@@ -31,7 +31,6 @@ class EditProfileViewController: UIViewController {
     
     @IBOutlet weak var cameraButton: UIButton!
     
-    @IBOutlet weak var backgroundImage: UIImageView!
     
     
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
@@ -56,6 +55,26 @@ class EditProfileViewController: UIViewController {
             i += 1
         }
 
+        
+        //background
+        let background: UIImageView!
+        background = UIImageView(frame: view.frame)
+        background.contentMode = .scaleAspectFill
+        background.clipsToBounds = true
+        background.image = UIImage(named: "start")
+        background.center = view.center
+        
+        //blur effect
+        let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.light))
+        blurEffect.frame = background.bounds
+        background.addSubview(blurEffect)
+        
+        view.addSubview(background)
+        view.sendSubview(toBack: background)
+        
+        
+        
+        
         // PROFILE BUTTON
         
         
@@ -106,20 +125,7 @@ class EditProfileViewController: UIViewController {
         doneButton.titleLabel?.textAlignment = .right
         
         
-        // BACKGROUND
-        
-        backgroundImage.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint(item: backgroundImage, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
-        
-        NSLayoutConstraint(item: backgroundImage, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
-        
-        
-        NSLayoutConstraint(item: backgroundImage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width).isActive = true
-        
-        NSLayoutConstraint(item: backgroundImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height).isActive = true
-        
-        backgroundImage.contentMode = .scaleAspectFill
+   
         
         
         // Edit profile LABEL

@@ -21,11 +21,22 @@ class startingViewController: UIViewController{
         
     }
     
+    @IBAction func avatarButton(_ sender: Any) {
+        
+        let profile = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "profileInfo")
+        self.present(profile,animated: true,completion: nil)
+    }
+    
+    
     @IBAction func rankingButton(_ sender: Any) {
         
         let rankingView = UIStoryboard(name: "Ranking", bundle: nil).instantiateViewController(withIdentifier: "rankingList")
         self.present(rankingView, animated: true, completion: nil)
     }
+    
+    
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var sideMenuView: UIView!
     @IBOutlet weak var menuButton: UIButton!
