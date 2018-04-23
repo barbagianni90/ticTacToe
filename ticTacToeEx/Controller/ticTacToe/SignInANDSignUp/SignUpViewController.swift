@@ -109,7 +109,8 @@ class SignUpViewController: UIViewController{
                                     "vittorie" : "0",
                                     "sconfitte" : "0",
                                     "invitatoDa" : "",
-                                    "invitoAccettato" : ""  ])
+                                    "invitoAccettato" : "",
+                                    "loggato" : "Si" ])
                             
                             if SignUpViewController.imageProfileSelected != nil {
                                 
