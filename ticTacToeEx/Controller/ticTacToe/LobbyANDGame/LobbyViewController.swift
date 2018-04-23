@@ -13,6 +13,13 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var players: [User] = []
     
+    @IBOutlet weak var homeButton: UIButton!
+    @IBOutlet weak var giocatoreLabel: UILabel!
+    
+    @IBOutlet weak var lobbyLabel: UILabel!
+    @IBOutlet weak var statoLabel: UILabel!
+    
+    
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     var nickNameSfidato: String = ""
@@ -68,6 +75,134 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         view.addSubview(background)
         view.sendSubview(toBack: background)
+        
+        
+        
+        // home button
+        
+        homeButton.translatesAutoresizingMaskIntoConstraints = false
+        //        homeButton.layer.borderWidth = 0.5
+        //        homeButton.layer.borderColor = UIColor.black.cgColor
+        
+        NSLayoutConstraint(item: homeButton, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: UIScreen.main.bounds.width / 15).isActive = true
+        NSLayoutConstraint(item: homeButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 28).isActive = true
+        NSLayoutConstraint(item: homeButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 7).isActive = true
+        NSLayoutConstraint(item: homeButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 7).isActive = true
+        
+        
+        homeButton.setTitle("Home", for: .normal)
+        homeButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)
+        
+        
+        homeButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        homeButton.titleLabel?.baselineAdjustment = .alignCenters
+        
+        
+        // lobby label
+        
+        lobbyLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        //        rankingLabel.layer.borderColor = UIColor.white.cgColor
+        //        rankingLabel.layer.borderWidth = 0.5
+        
+        NSLayoutConstraint(item: lobbyLabel, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.size.height / 10).isActive = true
+        
+        NSLayoutConstraint(item: lobbyLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        
+        NSLayoutConstraint(item: lobbyLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 2).isActive = true
+        
+        NSLayoutConstraint(item: lobbyLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 6).isActive = true
+        
+        let attTitleLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)]
+        
+        let lobbyLabelText = "Lobby"
+        let attLobby = NSMutableAttributedString(string: lobbyLabelText, attributes: attTitleLabel)
+        
+        lobbyLabel.attributedText = attLobby
+        
+        lobbyLabel.adjustsFontSizeToFitWidth = true
+        lobbyLabel.baselineAdjustment = .alignCenters
+        
+        
+        
+        
+        // giocatore label
+        
+        
+        statoLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+//                statoLabel.layer.borderColor = UIColor.white.cgColor
+//                statoLabel.layer.borderWidth = 0.5
+        
+        NSLayoutConstraint(item: statoLabel, attribute: .top, relatedBy: .equal, toItem: lobbyLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 30).isActive = true
+        
+        NSLayoutConstraint(item: statoLabel, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: UIScreen.main.bounds.size.width / -20).isActive = true
+        
+        
+        NSLayoutConstraint(item: statoLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 4).isActive = true
+        
+        NSLayoutConstraint(item: statoLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 20).isActive = true
+        
+        
+        
+        let attStatoLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 12)]
+        
+        let statoLabelText = "Status"
+        let attStato = NSMutableAttributedString(string: statoLabelText, attributes: attStatoLabel)
+        
+        statoLabel.attributedText = attStato
+        
+        statoLabel.adjustsFontSizeToFitWidth = true
+        statoLabel.baselineAdjustment = .alignCenters
+        
+        
+        
+        // giocatore label
+        
+        giocatoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+//                giocatoreLabel.layer.borderColor = UIColor.white.cgColor
+//                giocatoreLabel.layer.borderWidth = 0.5
+        
+        NSLayoutConstraint(item: giocatoreLabel, attribute: .top, relatedBy: .equal, toItem: lobbyLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 30).isActive = true
+        
+        NSLayoutConstraint(item: giocatoreLabel, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: UIScreen.main.bounds.size.width / 20).isActive = true
+        
+        
+        NSLayoutConstraint(item: giocatoreLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 4).isActive = true
+        
+        NSLayoutConstraint(item: giocatoreLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 20).isActive = true
+        
+        
+        
+        let attGiocatoreLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 12)]
+        
+        let giocatoreLabelText = "Player"
+        let attGiocatore = NSMutableAttributedString(string: giocatoreLabelText, attributes: attGiocatoreLabel)
+        
+        giocatoreLabel.attributedText = attGiocatore
+        
+        giocatoreLabel.adjustsFontSizeToFitWidth = true
+        giocatoreLabel.baselineAdjustment = .alignCenters
+        
+        
+        // lobby table
+        
+        lobbyTable.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint(item: lobbyTable, attribute: .top, relatedBy: .equal, toItem: statoLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 100).isActive = true
+        
+        NSLayoutConstraint(item: lobbyTable, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        
+        NSLayoutConstraint(item: lobbyTable, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width).isActive = true
+        
+        NSLayoutConstraint(item: lobbyTable, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+        
+      
+        
+        
+        
+        
     }
     
     func invite(notification: Notification) {
@@ -303,14 +438,19 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.button2.layer.cornerRadius = cell.button2.frame.size.width / 2
         cell.button3.layer.cornerRadius = cell.button3.frame.size.width / 2
         
+        
+        
         cell.button1.setBackgroundImage(UIImage(named: "iconTris"), for: .normal)
         cell.button2.setBackgroundImage(UIImage(named: "checkIcon"), for: .normal)
         cell.button3.setBackgroundImage(UIImage(named: "chessIcon"), for: .normal)
         
+        
+        
+        
         cell.button3.isEnabled = false
         cell.button3.alpha = 0.5
         
-        tableView.rowHeight = CGFloat(45.0)
+        tableView.rowHeight = UIScreen.main.bounds.size.height / 8
         
         return cell
     }
