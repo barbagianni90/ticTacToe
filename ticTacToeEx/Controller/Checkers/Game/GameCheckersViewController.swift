@@ -350,10 +350,6 @@ class GameCheckersViewController: UIViewController {
                 self.cellsMustEat.updateValue(tmpFinalCells, forKey: casella.titleLabel?.text as! String)
             }
         }
-            
-            
-            
-            
         else if x + 2 <= 7 && y - 2 >= 0 && y + 2 <= 7 {
             
             var tmpFinalCells: [String] = []
@@ -571,7 +567,7 @@ class GameCheckersViewController: UIViewController {
                             }
                         }
                         if x < 7 && y - 1 >= 0 {
-                            if buttons2D[x + 1][y + 1].backgroundImage(for: .normal) == nil {
+                            if buttons2D[x + 1][y - 1].backgroundImage(for: .normal) == nil {
                                 self.caselleOccupabili.append(buttons2D[x + 1][y - 1].titleLabel?.text as! String)
                             }
                         }
