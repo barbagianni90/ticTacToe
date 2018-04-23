@@ -12,6 +12,15 @@ import Firebase
 
 class RankingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBAction func segmented(_ sender: UISegmentedControl) {
+        
+//        switch sender.selectedSegmentIndex {
+//        case 0:
+//
+//        default:
+//            <#code#>
+//        }
+    }
     
     @IBOutlet weak var rankingLabel: UILabel!
     

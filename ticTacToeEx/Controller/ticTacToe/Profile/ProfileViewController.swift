@@ -119,12 +119,12 @@ class ProfileViewController: UIViewController {
         
         NSLayoutConstraint(item: avatarImage, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         
-        NSLayoutConstraint(item: avatarImage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 4).isActive = true
+        NSLayoutConstraint(item: avatarImage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 3).isActive = true
 
-        NSLayoutConstraint(item: avatarImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 4).isActive = true
+        NSLayoutConstraint(item: avatarImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 3).isActive = true
         
-//        avatarImage.layer.cornerRadius = (UIScreen.main.bounds.width / 4)
-        avatarImage.layer.cornerRadius = (UIScreen.main.bounds.width / 4) / 2
+
+        avatarImage.layer.cornerRadius = (UIScreen.main.bounds.width / 3) / 2
         avatarImage.contentMode = .scaleAspectFill
         
         
@@ -206,8 +206,10 @@ class ProfileViewController: UIViewController {
         self.nickNameLabel.text = MainViewController.user.nickName
         self.nickNameLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)
         
-        self.stateLabel.text = MainViewController.user.stato
+        self.stateLabel.text = String(MainViewController.user.vittorie)
         self.stateLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 8)
+        
+        
     }
    
     /*
