@@ -718,11 +718,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V2CAC79V4J;
+				DEVELOPMENT_TEAM = U6UD8WWS49;
 				INFOPLIST_FILE = ticTacToeEx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = it.stefanoApuzzo.ticTacToeEx;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stefanoApuzzo.ticTacToeEx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -735,11 +735,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V2CAC79V4J;
+				DEVELOPMENT_TEAM = U6UD8WWS49;
 				INFOPLIST_FILE = ticTacToeEx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = it.stefanoApuzzo.ticTacToeEx;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stefanoApuzzo.ticTacToeEx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
