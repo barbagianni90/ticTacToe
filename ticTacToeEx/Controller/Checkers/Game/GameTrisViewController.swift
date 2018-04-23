@@ -85,6 +85,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             cell.messageLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 30)
             cell.messageLabel.adjustsFontSizeToFitWidth = true
 
+           
             
             return cell
         }
@@ -115,8 +116,14 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             
             cell.messageLabel.adjustsFontSizeToFitWidth = true
             
+            
+            
+            
             return cell
         }
+        
+        
+       
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -289,6 +296,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         
         
         
+
         
         let ref = Database.database().reference()
         
@@ -370,7 +378,9 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
                 }
                 self.messages.sort(by: {$0.n_message < $1.n_message})
                 self.chatTable.reloadData()
+                
             }
+        
         }
         
         

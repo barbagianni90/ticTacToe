@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Raleway-Light.ttf">
+            <string>Raleway-Light</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Starting View Controller-->
         <scene sceneID="pOe-Dl-oX2">
@@ -94,11 +99,12 @@
         <scene sceneID="9yr-89-Szw">
             <objects>
                 <tableViewController id="Hub-pI-QDi" customClass="StartTableViewController" customModule="ticTacToeEx" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="zev-PG-6Sg">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="zev-PG-6Sg">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="separatorInset" minX="2000" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <sections>
                             <tableViewSection id="yCd-Th-vQX">
                                 <cells>
@@ -110,19 +116,18 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgP-Z0-T8n">
-                                                    <rect key="frame" x="0.0" y="0.0" width="224" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="43.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                                    <color key="textColor" red="0.95280774110964461" green="0.87490446792908039" blue="0.29664401463308537" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="dgP-Z0-T8n" secondAttribute="trailing" constant="60" id="9cy-TK-j2V"/>
                                                 <constraint firstItem="dgP-Z0-T8n" firstAttribute="top" secondItem="Dtx-2D-Vn1" secondAttribute="top" id="Q3l-nh-c8E"/>
                                                 <constraint firstItem="dgP-Z0-T8n" firstAttribute="leading" secondItem="Dtx-2D-Vn1" secondAttribute="leading" id="XGi-sQ-PFY"/>
                                                 <constraint firstAttribute="bottom" secondItem="dgP-Z0-T8n" secondAttribute="bottom" id="qFE-br-jdR"/>
-                                                <constraint firstAttribute="trailing" secondItem="dgP-Z0-T8n" secondAttribute="trailing" constant="16" id="rIk-Fs-2RF"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -135,18 +140,18 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gp0-fI-piU">
-                                                    <rect key="frame" x="0.0" y="0.0" width="224" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="43.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                                    <color key="textColor" red="0.95280774110964461" green="0.87490446792908039" blue="0.29664401463308537" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Gp0-fI-piU" firstAttribute="top" secondItem="7dX-0l-41l" secondAttribute="top" id="81a-J4-IB6"/>
                                                 <constraint firstAttribute="bottom" secondItem="Gp0-fI-piU" secondAttribute="bottom" id="8W6-Rc-2XC"/>
-                                                <constraint firstAttribute="trailing" secondItem="Gp0-fI-piU" secondAttribute="trailing" constant="16" id="Bam-v7-98i"/>
                                                 <constraint firstItem="Gp0-fI-piU" firstAttribute="leading" secondItem="7dX-0l-41l" secondAttribute="leading" id="U08-fX-JuH"/>
+                                                <constraint firstAttribute="trailing" secondItem="Gp0-fI-piU" secondAttribute="trailing" constant="60" id="t3g-7F-dz8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
