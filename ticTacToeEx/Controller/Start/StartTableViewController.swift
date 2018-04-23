@@ -12,6 +12,7 @@ import Firebase
 class StartTableViewController: UITableViewController {
     
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var profileLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,19 @@ class StartTableViewController: UITableViewController {
             
             label.text = "Log out"
         }
-        label.adjustsFontForContentSizeCategory = true
+        
+        
+        label.adjustsFontSizeToFitWidth = true
+        label.textAlignment = .right
+        
+        
+//        label.layer.borderWidth = 0.5
+//        label.layer.borderColor = UIColor(displayP3Red: 243/255.0, green: 223/255.0, blue: 76/255.0, alpha: 1).cgColor
+        
+        
+//        profileLabel.layer.borderWidth = 0.5
+//        profileLabel.layer.borderColor = UIColor(displayP3Red: 243/255.0, green: 223/255.0, blue: 76/255.0, alpha: 1).cgColor
+        
         
         tableView.backgroundColor = UIColor.clear
         
@@ -69,6 +82,7 @@ class StartTableViewController: UITableViewController {
                     MainViewController.user = User()
                     label.text = "Sign In"
                     print("Utente disconnesso\n")
+                    
                     
                 }
                 catch {
