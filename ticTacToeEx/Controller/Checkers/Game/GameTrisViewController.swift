@@ -370,6 +370,12 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
                 }
                 self.messages.sort(by: {$0.n_message < $1.n_message})
                 self.chatTable.reloadData()
+                
+                self.chatTable.scrollToBottom()
+                
+//                self.chatTable.scrollToRow(at: NSIndexPath(row: self.messages.count, section: 0) as IndexPath, at: UITableViewScrollPosition.middle, animated: true)
+                
+                
             }
         }
         
@@ -686,4 +692,15 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         }
         return ""
     }
+}
+
+extension UITableView {
+    
+    func scrollToBottom() {
+        let rows = self.numberOfRows(inSection: 0)
+        
+        let indexPath = IndexPath(row: rows - 1, section: 0)
+        self.scrollToRow(at: indexPath, at: .top, animated: true)
+    }
+    
 }
