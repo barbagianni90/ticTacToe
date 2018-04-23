@@ -118,13 +118,23 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             
             
             
-            
+            scrollToLastRow()
+
             return cell
         }
         
         
        
     }
+    
+    
+    func scrollToLastRow() {
+        let indexPath =  IndexPath.init(row: messages.count - 1,section: 0)
+        chatTable.scrollToRow(at: indexPath, at: .bottom, animated: true)
+    }
+    
+    
+    
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textFieldTouched = textField
@@ -547,7 +557,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-    
+   
     func getWinner() -> String
     {
         

@@ -40,7 +40,7 @@ class CustomLobbyCell: UITableViewCell {
 
         NSLayoutConstraint(item: stackViewGames, attribute: .top, relatedBy: .equal, toItem: imageCell , attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 150).isActive = true
 
-        NSLayoutConstraint(item: stackViewGames, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 1.25).isActive = true
+        NSLayoutConstraint(item: stackViewGames, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 1.5).isActive = true
 
         NSLayoutConstraint(item: stackViewGames, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 12).isActive = true
 
