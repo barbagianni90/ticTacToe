@@ -21,15 +21,18 @@ class StartTableViewController: UITableViewController {
         }else{
             label.text = "Log out"
         }
-        label.adjustsFontForContentSizeCategory = true
         
         
-        label.layer.borderWidth = 0.5
-        label.layer.borderColor = UIColor(displayP3Red: 243/255.0, green: 223/255.0, blue: 76/255.0, alpha: 1).cgColor
+        label.adjustsFontSizeToFitWidth = true
+        label.textAlignment = .right
         
         
-        profileLabel.layer.borderWidth = 0.5
-        profileLabel.layer.borderColor = UIColor(displayP3Red: 243/255.0, green: 223/255.0, blue: 76/255.0, alpha: 1).cgColor
+//        label.layer.borderWidth = 0.5
+//        label.layer.borderColor = UIColor(displayP3Red: 243/255.0, green: 223/255.0, blue: 76/255.0, alpha: 1).cgColor
+        
+        
+//        profileLabel.layer.borderWidth = 0.5
+//        profileLabel.layer.borderColor = UIColor(displayP3Red: 243/255.0, green: 223/255.0, blue: 76/255.0, alpha: 1).cgColor
         
         
         tableView.backgroundColor = UIColor.clear

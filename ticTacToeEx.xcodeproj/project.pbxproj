@@ -55,7 +55,6 @@
 		FE4D55322069024000ABF6C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE4D55302069024000ABF6C1 /* Main.storyboard */; };
 		FE4D55342069024000ABF6C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE4D55332069024000ABF6C1 /* Assets.xcassets */; };
 		FE4D55372069024000ABF6C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE4D55352069024000ABF6C1 /* LaunchScreen.storyboard */; };
-		FE5369522076501800908759 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5369512076501800908759 /* CollectionViewCell.swift */; };
 		FE588B262089DA14005E5657 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE588B252089DA14005E5657 /* Roboto-Regular.ttf */; };
 		FE588B282089DEE3005E5657 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE588B272089DEE3005E5657 /* Lato-Regular.ttf */; };
 		FE6BF157206D0F1500BA7800 /* Shojumaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE6BF156206D0F1400BA7800 /* Shojumaru-Regular.ttf */; };
@@ -125,7 +124,6 @@
 		FE4D55332069024000ABF6C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE4D55362069024000ABF6C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE4D55382069024000ABF6C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FE5369512076501800908759 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		FE588B252089DA14005E5657 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		FE588B272089DEE3005E5657 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		FE6BF156206D0F1400BA7800 /* Shojumaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Shojumaru-Regular.ttf"; sourceTree = "<group>"; };
@@ -187,8 +185,8 @@
 			children = (
 				C41036EA206E277C00423D7D /* CustomLobbyCell.swift */,
 				C41036EC206E284E00423D7D /* LobbyViewController.swift */,
-				C445E5712074CE5C00241182 /* CustomEnemyChatCell.swift */,
 				C445E5732074CE7400241182 /* CustomUserChatCell.swift */,
+				C445E5712074CE5C00241182 /* CustomEnemyChatCell.swift */,
 				FE159E38207E47960075C533 /* Lobby.storyboard */,
 			);
 			path = LobbyANDGame;
@@ -340,7 +338,6 @@
 			isa = PBXGroup;
 			children = (
 				FE159E28207E219F0075C533 /* Start.storyboard */,
-				FE5369512076501800908759 /* CollectionViewCell.swift */,
 				F3F62E952084E2A100A674BE /* startingViewController.swift */,
 				F3F62E9B2084FC8000A674BE /* StartTableViewController.swift */,
 				C41036EE206E35E600423D7D /* GameIamges */,
@@ -529,7 +526,6 @@
 				FEC8A08B206B89380031001B /* ProfileViewController.swift in Sources */,
 				F3F62E962084E2A100A674BE /* startingViewController.swift in Sources */,
 				C41036FE206E6EE400423D7D /* CustomCellRanking.swift in Sources */,
-				FE5369522076501800908759 /* CollectionViewCell.swift in Sources */,
 				F3CEB71E207CABF500B4D772 /* MainCheckersViewController.swift in Sources */,
 				F3F62E9C2084FC8000A674BE /* StartTableViewController.swift in Sources */,
 				C41036ED206E284E00423D7D /* LobbyViewController.swift in Sources */,

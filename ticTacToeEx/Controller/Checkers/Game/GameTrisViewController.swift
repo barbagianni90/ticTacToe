@@ -85,6 +85,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             cell.messageLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 30)
             cell.messageLabel.adjustsFontSizeToFitWidth = true
 
+           
             
             return cell
         }
@@ -115,8 +116,14 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             
             cell.messageLabel.adjustsFontSizeToFitWidth = true
             
+            
+            
+            
             return cell
         }
+        
+        
+       
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -289,6 +296,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         
         
         
+
         
         let ref = Database.database().reference()
         
@@ -371,12 +379,13 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
                 self.messages.sort(by: {$0.n_message < $1.n_message})
                 self.chatTable.reloadData()
                 
-                self.chatTable.scrollToBottom()
-                
-//                self.chatTable.scrollToRow(at: NSIndexPath(row: self.messages.count, section: 0) as IndexPath, at: UITableViewScrollPosition.middle, animated: true)
-                
-                
+                if self.messages.count > 0{
+                    let index = IndexPath(row: self.messages.count - 1, section: 0)
+                    
+                    self.chatTable.scrollToRow(at: index, at: UITableViewScrollPosition.middle, animated: true)
+                }
             }
+        
         }
         
         
@@ -692,15 +701,4 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         }
         return ""
     }
-}
-
-extension UITableView {
-    
-    func scrollToBottom() {
-        let rows = self.numberOfRows(inSection: 0)
-        
-        let indexPath = IndexPath(row: rows - 1, section: 0)
-        self.scrollToRow(at: indexPath, at: .top, animated: true)
-    }
-    
 }
