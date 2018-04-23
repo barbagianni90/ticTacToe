@@ -413,9 +413,9 @@ class SignUpViewController: UIViewController{
         
         NSLayoutConstraint(item: stackView, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         
-        NSLayoutConstraint(item: stackView, attribute: .top, relatedBy: .equal, toItem: avatarLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 120).isActive = true
+        NSLayoutConstraint(item: stackView, attribute: .top, relatedBy: .equal, toItem: avatarLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 40).isActive = true
         
-        NSLayoutConstraint(item: stackView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 2).isActive = true
+        NSLayoutConstraint(item: stackView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 1.5).isActive = true
         
         NSLayoutConstraint(item: stackView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 11).isActive = true
         
@@ -436,7 +436,7 @@ class SignUpViewController: UIViewController{
         
         NSLayoutConstraint(item: cameraButton, attribute: .top, relatedBy: .equal, toItem: stackView, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 50).isActive = true
         
-        NSLayoutConstraint(item: cameraButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 6).isActive = true
+        NSLayoutConstraint(item: cameraButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 5).isActive = true
         
         NSLayoutConstraint(item: cameraButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height / 12).isActive = true
         

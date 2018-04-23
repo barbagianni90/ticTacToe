@@ -26,8 +26,6 @@ class GameCheckersViewController: UIViewController {
     
     var mioTurno: Bool = false
     
-    var user = User()
-    
     var enemy = User()
     
     var myImage: UIImage!
@@ -102,7 +100,7 @@ class GameCheckersViewController: UIViewController {
             }
         })
         
-        ref.child("\(self.user.nickName)Damiera").child("Mossa").observe(.value, with: { (snap) in
+        ref.child("\(MainViewController.user.nickName)Damiera").child("Mossa").observe(.value, with: { (snap) in
             
             let dict = snap.value as! [String : String]
             
@@ -179,7 +177,14 @@ class GameCheckersViewController: UIViewController {
 
     func setNomeTabella() {
         
-        self.nomeTabella = "\(self.user.nickName)Damiera"
+        if fPlayer == true && sPlayer == false {
+            
+            self.nomeTabella = "\(MainViewController.user.nickName)VS\(self.enemy.nickName)Damiera"
+        }
+        else if fPlayer == false && sPlayer == true {
+            
+            self.nomeTabella = "\(self.enemy.nickName)VS\(MainViewController.user.nickName)Damiera"
+        }
     }
     
     func popolaTabellaIniziale() {
@@ -230,7 +235,7 @@ class GameCheckersViewController: UIViewController {
         
         let ref = Database.database().reference()
         
-        ref.child("\(self.user.nickName)Damiera").child("Mossa").child("GiocoIniziato").setValue("Ok")
+        ref.child("\(MainViewController.user.nickName)Damiera").child("Mossa").child("GiocoIniziato").setValue("Ok")
         
         ref.child("Utility\(self.nomeTabella)").child("TurnoDi").setValue("PrimoGiocatore")
     }
@@ -486,7 +491,7 @@ class GameCheckersViewController: UIViewController {
                         mossa = [
                             "\(cellaTocRib)" : "",
                             "\(cellEated)" : "",
-                            "\(senderTitleRib)" : "\(self.user.nickName):Dama"
+                            "\(senderTitleRib)" : "\(MainViewController.user.nickName):Dama"
                         ]
                     }
                         
@@ -494,7 +499,7 @@ class GameCheckersViewController: UIViewController {
                         mossa = [
                             "\(cellaTocRib)" : "",
                             "\(cellEated)" : "",
-                            "\(senderTitleRib)" : "\(self.user.nickName)"
+                            "\(senderTitleRib)" : "\(MainViewController.user.nickName)"
                         ]
                     }
                     
@@ -593,7 +598,7 @@ class GameCheckersViewController: UIViewController {
                             
                             mossa = [
                                 "\(cellaTocRib)" : "",
-                                "\(senderTitleRib)" : "\(self.user.nickName):Dama"
+                                "\(senderTitleRib)" : "\(MainViewController.user.nickName):Dama"
                             ]
                         }
                             
@@ -601,7 +606,7 @@ class GameCheckersViewController: UIViewController {
                             
                             mossa = [
                                 "\(cellaTocRib)" : "",
-                                "\(senderTitleRib)" : "\(self.user.nickName)"
+                                "\(senderTitleRib)" : "\(MainViewController.user.nickName)"
                             ]
                             
                         }

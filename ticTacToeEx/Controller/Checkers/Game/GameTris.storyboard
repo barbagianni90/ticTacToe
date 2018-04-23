@@ -19,8 +19,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="trisAgain" translatesAutoresizingMaskIntoConstraints="NO" id="qlR-ic-FoJ">
-                                <rect key="frame" x="67" y="109" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trisAgain" translatesAutoresizingMaskIntoConstraints="NO" id="qlR-ic-FoJ">
+                                <rect key="frame" x="67" y="109" width="240" height="202"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3te-MT-eJQ">
                                 <rect key="frame" x="20" y="353" width="339" height="262"/>
@@ -266,7 +267,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3te-MT-eJQ" firstAttribute="top" relation="lessThanOrEqual" secondItem="qlR-ic-FoJ" secondAttribute="bottom" constant="116" id="7tG-Fz-1Sy"/>
                             <constraint firstItem="3te-MT-eJQ" firstAttribute="leading" secondItem="pjX-wr-omw" secondAttribute="leading" constant="20" id="8X9-tY-thO"/>
                             <constraint firstAttribute="bottom" secondItem="WIR-ph-Cwh" secondAttribute="bottom" constant="4" id="E08-Gl-7yW"/>
                             <constraint firstItem="pjX-wr-omw" firstAttribute="trailing" secondItem="3te-MT-eJQ" secondAttribute="trailing" constant="16" id="IKy-eS-qIw"/>
