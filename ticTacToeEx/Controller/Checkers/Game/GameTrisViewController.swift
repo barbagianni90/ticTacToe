@@ -197,6 +197,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -378,6 +379,48 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             let utility = snap.value as! [String : Any]
             let tmp = utility["buttonEnabled"] as! String
             self.buttonEnabled = Int(tmp)!
+            
+            if self.buttonEnabled == 0 && self.getWinner() == "" && self.sPlayer == true {
+                
+                ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
+                ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
+                ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+                
+                ref.child("\(self.nomeTabella)").removeAllObservers()
+                ref.child("Utility\(self.nomeTabella)").removeAllObservers()
+                ref.child("Messages\(self.nomeTabella)").removeAllObservers()
+                
+                ref.child("\(self.nomeTabella)").removeValue()
+                ref.child("Utility\(self.nomeTabella)").removeValue()
+                ref.child("Messages\(self.nomeTabella)").removeValue()
+                
+                let alert = UIAlertController(title: "Pareggio", message: "", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                    self.partitaFinita = true
+                }))
+                
+                self.present(alert, animated: true)
+            }
+            
+            else if self.buttonEnabled == 0 && self.getWinner() == "" && self.fPlayer == true {
+                
+                ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
+                ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
+                ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+                
+                ref.child("\(self.nomeTabella)").removeAllObservers()
+                ref.child("Utility\(self.nomeTabella)").removeAllObservers()
+                ref.child("Messages\(self.nomeTabella)").removeAllObservers()
+                
+                let alert = UIAlertController(title: "Pareggio", message: "", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                    self.partitaFinita = true
+                }))
+                
+                self.present(alert, animated: true)
+            }
         }
         
         ref.child("\(nomeTabella)").observe(.value) { (snap) in
@@ -413,6 +456,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
                     }
                     
                     let winner = self.getWinner()
+                    
                     if winner == "Hai vinto" {
                         
                         ref.child("Players").child("\(MainViewController.user.id)").child("vittorie").setValue("\(MainViewController.user.vittorie + 1)")
@@ -640,6 +684,6 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             }
             j -= 1
         }
-        return " "
+        return ""
     }
 }
