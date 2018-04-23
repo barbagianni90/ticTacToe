@@ -170,6 +170,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var trisImage: UIImageView!
     
+    @IBOutlet weak var chatView: UIView!
     
     var enemy = User()
     
@@ -195,6 +196,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             self.dismiss(animated: true, completion: nil)
         }
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -224,15 +226,20 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         //top
         NSLayoutConstraint(item: stackView, attribute: .top, relatedBy: .equal, toItem: trisImage, attribute: .top, multiplier: 1, constant: 0).isActive = true
         //bottom
-        NSLayoutConstraint(item: stackView, attribute: .bottom, relatedBy: .equal, toItem: trisImage, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: stackView, attribute: .bottom, relatedBy: .equal, toItem: trisImage, attribute: .bottom, multiplier: 1, constant:(UIScreen.main.bounds.width / 100) * 2 ).isActive = true
         //left
         NSLayoutConstraint(item: stackView, attribute: .left, relatedBy: .equal, toItem: trisImage, attribute: .left, multiplier: 1, constant: 0).isActive = true
         //right
-        NSLayoutConstraint(item: stackView, attribute: .right, relatedBy: .equal, toItem: trisImage, attribute: .right, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: stackView, attribute: .right, relatedBy: .equal, toItem: trisImage, attribute: .right, multiplier: 1, constant: (UIScreen.main.bounds.width / 100) * 2 ).isActive = true
         
         stackView.distribution = .fillEqually
         
+        
+        
+        
         //setting tris image
+        
+        
         trisImage.translatesAutoresizingMaskIntoConstraints = false
         //top
         NSLayoutConstraint(item: trisImage, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 15).isActive = true
@@ -244,6 +251,42 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         NSLayoutConstraint(item: trisImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: (UIScreen.main.bounds.width / 100) * 78).isActive = true
         
         trisImage.contentMode = .scaleAspectFill
+        
+        
+        //CHAT VIEW
+        
+        chatView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint(item: chatView, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 10).isActive = true
+        NSLayoutConstraint(item: chatView, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: -10).isActive = true
+        NSLayoutConstraint(item: chatView, attribute: .top, relatedBy: .equal, toItem: stackView, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: chatView, attribute: .bottom, relatedBy: .equal, toItem: textFieldMessage, attribute: .top, multiplier: 1, constant: 0).isActive = true
+        
+        
+        
+        //text field message
+        
+        textFieldMessage.translatesAutoresizingMaskIntoConstraints = false
+        //left
+        NSLayoutConstraint(item: textFieldMessage, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 10).isActive = true
+        //right
+        NSLayoutConstraint(item: textFieldMessage, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: -10).isActive = true
+        //height
+        NSLayoutConstraint(item: textFieldMessage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 30).isActive = true
+        
+        //chat table
+        
+        chatTable.translatesAutoresizingMaskIntoConstraints = false
+        //top
+        NSLayoutConstraint(item: chatTable, attribute: .top, relatedBy: .equal, toItem: chatView, attribute: .top, multiplier: 1, constant: 10 ).isActive = true
+        //bottom
+        NSLayoutConstraint(item: chatTable, attribute: .bottom, relatedBy: .equal, toItem: chatView, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+        //left
+        NSLayoutConstraint(item: chatTable, attribute: .left, relatedBy: .equal, toItem: chatView, attribute: .left, multiplier: 1, constant: 0).isActive = true
+        //right
+        NSLayoutConstraint(item: chatTable, attribute: .right, relatedBy: .equal, toItem: chatView, attribute: .right, multiplier: 1, constant: 0).isActive = true
+        
+        
         
         
         
@@ -270,12 +313,12 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         
         buttons2D = Utils.collectionToArray2D(arr: buttons, size: 3)
         
-        for buttons in buttons2D {
-            for button in buttons {
-                button.layer.borderColor = UIColor.black.cgColor
-                button.layer.borderWidth = 1
-            }
-        }
+//        for buttons in buttons2D {
+//            for button in buttons {
+//                button.layer.borderColor = UIColor.black.cgColor
+//                button.layer.borderWidth = 1
+//            }
+//        }
         
         
         if fPlayer == true {
@@ -336,6 +379,48 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             let utility = snap.value as! [String : Any]
             let tmp = utility["buttonEnabled"] as! String
             self.buttonEnabled = Int(tmp)!
+            
+            if self.buttonEnabled == 0 && self.getWinner() == "" && self.sPlayer == true {
+                
+                ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
+                ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
+                ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+                
+                ref.child("\(self.nomeTabella)").removeAllObservers()
+                ref.child("Utility\(self.nomeTabella)").removeAllObservers()
+                ref.child("Messages\(self.nomeTabella)").removeAllObservers()
+                
+                ref.child("\(self.nomeTabella)").removeValue()
+                ref.child("Utility\(self.nomeTabella)").removeValue()
+                ref.child("Messages\(self.nomeTabella)").removeValue()
+                
+                let alert = UIAlertController(title: "Pareggio", message: "", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                    self.partitaFinita = true
+                }))
+                
+                self.present(alert, animated: true)
+            }
+            
+            else if self.buttonEnabled == 0 && self.getWinner() == "" && self.fPlayer == true {
+                
+                ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
+                ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
+                ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+                
+                ref.child("\(self.nomeTabella)").removeAllObservers()
+                ref.child("Utility\(self.nomeTabella)").removeAllObservers()
+                ref.child("Messages\(self.nomeTabella)").removeAllObservers()
+                
+                let alert = UIAlertController(title: "Pareggio", message: "", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                    self.partitaFinita = true
+                }))
+                
+                self.present(alert, animated: true)
+            }
         }
         
         ref.child("\(nomeTabella)").observe(.value) { (snap) in
@@ -371,6 +456,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
                     }
                     
                     let winner = self.getWinner()
+                    
                     if winner == "Hai vinto" {
                         
                         ref.child("Players").child("\(MainViewController.user.id)").child("vittorie").setValue("\(MainViewController.user.vittorie + 1)")
@@ -598,6 +684,6 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             }
             j -= 1
         }
-        return " "
+        return ""
     }
 }

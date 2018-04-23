@@ -123,6 +123,7 @@ class ProfileViewController: UIViewController {
 
         NSLayoutConstraint(item: avatarImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 4).isActive = true
         
+//        avatarImage.layer.cornerRadius = (UIScreen.main.bounds.width / 4)
         avatarImage.layer.cornerRadius = (UIScreen.main.bounds.width / 4) / 2
         avatarImage.contentMode = .scaleAspectFill
         

@@ -19,6 +19,12 @@ class GameCheckersViewController: UIViewController {
         case impossible, mangiataObbligatoria, turnoAvversario
     }
     
+    var partitaFinita = false {
+        didSet {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     var buttons2D: [[UIButton]]!
     
     var fPlayer = false
@@ -638,6 +644,8 @@ class GameCheckersViewController: UIViewController {
         var myCount = 0
         var enemyCount = 0
         
+        let ref = Database.database().reference()
+        
         for button in buttons {
             if button.backgroundImage(for: .normal) == self.myImage || button.backgroundImage(for: .normal) == self.myImageDama {
                 myCount += 1
@@ -647,22 +655,46 @@ class GameCheckersViewController: UIViewController {
             }
         }
         
-        if myCount == 0 {
+        if enemyCount == 0 {
+            
+            ref.child("Players").child("\(MainViewController.user.id)").child("vittorie").setValue("\(MainViewController.user.vittorie + 1)")
+            
+            ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
+            ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
+            ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+            
+            ref.child("\(MainViewController.user.nickName)Damiera").removeAllObservers()
+            ref.child("\(MainViewController.user.nickName)Damiera").removeValue()
+            ref.child("Utility\(self.nomeTabella)").removeAllObservers()
+            
+            
+            let alert = UIAlertController(title: "Hai vinto", message: "Bravo", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                
+                self.partitaFinita = true
+            }))
+            
+            self.present(alert, animated: true)
+        }
+        else if myCount == 0 {
+            
+            ref.child("Players").child("\(MainViewController.user.id)").child("sconfitte").setValue("\(MainViewController.user.sconfitte + 1)")
+            
+            ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
+            ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
+            ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+            
+            ref.child("\(MainViewController.user.nickName)Damiera").removeAllObservers()
+            ref.child("\(MainViewController.user.nickName)Damiera").removeValue()
+            ref.child("Utility\(self.nomeTabella)").removeAllObservers()
+            ref.child("Utility\(self.nomeTabella)").removeValue()
             
             let alert = UIAlertController(title: "Hai perso", message: "Mi spiace", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                 
-            }))
-            
-            self.present(alert, animated: true)
-        }
-        else if enemyCount == 0 {
-            
-            let alert = UIAlertController(title: "Hai vinto", message: "bravo", preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-                
+                self.partitaFinita = true
             }))
             
             self.present(alert, animated: true)
