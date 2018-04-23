@@ -16,9 +16,14 @@ class StartTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if MainViewController.user.nickName == ""{
+            
             label.text = "Sign In"
-        }else{
+            
+        }
+        else{
+            
             label.text = "Log out"
         }
         
@@ -41,8 +46,10 @@ class StartTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if MainViewController.user.nickName == ""{
+            
             label.text = "Sign In"
         }else{
+            
             label.text = "Log out"
         }
     }
@@ -70,6 +77,8 @@ class StartTableViewController: UITableViewController {
             }else{
                 do {
                     try Auth.auth().signOut()
+                    let ref = Database.database().reference()
+                    ref.child("Players").child("\(MainViewController.user.id)").child("loggato").setValue("No")
                     MainViewController.user = User()
                     label.text = "Sign In"
                     print("Utente disconnesso\n")
