@@ -170,6 +170,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var trisImage: UIImageView!
     
+    @IBOutlet weak var chatView: UIView!
     
     var enemy = User()
     
@@ -224,15 +225,20 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         //top
         NSLayoutConstraint(item: stackView, attribute: .top, relatedBy: .equal, toItem: trisImage, attribute: .top, multiplier: 1, constant: 0).isActive = true
         //bottom
-        NSLayoutConstraint(item: stackView, attribute: .bottom, relatedBy: .equal, toItem: trisImage, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: stackView, attribute: .bottom, relatedBy: .equal, toItem: trisImage, attribute: .bottom, multiplier: 1, constant:(UIScreen.main.bounds.width / 100) * 2 ).isActive = true
         //left
         NSLayoutConstraint(item: stackView, attribute: .left, relatedBy: .equal, toItem: trisImage, attribute: .left, multiplier: 1, constant: 0).isActive = true
         //right
-        NSLayoutConstraint(item: stackView, attribute: .right, relatedBy: .equal, toItem: trisImage, attribute: .right, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: stackView, attribute: .right, relatedBy: .equal, toItem: trisImage, attribute: .right, multiplier: 1, constant: (UIScreen.main.bounds.width / 100) * 2 ).isActive = true
         
         stackView.distribution = .fillEqually
         
+        
+        
+        
         //setting tris image
+        
+        
         trisImage.translatesAutoresizingMaskIntoConstraints = false
         //top
         NSLayoutConstraint(item: trisImage, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 15).isActive = true
@@ -244,6 +250,42 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         NSLayoutConstraint(item: trisImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: (UIScreen.main.bounds.width / 100) * 78).isActive = true
         
         trisImage.contentMode = .scaleAspectFill
+        
+        
+        //CHAT VIEW
+        
+        chatView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint(item: chatView, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 10).isActive = true
+        NSLayoutConstraint(item: chatView, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: -10).isActive = true
+        NSLayoutConstraint(item: chatView, attribute: .top, relatedBy: .equal, toItem: stackView, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: chatView, attribute: .bottom, relatedBy: .equal, toItem: textFieldMessage, attribute: .top, multiplier: 1, constant: 0).isActive = true
+        
+        
+        
+        //text field message
+        
+        textFieldMessage.translatesAutoresizingMaskIntoConstraints = false
+        //left
+        NSLayoutConstraint(item: textFieldMessage, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 10).isActive = true
+        //right
+        NSLayoutConstraint(item: textFieldMessage, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: -10).isActive = true
+        //height
+        NSLayoutConstraint(item: textFieldMessage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 30).isActive = true
+        
+        //chat table
+        
+        chatTable.translatesAutoresizingMaskIntoConstraints = false
+        //top
+        NSLayoutConstraint(item: chatTable, attribute: .top, relatedBy: .equal, toItem: chatView, attribute: .top, multiplier: 1, constant: 10 ).isActive = true
+        //bottom
+        NSLayoutConstraint(item: chatTable, attribute: .bottom, relatedBy: .equal, toItem: chatView, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+        //left
+        NSLayoutConstraint(item: chatTable, attribute: .left, relatedBy: .equal, toItem: chatView, attribute: .left, multiplier: 1, constant: 0).isActive = true
+        //right
+        NSLayoutConstraint(item: chatTable, attribute: .right, relatedBy: .equal, toItem: chatView, attribute: .right, multiplier: 1, constant: 0).isActive = true
+        
+        
         
         
         
@@ -270,12 +312,12 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         
         buttons2D = Utils.collectionToArray2D(arr: buttons, size: 3)
         
-        for buttons in buttons2D {
-            for button in buttons {
-                button.layer.borderColor = UIColor.black.cgColor
-                button.layer.borderWidth = 1
-            }
-        }
+//        for buttons in buttons2D {
+//            for button in buttons {
+//                button.layer.borderColor = UIColor.black.cgColor
+//                button.layer.borderWidth = 1
+//            }
+//        }
         
         
         if fPlayer == true {
