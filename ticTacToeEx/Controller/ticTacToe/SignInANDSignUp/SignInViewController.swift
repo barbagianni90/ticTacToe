@@ -329,59 +329,79 @@ class SignInViewController: UIViewController {
         }
         else {
             
-            Auth.auth().signIn(withEmail: self.emailTextField.text!, password: self.passTextField.text!) { (user, error) in
+            let ref = Database.database().reference()
+            
+            ref.child("Players").child("\(MainViewController.user.id)").child("loggato").observeSingleEvent(of: .value, with: { (snap) in
                 
-                if error == nil {
+                let value = snap.value as! String
+                
+                if value == "Si" {
                     
-                    //Print into the console if successfully logged in
-                    print("You have successfully logged in")
+                    let alertController = UIAlertController(title: "Ops...", message: "Sei già connesso da un altro dispositivo", preferredStyle: .alert)
                     
-                    let emailCurrentUser = ConvertOptionalString.convert(Auth.auth().currentUser?.email!)
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
                     
-                    let ref = Database.database().reference()
-                    
-                    ref.child("Players").observeSingleEvent(of: .value, with:{ (snap) in
+                    self.present(alertController, animated: true, completion: nil)
+                }
+                else {
+            
+                    Auth.auth().signIn(withEmail: self.emailTextField.text!, password: self.passTextField.text!) { (user, error) in
+                
+                    if error == nil {
                         
-                        let players = snap.value as! [String : Any]
+                        //Print into the console if successfully logged in
+                        print("You have successfully logged in")
                         
-                        for(key, value) in players {
+                        let emailCurrentUser = ConvertOptionalString.convert(Auth.auth().currentUser?.email!)
+                        
+                        let ref = Database.database().reference()
+                        
+                        ref.child("Players").observeSingleEvent(of: .value, with:{ (snap) in
                             
-                            let datiPlayer = value as! [String : Any]
+                            let players = snap.value as! [String : Any]
                             
-                            if datiPlayer["email"] as! String == emailCurrentUser {
-                                MainViewController.user.id = key
-                                MainViewController.user.nickName = datiPlayer["nickname"] as! String
-                                MainViewController.user.email = datiPlayer["email"] as! String
-                                MainViewController.user.vittorie = Int(datiPlayer["vittorie"] as! String)!
-                                MainViewController.user.sconfitte = Int(datiPlayer["sconfitte"] as! String)!
-                                MainViewController.user.stato = "online"
+                            for(key, value) in players {
                                 
-                                let decodeString = Data(base64Encoded: datiPlayer["image"] as! String)
+                                let datiPlayer = value as! [String : Any]
                                 
-                                let image = UIImage(data: decodeString!)
-                                
-                                let imagePNG = UIImagePNGRepresentation(image!)
-                                
-                                MainViewController.user.image = UIImage(data: imagePNG!)
-                                
-                                ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
-                                
-                                self.activityIndicator.stopAnimating()
-                                UIApplication.shared.endIgnoringInteractionEvents()
-                                
-                                self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
-                                
+                                if datiPlayer["email"] as! String == emailCurrentUser {
+                                    MainViewController.user.id = key
+                                    MainViewController.user.nickName = datiPlayer["nickname"] as! String
+                                    MainViewController.user.email = datiPlayer["email"] as! String
+                                    MainViewController.user.vittorie = Int(datiPlayer["vittorie"] as! String)!
+                                    MainViewController.user.sconfitte = Int(datiPlayer["sconfitte"] as! String)!
+                                    MainViewController.user.stato = "online"
+                                    
+                                    let decodeString = Data(base64Encoded: datiPlayer["image"] as! String)
+                                    
+                                    let image = UIImage(data: decodeString!)
+                                    
+                                    let imagePNG = UIImagePNGRepresentation(image!)
+                                    
+                                    MainViewController.user.image = UIImage(data: imagePNG!)
+                                    
+                                    ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+                                    ref.child("Players").child("\(MainViewController.user.id)").child("loggato").setValue("Si")
+                                    
+                                    self.activityIndicator.stopAnimating()
+                                    UIApplication.shared.endIgnoringInteractionEvents()
+                                    
+                                    self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+                                    
+                                }
                             }
-                        }
-                    })
+                        })
                     
                 } else {
                     
                     print("wrong login")
                     self.activityIndicator.stopAnimating()
                     UIApplication.shared.endIgnoringInteractionEvents()
+                        }
+                    }
                 }
-            }
+            })
         }
     }
     @IBAction func goHome(_ sender: Any) {
