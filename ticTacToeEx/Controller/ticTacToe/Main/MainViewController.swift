@@ -215,7 +215,6 @@ class MainViewController: UIViewController {
             self.nickNameLabel.isHidden = false
             self.startButton.isEnabled = true
             self.avatarButton.setBackgroundImage(MainViewController.user.image, for: .normal)
-            //self.avatarButton.transform = CGAffineTransform(rotationAngle: (90.0 * .pi) / 180.0)
             self.avatarButton.layer.cornerRadius = UIScreen.main.bounds.width / 20
             self.avatarButton.layer.masksToBounds = true
             

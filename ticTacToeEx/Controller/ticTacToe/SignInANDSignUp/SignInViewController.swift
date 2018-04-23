@@ -329,14 +329,7 @@ class SignInViewController: UIViewController {
         }
         else {
             
-            Auth.auth().signIn(withEmail: self.emailTextField.text!, password: self.passTextField.text!) { (user, error) in
-        
-            if error == nil {
-                
-                //Print into the console if successfully logged in
-                print("You have successfully logged in")
-                
-                let emailCurrentUser = ConvertOptionalString.convert(Auth.auth().currentUser?.email!)
+            let emailCurrentUser = ConvertOptionalString.convert(self.emailTextField.text)
                 
                 let ref = Database.database().reference()
                 
@@ -348,26 +341,28 @@ class SignInViewController: UIViewController {
                         
                         let datiPlayer = value as! [String : Any]
                         
-                            if datiPlayer["email"] as! String == emailCurrentUser {
+                        if datiPlayer["email"] as! String == emailCurrentUser {
                                 
-                                if datiPlayer["loggato"] as! String == "Si" {
+                            if datiPlayer["loggato"] as! String == "Si" {
+                                
+                                self.activityIndicator.stopAnimating()
+                                UIApplication.shared.endIgnoringInteractionEvents()
+                                
+                                let alertController = UIAlertController(title: "Ops...", message: "Sei già connesso da un altro dispositivo", preferredStyle: .alert)
+                                
+                                alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                                        print("Illegal access")
+                                }))
+                                
+                                self.present(alertController, animated: true)
+                                
+                            }
+                            else {
+                                
+                            Auth.auth().signIn(withEmail: self.emailTextField.text!, password: self.passTextField.text!) { (user, error) in
+                                
+                                if error == nil {
                                     
-                                    let alertController = UIAlertController(title: "Ops...", message: "Sei già connesso da un altro dispositivo", preferredStyle: .alert)
-                                    
-                                    alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-                                        do {
-                                            try Auth.auth().signOut()
-                                            self.dismiss(animated: true, completion: nil)
-                                        }
-                                        catch {
-                                             print("Error Log out")
-                                        }
-                                    }))
-                                    
-                                    self.present(alertController, animated: true)
-                                    
-                                }
-                                else {
                                     MainViewController.user.id = key
                                     MainViewController.user.nickName = datiPlayer["nickname"] as! String
                                     MainViewController.user.email = datiPlayer["email"] as! String
@@ -390,18 +385,19 @@ class SignInViewController: UIViewController {
                                     UIApplication.shared.endIgnoringInteractionEvents()
                                     
                                     self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+                                    
+                                }
+                            
+                                else {
+                                    print("wrong login")
+                                    self.activityIndicator.stopAnimating()
+                                    UIApplication.shared.endIgnoringInteractionEvents()
                                 }
                             }
                         }
-                    })
+                    }
                 }
-            else {
-            
-            print("wrong login")
-            self.activityIndicator.stopAnimating()
-            UIApplication.shared.endIgnoringInteractionEvents()
-                }
-            }
+            })
         }
     }
     @IBAction func goHome(_ sender: Any) {
