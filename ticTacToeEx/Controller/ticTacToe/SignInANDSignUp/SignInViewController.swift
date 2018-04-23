@@ -329,43 +329,45 @@ class SignInViewController: UIViewController {
         }
         else {
             
-            let ref = Database.database().reference()
-            
-            ref.child("Players").child("\(MainViewController.user.id)").child("loggato").observeSingleEvent(of: .value, with: { (snap) in
+            Auth.auth().signIn(withEmail: self.emailTextField.text!, password: self.passTextField.text!) { (user, error) in
+        
+            if error == nil {
                 
-                let value = snap.value as! String
+                //Print into the console if successfully logged in
+                print("You have successfully logged in")
                 
-                if value == "Si" {
-                    
-                    let alertController = UIAlertController(title: "Ops...", message: "Sei già connesso da un altro dispositivo", preferredStyle: .alert)
-                    
-                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alertController.addAction(defaultAction)
-                    
-                    self.present(alertController, animated: true, completion: nil)
-                }
-                else {
-            
-                    Auth.auth().signIn(withEmail: self.emailTextField.text!, password: self.passTextField.text!) { (user, error) in
+                let emailCurrentUser = ConvertOptionalString.convert(Auth.auth().currentUser?.email!)
                 
-                    if error == nil {
+                let ref = Database.database().reference()
+                
+                ref.child("Players").observeSingleEvent(of: .value, with:{ (snap) in
+                    
+                    let players = snap.value as! [String : Any]
+                    
+                    for(key, value) in players {
                         
-                        //Print into the console if successfully logged in
-                        print("You have successfully logged in")
+                        let datiPlayer = value as! [String : Any]
                         
-                        let emailCurrentUser = ConvertOptionalString.convert(Auth.auth().currentUser?.email!)
-                        
-                        let ref = Database.database().reference()
-                        
-                        ref.child("Players").observeSingleEvent(of: .value, with:{ (snap) in
-                            
-                            let players = snap.value as! [String : Any]
-                            
-                            for(key, value) in players {
+                            if datiPlayer["email"] as! String == emailCurrentUser {
                                 
-                                let datiPlayer = value as! [String : Any]
-                                
-                                if datiPlayer["email"] as! String == emailCurrentUser {
+                                if datiPlayer["loggato"] as! String == "Si" {
+                                    
+                                    let alertController = UIAlertController(title: "Ops...", message: "Sei già connesso da un altro dispositivo", preferredStyle: .alert)
+                                    
+                                    alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                                        do {
+                                            try Auth.auth().signOut()
+                                            self.dismiss(animated: true, completion: nil)
+                                        }
+                                        catch {
+                                             print("Error Log out")
+                                        }
+                                    }))
+                                    
+                                    self.present(alertController, animated: true)
+                                    
+                                }
+                                else {
                                     MainViewController.user.id = key
                                     MainViewController.user.nickName = datiPlayer["nickname"] as! String
                                     MainViewController.user.email = datiPlayer["email"] as! String
@@ -388,20 +390,18 @@ class SignInViewController: UIViewController {
                                     UIApplication.shared.endIgnoringInteractionEvents()
                                     
                                     self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
-                                    
                                 }
                             }
-                        })
-                    
-                } else {
-                    
-                    print("wrong login")
-                    self.activityIndicator.stopAnimating()
-                    UIApplication.shared.endIgnoringInteractionEvents()
                         }
-                    }
+                    })
                 }
-            })
+            else {
+            
+            print("wrong login")
+            self.activityIndicator.stopAnimating()
+            UIApplication.shared.endIgnoringInteractionEvents()
+                }
+            }
         }
     }
     @IBAction func goHome(_ sender: Any) {
