@@ -118,7 +118,6 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             
             
             
-            scrollToLastRow()
 
             return cell
         }
@@ -129,8 +128,10 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     func scrollToLastRow() {
+        if messages.count > 0 {
         let indexPath =  IndexPath.init(row: messages.count - 1,section: 0)
         chatTable.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        }
     }
     
     
@@ -389,6 +390,8 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
                 self.messages.sort(by: {$0.n_message < $1.n_message})
                 self.chatTable.reloadData()
                 
+                self.scrollToLastRow()
+
             }
         
         }
