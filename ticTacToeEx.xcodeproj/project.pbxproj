@@ -41,7 +41,7 @@
 		F31876322085EBEE00482CAD /* GameCheckersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31876312085EBEE00482CAD /* GameCheckersViewController.swift */; };
 		F3CEB71C207CABD200B4D772 /* MainCheckers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3CEB71B207CABD200B4D772 /* MainCheckers.storyboard */; };
 		F3CEB71E207CABF500B4D772 /* MainCheckersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CEB71D207CABF500B4D772 /* MainCheckersViewController.swift */; };
-		F3F62E962084E2A100A674BE /* startingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F62E952084E2A100A674BE /* startingViewController.swift */; };
+		F3F62E962084E2A100A674BE /* StartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F62E952084E2A100A674BE /* StartingViewController.swift */; };
 		F3F62E9C2084FC8000A674BE /* StartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F62E9B2084FC8000A674BE /* StartTableViewController.swift */; };
 		FE159E26207E219F0075C533 /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE159E28207E219F0075C533 /* Start.storyboard */; };
 		FE159E2B207E3D3B0075C533 /* RankingDama.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE159E2D207E3D3B0075C533 /* RankingDama.storyboard */; };
@@ -103,7 +103,7 @@
 		F31876312085EBEE00482CAD /* GameCheckersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCheckersViewController.swift; sourceTree = "<group>"; };
 		F3CEB71B207CABD200B4D772 /* MainCheckers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainCheckers.storyboard; sourceTree = "<group>"; };
 		F3CEB71D207CABF500B4D772 /* MainCheckersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCheckersViewController.swift; sourceTree = "<group>"; };
-		F3F62E952084E2A100A674BE /* startingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startingViewController.swift; sourceTree = "<group>"; };
+		F3F62E952084E2A100A674BE /* StartingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingViewController.swift; sourceTree = "<group>"; };
 		F3F62E9B2084FC8000A674BE /* StartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartTableViewController.swift; sourceTree = "<group>"; };
 		FE159E24207E182B0075C533 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = Main/it.lproj/Main.strings; sourceTree = "<group>"; };
 		FE159E25207E182B0075C533 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -338,7 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				FE159E28207E219F0075C533 /* Start.storyboard */,
-				F3F62E952084E2A100A674BE /* startingViewController.swift */,
+				F3F62E952084E2A100A674BE /* StartingViewController.swift */,
 				F3F62E9B2084FC8000A674BE /* StartTableViewController.swift */,
 				C41036EE206E35E600423D7D /* GameIamges */,
 			);
@@ -524,7 +524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEC8A08B206B89380031001B /* ProfileViewController.swift in Sources */,
-				F3F62E962084E2A100A674BE /* startingViewController.swift in Sources */,
+				F3F62E962084E2A100A674BE /* StartingViewController.swift in Sources */,
 				C41036FE206E6EE400423D7D /* CustomCellRanking.swift in Sources */,
 				F3CEB71E207CABF500B4D772 /* MainCheckersViewController.swift in Sources */,
 				F3F62E9C2084FC8000A674BE /* StartTableViewController.swift in Sources */,

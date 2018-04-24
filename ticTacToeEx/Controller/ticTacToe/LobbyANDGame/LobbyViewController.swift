@@ -9,6 +9,77 @@
 import UIKit
 import Firebase
 
+
+
+class ActivityViewController: UIViewController {
+    
+    private let activityView = ActivityView()
+    
+    init(message: String) {
+        super.init(nibName: nil, bundle: nil)
+        modalTransitionStyle = .crossDissolve
+        modalPresentationStyle = .overFullScreen
+        activityView.messageLabel.text = message
+        view = activityView
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+private class ActivityView: UIView {
+    
+    let activityIndicatorView = UIActivityIndicatorView()
+    let boundingBoxView = UIView()
+    let messageLabel = UILabel()
+    
+    init() {
+        
+        super.init(frame: CGRect())
+        
+        backgroundColor = UIColor(white: 0.0, alpha: 0.5)
+        
+        self.boundingBoxView.backgroundColor = UIColor(white: 0.0, alpha: 0.5)
+        self.boundingBoxView.layer.cornerRadius = 12.0
+        
+        activityIndicatorView.startAnimating()
+        
+        self.messageLabel.font = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
+        self.messageLabel.textColor = UIColor.white
+        self.messageLabel.textAlignment = .center
+        self.messageLabel.shadowColor = UIColor.black
+        self.messageLabel.numberOfLines = 0
+        
+        addSubview(boundingBoxView)
+        addSubview(activityIndicatorView)
+        addSubview(messageLabel)
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        boundingBoxView.frame.size.width = 160.0
+        boundingBoxView.frame.size.height = 160.0
+        boundingBoxView.frame.origin.x = (bounds.width / 2.0) - (boundingBoxView.frame.width / 2.0)
+        boundingBoxView.frame.origin.y = (bounds.height / 2.0) - (boundingBoxView.frame.height / 2.0)
+        
+        activityIndicatorView.frame.origin.x = ceil((bounds.width / 2.0) - (activityIndicatorView.frame.width / 2.0))
+        activityIndicatorView.frame.origin.y = ceil((bounds.height / 2.0) - (activityIndicatorView.frame.height / 2.0))
+        
+        let messageLabelSize = messageLabel.sizeThatFits(CGSize(width: 160.0 - 20.0 * 2.0, height: CGFloat.greatestFiniteMagnitude))
+        messageLabel.frame.size.width = messageLabelSize.width
+        messageLabel.frame.size.height = messageLabelSize.height
+        messageLabel.frame.origin.x = (bounds.width / 2.0) - (messageLabel.frame.width / 2.0)
+        messageLabel.frame.origin.y = activityIndicatorView.frame.origin.y + activityIndicatorView.frame.size.height + ((boundingBoxView.frame.height - activityIndicatorView.frame.height) / 4.0) - (messageLabel.frame.height / 2.0)
+    }
+}
+
+
 class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var players: [User] = []
@@ -20,9 +91,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var statoLabel: UILabel!
     
     
-    //var alertAttending: Ale
-    
-    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    let activitiyViewController = ActivityViewController(message: "Attending...")
     
     var nickNameSfidato: String = ""
     
@@ -223,14 +292,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 }
             }
             
-            
-//            self.activityIndicator.center = self.view.center
-//            self.activityIndicator.hidesWhenStopped = true
-//            self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.white
-//            self.view.addSubview(self.activityIndicator)
-//
-//            activityIndicator.startAnimating()
-//            UIApplication.shared.beginIgnoringInteractionEvents()
+            self.present(activitiyViewController, animated: true, completion: nil)
         }
     }
     
@@ -327,7 +389,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             if value != "" {
                 
-                self.activityIndicator.stopAnimating()
+                self.activitiyViewController.dismiss(animated: true, completion: nil)
                 UIApplication.shared.endIgnoringInteractionEvents()
                 
                 if value == "Si" {
