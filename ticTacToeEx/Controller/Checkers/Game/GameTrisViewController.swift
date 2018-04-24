@@ -169,6 +169,10 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         return true
     }
     
+    @IBOutlet weak var dismissButton: UIButton!
+    
+    
+    
     func performAction() {
         let ref = Database.database().reference()
         let messageText = ConvertOptionalString.convert(self.textFieldTouched.text!)
@@ -327,6 +331,32 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         NSLayoutConstraint(item: chatTable, attribute: .right, relatedBy: .equal, toItem: chatView, attribute: .right, multiplier: 1, constant: 0).isActive = true
         
         
+        // TASTO ABBANDONA
+        dismissButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        dismissButton.layer.borderWidth = 0.5
+        dismissButton.layer.borderColor = UIColor.white.cgColor
+        
+        
+        //top
+        NSLayoutConstraint(item: dismissButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 28).isActive = true
+        
+        //right
+        NSLayoutConstraint(item: dismissButton, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: UIScreen.main.bounds.width / 15).isActive = true
+        
+        //width
+        NSLayoutConstraint(item: dismissButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 6).isActive = true
+        
+        //height
+        NSLayoutConstraint(item: dismissButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 6).isActive = true
+        
+        
+        dismissButton.setTitle("Abbandona", for: .normal)
+        dismissButton.titleLabel?.textColor = UIColor.white
+        dismissButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)
+        
+        dismissButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        dismissButton.titleLabel?.baselineAdjustment = .alignCenters
         
         
 
