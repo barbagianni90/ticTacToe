@@ -39,7 +39,6 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var textFieldMessage: UITextField!
     
-    @IBOutlet weak var bottomTextField: NSLayoutConstraint!
     
     var messages: [Message] = []
     
@@ -148,7 +147,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         let info = notification.userInfo! as NSDictionary
         let keyboardSize = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         
-        self.bottomTextField.constant = keyboardSize.height + 8.0
+        // self.bottomTextField.constant = keyboardSize.height + 8.0
         if self.view.frame.origin.y >= 0 {
             UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut, animations: {
                 self.textFieldTouched.layoutIfNeeded()
@@ -158,7 +157,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
     }
     @objc func keyboardWillHide(notification: Notification) {
         
-        self.bottomTextField.constant = 3
+       // self.bottomTextField.constant = 3
         UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
             self.textFieldTouched.layoutIfNeeded()
         }, completion: nil)
@@ -245,22 +244,24 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         //top
-        NSLayoutConstraint(item: stackView, attribute: .top, relatedBy: .equal, toItem: trisImage, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.size.height / 30).isActive = true
+        NSLayoutConstraint(item: stackView, attribute: .top, relatedBy: .equal, toItem: trisImage, attribute: .top, multiplier: 1, constant:0).isActive = true
         
         
         //bottom
-        NSLayoutConstraint(item: stackView, attribute: .bottom, relatedBy: .equal, toItem: trisImage, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / -30).isActive = true
-        
+        NSLayoutConstraint(item: stackView, attribute: .bottom, relatedBy: .equal, toItem: trisImage, attribute: .bottom, multiplier: 1, constant: (UIScreen.main.bounds.width / 100) * 2).isActive = true
+     
         
         //left
-        NSLayoutConstraint(item: stackView, attribute: .left, relatedBy: .equal, toItem: trisImage, attribute: .left, multiplier: 1, constant: UIScreen.main.bounds.size.width / 10).isActive = true
-        
-        
+        NSLayoutConstraint(item: stackView, attribute: .left, relatedBy: .equal, toItem: trisImage, attribute: .left, multiplier: 1, constant: 0).isActive = true
+//
+//
         //right
-        NSLayoutConstraint(item: stackView, attribute: .right, relatedBy: .equal, toItem: trisImage, attribute: .right, multiplier: 1, constant: UIScreen.main.bounds.size.width / -10).isActive = true
+        NSLayoutConstraint(item: stackView, attribute: .right, relatedBy: .equal, toItem: trisImage, attribute: .right, multiplier: 1, constant:(UIScreen.main.bounds.width / 100) * 2).isActive = true
+        
+        
+     
         
         stackView.distribution = .fillEqually
-        stackView.contentMode = .scaleAspectFill
         
         
         //setting tris image
@@ -272,9 +273,9 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         //centerX
         NSLayoutConstraint(item: trisImage, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         //width
-        NSLayoutConstraint(item: trisImage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 1.25).isActive = true
+        NSLayoutConstraint(item: trisImage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: (UIScreen.main.bounds.width / 100) * 78).isActive = true
         //height
-        NSLayoutConstraint(item: trisImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 1.25).isActive = true
+        NSLayoutConstraint(item: trisImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: (UIScreen.main.bounds.width / 100) * 78).isActive = true
         
         trisImage.contentMode = .scaleAspectFill
         
@@ -307,9 +308,9 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         NSLayoutConstraint(item: textFieldMessage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 1.25).isActive = true
         
         //height
-        NSLayoutConstraint(item: textFieldMessage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 20).isActive = true
+//        NSLayoutConstraint(item: textFieldMessage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 20).isActive = true
         
-        NSLayoutConstraint(item: textFieldMessage, attribute: .bottom, relatedBy: .equal, toItem: chatTable, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 15).isActive = true
+        NSLayoutConstraint(item: textFieldMessage, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / -30).isActive = true
         
         
         //chat table
@@ -362,12 +363,12 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         
         
         if fPlayer == true {
-            myImage = UIImage(named: "croce.png")
-            oppositeImage = UIImage(named: "cerchio.png")
+            myImage = UIImage(named: "cross")
+            oppositeImage = UIImage(named: "cerchio")
         }
         else if sPlayer == true {
-            myImage = UIImage(named: "cerchio.png")
-            oppositeImage = UIImage(named: "croce.png")
+            myImage = UIImage(named: "cerchio")
+            oppositeImage = UIImage(named: "cross")
         }
         
         self.chatTable.delegate = self

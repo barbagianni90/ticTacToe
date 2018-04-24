@@ -553,7 +553,7 @@ class SignUpViewController: UIViewController{
         submitButton.titleLabel?.adjustsFontSizeToFitWidth = true
         submitButton.titleLabel?.baselineAdjustment = .alignCenters
         
-        submitButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 10)
+        submitButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 12)
         
         
         

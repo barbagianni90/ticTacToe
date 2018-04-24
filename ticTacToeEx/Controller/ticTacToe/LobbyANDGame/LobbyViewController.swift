@@ -147,7 +147,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         
         
-        let attStatoLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 12)]
+        let attStatoLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 24)]
         
         let statoLabelText = "Status"
         let attStato = NSMutableAttributedString(string: statoLabelText, attributes: attStatoLabel)
@@ -156,6 +156,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         statoLabel.adjustsFontSizeToFitWidth = true
         statoLabel.baselineAdjustment = .alignCenters
+        statoLabel.textAlignment = .right
         
         
         
@@ -177,7 +178,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         
         
-        let attGiocatoreLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 12)]
+        let attGiocatoreLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 24)]
         
         let giocatoreLabelText = "Player"
         let attGiocatore = NSMutableAttributedString(string: giocatoreLabelText, attributes: attGiocatoreLabel)
@@ -186,6 +187,8 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         giocatoreLabel.adjustsFontSizeToFitWidth = true
         giocatoreLabel.baselineAdjustment = .alignCenters
+        giocatoreLabel.textAlignment = .left
+        
         
         
         // lobby table
