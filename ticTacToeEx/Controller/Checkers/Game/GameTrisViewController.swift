@@ -37,8 +37,14 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var chatTable: UITableView!
     
+    @IBOutlet weak var bottomTextField: NSLayoutConstraint!
+    
     @IBOutlet weak var textFieldMessage: UITextField!
     
+    @IBAction func dismissButton(_ sender: Any) {
+        
+        dismiss(animated: true, completion: nil)
+    }
     
     var messages: [Message] = []
     
@@ -85,6 +91,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             cell.messageLabel.adjustsFontSizeToFitWidth = true
 
             cell.isUserInteractionEnabled = false
+            
            
             
             return cell
@@ -147,7 +154,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         let info = notification.userInfo! as NSDictionary
         let keyboardSize = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         
-        // self.bottomTextField.constant = keyboardSize.height + 8.0
+         self.bottomTextField.constant = keyboardSize.height + 8.0
         if self.view.frame.origin.y >= 0 {
             UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut, animations: {
                 self.textFieldTouched.layoutIfNeeded()
@@ -155,9 +162,10 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
     }
+    
     @objc func keyboardWillHide(notification: Notification) {
         
-       // self.bottomTextField.constant = 3
+        self.bottomTextField.constant = 3
         UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
             self.textFieldTouched.layoutIfNeeded()
         }, completion: nil)
@@ -272,8 +280,10 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         
         
         trisImage.translatesAutoresizingMaskIntoConstraints = false
+        
+        
         //top
-        NSLayoutConstraint(item: trisImage, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 6).isActive = true
+        NSLayoutConstraint(item: trisImage, attribute: .top, relatedBy: .equal, toItem: dismissButton, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 30).isActive = true
         //centerX
         NSLayoutConstraint(item: trisImage, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         //width
@@ -300,21 +310,21 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         
         //text field message
         
-        textFieldMessage.translatesAutoresizingMaskIntoConstraints = false
+//        textFieldMessage.translatesAutoresizingMaskIntoConstraints = false
         
 //        //left
 //        NSLayoutConstraint(item: textFieldMessage, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: UIScreen.main.bounds.size.width / 15).isActive = true
 //        //right
 //        NSLayoutConstraint(item: textFieldMessage, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: -10).isActive = true
         
-        NSLayoutConstraint(item: textFieldMessage, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
-        
-        NSLayoutConstraint(item: textFieldMessage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 1.25).isActive = true
-        
+//        NSLayoutConstraint(item: textFieldMessage, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+//        
+//        NSLayoutConstraint(item: textFieldMessage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 1.25).isActive = true
+//        
         //height
 //        NSLayoutConstraint(item: textFieldMessage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 20).isActive = true
         
-        NSLayoutConstraint(item: textFieldMessage, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / -30).isActive = true
+//        NSLayoutConstraint(item: textFieldMessage, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / -30).isActive = true
         
         
         //chat table
@@ -332,6 +342,8 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         
         
         // TASTO ABBANDONA
+        
+        
         dismissButton.translatesAutoresizingMaskIntoConstraints = false
         
         dismissButton.layer.borderWidth = 0.5
@@ -345,10 +357,10 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         NSLayoutConstraint(item: dismissButton, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: UIScreen.main.bounds.width / 15).isActive = true
         
         //width
-        NSLayoutConstraint(item: dismissButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 6).isActive = true
+        NSLayoutConstraint(item: dismissButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 7).isActive = true
         
         //height
-        NSLayoutConstraint(item: dismissButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 6).isActive = true
+        NSLayoutConstraint(item: dismissButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 7).isActive = true
         
         
         dismissButton.setTitle("Abbandona", for: .normal)

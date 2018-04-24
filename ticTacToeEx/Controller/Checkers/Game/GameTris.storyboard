@@ -258,9 +258,8 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Send a message here.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WIR-ph-Cwh">
-                                <rect key="frame" x="13" y="633" width="353" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Send a message here.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WIR-ph-Cwh">
+                                <rect key="frame" x="20" y="633" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -268,12 +267,22 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8nE-5g-evf">
                                 <rect key="frame" x="75" y="26" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="dismissButton:" destination="JXl-Mc-nHg" eventType="touchUpInside" id="YEs-Og-CDz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pjX-wr-omw" firstAttribute="trailing" secondItem="WIR-ph-Cwh" secondAttribute="trailing" constant="20" id="1RF-yE-oKl"/>
+                            <constraint firstItem="WIR-ph-Cwh" firstAttribute="centerX" secondItem="pUn-i0-XWl" secondAttribute="centerX" id="JhD-SO-6An"/>
+                            <constraint firstAttribute="bottom" secondItem="WIR-ph-Cwh" secondAttribute="bottom" constant="4" id="Oxj-sL-aR0"/>
+                            <constraint firstItem="WIR-ph-Cwh" firstAttribute="leading" secondItem="pjX-wr-omw" secondAttribute="leading" constant="20" id="r3s-F4-KZT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pjX-wr-omw"/>
                     </view>
                     <connections>
+                        <outlet property="bottomTextField" destination="Oxj-sL-aR0" id="cwS-Gb-brX"/>
                         <outlet property="chatTable" destination="GMk-9C-SLb" id="f9R-Ol-NYI"/>
                         <outlet property="chatView" destination="3te-MT-eJQ" id="a06-iQ-6HF"/>
                         <outlet property="dismissButton" destination="8nE-5g-evf" id="xO1-4S-fqR"/>
