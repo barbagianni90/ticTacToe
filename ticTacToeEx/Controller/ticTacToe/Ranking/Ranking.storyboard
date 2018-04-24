@@ -56,28 +56,44 @@
                                                         <constraint firstAttribute="height" constant="40" id="cPz-GS-NyS"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEo-Yc-Yjm">
-                                                    <rect key="frame" x="274" y="8" width="44" height="27"/>
+                                                <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lHO-aF-zsd">
+                                                    <rect key="frame" x="200" y="9.5" width="155" height="25"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEo-Yc-Yjm" userLabel="Vittore">
+                                                            <rect key="frame" x="0.0" y="0.0" width="45" height="25"/>
+                                                            <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Twj-0b-aDn" userLabel="Sconfitte">
+                                                            <rect key="frame" x="55" y="0.0" width="45" height="25"/>
+                                                            <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlL-aA-hfa" userLabel="Media">
+                                                            <rect key="frame" x="110" y="0.0" width="45" height="25"/>
+                                                            <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="27" id="UZP-dY-4Mw"/>
+                                                        <constraint firstAttribute="height" constant="25" id="2XA-A5-Ki9"/>
+                                                        <constraint firstAttribute="width" constant="155" id="JaY-yn-2Pz"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                </stackView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="V3D-48-fnY" firstAttribute="top" secondItem="vd9-JP-Tdz" secondAttribute="top" constant="5" id="3qU-Yc-Mry"/>
                                                 <constraint firstAttribute="bottom" secondItem="WUE-Z1-cVo" secondAttribute="bottom" constant="2.5" id="IZw-1h-L8R"/>
+                                                <constraint firstItem="lHO-aF-zsd" firstAttribute="centerY" secondItem="vd9-JP-Tdz" secondAttribute="centerY" id="Lek-gR-8wO"/>
                                                 <constraint firstItem="V3D-48-fnY" firstAttribute="leading" secondItem="vd9-JP-Tdz" secondAttribute="leading" constant="59" id="NtS-XG-sKe"/>
-                                                <constraint firstAttribute="bottom" secondItem="fEo-Yc-Yjm" secondAttribute="bottom" constant="8.5" id="Sqg-bL-LV0"/>
+                                                <constraint firstItem="V3D-48-fnY" firstAttribute="centerY" secondItem="vd9-JP-Tdz" secondAttribute="centerY" id="Obs-5W-Qmj"/>
                                                 <constraint firstItem="WUE-Z1-cVo" firstAttribute="top" secondItem="vd9-JP-Tdz" secondAttribute="top" constant="1" id="WG5-aE-wXx"/>
-                                                <constraint firstAttribute="trailing" secondItem="fEo-Yc-Yjm" secondAttribute="trailing" constant="57" id="Yqr-Ic-7Ol"/>
                                                 <constraint firstItem="WUE-Z1-cVo" firstAttribute="leading" secondItem="vd9-JP-Tdz" secondAttribute="leading" constant="11" id="jcB-FY-bsH"/>
-                                                <constraint firstItem="fEo-Yc-Yjm" firstAttribute="top" secondItem="vd9-JP-Tdz" secondAttribute="top" constant="8" id="mix-AK-GrA"/>
-                                                <constraint firstAttribute="bottom" secondItem="V3D-48-fnY" secondAttribute="bottom" constant="5.5" id="p6z-th-5IZ"/>
                                                 <constraint firstItem="V3D-48-fnY" firstAttribute="leading" secondItem="WUE-Z1-cVo" secondAttribute="trailing" constant="8" id="tCK-U3-MfH"/>
+                                                <constraint firstAttribute="trailing" secondItem="lHO-aF-zsd" secondAttribute="trailing" constant="20" id="vIK-90-jLW"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -107,15 +123,6 @@
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Punteggio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0l-nD-iyD">
-                                <rect key="frame" x="247" y="180" width="112" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Shojumaru-Regular" family="Shojumaru" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <size key="shadowOffset" width="0.0" height="1"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JcH-3b-bVr">
                                 <rect key="frame" x="16" y="20" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -131,13 +138,42 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Checkers"/>
-                                    <segment title="Chess"/>
                                     <segment title="TicTacToe"/>
                                 </segments>
                                 <connections>
                                     <action selector="segmented:" destination="eOE-nf-9mp" eventType="valueChanged" id="tSL-8x-31l"/>
                                 </connections>
                             </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="aFz-SQ-rGY">
+                                <rect key="frame" x="210" y="180" width="145" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="V" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0l-nD-iyD" userLabel="Vittorie Label">
+                                        <rect key="frame" x="0.0" y="0.0" width="15" height="21"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="shadowOffset" width="0.0" height="1"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="S" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRp-9f-b8N" userLabel="Sconfitte Label">
+                                        <rect key="frame" x="65" y="0.0" width="15" height="21"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="shadowOffset" width="0.0" height="1"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="M" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJn-mT-cbC" userLabel="Media Label">
+                                        <rect key="frame" x="130" y="0.0" width="15" height="21"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="shadowOffset" width="0.0" height="1"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="sC5-lF-bi0"/>
@@ -145,10 +181,13 @@
                     <connections>
                         <outlet property="giocatoreLabel" destination="48k-uH-w6s" id="PCu-Rp-gsI"/>
                         <outlet property="homeButton" destination="JcH-3b-bVr" id="oPz-WP-Ram"/>
-                        <outlet property="punteggioLabel" destination="f0l-nD-iyD" id="UHv-Vp-HaL"/>
+                        <outlet property="mediaLabel" destination="yJn-mT-cbC" id="X7a-Rv-9oO"/>
+                        <outlet property="punteggioLabel" destination="f0l-nD-iyD" id="yPc-Vl-LMs"/>
                         <outlet property="rankingLabel" destination="nHc-3x-lOI" id="AkU-pp-IKX"/>
+                        <outlet property="sconfitteLabel" destination="rRp-9f-b8N" id="n4F-Ut-mAc"/>
                         <outlet property="segmented" destination="ASh-II-0tb" id="69K-ba-0QI"/>
                         <outlet property="tableRanking" destination="YO0-mk-1iM" id="ASr-8D-4fm"/>
+                        <outlet property="titleStackview" destination="aFz-SQ-rGY" id="EuF-R2-909"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AtX-gI-9iq" userLabel="First Responder" sceneMemberID="firstResponder"/>

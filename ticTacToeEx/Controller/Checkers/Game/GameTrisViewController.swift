@@ -283,7 +283,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         
         
         //top
-        NSLayoutConstraint(item: trisImage, attribute: .top, relatedBy: .equal, toItem: dismissButton, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 30).isActive = true
+        NSLayoutConstraint(item: trisImage, attribute: .top, relatedBy: .equal, toItem: dismissButton, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 30).isActive = true
         //centerX
         NSLayoutConstraint(item: trisImage, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         //width
@@ -364,16 +364,21 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         NSLayoutConstraint(item: dismissButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 7).isActive = true
         
         //height
-        NSLayoutConstraint(item: dismissButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 7).isActive = true
+        NSLayoutConstraint(item: dismissButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 8).isActive = true
         
         
         dismissButton.setTitle("Abbandona", for: .normal)
-        dismissButton.titleLabel?.textColor = UIColor.white
-        dismissButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)
+        dismissButton.setTitleColor(UIColor.white, for: .normal)
+        
+        dismissButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.width / 8)
         
         dismissButton.titleLabel?.adjustsFontSizeToFitWidth = true
         dismissButton.titleLabel?.baselineAdjustment = .alignCenters
         
+        
+        
+        
+     
         
 
         
