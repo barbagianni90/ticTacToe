@@ -311,8 +311,8 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         // TASTO ABBANDONA
         dismissButton.translatesAutoresizingMaskIntoConstraints = false
         
-        dismissButton.layer.borderWidth = 0.5
-        dismissButton.layer.borderColor = UIColor.white.cgColor
+//        dismissButton.layer.borderWidth = 0.5
+//        dismissButton.layer.borderColor = UIColor.white.cgColor
         
         
         //top
@@ -320,14 +320,14 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         //right
         NSLayoutConstraint(item: dismissButton, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: -UIScreen.main.bounds.width / 15).isActive = true
         //width
-        NSLayoutConstraint(item: dismissButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 5).isActive = true
+        NSLayoutConstraint(item: dismissButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 4).isActive = true
         //height
         NSLayoutConstraint(item: dismissButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 7).isActive = true
         
         
         dismissButton.setTitle("Abbandona", for: .normal)
-        dismissButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)
-        
+//        dismissButton.titleLabel?.textColor = UIColor.white
+//        dismissButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.width)
         
         dismissButton.titleLabel?.adjustsFontSizeToFitWidth = true
         dismissButton.titleLabel?.baselineAdjustment = .alignCenters
