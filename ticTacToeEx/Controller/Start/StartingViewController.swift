@@ -8,7 +8,7 @@
 
 import UIKit
 
-class startingViewController: UIViewController{
+class StartingViewController: UIViewController{
     
     @IBOutlet weak var avatarButton: UIButton!
     @IBOutlet weak var nickNameLabel: UILabel!
@@ -55,10 +55,18 @@ class startingViewController: UIViewController{
     
     static var first: Bool!
     
+    func signOut(notification: Notification) {
+        self.avatarButton.isHidden = true
+        self.nickNameLabel.text = ""
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        startingViewController.first = true
+        //observer signOut
+        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue:"LogOut"), object: nil, queue: nil, using: signOut)
+        
+        StartingViewController.first = true
         //swipe
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(swipe:)))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
@@ -234,11 +242,11 @@ class startingViewController: UIViewController{
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if !startingViewController.first && MainViewController.user.nickName != ""{
+        if !StartingViewController.first && MainViewController.user.nickName != ""{
             hideSideMenu()
             isSlideMenuHidden = true
         }
-       startingViewController.first = false
+        StartingViewController.first = false
     }
     
     @IBAction func menuButtonAction(_ sender: UIButton) {
@@ -298,7 +306,6 @@ class startingViewController: UIViewController{
             self.avatarButton.isHidden = false
             self.nickNameLabel.isHidden = false
             self.avatarButton.setBackgroundImage(MainViewController.user.image, for: .normal)
-            //self.avatarButton.transform = CGAffineTransform(rotationAngle: (90.0 * .pi) / 180.0)
             self.avatarButton.layer.cornerRadius = UIScreen.main.bounds.width / 20
             self.avatarButton.layer.masksToBounds = true
             

@@ -71,7 +71,7 @@ class StartTableViewController: UITableViewController {
                 let profile = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "profileInfo")
                 self.present(profile,animated: true,completion: nil)
                 
-                startingViewController.first = true
+                StartingViewController.first = true
             }
         }else if indexPath.row == 1{
             if MainViewController.user.nickName == ""{
@@ -84,7 +84,7 @@ class StartTableViewController: UITableViewController {
                     ref.child("Players").child("\(MainViewController.user.id)").child("loggato").setValue("No")
                     MainViewController.user = User()
                     label.text = "Sign In"
-                    
+                    NotificationCenter.default.post(name: Notification.Name(rawValue:"LogOut"), object: nil)
                     print("Utente disconnesso\n")
                     
                     
