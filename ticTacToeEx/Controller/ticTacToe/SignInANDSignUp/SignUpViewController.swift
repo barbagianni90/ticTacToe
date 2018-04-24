@@ -99,6 +99,9 @@ class SignUpViewController: UIViewController{
                     
                     if error == nil {
                         
+                        self.activityIndicator.stopAnimating()
+                        UIApplication.shared.endIgnoringInteractionEvents()
+                        
                         print("You have successfully signed up")
                         
                         let alert = UIAlertController(title: "Insert your nickname", message: nil, preferredStyle: .alert)
@@ -154,6 +157,7 @@ class SignUpViewController: UIViewController{
                                 }
                                 
                             }
+                            
                             self.getData()
                             self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
                             
