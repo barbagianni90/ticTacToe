@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ticTacToeEx/Controller/ticTacToe/Main/MainViewController.swift"
-            timestampString = "546189960.418103"
+            timestampString = "546267597.938942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "209"
@@ -31,8 +31,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "318"
             endingLineNumber = "318"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "mangiateObbligatoriePedina(_:_:_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -42,7 +42,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.7525589"
+                  timestampString = "546269824.569876"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "318"
@@ -57,7 +57,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.756851"
+                  timestampString = "546269824.573912"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "318"
@@ -79,8 +79,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "322"
             endingLineNumber = "322"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "mangiateObbligatoriePedina(_:_:_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -90,7 +90,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.767839"
+                  timestampString = "546269824.585469"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "322"
@@ -105,7 +105,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.771957"
+                  timestampString = "546269824.5897"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "322"
@@ -127,8 +127,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "325"
             endingLineNumber = "325"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "mangiateObbligatoriePedina(_:_:_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -138,7 +138,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.780998"
+                  timestampString = "546269824.602353"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "325"
@@ -153,7 +153,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.785174"
+                  timestampString = "546269824.605878"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "325"
@@ -175,8 +175,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "334"
             endingLineNumber = "334"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "mangiateObbligatoriePedina(_:_:_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -186,7 +186,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.795058"
+                  timestampString = "546269824.622197"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "334"
@@ -201,7 +201,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.7993079"
+                  timestampString = "546269824.626369"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "334"
@@ -223,8 +223,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "338"
             endingLineNumber = "338"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "mangiateObbligatorieDama(_:_:_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -234,7 +234,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.811674"
+                  timestampString = "546269824.638853"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "338"
@@ -249,7 +249,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.8154809"
+                  timestampString = "546269824.643415"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "338"
@@ -271,8 +271,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "347"
             endingLineNumber = "347"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "mangiateObbligatorieDama(_:_:_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -282,7 +282,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.825382"
+                  timestampString = "546269824.657869"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "347"
@@ -297,7 +297,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.8291"
+                  timestampString = "546269824.664281"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "347"
@@ -319,8 +319,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "350"
             endingLineNumber = "350"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "mangiateObbligatorieDama(_:_:_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -330,7 +330,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.839553"
+                  timestampString = "546269824.6792181"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "350"
@@ -345,7 +345,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.843643"
+                  timestampString = "546269824.6828279"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "350"
@@ -367,8 +367,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "359"
             endingLineNumber = "359"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "mangiateObbligatorieDama(_:_:_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -378,7 +378,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.8543971"
+                  timestampString = "546269824.7017879"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "359"
@@ -393,7 +393,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.859045"
+                  timestampString = "546269824.706314"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "359"
@@ -415,8 +415,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "363"
             endingLineNumber = "363"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "mangiateObbligatorieDama(_:_:_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -426,7 +426,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.869776"
+                  timestampString = "546269824.719951"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "363"
@@ -441,7 +441,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.873732"
+                  timestampString = "546269824.724179"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "363"
@@ -463,8 +463,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "366"
             endingLineNumber = "366"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "mangiateObbligatorieDama(_:_:_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -474,7 +474,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.8843189"
+                  timestampString = "546269824.736522"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "366"
@@ -489,7 +489,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.888744"
+                  timestampString = "546269824.740616"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "366"
@@ -511,8 +511,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "375"
             endingLineNumber = "375"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "mangiateObbligatorieDama(_:_:_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -522,7 +522,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.900807"
+                  timestampString = "546269824.754717"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "376"
@@ -537,7 +537,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.9054019"
+                  timestampString = "546269824.7601711"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "376"
@@ -559,8 +559,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "380"
             endingLineNumber = "380"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "mangiateObbligatorieDama(_:_:_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -570,7 +570,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.919358"
+                  timestampString = "546269824.774278"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "380"
@@ -585,7 +585,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.925849"
+                  timestampString = "546269824.778905"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "380"
@@ -607,8 +607,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "390"
             endingLineNumber = "390"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "mangiateObbligatorieDama(_:_:_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -618,7 +618,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.936874"
+                  timestampString = "546269824.792437"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "390"
@@ -633,7 +633,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.940779"
+                  timestampString = "546269824.79814"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "390"
@@ -655,8 +655,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "393"
             endingLineNumber = "393"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "mangiateObbligatorieDama(_:_:_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -666,7 +666,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.952469"
+                  timestampString = "546269824.816747"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "393"
@@ -681,7 +681,7 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546250108.956413"
+                  timestampString = "546269824.8212481"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "393"
@@ -703,8 +703,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "312"
             endingLineNumber = "312"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "mangiateObbligatoriePedina(_:_:_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
