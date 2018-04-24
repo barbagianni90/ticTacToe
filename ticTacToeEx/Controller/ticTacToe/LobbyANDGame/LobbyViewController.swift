@@ -20,6 +20,8 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var statoLabel: UILabel!
     
     
+    //var alertAttending: Ale
+    
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     var nickNameSfidato: String = ""
@@ -220,13 +222,15 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     ref.child("Players").child("\(user.id)").child("invitatoDa").setValue("\(MainViewController.user.nickName)\(LobbyViewController.gameSelected)")
                 }
             }
-            self.activityIndicator.center = self.view.center
-            self.activityIndicator.hidesWhenStopped = true
-            self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-            self.view.addSubview(self.activityIndicator)
             
-            activityIndicator.startAnimating()
-            UIApplication.shared.beginIgnoringInteractionEvents()
+            
+//            self.activityIndicator.center = self.view.center
+//            self.activityIndicator.hidesWhenStopped = true
+//            self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.white
+//            self.view.addSubview(self.activityIndicator)
+//
+//            activityIndicator.startAnimating()
+//            UIApplication.shared.beginIgnoringInteractionEvents()
         }
     }
     
@@ -443,8 +447,6 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.button1.setBackgroundImage(UIImage(named: "iconTris"), for: .normal)
         cell.button2.setBackgroundImage(UIImage(named: "checkIcon"), for: .normal)
         cell.button3.setBackgroundImage(UIImage(named: "chessIcon"), for: .normal)
-        
-        
         
         
         cell.button3.isEnabled = false
