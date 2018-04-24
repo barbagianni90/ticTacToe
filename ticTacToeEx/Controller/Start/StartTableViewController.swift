@@ -81,6 +81,7 @@ class StartTableViewController: UITableViewController {
                     ref.child("Players").child("\(MainViewController.user.id)").child("loggato").setValue("No")
                     MainViewController.user = User()
                     label.text = "Sign In"
+                    
                     print("Utente disconnesso\n")
                     
                     
