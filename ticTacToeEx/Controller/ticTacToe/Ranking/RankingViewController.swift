@@ -224,6 +224,11 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.imagePlayer.layer.cornerRadius = cell.imagePlayer.frame.size.width / 2
         cell.imagePlayer.layer.masksToBounds = true
         
+        if MainViewController.user.nickName == players[indexPath.row].nickName{
+            cell.nickNameLabel.textColor = UIColor.white
+            cell.scoreLabel.textColor = UIColor.white
+            
+        }
         
         return cell
     }
@@ -246,11 +251,13 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func refresh() {
         
-        self.players.removeAll()
+        
         
         let ref = Database.database().reference()
         
         ref.child("Players").observeSingleEvent(of: .value, with: { (snap) in
+            
+            self.players.removeAll()
             
             let players = snap.value as! [String : Any]
             
