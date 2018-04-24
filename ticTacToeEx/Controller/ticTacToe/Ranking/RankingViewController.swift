@@ -201,16 +201,6 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         NSLayoutConstraint(item: tableRanking, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
     }
     
     

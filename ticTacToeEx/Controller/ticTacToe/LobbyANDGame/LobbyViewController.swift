@@ -222,7 +222,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
             self.activityIndicator.center = self.view.center
             self.activityIndicator.hidesWhenStopped = true
-            self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+            self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.white
             self.view.addSubview(self.activityIndicator)
             
             activityIndicator.startAnimating()
@@ -443,8 +443,6 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.button1.setBackgroundImage(UIImage(named: "iconTris"), for: .normal)
         cell.button2.setBackgroundImage(UIImage(named: "checkIcon"), for: .normal)
         cell.button3.setBackgroundImage(UIImage(named: "chessIcon"), for: .normal)
-        
-        
         
         
         cell.button3.isEnabled = false

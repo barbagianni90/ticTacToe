@@ -18,6 +18,8 @@ import Alamofire
 
 class SignUpViewController: UIViewController{
     
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    
     static var imageProfileSelected: UIImage!
     var nicknameChose = ""
     
@@ -56,8 +58,19 @@ class SignUpViewController: UIViewController{
     
     @IBAction func submitButton(_ sender: Any) {
         
+        self.activityIndicator.center = CGPoint(x: self.view.center.x, y: UIScreen.main.bounds.height / 8)
+        self.activityIndicator.hidesWhenStopped = true
+        self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.white
+        self.view.addSubview(self.activityIndicator)
+        
+        activityIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
         
         if emailTextField.text == "" || passTextField.text == "" {
+            
+            self.activityIndicator.stopAnimating()
+            UIApplication.shared.endIgnoringInteractionEvents()
+            
             let alertController = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -68,6 +81,9 @@ class SignUpViewController: UIViewController{
         }
         else if self.isValidEmail(testStr: ConvertOptionalString.convert(self.emailTextField.text)) == false {
             
+            self.activityIndicator.stopAnimating()
+            UIApplication.shared.endIgnoringInteractionEvents()
+            
             let alertController = UIAlertController(title: "Error", message: "Please enter a valid email", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -77,79 +93,97 @@ class SignUpViewController: UIViewController{
         }
         else {
             
-            Auth.auth().createUser(withEmail: emailTextField.text!, password: passTextField.text!) { (user, error) in
-                
-                if error == nil {
-                    print("You have successfully signed up")
+            if (NetworkReachabilityManager()?.isReachable)! {
+            
+                Auth.auth().createUser(withEmail: emailTextField.text!, password: passTextField.text!) { (user, error) in
                     
-                    let alert = UIAlertController(title: "Insert your nickname", message: nil, preferredStyle: .alert)
-                    
-                    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                    
-                    alert.addTextField(configurationHandler: { textField in
-                        textField.placeholder = "Input your nickname here..."
-                    })
-                    
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                    if error == nil {
                         
-                        if let name = alert.textFields?.first?.text {
-                            
-                            MainViewController.user.id = (user?.uid)!
-                            MainViewController.user.nickName = name
-                            self.nicknameChose = name
-                            MainViewController.user.stato = "online"
-                            MainViewController.user.email = "\(ConvertOptionalString.convert(self.emailTextField.text))"
-                            
-                            let ref = Database.database().reference()
-                            
-                            ref.child("Players").child("\(MainViewController.user.id)").setValue(
-                                [   "nickname" : "\(name)",
-                                    "email" : "\(ConvertOptionalString.convert(self.emailTextField.text))",
-                                    "stato" : "online",
-                                    "vittorie" : "0",
-                                    "sconfitte" : "0",
-                                    "invitatoDa" : "",
-                                    "invitoAccettato" : "",
-                                    "loggato" : "Si" ])
-                            
-                            if SignUpViewController.imageProfileSelected != nil {
-                                
-                                let uploadData = UIImagePNGRepresentation(self.resizeImage(image: SignUpViewController.imageProfileSelected))!
-                                
-                                let base64ImageString = uploadData.base64EncodedString()
-                                
-                                ref.child("Players").child("\(MainViewController.user.id)").child("image").setValue(base64ImageString)
-                                
-                                MainViewController.user.image = SignUpViewController.imageProfileSelected
-                            }
-                                
-                            else {
-                                
-                                let uploadData = UIImagePNGRepresentation(self.resizeImage(image:UIImage(named: "default.jpg")!))!
-                                
-                                let base64ImageString = uploadData.base64EncodedString()
-                                
-                                ref.child("Players").child("\(MainViewController.user.id)").child("image").setValue(base64ImageString)
-                                
-                                MainViewController.user.image = UIImage(named: "default.jpg")
-                            }
-                            
-                        }
-                        self.getData()
-                        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+                        print("You have successfully signed up")
                         
-                    }))
-                    
-                    self.present(alert, animated: true)
-                    
-                } else {
-                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-                    
-                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alertController.addAction(defaultAction)
-                    
-                    self.present(alertController, animated: true, completion: nil)
+                        let alert = UIAlertController(title: "Insert your nickname", message: nil, preferredStyle: .alert)
+                        
+                        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                        
+                        alert.addTextField(configurationHandler: { textField in
+                            textField.placeholder = "Input your nickname here..."
+                        })
+                        
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                            
+                            if let name = alert.textFields?.first?.text {
+                                
+                                MainViewController.user.id = (user?.uid)!
+                                MainViewController.user.nickName = name
+                                self.nicknameChose = name
+                                MainViewController.user.stato = "online"
+                                MainViewController.user.email = "\(ConvertOptionalString.convert(self.emailTextField.text))"
+                                
+                                let ref = Database.database().reference()
+                                
+                                ref.child("Players").child("\(MainViewController.user.id)").setValue(
+                                    [   "nickname" : "\(name)",
+                                        "email" : "\(ConvertOptionalString.convert(self.emailTextField.text))",
+                                        "stato" : "online",
+                                        "vittorie" : "0",
+                                        "sconfitte" : "0",
+                                        "invitatoDa" : "",
+                                        "invitoAccettato" : "",
+                                        "loggato" : "Si" ])
+                                
+                                if SignUpViewController.imageProfileSelected != nil {
+                                    
+                                    let uploadData = UIImagePNGRepresentation(self.resizeImage(image: SignUpViewController.imageProfileSelected))!
+                                    
+                                    let base64ImageString = uploadData.base64EncodedString()
+                                    
+                                    ref.child("Players").child("\(MainViewController.user.id)").child("image").setValue(base64ImageString)
+                                    
+                                    MainViewController.user.image = SignUpViewController.imageProfileSelected
+                                }
+                                    
+                                else {
+                                    
+                                    let uploadData = UIImagePNGRepresentation(self.resizeImage(image:UIImage(named: "default.jpg")!))!
+                                    
+                                    let base64ImageString = uploadData.base64EncodedString()
+                                    
+                                    ref.child("Players").child("\(MainViewController.user.id)").child("image").setValue(base64ImageString)
+                                    
+                                    MainViewController.user.image = UIImage(named: "default.jpg")
+                                }
+                                
+                            }
+                            self.getData()
+                            self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+                            
+                        }))
+                        
+                        self.present(alert, animated: true)
+                        
+                    } else {
+                        
+                        self.activityIndicator.stopAnimating()
+                        UIApplication.shared.endIgnoringInteractionEvents()
+                        
+                        let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                        
+                        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                        alertController.addAction(defaultAction)
+                        
+                        self.present(alertController, animated: true, completion: nil)
+                    }
                 }
+            }
+            else {
+                
+                self.activityIndicator.stopAnimating()
+                UIApplication.shared.endIgnoringInteractionEvents()
+                
+                let alertController = UIAlertController(title: "Connessione assente", message: nil, preferredStyle: .alert)
+                
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
             }
         }
     }
