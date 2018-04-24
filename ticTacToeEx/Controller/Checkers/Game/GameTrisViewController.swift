@@ -190,6 +190,8 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var chatView: UIView!
     
+    @IBOutlet weak var dismissButton: UIButton!
+    
     var enemy = User()
     
     var fPlayer = false
@@ -237,8 +239,6 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         view.sendSubview(toBack: background)
         
         
-        
-        
         //setting stack view
         stackView.translatesAutoresizingMaskIntoConstraints = false
         //top
@@ -260,7 +260,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         
         trisImage.translatesAutoresizingMaskIntoConstraints = false
         //top
-        NSLayoutConstraint(item: trisImage, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 15).isActive = true
+        NSLayoutConstraint(item: trisImage, attribute: .top, relatedBy: .equal, toItem: dismissButton, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 25).isActive = true
         //centerX
         NSLayoutConstraint(item: trisImage, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         //width
@@ -274,11 +274,15 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         //CHAT VIEW
         
         chatView.translatesAutoresizingMaskIntoConstraints = false
-        
+        //left
         NSLayoutConstraint(item: chatView, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 10).isActive = true
+        //right
         NSLayoutConstraint(item: chatView, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: -10).isActive = true
+        //top
         NSLayoutConstraint(item: chatView, attribute: .top, relatedBy: .equal, toItem: stackView, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+        //bottom
         NSLayoutConstraint(item: chatView, attribute: .bottom, relatedBy: .equal, toItem: textFieldMessage, attribute: .top, multiplier: 1, constant: 0).isActive = true
+        
         
         
         
@@ -304,8 +308,30 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         //right
         NSLayoutConstraint(item: chatTable, attribute: .right, relatedBy: .equal, toItem: chatView, attribute: .right, multiplier: 1, constant: 0).isActive = true
         
+        // TASTO ABBANDONA
+        dismissButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        dismissButton.layer.borderWidth = 0.5
+        dismissButton.layer.borderColor = UIColor.white.cgColor
         
         
+        //top
+        NSLayoutConstraint(item: dismissButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 15).isActive = true
+        //right
+        NSLayoutConstraint(item: dismissButton, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: -UIScreen.main.bounds.width / 15).isActive = true
+        //width
+        NSLayoutConstraint(item: dismissButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 5).isActive = true
+        //height
+        NSLayoutConstraint(item: dismissButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 7).isActive = true
+        
+        
+        dismissButton.setTitle("Abbandona", for: .normal)
+        dismissButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)
+        
+        
+        dismissButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        dismissButton.titleLabel?.baselineAdjustment = .alignCenters
+        dismissButton.titleLabel?.textAlignment = .right
         
 
         
