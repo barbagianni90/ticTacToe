@@ -9,8 +9,7 @@
 import Foundation
 import UIKit
 import Firebase
-import FirebaseAuth
-import FirebaseDatabase
+import Alamofire
 
 
 
@@ -299,9 +298,9 @@ class SignInViewController: UIViewController {
     
     @IBAction func loginButton(_ sender: Any) {
         
-        self.activityIndicator.center = self.view.center
+        self.activityIndicator.center = CGPoint(x: self.view.center.x, y: UIScreen.main.bounds.height / 8)
         self.activityIndicator.hidesWhenStopped = true
-        self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.white
         self.view.addSubview(self.activityIndicator)
         
         activityIndicator.startAnimating()
@@ -309,6 +308,8 @@ class SignInViewController: UIViewController {
         
         if self.emailTextField.text == "" || self.passTextField.text == "" {
             
+            self.activityIndicator.stopAnimating()
+            UIApplication.shared.endIgnoringInteractionEvents()
             
             let alertController = UIAlertController(title: "Error", message: "Please enter an email and password.", preferredStyle: .alert)
             
@@ -320,6 +321,9 @@ class SignInViewController: UIViewController {
         }
         else if self.isValidEmail(testStr: ConvertOptionalString.convert(self.emailTextField.text!)) == false {
             
+            self.activityIndicator.stopAnimating()
+            UIApplication.shared.endIgnoringInteractionEvents()
+            
             let alertController = UIAlertController(title: "Error", message: "Please enter a valid email", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -329,7 +333,9 @@ class SignInViewController: UIViewController {
         }
         else {
             
-            let emailCurrentUser = ConvertOptionalString.convert(self.emailTextField.text)
+            if (NetworkReachabilityManager()?.isReachable)! {
+                
+                let emailCurrentUser = ConvertOptionalString.convert(self.emailTextField.text)
                 
                 let ref = Database.database().reference()
                 
@@ -341,63 +347,75 @@ class SignInViewController: UIViewController {
                         
                         let datiPlayer = value as! [String : Any]
                         
-                        if datiPlayer["email"] as! String == emailCurrentUser {
+                            if datiPlayer["email"] as! String == emailCurrentUser {
                                 
-                            if datiPlayer["loggato"] as! String == "Si" {
-                                
-                                self.activityIndicator.stopAnimating()
-                                UIApplication.shared.endIgnoringInteractionEvents()
-                                
-                                let alertController = UIAlertController(title: "Ops...", message: "Sei già connesso da un altro dispositivo", preferredStyle: .alert)
-                                
-                                alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-                                        print("Illegal access")
-                                }))
-                                
-                                self.present(alertController, animated: true)
-                                
-                            }
-                            else {
-                                
-                            Auth.auth().signIn(withEmail: self.emailTextField.text!, password: self.passTextField.text!) { (user, error) in
-                                
-                                if error == nil {
-                                    
-                                    MainViewController.user.id = key
-                                    MainViewController.user.nickName = datiPlayer["nickname"] as! String
-                                    MainViewController.user.email = datiPlayer["email"] as! String
-                                    MainViewController.user.vittorie = Int(datiPlayer["vittorie"] as! String)!
-                                    MainViewController.user.sconfitte = Int(datiPlayer["sconfitte"] as! String)!
-                                    MainViewController.user.stato = "online"
-                                    
-                                    let decodeString = Data(base64Encoded: datiPlayer["image"] as! String)
-                                    
-                                    let image = UIImage(data: decodeString!)
-                                    
-                                    let imagePNG = UIImagePNGRepresentation(image!)
-                                    
-                                    MainViewController.user.image = UIImage(data: imagePNG!)
-                                    
-                                    ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
-                                    ref.child("Players").child("\(MainViewController.user.id)").child("loggato").setValue("Si")
+                                if datiPlayer["loggato"] as! String == "Si" {
                                     
                                     self.activityIndicator.stopAnimating()
                                     UIApplication.shared.endIgnoringInteractionEvents()
                                     
-                                    self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+                                    let alertController = UIAlertController(title: "Ops...", message: "Sei già connesso da un altro dispositivo", preferredStyle: .alert)
+                                    
+                                    alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                                            print("Illegal access")
+                                    }))
+                                    
+                                    self.present(alertController, animated: true)
                                     
                                 }
-                            
                                 else {
-                                    print("wrong login")
-                                    self.activityIndicator.stopAnimating()
-                                    UIApplication.shared.endIgnoringInteractionEvents()
+                                    
+                                Auth.auth().signIn(withEmail: self.emailTextField.text!, password: self.passTextField.text!) { (user, error) in
+                                    
+                                    if error == nil {
+                                        
+                                        MainViewController.user.id = key
+                                        MainViewController.user.nickName = datiPlayer["nickname"] as! String
+                                        MainViewController.user.email = datiPlayer["email"] as! String
+                                        MainViewController.user.vittorie = Int(datiPlayer["vittorie"] as! String)!
+                                        MainViewController.user.sconfitte = Int(datiPlayer["sconfitte"] as! String)!
+                                        MainViewController.user.stato = "online"
+                                        
+                                        let decodeString = Data(base64Encoded: datiPlayer["image"] as! String)
+                                        
+                                        let image = UIImage(data: decodeString!)
+                                        
+                                        let imagePNG = UIImagePNGRepresentation(image!)
+                                        
+                                        MainViewController.user.image = UIImage(data: imagePNG!)
+                                        
+                                        ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+                                        ref.child("Players").child("\(MainViewController.user.id)").child("loggato").setValue("Si")
+                                        
+                                        self.activityIndicator.stopAnimating()
+                                        UIApplication.shared.endIgnoringInteractionEvents()
+                                        
+                                        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+                                        
+                                    }
+                                
+                                    else {
+                                        print("wrong login")
+                                        self.activityIndicator.stopAnimating()
+                                        UIApplication.shared.endIgnoringInteractionEvents()
+                                    }
                                 }
                             }
                         }
                     }
-                }
-            })
+                })
+            }
+            else {
+                
+                self.activityIndicator.stopAnimating()
+                UIApplication.shared.endIgnoringInteractionEvents()
+                
+                let alertController = UIAlertController(title: "Ops...", message: "Connessione assente", preferredStyle: .alert)
+                
+                alertController.addAction(UIAlertAction(title: "OK", style: .default))
+                
+                self.present(alertController, animated: true)
+            }
         }
     }
     @IBAction func goHome(_ sender: Any) {
