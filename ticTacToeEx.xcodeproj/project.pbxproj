@@ -59,6 +59,7 @@
 		FE588B282089DEE3005E5657 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE588B272089DEE3005E5657 /* Lato-Regular.ttf */; };
 		FE6BF157206D0F1500BA7800 /* Shojumaru-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE6BF156206D0F1400BA7800 /* Shojumaru-Regular.ttf */; };
 		FE6BF159206D113900BA7800 /* CatCafe.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE6BF158206D113800BA7800 /* CatCafe.ttf */; };
+		FEAE5096208F16CC00AEB1BB /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAE5095208F16CC00AEB1BB /* SideMenuTableViewCell.swift */; };
 		FEC8A084206B849C0031001B /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A083206B849C0031001B /* SignInViewController.swift */; };
 		FEC8A089206B87AA0031001B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A088206B87AA0031001B /* SignUpViewController.swift */; };
 		FEC8A08B206B89380031001B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC8A08A206B89380031001B /* ProfileViewController.swift */; };
@@ -128,6 +129,7 @@
 		FE588B272089DEE3005E5657 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		FE6BF156206D0F1400BA7800 /* Shojumaru-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Shojumaru-Regular.ttf"; sourceTree = "<group>"; };
 		FE6BF158206D113800BA7800 /* CatCafe.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CatCafe.ttf; sourceTree = "<group>"; };
+		FEAE5095208F16CC00AEB1BB /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		FEC8A083206B849C0031001B /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		FEC8A088206B87AA0031001B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FEC8A08A206B89380031001B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 				FE159E28207E219F0075C533 /* Start.storyboard */,
 				F3F62E952084E2A100A674BE /* startingViewController.swift */,
 				F3F62E9B2084FC8000A674BE /* StartTableViewController.swift */,
+				FEAE5095208F16CC00AEB1BB /* SideMenuTableViewCell.swift */,
 				C41036EE206E35E600423D7D /* GameIamges */,
 			);
 			path = Start;
@@ -530,6 +533,7 @@
 				F3F62E9C2084FC8000A674BE /* StartTableViewController.swift in Sources */,
 				C41036ED206E284E00423D7D /* LobbyViewController.swift in Sources */,
 				FE4D552F2069024000ABF6C1 /* MainViewController.swift in Sources */,
+				FEAE5096208F16CC00AEB1BB /* SideMenuTableViewCell.swift in Sources */,
 				FE1B8AA7207CEC6000960EEB /* RankingDamaViewController.swift in Sources */,
 				FE4D552D2069023F00ABF6C1 /* AppDelegate.swift in Sources */,
 				FEC8A08D206B899D0031001B /* RankingViewController.swift in Sources */,

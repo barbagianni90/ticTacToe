@@ -14,6 +14,7 @@ class StartTableViewController: UITableViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var profileLabel: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,6 +56,8 @@ class StartTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     
+        
         if indexPath.row == 0{
             if MainViewController.user.nickName == ""{
                 let alertController = UIAlertController(title: "Ops...", message: "Devi prima accedere al tuo profilo", preferredStyle: .alert)
@@ -91,13 +94,16 @@ class StartTableViewController: UITableViewController {
             }
         }
         
-        tableView.deselectRow(at: indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true) 
+    
 
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UIScreen.main.bounds.height / 12
     }
+    
+   
     
     
 }

@@ -142,15 +142,16 @@ class GameCheckersViewController: UIViewController {
         
         
         // set image damiera
+        
         damieraImage.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint(item: damieraImage, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         
-        NSLayoutConstraint(item: damieraImage, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 10).isActive = true
+        NSLayoutConstraint(item: damieraImage, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 8).isActive = true
         
-        NSLayoutConstraint(item: damieraImage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: (UIScreen.main.bounds.width / 100) * 78).isActive = true
+        NSLayoutConstraint(item: damieraImage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 1.25).isActive = true
         
-        NSLayoutConstraint(item: damieraImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: (UIScreen.main.bounds.width / 100) * 78).isActive = true
+        NSLayoutConstraint(item: damieraImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 1.25).isActive = true
         
         damieraImage.image = UIImage(named: "damiera")
         
@@ -164,9 +165,14 @@ class GameCheckersViewController: UIViewController {
         damieraStackView.distribution = .fillEqually
         
         NSLayoutConstraint(item: damieraStackView, attribute: .top, relatedBy: .equal, toItem: damieraImage, attribute: .top, multiplier: 1, constant: 0).isActive = true
+        
         NSLayoutConstraint(item: damieraStackView, attribute: .bottom, relatedBy: .equal, toItem: damieraImage, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+        
         NSLayoutConstraint(item: damieraStackView, attribute: .left, relatedBy: .equal, toItem: damieraImage, attribute: .left, multiplier: 1, constant: 0).isActive = true
+        
         NSLayoutConstraint(item: damieraStackView, attribute: .right, relatedBy: .equal, toItem: damieraImage, attribute: .right, multiplier: 1, constant: 0).isActive = true
+        
+        damieraStackView.contentMode = .scaleAspectFill
         
         //background
         let background: UIImageView!
