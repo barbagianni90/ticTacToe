@@ -55,6 +55,7 @@ class GameCheckersViewController: UIViewController {
     
     // Grafica
     @IBOutlet weak var damieraImage: UIImageView!
+    @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var damieraStackView: UIStackView!
     // end
     
@@ -142,16 +143,15 @@ class GameCheckersViewController: UIViewController {
         
         
         // set image damiera
-        
         damieraImage.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint(item: damieraImage, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         
-        NSLayoutConstraint(item: damieraImage, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 8).isActive = true
+        NSLayoutConstraint(item: damieraImage, attribute: .top, relatedBy: .equal, toItem: dismissButton, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 25).isActive = true
         
-        NSLayoutConstraint(item: damieraImage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 1.25).isActive = true
+        NSLayoutConstraint(item: damieraImage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: (UIScreen.main.bounds.width / 100) * 78).isActive = true
         
-        NSLayoutConstraint(item: damieraImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 1.25).isActive = true
+        NSLayoutConstraint(item: damieraImage, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: (UIScreen.main.bounds.width / 100) * 78).isActive = true
         
         damieraImage.image = UIImage(named: "damiera")
         
@@ -165,14 +165,9 @@ class GameCheckersViewController: UIViewController {
         damieraStackView.distribution = .fillEqually
         
         NSLayoutConstraint(item: damieraStackView, attribute: .top, relatedBy: .equal, toItem: damieraImage, attribute: .top, multiplier: 1, constant: 0).isActive = true
-        
         NSLayoutConstraint(item: damieraStackView, attribute: .bottom, relatedBy: .equal, toItem: damieraImage, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
-        
         NSLayoutConstraint(item: damieraStackView, attribute: .left, relatedBy: .equal, toItem: damieraImage, attribute: .left, multiplier: 1, constant: 0).isActive = true
-        
         NSLayoutConstraint(item: damieraStackView, attribute: .right, relatedBy: .equal, toItem: damieraImage, attribute: .right, multiplier: 1, constant: 0).isActive = true
-        
-        damieraStackView.contentMode = .scaleAspectFill
         
         //background
         let background: UIImageView!
@@ -184,6 +179,31 @@ class GameCheckersViewController: UIViewController {
         
         view.addSubview(background)
         view.sendSubview(toBack: background)
+        
+        // TASTO ABBANDONA
+        dismissButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        //        dismissButton.layer.borderWidth = 0.5
+        //        dismissButton.layer.borderColor = UIColor.white.cgColor
+        
+        
+        //top
+        NSLayoutConstraint(item: dismissButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 15).isActive = true
+        //right
+        NSLayoutConstraint(item: dismissButton, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: -UIScreen.main.bounds.width / 15).isActive = true
+        //width
+        NSLayoutConstraint(item: dismissButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 4).isActive = true
+        //height
+        NSLayoutConstraint(item: dismissButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 7).isActive = true
+        
+        
+        dismissButton.setTitle("Abbandona", for: .normal)
+        //        dismissButton.titleLabel?.textColor = UIColor.white
+        //        dismissButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.width)
+        
+        dismissButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        dismissButton.titleLabel?.baselineAdjustment = .alignCenters
+        dismissButton.titleLabel?.textAlignment = .right
         
     }
 

@@ -265,6 +265,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLU-e0-Tn9">
+                                <rect key="frame" x="304" y="52" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="17"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="pjX-wr-omw"/>
@@ -272,6 +280,7 @@
                     <connections>
                         <outlet property="chatTable" destination="GMk-9C-SLb" id="f9R-Ol-NYI"/>
                         <outlet property="chatView" destination="3te-MT-eJQ" id="a06-iQ-6HF"/>
+                        <outlet property="dismissButton" destination="TLU-e0-Tn9" id="dP2-zb-sbx"/>
                         <outlet property="stackView" destination="Sqx-HX-UXv" id="kot-9r-HXH"/>
                         <outlet property="textFieldMessage" destination="WIR-ph-Cwh" id="18B-t1-7zF"/>
                         <outlet property="trisImage" destination="qlR-ic-FoJ" id="WM0-Qr-Adu"/>
