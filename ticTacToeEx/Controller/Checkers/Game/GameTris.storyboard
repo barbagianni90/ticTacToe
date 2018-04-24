@@ -258,7 +258,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Send a message here.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WIR-ph-Cwh">
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Send a message here.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WIR-ph-Cwh">
                                 <rect key="frame" x="20" y="633" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -274,10 +274,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="pjX-wr-omw" firstAttribute="trailing" secondItem="WIR-ph-Cwh" secondAttribute="trailing" constant="20" id="1RF-yE-oKl"/>
-                            <constraint firstItem="WIR-ph-Cwh" firstAttribute="centerX" secondItem="pUn-i0-XWl" secondAttribute="centerX" id="JhD-SO-6An"/>
                             <constraint firstAttribute="bottom" secondItem="WIR-ph-Cwh" secondAttribute="bottom" constant="4" id="Oxj-sL-aR0"/>
-                            <constraint firstItem="WIR-ph-Cwh" firstAttribute="leading" secondItem="pjX-wr-omw" secondAttribute="leading" constant="20" id="r3s-F4-KZT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pjX-wr-omw"/>
                     </view>
