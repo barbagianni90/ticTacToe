@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Raleway-Light.ttf">
+            <string>Raleway-Light</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Game Checkers View Controller-->
         <scene sceneID="UTn-aZ-QG5">
@@ -646,6 +651,14 @@
                                 <rect key="frame" x="53" y="368" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRU-5L-dde">
+                                <rect key="frame" x="314" y="97" width="30" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="17"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="G0u-c6-0WK"/>
@@ -653,6 +666,7 @@
                     <connections>
                         <outlet property="damieraImage" destination="Ocm-Gz-vdt" id="j0V-Vj-KXI"/>
                         <outlet property="damieraStackView" destination="Cbb-LD-JEz" id="ZH3-ds-4bP"/>
+                        <outlet property="dismissButton" destination="rRU-5L-dde" id="2Wk-I4-j6C"/>
                         <outletCollection property="buttons" destination="vPs-kv-VOa" collectionClass="NSMutableArray" id="FCP-lH-NgA"/>
                         <outletCollection property="buttons" destination="TzD-1c-zsL" collectionClass="NSMutableArray" id="0IN-lP-0VW"/>
                         <outletCollection property="buttons" destination="I7f-8f-k6w" collectionClass="NSMutableArray" id="qB4-QO-eeF"/>

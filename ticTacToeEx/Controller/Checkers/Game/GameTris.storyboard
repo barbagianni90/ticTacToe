@@ -97,7 +97,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="353" height="161.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I5D-np-55F">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I5D-np-55F">
                                                             <rect key="frame" x="293" y="11" width="45" height="45"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="45" id="S09-hA-iIb"/>
@@ -147,14 +147,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Sqx-HX-UXv">
+                            <stackView opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Sqx-HX-UXv">
                                 <rect key="frame" x="20" y="52" width="90" height="102"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="04s-h2-TYJ">
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="04s-h2-TYJ">
                                         <rect key="frame" x="0.0" y="0.0" width="90" height="34"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YoO-c1-JsF">
+                                            <button opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YoO-c1-JsF">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="0:0">
@@ -164,7 +164,7 @@
                                                     <action selector="mossa:" destination="JXl-Mc-nHg" eventType="touchUpInside" id="2n9-AP-bNJ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lL-7Y-S4Q">
+                                            <button opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lL-7Y-S4Q">
                                                 <rect key="frame" x="30" y="0.0" width="30" height="34"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="0:1">
@@ -174,7 +174,7 @@
                                                     <action selector="mossa:" destination="JXl-Mc-nHg" eventType="touchUpInside" id="UMB-I9-46z"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xik-As-qr0">
+                                            <button opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xik-As-qr0">
                                                 <rect key="frame" x="60" y="0.0" width="30" height="34"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="0:2">
@@ -186,10 +186,10 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jJK-Sc-FaE">
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jJK-Sc-FaE">
                                         <rect key="frame" x="0.0" y="34" width="90" height="34"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LM0-S4-Zc5">
+                                            <button opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LM0-S4-Zc5">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="1:0">
@@ -199,7 +199,7 @@
                                                     <action selector="mossa:" destination="JXl-Mc-nHg" eventType="touchUpInside" id="cJF-cz-ovr"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5X-vO-Wdx">
+                                            <button opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5X-vO-Wdx">
                                                 <rect key="frame" x="30" y="0.0" width="30" height="34"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="1:1">
@@ -209,7 +209,7 @@
                                                     <action selector="mossa:" destination="JXl-Mc-nHg" eventType="touchUpInside" id="MiN-Op-G5T"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1r-2c-mx0">
+                                            <button opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1r-2c-mx0">
                                                 <rect key="frame" x="60" y="0.0" width="30" height="34"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="1:2">
@@ -221,10 +221,10 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="MV3-UD-qKU">
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="MV3-UD-qKU">
                                         <rect key="frame" x="0.0" y="68" width="90" height="34"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsh-aI-Hn1">
+                                            <button opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsh-aI-Hn1">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="2:0">
@@ -234,7 +234,7 @@
                                                     <action selector="mossa:" destination="JXl-Mc-nHg" eventType="touchUpInside" id="dNX-WW-yYQ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="852-WN-cof">
+                                            <button opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="852-WN-cof">
                                                 <rect key="frame" x="30" y="0.0" width="30" height="34"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="2:1">
@@ -244,7 +244,7 @@
                                                     <action selector="mossa:" destination="JXl-Mc-nHg" eventType="touchUpInside" id="2ak-qh-xkH"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" restorationIdentifier="Tris" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjh-3v-2FS">
+                                            <button opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" restorationIdentifier="Tris" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjh-3v-2FS">
                                                 <rect key="frame" x="60" y="0.0" width="30" height="34"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="2:2">
@@ -258,23 +258,31 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WIR-ph-Cwh">
-                                <rect key="frame" x="13" y="633" width="353" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Send a message here.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WIR-ph-Cwh">
+                                <rect key="frame" x="20" y="633" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8nE-5g-evf">
+                                <rect key="frame" x="75" y="26" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="dismissButton:" destination="JXl-Mc-nHg" eventType="touchUpInside" id="YEs-Og-CDz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="WIR-ph-Cwh" secondAttribute="bottom" constant="4" id="E08-Gl-7yW"/>
+                            <constraint firstAttribute="bottom" secondItem="WIR-ph-Cwh" secondAttribute="bottom" constant="4" id="Oxj-sL-aR0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pjX-wr-omw"/>
                     </view>
                     <connections>
-                        <outlet property="bottomTextField" destination="E08-Gl-7yW" id="ZDd-Ku-RPt"/>
+                        <outlet property="bottomTextField" destination="Oxj-sL-aR0" id="cwS-Gb-brX"/>
                         <outlet property="chatTable" destination="GMk-9C-SLb" id="f9R-Ol-NYI"/>
                         <outlet property="chatView" destination="3te-MT-eJQ" id="a06-iQ-6HF"/>
+                        <outlet property="dismissButton" destination="8nE-5g-evf" id="xO1-4S-fqR"/>
                         <outlet property="stackView" destination="Sqx-HX-UXv" id="kot-9r-HXH"/>
                         <outlet property="textFieldMessage" destination="WIR-ph-Cwh" id="18B-t1-7zF"/>
                         <outlet property="trisImage" destination="qlR-ic-FoJ" id="WM0-Qr-Adu"/>

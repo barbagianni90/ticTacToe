@@ -255,7 +255,13 @@ class StartingViewController: UIViewController{
         }else{
             hideSideMenu()
         }
-        isSlideMenuHidden = !isSlideMenuHidden 
+        isSlideMenuHidden = !isSlideMenuHidden
+        
+        if MainViewController.user.nickName == ""{
+            nickNameLabel.isHidden = true
+            
+            avatarButton.isHidden = true
+        }
     }
     
     @IBAction func rankingAction(_ sender: UIButton) {
@@ -269,7 +275,6 @@ class StartingViewController: UIViewController{
         
         trisButton.isHidden = true
         rankingButton.isHidden = true
-        
         nickNameLabel.isHidden = true
         
         UIView.animate(withDuration: 0.3, animations: {
@@ -319,5 +324,4 @@ class StartingViewController: UIViewController{
         }
         
     }
-    
 }
