@@ -44,6 +44,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func dismissButton(_ sender: Any) {
         
         dismiss(animated: true, completion: nil)
+        
     }
     
     var messages: [Message] = []
@@ -369,7 +370,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         NSLayoutConstraint(item: dismissButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 8).isActive = true
         
         
-        dismissButton.setTitle("Abbandona", for: .normal)
+        dismissButton.setTitle("Quit", for: .normal)
         dismissButton.setTitleColor(UIColor.white, for: .normal)
         
         dismissButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.width / 8)

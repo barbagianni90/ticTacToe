@@ -164,11 +164,19 @@
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="0.0" height="2"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CwA-qX-0dd">
+                                <rect key="frame" x="321" y="20" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="avatarButton:" destination="eWC-iH-G71" eventType="touchUpInside" id="v3C-DP-LEq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="vix-zq-BBQ"/>
                     </view>
                     <connections>
+                        <outlet property="avatarButton" destination="CwA-qX-0dd" id="QW9-wb-r6a"/>
                         <outlet property="giocatoreLabel" destination="K0P-2q-Pfi" id="9CH-Oc-4v4"/>
                         <outlet property="homeButton" destination="i6O-PV-O4j" id="mbP-Rp-61a"/>
                         <outlet property="lobbyLabel" destination="N2x-68-7zu" id="Xjw-ej-eE4"/>

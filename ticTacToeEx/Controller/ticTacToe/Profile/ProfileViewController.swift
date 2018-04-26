@@ -34,7 +34,7 @@ class ProfileViewController: UIViewController {
         NSLayoutConstraint(item: homeButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 7).isActive = true
         
         
-        homeButton.setTitle("Home", for: .normal)
+        homeButton.setTitle("Back", for: .normal)
         homeButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)
         homeButton.setTitleColor(UIColor.white, for: .normal)
         

@@ -395,6 +395,7 @@ class SignInViewController: UIViewController {
                                         
                                         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
                                         
+                                        
                                     }
                                 
                                     else {
