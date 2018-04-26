@@ -161,8 +161,8 @@ class ProfileViewController: UIViewController {
         
         stateLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        stateLabel.layer.borderColor = UIColor.white.cgColor
-        stateLabel.layer.borderWidth = 0.5
+//        stateLabel.layer.borderColor = UIColor.white.cgColor
+//        stateLabel.layer.borderWidth = 0.5
         
         NSLayoutConstraint(item: stateLabel, attribute: .top, relatedBy: .equal, toItem: nickNameLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 20).isActive = true
         
@@ -175,13 +175,14 @@ class ProfileViewController: UIViewController {
         let attStateLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 22)]
         let stateLabelText = ""
         let attState = NSMutableAttributedString(string: stateLabelText, attributes: attStateLabel)
-        nickNameLabel.attributedText = attState
-
-
         
         
         stateLabel.adjustsFontSizeToFitWidth = true
         stateLabel.baselineAdjustment = .alignCenters
+        
+        stateLabel.textAlignment = .center
+        
+        stateLabel.attributedText = attState
         
         
         
@@ -211,7 +212,7 @@ class ProfileViewController: UIViewController {
         self.nickNameLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)
         
         self.stateLabel.text = String(MainViewController.user.vittorie)
-        self.stateLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 8)
+//        self.stateLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 8)
         
         
     }
