@@ -143,8 +143,8 @@ class StartingViewController: UIViewController, Lobby {
         
         trisButton.translatesAutoresizingMaskIntoConstraints = false
         
-//        trisButton.layer.borderWidth = 0.5
-//        trisButton.layer.borderColor = UIColor.white.cgColor
+        trisButton.layer.borderWidth = 0.5
+        trisButton.layer.borderColor = UIColor.white.cgColor
         
         NSLayoutConstraint(item: trisButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.size.height / 3).isActive = true
         
@@ -172,6 +172,7 @@ class StartingViewController: UIViewController, Lobby {
         // RANKING BUTTON
         
         rankingButton.translatesAutoresizingMaskIntoConstraints = false
+        
         
         NSLayoutConstraint(item: rankingButton, attribute: .top, relatedBy: .equal, toItem: trisButton, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 10).isActive = true
         
@@ -203,17 +204,17 @@ class StartingViewController: UIViewController, Lobby {
 //                avatarButton.layer.borderWidth = 1
 //                avatarButton.layer.borderColor = UIColor.white.cgColor
         
-        NSLayoutConstraint(item: avatarButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 9).isActive = true
+        NSLayoutConstraint(item: avatarButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 12).isActive = true
         
-        NSLayoutConstraint(item: avatarButton, attribute: .left, relatedBy: .equal, toItem: sideMenuView, attribute: .right, multiplier: 1, constant: (UIScreen.main.bounds.width / 10)*8).isActive = true
+        NSLayoutConstraint(item: avatarButton, attribute: .left, relatedBy: .equal, toItem: sideMenuView, attribute: .right, multiplier: 1, constant: (UIScreen.main.bounds.width / 10)*7).isActive = true
         
-        NSLayoutConstraint(item: avatarButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 10).isActive = true
+        NSLayoutConstraint(item: avatarButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 6).isActive = true
         
-        NSLayoutConstraint(item: avatarButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 10).isActive = true
+        NSLayoutConstraint(item: avatarButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 6).isActive = true
         
         
         avatarButton.imageView?.contentMode = .scaleAspectFill
-        avatarButton.imageView?.layer.cornerRadius = (UIScreen.main.bounds.width / 7) / 2
+        avatarButton.imageView?.layer.cornerRadius = (UIScreen.main.bounds.width / 8) / 2
         
         avatarButton.backgroundColor = UIColor.clear
         
@@ -226,14 +227,15 @@ class StartingViewController: UIViewController, Lobby {
 //                nickNameLabel.layer.borderWidth = 0.5
 //                nickNameLabel.layer.borderColor = UIColor.black.cgColor
         
-        NSLayoutConstraint(item: nickNameLabel, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 10.5).isActive = true
+        NSLayoutConstraint(item: nickNameLabel, attribute: .top, relatedBy: .equal, toItem: avatarButton, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
         
-        NSLayoutConstraint(item: nickNameLabel, attribute: .right, relatedBy: .equal, toItem: avatarButton, attribute: .left, multiplier: 1, constant: -10).isActive = true
+        NSLayoutConstraint(item: nickNameLabel, attribute: .left, relatedBy: .equal, toItem: sideMenuView, attribute: .right, multiplier: 1, constant: (UIScreen.main.bounds.width / 10)*6).isActive = true
         
-        NSLayoutConstraint(item: nickNameLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 2).isActive = true
+        NSLayoutConstraint(item: nickNameLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 3).isActive = true
         
         nickNameLabel.adjustsFontSizeToFitWidth = true
-        nickNameLabel.textAlignment = .right
+        nickNameLabel.baselineAdjustment = .alignCenters
+        nickNameLabel.textAlignment = .center
         
         //
         
@@ -243,7 +245,7 @@ class StartingViewController: UIViewController, Lobby {
         
         nickNameLabel.baselineAdjustment = .alignCenters
         
-        nickNameLabel.font = UIFont(name: "Raleway-Light", size: UIScreen.main.bounds.height / 23)
+        nickNameLabel.font = UIFont(name: "Raleway-Light", size: UIScreen.main.bounds.height / 40)
         nickNameLabel.textColor = UIColor.white
         
     }
@@ -313,8 +315,9 @@ class StartingViewController: UIViewController, Lobby {
             self.avatarButton.isHidden = false
             self.nickNameLabel.isHidden = false
             self.avatarButton.setBackgroundImage(MainViewController.user.image, for: .normal)
-            self.avatarButton.layer.cornerRadius = UIScreen.main.bounds.width / 20
+            self.avatarButton.layer.cornerRadius = (UIScreen.main.bounds.width / 6) / 2
             self.avatarButton.layer.masksToBounds = true
+            self.avatarButton.imageView?.contentMode = .scaleAspectFill
             
             self.nickNameLabel.text = MainViewController.user.nickName
         }

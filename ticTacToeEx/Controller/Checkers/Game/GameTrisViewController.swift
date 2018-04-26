@@ -45,7 +45,15 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func dismissButton(_ sender: Any) {
         
-        dismiss(animated: true, completion: nil)
+        
+        let alert = UIAlertController(title: "Logout", message: "Are you sure?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Si", style: .default, handler: { (action) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (action) in
+        }))
+        self.present(alert,animated: true, completion: nil)
+            
     }
     
     var messages: [Message] = []
@@ -210,6 +218,8 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func showChawView(){
+        textFieldMessage.becomeFirstResponder()
+        
         chatViewTop.constant = UIScreen.main.bounds.height / 4
         trisImage.alpha = 0.3
         stackView.alpha = 0.3
@@ -412,8 +422,8 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         
         dismissButton.translatesAutoresizingMaskIntoConstraints = false
         
-        dismissButton.layer.borderWidth = 0.5
-        dismissButton.layer.borderColor = UIColor.white.cgColor
+//        dismissButton.layer.borderWidth = 0.5
+//        dismissButton.layer.borderColor = UIColor.white.cgColor
         
         
         //top
@@ -429,10 +439,10 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         NSLayoutConstraint(item: dismissButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 8).isActive = true
         
         
-        dismissButton.setTitle("Abbandona", for: .normal)
+        dismissButton.setTitle("Quit", for: .normal)
         dismissButton.setTitleColor(UIColor.white, for: .normal)
         
-        dismissButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.width / 8)
+        dismissButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.width / 4)
         
         dismissButton.titleLabel?.adjustsFontSizeToFitWidth = true
         dismissButton.titleLabel?.baselineAdjustment = .alignCenters
