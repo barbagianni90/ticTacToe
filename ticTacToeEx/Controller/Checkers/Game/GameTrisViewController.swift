@@ -283,7 +283,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         
         
         //top
-        NSLayoutConstraint(item: trisImage, attribute: .top, relatedBy: .equal, toItem: dismissButton, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 30).isActive = true
+        NSLayoutConstraint(item: trisImage, attribute: .top, relatedBy: .equal, toItem: dismissButton, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 15).isActive = true
         //centerX
         NSLayoutConstraint(item: trisImage, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         //width
@@ -310,7 +310,9 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         
         NSLayoutConstraint(item: chatView, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         
-        NSLayoutConstraint(item: chatView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 3).isActive = true
+//        NSLayoutConstraint(item: chatView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 3).isActive = true
+        
+        NSLayoutConstraint(item: chatView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: textFieldMessage.bounds.height).isActive = true
         
         //text field message
         
