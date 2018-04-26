@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StartingViewController: UIViewController{
+class StartingViewController: UIViewController, Lobby {
     
     @IBOutlet weak var avatarButton: UIButton!
     @IBOutlet weak var nickNameLabel: UILabel!
@@ -20,6 +20,13 @@ class StartingViewController: UIViewController{
         let profile = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "profileInfo")
         self.present(profile,animated: true,completion: nil)
         
+    }
+    
+    func presentLobby() {
+        
+        let segue = UIStoryboard(name:"Lobby",bundle:nil).instantiateViewController(withIdentifier: "lobby") as! LobbyViewController
+        
+        self.present(segue, animated: true)
     }
     
     @IBAction func trisButton(_ sender: Any) {

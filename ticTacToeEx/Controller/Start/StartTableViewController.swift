@@ -9,7 +9,8 @@
 import UIKit
 import Firebase
 
-class StartTableViewController: UITableViewController {
+class StartTableViewController: UITableViewController{
+    
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var profileLabel: UILabel!
@@ -104,7 +105,7 @@ class StartTableViewController: UITableViewController {
         return UIScreen.main.bounds.height / 12
     }
     
-   
+    
     
     
 }

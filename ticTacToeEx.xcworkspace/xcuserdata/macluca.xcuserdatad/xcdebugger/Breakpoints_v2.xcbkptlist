@@ -33,38 +33,6 @@
             endingLineNumber = "318"
             landmarkName = "mangiateObbligatoriePedina(_:_:_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ticTacToeEx.GameCheckersViewController.mangiateObbligatorieDama(__ObjC.UIButton, Swift.Int, Swift.Int) -&gt; ()"
-                  moduleName = "ticTacToeEx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.569876"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "318"
-                  endingLineNumber = "318"
-                  offsetFromSymbolStart = "2351">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ticTacToeEx.GameCheckersViewController.mangiateObbligatorieDama(__ObjC.UIButton, Swift.Int, Swift.Int) -&gt; ()"
-                  moduleName = "ticTacToeEx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.573912"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "318"
-                  endingLineNumber = "318"
-                  offsetFromSymbolStart = "32423">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -81,38 +49,6 @@
             endingLineNumber = "322"
             landmarkName = "mangiateObbligatoriePedina(_:_:_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ticTacToeEx.GameCheckersViewController.mangiateObbligatorieDama(__ObjC.UIButton, Swift.Int, Swift.Int) -&gt; ()"
-                  moduleName = "ticTacToeEx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.585469"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "322"
-                  endingLineNumber = "322"
-                  offsetFromSymbolStart = "5263">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ticTacToeEx.GameCheckersViewController.mangiateObbligatorieDama(__ObjC.UIButton, Swift.Int, Swift.Int) -&gt; ()"
-                  moduleName = "ticTacToeEx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.5897"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "322"
-                  endingLineNumber = "322"
-                  offsetFromSymbolStart = "32435">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -129,38 +65,6 @@
             endingLineNumber = "325"
             landmarkName = "mangiateObbligatoriePedina(_:_:_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ticTacToeEx.GameCheckersViewController.mangiateObbligatorieDama(__ObjC.UIButton, Swift.Int, Swift.Int) -&gt; ()"
-                  moduleName = "ticTacToeEx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.602353"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "325"
-                  endingLineNumber = "325"
-                  offsetFromSymbolStart = "6462">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ticTacToeEx.GameCheckersViewController.mangiateObbligatorieDama(__ObjC.UIButton, Swift.Int, Swift.Int) -&gt; ()"
-                  moduleName = "ticTacToeEx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.605878"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "325"
-                  endingLineNumber = "325"
-                  offsetFromSymbolStart = "32447">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -177,38 +81,6 @@
             endingLineNumber = "334"
             landmarkName = "mangiateObbligatoriePedina(_:_:_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ticTacToeEx.GameCheckersViewController.mangiateObbligatorieDama(__ObjC.UIButton, Swift.Int, Swift.Int) -&gt; ()"
-                  moduleName = "ticTacToeEx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.622197"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "334"
-                  endingLineNumber = "334"
-                  offsetFromSymbolStart = "9696">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ticTacToeEx.GameCheckersViewController.mangiateObbligatorieDama(__ObjC.UIButton, Swift.Int, Swift.Int) -&gt; ()"
-                  moduleName = "ticTacToeEx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.626369"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "334"
-                  endingLineNumber = "334"
-                  offsetFromSymbolStart = "32459">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -225,38 +97,6 @@
             endingLineNumber = "338"
             landmarkName = "mangiateObbligatorieDama(_:_:_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ticTacToeEx.GameCheckersViewController.mangiateObbligatorieDama(__ObjC.UIButton, Swift.Int, Swift.Int) -&gt; ()"
-                  moduleName = "ticTacToeEx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.638853"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "338"
-                  endingLineNumber = "338"
-                  offsetFromSymbolStart = "10895">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ticTacToeEx.GameCheckersViewController.mangiateObbligatorieDama(__ObjC.UIButton, Swift.Int, Swift.Int) -&gt; ()"
-                  moduleName = "ticTacToeEx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.643415"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "338"
-                  endingLineNumber = "338"
-                  offsetFromSymbolStart = "32471">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -282,12 +122,12 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.657869"
+                  timestampString = "546441534.888328"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "347"
-                  endingLineNumber = "347"
-                  offsetFromSymbolStart = "14129">
+                  startingLineNumber = "348"
+                  endingLineNumber = "348"
+                  offsetFromSymbolStart = "5263">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -297,12 +137,12 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.664281"
+                  timestampString = "546441534.894159"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "347"
-                  endingLineNumber = "347"
-                  offsetFromSymbolStart = "32483">
+                  startingLineNumber = "348"
+                  endingLineNumber = "348"
+                  offsetFromSymbolStart = "32435">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -321,38 +161,6 @@
             endingLineNumber = "350"
             landmarkName = "mangiateObbligatorieDama(_:_:_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ticTacToeEx.GameCheckersViewController.mangiateObbligatorieDama(__ObjC.UIButton, Swift.Int, Swift.Int) -&gt; ()"
-                  moduleName = "ticTacToeEx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.6792181"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "350"
-                  endingLineNumber = "350"
-                  offsetFromSymbolStart = "15328">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ticTacToeEx.GameCheckersViewController.mangiateObbligatorieDama(__ObjC.UIButton, Swift.Int, Swift.Int) -&gt; ()"
-                  moduleName = "ticTacToeEx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.6828279"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "350"
-                  endingLineNumber = "350"
-                  offsetFromSymbolStart = "32495">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -378,12 +186,12 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.7017879"
+                  timestampString = "546441534.9771121"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "359"
-                  endingLineNumber = "359"
-                  offsetFromSymbolStart = "18565">
+                  startingLineNumber = "360"
+                  endingLineNumber = "360"
+                  offsetFromSymbolStart = "9696">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -393,12 +201,12 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.706314"
+                  timestampString = "546441534.98324"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "359"
-                  endingLineNumber = "359"
-                  offsetFromSymbolStart = "32507">
+                  startingLineNumber = "360"
+                  endingLineNumber = "360"
+                  offsetFromSymbolStart = "32459">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -417,38 +225,6 @@
             endingLineNumber = "363"
             landmarkName = "mangiateObbligatorieDama(_:_:_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ticTacToeEx.GameCheckersViewController.mangiateObbligatorieDama(__ObjC.UIButton, Swift.Int, Swift.Int) -&gt; ()"
-                  moduleName = "ticTacToeEx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.719951"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "363"
-                  endingLineNumber = "363"
-                  offsetFromSymbolStart = "21477">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ticTacToeEx.GameCheckersViewController.mangiateObbligatorieDama(__ObjC.UIButton, Swift.Int, Swift.Int) -&gt; ()"
-                  moduleName = "ticTacToeEx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.724179"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "363"
-                  endingLineNumber = "363"
-                  offsetFromSymbolStart = "32519">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -465,38 +241,6 @@
             endingLineNumber = "366"
             landmarkName = "mangiateObbligatorieDama(_:_:_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ticTacToeEx.GameCheckersViewController.mangiateObbligatorieDama(__ObjC.UIButton, Swift.Int, Swift.Int) -&gt; ()"
-                  moduleName = "ticTacToeEx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.736522"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "366"
-                  endingLineNumber = "366"
-                  offsetFromSymbolStart = "22676">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ticTacToeEx.GameCheckersViewController.mangiateObbligatorieDama(__ObjC.UIButton, Swift.Int, Swift.Int) -&gt; ()"
-                  moduleName = "ticTacToeEx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.740616"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "366"
-                  endingLineNumber = "366"
-                  offsetFromSymbolStart = "32527">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -513,38 +257,6 @@
             endingLineNumber = "375"
             landmarkName = "mangiateObbligatorieDama(_:_:_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ticTacToeEx.GameCheckersViewController.mangiateObbligatorieDama(__ObjC.UIButton, Swift.Int, Swift.Int) -&gt; ()"
-                  moduleName = "ticTacToeEx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.754717"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "376"
-                  endingLineNumber = "376"
-                  offsetFromSymbolStart = "25910">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ticTacToeEx.GameCheckersViewController.mangiateObbligatorieDama(__ObjC.UIButton, Swift.Int, Swift.Int) -&gt; ()"
-                  moduleName = "ticTacToeEx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.7601711"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "376"
-                  endingLineNumber = "376"
-                  offsetFromSymbolStart = "32535">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -561,38 +273,6 @@
             endingLineNumber = "380"
             landmarkName = "mangiateObbligatorieDama(_:_:_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ticTacToeEx.GameCheckersViewController.mangiateObbligatorieDama(__ObjC.UIButton, Swift.Int, Swift.Int) -&gt; ()"
-                  moduleName = "ticTacToeEx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.774278"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "380"
-                  endingLineNumber = "380"
-                  offsetFromSymbolStart = "27109">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ticTacToeEx.GameCheckersViewController.mangiateObbligatorieDama(__ObjC.UIButton, Swift.Int, Swift.Int) -&gt; ()"
-                  moduleName = "ticTacToeEx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.778905"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "380"
-                  endingLineNumber = "380"
-                  offsetFromSymbolStart = "32543">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -609,38 +289,6 @@
             endingLineNumber = "390"
             landmarkName = "mangiateObbligatorieDama(_:_:_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ticTacToeEx.GameCheckersViewController.mangiateObbligatorieDama(__ObjC.UIButton, Swift.Int, Swift.Int) -&gt; ()"
-                  moduleName = "ticTacToeEx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.792437"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "390"
-                  endingLineNumber = "390"
-                  offsetFromSymbolStart = "30268">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ticTacToeEx.GameCheckersViewController.mangiateObbligatorieDama(__ObjC.UIButton, Swift.Int, Swift.Int) -&gt; ()"
-                  moduleName = "ticTacToeEx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.79814"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "390"
-                  endingLineNumber = "390"
-                  offsetFromSymbolStart = "32551">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -657,38 +305,6 @@
             endingLineNumber = "393"
             landmarkName = "mangiateObbligatorieDama(_:_:_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ticTacToeEx.GameCheckersViewController.mangiateObbligatorieDama(__ObjC.UIButton, Swift.Int, Swift.Int) -&gt; ()"
-                  moduleName = "ticTacToeEx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.816747"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "393"
-                  endingLineNumber = "393"
-                  offsetFromSymbolStart = "31461">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ticTacToeEx.GameCheckersViewController.mangiateObbligatorieDama(__ObjC.UIButton, Swift.Int, Swift.Int) -&gt; ()"
-                  moduleName = "ticTacToeEx"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546269824.8212481"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "393"
-                  endingLineNumber = "393"
-                  offsetFromSymbolStart = "32559">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
