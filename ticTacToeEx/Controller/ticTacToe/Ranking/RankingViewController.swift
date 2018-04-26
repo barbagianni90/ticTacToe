@@ -29,8 +29,13 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var punteggioLabel: UILabel!
     
+    @IBOutlet weak var titleStackview: UIStackView!
+    @IBOutlet weak var sconfitteLabel: UILabel!
+    
+    @IBOutlet weak var mediaLabel: UILabel!
     
     @IBOutlet weak var homeButton: UIButton!
+    
     var players: [User] = []
     
     @IBOutlet weak var tableRanking: UITableView!
@@ -130,32 +135,46 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         
         // punteggio label
+//
+//        punteggioLabel.translatesAutoresizingMaskIntoConstraints = false
+//
+////        punteggioLabel.layer.borderColor = UIColor.white.cgColor
+////        punteggioLabel.layer.borderWidth = 0.5
+//
+//        NSLayoutConstraint(item: punteggioLabel, attribute: .top, relatedBy: .equal, toItem: rankingLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 10).isActive = true
+//
+//        NSLayoutConstraint(item: punteggioLabel, attribute: .right, relatedBy: .equal, toItem: sconfitteLabel, attribute: .left, multiplier: 1, constant: UIScreen.main.bounds.size.width / -15).isActive = true
+//
+//
+//        NSLayoutConstraint(item: punteggioLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 4).isActive = true
+//
+//        NSLayoutConstraint(item: punteggioLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 20).isActive = true
+//
+//
+//
+//        let attPunteggioLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 12)]
+//
+//        let punteggioLabelText = "V"
+//        let attPunteggio = NSMutableAttributedString(string: punteggioLabelText, attributes: attPunteggioLabel)
+//
+//        punteggioLabel.attributedText = attPunteggio
+//
+//        punteggioLabel.adjustsFontSizeToFitWidth = true
+//        punteggioLabel.baselineAdjustment = .alignCenters
+//
+       
+        // title stack view
         
-        punteggioLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleStackview.translatesAutoresizingMaskIntoConstraints = false
         
-//        punteggioLabel.layer.borderColor = UIColor.white.cgColor
-//        punteggioLabel.layer.borderWidth = 0.5
+    
         
-        NSLayoutConstraint(item: punteggioLabel, attribute: .top, relatedBy: .equal, toItem: rankingLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 10).isActive = true
+        NSLayoutConstraint(item: titleStackview, attribute: .top, relatedBy: .equal, toItem: rankingLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 10).isActive = true
         
-        NSLayoutConstraint(item: punteggioLabel, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: UIScreen.main.bounds.size.width / -15).isActive = true
+        NSLayoutConstraint(item: titleStackview, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: -40).isActive = true
         
+        NSLayoutConstraint(item: titleStackview, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 20).isActive = true
         
-        NSLayoutConstraint(item: punteggioLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 4).isActive = true
-        
-        NSLayoutConstraint(item: punteggioLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 20).isActive = true
-        
-        
-        
-        let attPunteggioLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 12)]
-        
-        let punteggioLabelText = "Punteggio"
-        let attPunteggio = NSMutableAttributedString(string: punteggioLabelText, attributes: attPunteggioLabel)
-        
-        punteggioLabel.attributedText = attPunteggio
-        
-        punteggioLabel.adjustsFontSizeToFitWidth = true
-        punteggioLabel.baselineAdjustment = .alignCenters
         
         
         
@@ -177,7 +196,7 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         
         
-        let attGiocatoreLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 12)]
+        let attGiocatoreLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: 17)]
         
         let giocatoreLabelText = "Giocatore"
         let attGiocatore = NSMutableAttributedString(string: giocatoreLabelText, attributes: attGiocatoreLabel)
@@ -246,12 +265,12 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func refresh() {
         
-        self.players.removeAll()
         
         let ref = Database.database().reference()
         
         ref.child("Players").observeSingleEvent(of: .value, with: { (snap) in
-            
+            self.players.removeAll()
+
             let players = snap.value as! [String : Any]
             
             for(key, value) in players{

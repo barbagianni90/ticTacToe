@@ -265,11 +265,9 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8nE-5g-evf">
-                                <rect key="frame" x="75" y="26" width="30" height="30"/>
+                                <rect key="frame" x="20" y="31" width="90" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="30"/>
                                 <connections>
                                     <action selector="dismissButton:" destination="JXl-Mc-nHg" eventType="touchUpInside" id="YEs-Og-CDz"/>
                                 </connections>
