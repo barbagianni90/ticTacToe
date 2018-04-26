@@ -50,7 +50,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
     
     var messagesTot: Int = 0
     
-    var textFieldTouched: UITextField!
+    var textFieldTouched: UITextField?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -146,7 +146,12 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textFieldTouched = textField
+        if let textField = textField as? UITextField {
+            self.textFieldTouched = textField
+        }
+        else {
+            print("Error textfield")
+        }
     }
     
     @objc func keyboardDidShow(notification: Notification) {
@@ -157,7 +162,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
          self.bottomTextField.constant = keyboardSize.height + 8.0
         if self.view.frame.origin.y >= 0 {
             UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut, animations: {
-                self.textFieldTouched.layoutIfNeeded()
+                self.textFieldTouched?.layoutIfNeeded()
             }, completion: nil)
         }
         
@@ -167,7 +172,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         
         self.bottomTextField.constant = 3
         UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
-            self.textFieldTouched.layoutIfNeeded()
+            self.textFieldTouched?.layoutIfNeeded()
         }, completion: nil)
     }
     
@@ -183,14 +188,14 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
     
     func performAction() {
         let ref = Database.database().reference()
-        let messageText = ConvertOptionalString.convert(self.textFieldTouched.text!)
+        let messageText = ConvertOptionalString.convert(self.textFieldTouched?.text!)
         let message = [
             "Message" : "\(messageText)",
             "Nickname" : "\(MainViewController.user.nickName)"
         ]
         let newMessageNumber = self.messagesTot + 1
         ref.child("Messages\(nomeTabella)").child("Message\(newMessageNumber)").setValue(message)
-        self.textFieldTouched.text = ""
+        self.textFieldTouched?.text = ""
     }
     //----------------------Game-------------------------
     
@@ -444,7 +449,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
                 
                 for(key, value) in dict {
                     let keyMessage = key as String
-                    let n_message = String(keyMessage.suffix(1))
+                    let n_message = ConvertOptionalString.extractNumberMessage(keyMessage)
                     
                     if n_message != "0" {
                         let dict2 = value as! [String : Any]
@@ -585,14 +590,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
                         ref.child("Utility\(self.nomeTabella)").removeValue()
                         ref.child("Messages\(self.nomeTabella)").removeValue()
                         
-                        let alert = UIAlertController(title: "Hai perso", message: "Mi spiace", preferredStyle: .alert)
-                        
-                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-                            self.partitaFinita = true
-                        }))
-                        
-                        self.present(alert, animated: true)
-                        
+                        self.rivincita()
                     }
                 }
             }
@@ -776,5 +774,26 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             j -= 1
         }
         return ""
+    }
+    
+    func rivincita() {
+        
+        let alert = UIAlertController(title: "Hai perso", message: "Vuoi la rivincita con \(self.enemy.nickName)?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            
+            let ref = Database.database().reference()
+            
+            ref.child("Players").child("\(self.enemy.id)").child("invitatoDa").setValue("\(MainViewController.user.nickName)\(LobbyViewController.gameSelected)")
+            
+            self.partitaFinita = true
+        }))
+        
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: { action in
+            
+            self.partitaFinita = true
+        }))
+        
+        self.present(alert, animated: true)
     }
 }

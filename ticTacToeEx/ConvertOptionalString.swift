@@ -60,4 +60,16 @@ class ConvertOptionalString {
         
         return ""
     }
+    static func extractNumberMessage(_ string: Any) -> String {
+        
+        let string = string as! String
+        
+        if string.range(of: "Message") != nil {
+            
+            let indexStartStringGame = (string.range(of: "Message")?.upperBound)!
+            
+            return String(string.suffix(from: indexStartStringGame))
+        }
+        return ""
+    }
 }

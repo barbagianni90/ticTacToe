@@ -130,9 +130,8 @@
                                 <rect key="frame" x="16" y="124" width="343" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="Checkers"/>
-                                    <segment title="Chess"/>
                                     <segment title="TicTacToe"/>
+                                    <segment title="Checkers"/>
                                 </segments>
                                 <connections>
                                     <action selector="segmented:" destination="eOE-nf-9mp" eventType="valueChanged" id="tSL-8x-31l"/>

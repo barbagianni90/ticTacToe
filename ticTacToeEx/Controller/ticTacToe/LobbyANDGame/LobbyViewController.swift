@@ -79,7 +79,6 @@ private class ActivityView: UIView {
     }
 }
 
-
 class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var players: [User] = []
@@ -93,7 +92,8 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     let activitiyViewController = ActivityViewController(message: "Attending...")
     
-    var nickNameSfidato: String = ""
+    var sfidante: [String : String] = ["id" : "",
+                                       "nickname" : ""]
     
     var statePlayerSelected: String = ""
     
@@ -289,9 +289,11 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             for user in players {
                 
-                if user.nickName == self.nickNameSfidato{
+                if user.nickName == self.sfidante["nickname"]{
                     
                     ref.child("Players").child("\(user.id)").child("invitatoDa").setValue("\(MainViewController.user.nickName)\(LobbyViewController.gameSelected)")
+                    
+                    self.sfidante.updateValue(user.id, forKey: "id")
                 }
             }
             
@@ -336,6 +338,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         let segue = UIStoryboard(name:"GameTris",bundle:nil).instantiateViewController(withIdentifier: "GameTrisID") as! GameTrisViewController
                         
                         let enemy = User()
+                        enemy.id = idNickInvito
                         enemy.nickName = "\(enemyNickName)"
                         
                         for user in self.players {
@@ -358,6 +361,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         let segue = UIStoryboard(name:"GameCheckers",bundle:nil).instantiateViewController(withIdentifier: "GameCheckID") as! GameCheckersViewController
                         
                         let enemy = User()
+                        enemy.id = idNickInvito
                         enemy.nickName = "\(enemyNickName)"
                         
                         for user in self.players {
@@ -402,11 +406,12 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         let segue = UIStoryboard(name:"GameTris",bundle:nil).instantiateViewController(withIdentifier: "GameTrisID") as! GameTrisViewController
                         
                         let enemy = User()
-                        enemy.nickName = "\(self.nickNameSfidato)"
+                        enemy.id = self.sfidante["id"]!
+                        enemy.nickName = self.sfidante["nickname"]!
                         
                         for user in self.players {
                             
-                            if user.nickName == self.nickNameSfidato {
+                            if user.nickName == self.sfidante["nickname"]! {
                                 
                                 enemy.image = user.image
                             }
@@ -424,11 +429,12 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         let segue = UIStoryboard(name:"GameCheckers",bundle:nil).instantiateViewController(withIdentifier: "GameCheckID") as! GameCheckersViewController
                         
                         let enemy = User()
-                        enemy.nickName = "\(self.nickNameSfidato)"
+                        enemy.id = self.sfidante["id"]!
+                        enemy.nickName = self.sfidante["nickname"]!
                         
                         for user in self.players {
                             
-                            if user.nickName == self.nickNameSfidato {
+                            if user.nickName == self.sfidante["nickname"]! {
                                 
                                 enemy.image = user.image
                             }
@@ -482,7 +488,8 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let cell = tableView.cellForRow(at: indexPath) as! CustomLobbyCell
         
-        self.nickNameSfidato = ConvertOptionalString.convert(cell.nickNameLabel.text!)
+        self.sfidante.updateValue(ConvertOptionalString.convert(cell.nickNameLabel.text!), forKey: "nickname")
+        
         self.statePlayerSelected = ConvertOptionalString.convert(cell.stateLabel.text!)
         
     }
