@@ -79,20 +79,27 @@ class StartTableViewController: UITableViewController{
                 let signInView = UIStoryboard(name: "SignInANDSignUp", bundle: nil).instantiateViewController(withIdentifier: "signIn")
                 self.present(signInView, animated: true, completion: nil)
             }else{
-                do {
-                    try Auth.auth().signOut()
-                    let ref = Database.database().reference()
-                    ref.child("Players").child("\(MainViewController.user.id)").child("loggato").setValue("No")
-                    MainViewController.user = User()
-                    label.text = "Sign In"
-                    NotificationCenter.default.post(name: Notification.Name(rawValue:"LogOut"), object: nil)
-                    print("Utente disconnesso\n")
-                    
-                    
-                }
-                catch {
-                    print("Error Log out")
-                }
+                let alert = UIAlertController(title: "Logout", message: "Are you sure?", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Si", style: .default, handler: { (action) in
+                    do {
+                        try Auth.auth().signOut()
+                        let ref = Database.database().reference()
+                        ref.child("Players").child("\(MainViewController.user.id)").child("loggato").setValue("No")
+                        MainViewController.user = User()
+                        self.label.text = "Sign In"
+                        NotificationCenter.default.post(name: Notification.Name(rawValue:"LogOut"), object: nil)
+                        print("Utente disconnesso\n")
+                        
+                        
+                    }
+                    catch {
+                        print("Error Log out")
+                    }
+                }))
+                alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (action) in
+                    self.dismiss(animated: true)
+                }))
+                self.present(alert,animated: true,completion: nil)
             }
         }
         

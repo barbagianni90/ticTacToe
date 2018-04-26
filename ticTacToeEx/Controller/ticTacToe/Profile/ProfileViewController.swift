@@ -211,7 +211,25 @@ class ProfileViewController: UIViewController {
         self.nickNameLabel.text = MainViewController.user.nickName
         self.nickNameLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)
         
-        self.stateLabel.text = String(MainViewController.user.vittorie)
+    
+        
+        let vittorieDouble: Float = Float(MainViewController.user.vittorie)
+        
+        let sconfitteDouble: Float = Float(MainViewController.user.sconfitte)
+        
+        let percentualeVittorie: Float = ((vittorieDouble / (vittorieDouble + sconfitteDouble))*100)
+        
+        var string: String = "La blablablòa: "
+        var concat: String = String(format: "%.2f", percentualeVittorie)
+        var perc: String = "%"
+        
+        var final = string + concat + perc
+        
+        self.stateLabel.text = final
+//        self.stateLabel.text = String(format: "la tua percentuale di vittorie è: %ld %", percentualeVittorie)
+        
+//        self.stateLabel.text = String(format: "La tua percentuale di vittorie è: %.2f \(percentualeVittorie)%")
+        
 //        self.stateLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 8)
         
         
