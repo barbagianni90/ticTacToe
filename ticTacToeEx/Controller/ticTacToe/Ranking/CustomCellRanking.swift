@@ -16,9 +16,25 @@ class CustomCellRanking: UITableViewCell {
     
     @IBOutlet weak var imagePlayer: UIImageView!
     
+    @IBOutlet weak var stackView: UIStackView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+     
+        nickNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint(item: nickNameLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 3).isActive = true
+        
+        NSLayoutConstraint(item: nickNameLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 25).isActive = true
+        
+    
+        
+        
+        
+        
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

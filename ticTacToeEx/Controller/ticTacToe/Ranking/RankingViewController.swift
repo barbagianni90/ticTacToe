@@ -171,7 +171,7 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         NSLayoutConstraint(item: titleStackview, attribute: .top, relatedBy: .equal, toItem: rankingLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 10).isActive = true
         
-        NSLayoutConstraint(item: titleStackview, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: UIScreen.main.bounds.size.width / -15).isActive = true
+        NSLayoutConstraint(item: titleStackview, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: -40).isActive = true
         
         NSLayoutConstraint(item: titleStackview, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 20).isActive = true
         
