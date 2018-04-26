@@ -384,6 +384,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     
                     ref.child("Players").child("\(idNickInvito)").child("invitoAccettato").setValue("No")
                     ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+                    ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
                 }))
                 
                 self.present(alert, animated: true)
@@ -449,6 +450,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 }
                 else {
                     ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+                    ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
                 }
             }
         }

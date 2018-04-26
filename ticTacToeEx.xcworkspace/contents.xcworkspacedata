@@ -4,6 +4,278 @@
    <FileRef
       location = "group:ticTacToeEx.xcodeproj">
    </FileRef>
+   <Group
+      location = "group:ticTacToeEx"
+      name = "ticTacToeEx">
+      <FileRef
+         location = "group:ticTacToeEx/AppDelegate.swift">
+      </FileRef>
+      <FileRef
+         location = "group:ticTacToeEx/Controller/User.swift">
+      </FileRef>
+      <FileRef
+         location = "group:ticTacToeEx/Message.swift">
+      </FileRef>
+      <FileRef
+         location = "group:ticTacToeEx/ConvertOptionalString.swift">
+      </FileRef>
+      <FileRef
+         location = "group:ticTacToeEx/camera.png">
+      </FileRef>
+      <Group
+         location = "group:ticTacToeEx/Controller"
+         name = "Controller">
+         <Group
+            location = "group:ticTacToeEx/Controller/ticTacToe"
+            name = "ticTacToe">
+            <Group
+               location = "group:ticTacToeEx/Controller/ticTacToe/LobbyANDGame"
+               name = "LobbyANDGame">
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/ticTacToe/LobbyANDGame/CustomLobbyCell.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/ticTacToe/LobbyANDGame/LobbyViewController.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/ticTacToe/LobbyANDGame/CustomUserChatCell.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/ticTacToe/LobbyANDGame/CustomEnemyChatCell.swift">
+               </FileRef>
+               <Group
+                  location = "group:ticTacToeEx/Controller/ticTacToe/LobbyANDGame"
+                  name = "Lobby.storyboard">
+                  <FileRef
+                     location = "group:ticTacToeEx/Controller/ticTacToe/LobbyANDGame/Base.lproj/Lobby.storyboard">
+                  </FileRef>
+                  <FileRef
+                     location = "group:ticTacToeEx/Controller/ticTacToe/LobbyANDGame/it.lproj/Lobby.strings">
+                  </FileRef>
+               </Group>
+            </Group>
+            <Group
+               location = "group:ticTacToeEx/Controller/ticTacToe/Profile"
+               name = "Profile">
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/ticTacToe/Profile/ProfileViewController.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/ticTacToe/Profile/EditProfileViewController.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/ticTacToe/Profile/Profile.storyboard">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:ticTacToeEx/Controller/ticTacToe/Ranking"
+               name = "Ranking">
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/ticTacToe/Ranking/CustomCellRanking.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/ticTacToe/Ranking/RankingViewController.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/ticTacToe/Ranking/Ranking.storyboard">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:ticTacToeEx/Controller/ticTacToe/SignInANDSignUp"
+               name = "SignInANDSignUp">
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/ticTacToe/SignInANDSignUp/SignInANDSignUp.storyboard">
+               </FileRef>
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/ticTacToe/SignInANDSignUp/SignInViewController.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/ticTacToe/SignInANDSignUp/SignUpViewController.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/ticTacToe/SignInANDSignUp/PhotoProfile.swift">
+               </FileRef>
+            </Group>
+            <FileRef
+               location = "group:ticTacToeEx/Controller/ticTacToe/Main/MainViewController.swift">
+            </FileRef>
+            <Group
+               location = "group:ticTacToeEx/Controller/ticTacToe"
+               name = "Main.storyboard">
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/ticTacToe/Main/Base.lproj/Main.storyboard">
+               </FileRef>
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/ticTacToe/Main/it.lproj/Main.strings">
+               </FileRef>
+            </Group>
+         </Group>
+         <Group
+            location = "group:ticTacToeEx/Controller/Checkers"
+            name = "Checkers">
+            <Group
+               location = "group:ticTacToeEx/Controller/Checkers/Game"
+               name = "Game">
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/Checkers/Game/GameTris.storyboard">
+               </FileRef>
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/Checkers/Game/GameCheckers.storyboard">
+               </FileRef>
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/Checkers/Game/GameTrisViewController.swift">
+               </FileRef>
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:ticTacToeEx/Controller/Checkers/Ranking"
+               name = "Ranking">
+               <Group
+                  location = "group:ticTacToeEx/Controller/Checkers/Ranking"
+                  name = "RankingDama.storyboard">
+                  <FileRef
+                     location = "group:ticTacToeEx/Controller/Checkers/Ranking/Base.lproj/RankingDama.storyboard">
+                  </FileRef>
+                  <FileRef
+                     location = "group:ticTacToeEx/Controller/Checkers/Ranking/it.lproj/RankingDama.strings">
+                  </FileRef>
+               </Group>
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/Checkers/Ranking/RankingDamaViewController.swift">
+               </FileRef>
+            </Group>
+            <Group
+               location = "group:ticTacToeEx/Controller/Checkers/Main"
+               name = "Main">
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/Checkers/Main/MainCheckers.storyboard">
+               </FileRef>
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/Checkers/Main/MainCheckersViewController.swift">
+               </FileRef>
+            </Group>
+         </Group>
+         <Group
+            location = "group:ticTacToeEx/Controller/Start"
+            name = "Start">
+            <Group
+               location = "group:ticTacToeEx/Controller/Start"
+               name = "Start.storyboard">
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/Start/Base.lproj/Start.storyboard">
+               </FileRef>
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/Start/it.lproj/Start.strings">
+               </FileRef>
+            </Group>
+            <FileRef
+               location = "group:ticTacToeEx/Controller/Start/StartingViewController.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ticTacToeEx/Controller/Start/StartTableViewController.swift">
+            </FileRef>
+            <FileRef
+               location = "group:ticTacToeEx/Controller/Start/SideMenuTableViewCell.swift">
+            </FileRef>
+            <Group
+               location = "group:ticTacToeEx/Controller/Start/GameIamges"
+               name = "GameIamges">
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/Start/GameIamges/cerchio.png">
+               </FileRef>
+               <FileRef
+                  location = "group:ticTacToeEx/Controller/Start/GameIamges/croce.png">
+               </FileRef>
+            </Group>
+         </Group>
+      </Group>
+      <FileRef
+         location = "group:ticTacToeEx/Assets.xcassets">
+      </FileRef>
+      <Group
+         location = "group:ticTacToeEx"
+         name = "LaunchScreen.storyboard">
+         <FileRef
+            location = "group:ticTacToeEx/Base.lproj/LaunchScreen.storyboard">
+         </FileRef>
+         <FileRef
+            location = "group:ticTacToeEx/it.lproj/LaunchScreen.strings">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:ticTacToeEx/GoogleService-Info.plist">
+      </FileRef>
+      <FileRef
+         location = "group:ticTacToeEx/Info.plist">
+      </FileRef>
+      <Group
+         location = "group:ticTacToeEx/Fonts"
+         name = "Fonts">
+         <FileRef
+            location = "group:ticTacToeEx/Fonts/SanFranciscoDisplay-Heavy.otf">
+         </FileRef>
+         <FileRef
+            location = "group:ticTacToeEx/Fonts/SanFranciscoDisplay-Light.otf">
+         </FileRef>
+         <FileRef
+            location = "group:ticTacToeEx/Fonts/SanFranciscoDisplay-Medium.otf">
+         </FileRef>
+         <FileRef
+            location = "group:ticTacToeEx/Fonts/SanFranciscoDisplay-Regular.otf">
+         </FileRef>
+         <FileRef
+            location = "group:ticTacToeEx/Fonts/SanFranciscoDisplay-Semibold.otf">
+         </FileRef>
+         <FileRef
+            location = "group:ticTacToeEx/Fonts/SanFranciscoDisplay-Thin.otf">
+         </FileRef>
+         <FileRef
+            location = "group:ticTacToeEx/Fonts/Shojumaru-Regular.ttf">
+         </FileRef>
+         <FileRef
+            location = "group:ticTacToeEx/Fonts/CatCafe.ttf">
+         </FileRef>
+         <FileRef
+            location = "group:ticTacToeEx/Fonts/Kalam-Light.ttf">
+         </FileRef>
+         <FileRef
+            location = "group:ticTacToeEx/Fonts/Raleway-ExtraLight.ttf">
+         </FileRef>
+         <FileRef
+            location = "group:ticTacToeEx/Fonts/Raleway-Light.ttf">
+         </FileRef>
+         <FileRef
+            location = "group:ticTacToeEx/Fonts/Roboto-Regular.ttf">
+         </FileRef>
+         <FileRef
+            location = "group:ticTacToeEx/Fonts/Lato-Regular.ttf">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:ticTacToeEx/Avatar"
+         name = "Avatar">
+         <FileRef
+            location = "group:ticTacToeEx/Avatar/avatar1.png">
+         </FileRef>
+         <FileRef
+            location = "group:ticTacToeEx/Avatar/avatar2.png">
+         </FileRef>
+         <FileRef
+            location = "group:ticTacToeEx/Avatar/avatar3.png">
+         </FileRef>
+         <FileRef
+            location = "group:ticTacToeEx/Avatar/avatar4.png">
+         </FileRef>
+         <FileRef
+            location = "group:ticTacToeEx/Avatar/avatar5.png">
+         </FileRef>
+         <FileRef
+            location = "group:ticTacToeEx/Avatar/default.jpg">
+         </FileRef>
+      </Group>
+   </Group>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>

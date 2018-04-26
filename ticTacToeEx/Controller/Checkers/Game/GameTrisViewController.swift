@@ -149,14 +149,11 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if let textField = textField as? UITextField {
-<<<<<<< HEAD
             textFieldTouched = textField
-=======
             self.textFieldTouched = textField
         }
         else {
             print("Error textfield")
->>>>>>> e92a355a623f81089c9807eb01c633c34803d84e
         }
     }
     
