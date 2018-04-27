@@ -375,8 +375,10 @@ class SignInViewController: UIViewController {
                                         MainViewController.user.id = key
                                         MainViewController.user.nickName = datiPlayer["nickname"] as! String
                                         MainViewController.user.email = datiPlayer["email"] as! String
-                                        MainViewController.user.vittorie = Int(datiPlayer["vittorie"] as! String)!
-                                        MainViewController.user.sconfitte = Int(datiPlayer["sconfitte"] as! String)!
+                                        MainViewController.user.vittorieTris = Int(datiPlayer["vittorieTris"] as! String)!
+                                        MainViewController.user.vittorieDama = Int(datiPlayer["vittorieDama"] as! String)!
+                                        MainViewController.user.sconfitteTris = Int(datiPlayer["sconfitteTris"] as! String)!
+                                        MainViewController.user.sconfitteDama = Int(datiPlayer["sconfitteDama"] as! String)!
                                         MainViewController.user.stato = "online"
                                         
                                         let decodeString = Data(base64Encoded: datiPlayer["image"] as! String)

@@ -16,7 +16,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var nickNameLabel: UILabel!
-    @IBOutlet weak var stateLabel: UILabel!
+    @IBOutlet weak var stateLabelTris: UILabel!
+    @IBOutlet weak var stateLabelDama: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -159,17 +160,19 @@ class ProfileViewController: UIViewController {
         
         // status label
         
-        stateLabel.translatesAutoresizingMaskIntoConstraints = false
+        stateLabelTris.translatesAutoresizingMaskIntoConstraints = false
+        stateLabelDama.translatesAutoresizingMaskIntoConstraints = false
         
 //        stateLabel.layer.borderColor = UIColor.white.cgColor
 //        stateLabel.layer.borderWidth = 0.5
         
-        NSLayoutConstraint(item: stateLabel, attribute: .top, relatedBy: .equal, toItem: nickNameLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 20).isActive = true
+        NSLayoutConstraint(item: stateLabelTris, attribute: .top, relatedBy: .equal, toItem: nickNameLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 20).isActive = true
         
-        NSLayoutConstraint(item: stateLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: stateLabelTris, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: UIScreen.main.bounds.size.width / 15).isActive = true
         
-        NSLayoutConstraint(item: stateLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 3).isActive = true
-        NSLayoutConstraint(item: stateLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 18).isActive = true
+        NSLayoutConstraint(item: stateLabelTris, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 3).isActive = true
+        
+        NSLayoutConstraint(item: stateLabelTris, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 18).isActive = true
         
         
         let attStateLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 22)]
@@ -177,15 +180,29 @@ class ProfileViewController: UIViewController {
         let attState = NSMutableAttributedString(string: stateLabelText, attributes: attStateLabel)
         
         
-        stateLabel.adjustsFontSizeToFitWidth = true
-        stateLabel.baselineAdjustment = .alignCenters
+        stateLabelTris.adjustsFontSizeToFitWidth = true
+        stateLabelTris.baselineAdjustment = .alignCenters
         
-        stateLabel.textAlignment = .center
+        stateLabelTris.textAlignment = .center
         
-        stateLabel.attributedText = attState
+        stateLabelTris.attributedText = attState
         
         
+        NSLayoutConstraint(item: stateLabelDama, attribute: .top, relatedBy: .equal, toItem: nickNameLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 20).isActive = true
         
+        NSLayoutConstraint(item: stateLabelDama, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: UIScreen.main.bounds.size.width / -15).isActive = true
+        
+        NSLayoutConstraint(item: stateLabelDama, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 3).isActive = true
+        
+        NSLayoutConstraint(item: stateLabelDama, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 18).isActive = true
+        
+        
+        stateLabelDama.adjustsFontSizeToFitWidth = true
+        stateLabelDama.baselineAdjustment = .alignCenters
+        
+        stateLabelDama.textAlignment = .center
+        
+        stateLabelDama.attributedText = attState
         
         
         
@@ -213,19 +230,30 @@ class ProfileViewController: UIViewController {
         
     
         
-        let vittorieDouble: Float = Float(MainViewController.user.vittorie)
+        let vittorieTrisDouble: Float = Float(MainViewController.user.vittorieTris)
         
-        let sconfitteDouble: Float = Float(MainViewController.user.sconfitte)
+        let vittorieDamaDouble: Float = Float(MainViewController.user.vittorieDama)
         
-        let percentualeVittorie: Float = ((vittorieDouble / (vittorieDouble + sconfitteDouble))*100)
+        let sconfitteDamaDouble: Float = Float(MainViewController.user.sconfitteDama)
+        
+        let sconfitteTrisDouble: Float = Float(MainViewController.user.sconfitteTris)
+        
+        let percentualeVittorieTris: Float = ((vittorieTrisDouble / (vittorieTrisDouble + sconfitteTrisDouble))*100)
+        let percentualeVittorieDama: Float = ((vittorieDamaDouble / (vittorieDamaDouble + sconfitteDamaDouble))*100)
         
         var string: String = "La blablablòa: "
-        var concat: String = String(format: "%.2f", percentualeVittorie)
+        
+        var concatTris: String = String(format: "%.2f", percentualeVittorieTris)
+        var concatDama: String = String(format: "%.2f", percentualeVittorieDama)
+        
         var perc: String = "%"
         
-        var final = string + concat + perc
+        var finalTris = string + concatTris + perc
+        var finalDama = string + concatDama + perc
         
-        self.stateLabel.text = final
+        self.stateLabelTris.text = finalTris
+        self.stateLabelDama.text = finalDama
+        
 //        self.stateLabel.text = String(format: "la tua percentuale di vittorie è: %ld %", percentualeVittorie)
         
 //        self.stateLabel.text = String(format: "La tua percentuale di vittorie è: %.2f \(percentualeVittorie)%")

@@ -52,7 +52,12 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             
             let ref = Database.database().reference()
             
-            ref.child("Players").child("\(MainViewController.user.id)").child("sconfitte").setValue("\(MainViewController.user.sconfitte + 1)")
+            if LobbyViewController.gameSelected == "tris" {
+                ref.child("Players").child("\(MainViewController.user.id)").child("sconfitteTris").setValue("\(MainViewController.user.sconfitteTris + 1)")
+            }
+            else if LobbyViewController.gameSelected == "dama" {
+                ref.child("Players").child("\(MainViewController.user.id)").child("sconfitteDama").setValue("\(MainViewController.user.sconfitteDama + 1)")
+            }
             ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
             ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
             ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
@@ -613,21 +618,33 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             
             if quit == self.enemy.nickName {
                 
-                ref.child("Players").child("\(MainViewController.user.id)").child("vittorie").setValue("\(MainViewController.user.vittorie + 1)")
+                let alert = UIAlertController(title: "L'avversario ha abbandonato la partita", message: nil, preferredStyle: .alert)
                 
-                ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
-                ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
-                ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                    
+                    if LobbyViewController.gameSelected == "tris" {
+                        ref.child("Players").child("\(MainViewController.user.id)").child("sconfitteTris").setValue("\(MainViewController.user.vittorieTris + 1)")
+                    }
+                    else if LobbyViewController.gameSelected == "dama" {
+                        ref.child("Players").child("\(MainViewController.user.id)").child("sconfitteDama").setValue("\(MainViewController.user.vittorieDama + 1)")
+                    }
+                    
+                    ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
+                    ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
+                    ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+                    
+                    ref.child("\(self.nomeTabella)").removeAllObservers()
+                    ref.child("Utility\(self.nomeTabella)").removeAllObservers()
+                    ref.child("Messages\(self.nomeTabella)").removeAllObservers()
+                    
+                    ref.child("\(self.nomeTabella)").removeValue()
+                    ref.child("Utility\(self.nomeTabella)").removeValue()
+                    ref.child("Messages\(self.nomeTabella)").removeValue()
+                    
+                    self.partitaFinita = true
+                }))
                 
-                ref.child("\(self.nomeTabella)").removeAllObservers()
-                ref.child("Utility\(self.nomeTabella)").removeAllObservers()
-                ref.child("Messages\(self.nomeTabella)").removeAllObservers()
-                
-                ref.child("\(self.nomeTabella)").removeValue()
-                ref.child("Utility\(self.nomeTabella)").removeValue()
-                ref.child("Messages\(self.nomeTabella)").removeValue()
-                
-                self.partitaFinita = true
+                self.present(alert, animated: true)
             }
             
             if self.buttonEnabled == 0 && self.getWinner() == "" && self.sPlayer == true {
@@ -708,7 +725,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
                     
                     if winner == "Hai vinto" {
                         
-                        ref.child("Players").child("\(MainViewController.user.id)").child("vittorie").setValue("\(MainViewController.user.vittorie + 1)")
+                        ref.child("Players").child("\(MainViewController.user.id)").child("vittorieTris").setValue("\(MainViewController.user.vittorieTris + 1)")
                         
                         ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
                         ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
@@ -730,7 +747,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
                     }
                     else if winner == "Hai perso" {
                         
-                        ref.child("Players").child("\(MainViewController.user.id)").child("sconfitte").setValue("\(MainViewController.user.sconfitte + 1)")
+                        ref.child("Players").child("\(MainViewController.user.id)").child("sconfitteTris").setValue("\(MainViewController.user.sconfitteTris + 1)")
                         ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
                         ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
                         ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")

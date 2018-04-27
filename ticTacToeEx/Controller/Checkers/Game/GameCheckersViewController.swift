@@ -679,7 +679,7 @@ class GameCheckersViewController: UIViewController {
         
         if enemyCount == 0 {
             
-            ref.child("Players").child("\(MainViewController.user.id)").child("vittorie").setValue("\(MainViewController.user.vittorie + 1)")
+            ref.child("Players").child("\(MainViewController.user.id)").child("vittorieDama").setValue("\(MainViewController.user.vittorieDama + 1)")
             
             ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
             ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
@@ -701,7 +701,7 @@ class GameCheckersViewController: UIViewController {
         }
         else if myCount == 0 {
             
-            ref.child("Players").child("\(MainViewController.user.id)").child("sconfitte").setValue("\(MainViewController.user.sconfitte + 1)")
+            ref.child("Players").child("\(MainViewController.user.id)").child("sconfitteDama").setValue("\(MainViewController.user.sconfitteDama + 1)")
             
             ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
             ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
