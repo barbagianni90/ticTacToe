@@ -301,7 +301,7 @@ class SignInViewController: UIViewController {
     
     @IBAction func loginButton(_ sender: Any) {
         
-        self.activityIndicator.center = CGPoint(x: self.view.center.x, y: UIScreen.main.bounds.height / 8)
+        self.activityIndicator.center = CGPoint(x: self.view.center.x, y: UIScreen.main.bounds.height / 1.5)
         self.activityIndicator.hidesWhenStopped = true
         self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.white
         self.view.addSubview(self.activityIndicator)
@@ -400,6 +400,7 @@ class SignInViewController: UIViewController {
                                 
                                     else {
                                         print("wrong login")
+                                        print(error)
                                         self.activityIndicator.stopAnimating()
                                         UIApplication.shared.endIgnoringInteractionEvents()
                                     }
@@ -426,7 +427,7 @@ class SignInViewController: UIViewController {
     
     @IBAction func goHome(_ sender: Any) {
         
-        self.dismiss(animated: true, completion: nil)
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {

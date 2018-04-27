@@ -46,9 +46,21 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func dismissButton(_ sender: Any) {
         
         
-        let alert = UIAlertController(title: "Logout", message: "Are you sure?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Abbandona", message: "Are you sure?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Si", style: .default, handler: { (action) in
-            self.dismiss(animated: true, completion: nil)
+            
+            let ref = Database.database().reference()
+            
+            ref.child("Players").child("\(MainViewController.user.id)").child("sconfitte").setValue("\(MainViewController.user.sconfitte + 1)")
+            ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
+            ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
+            ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+            
+            ref.child("\(self.nomeTabella)").removeAllObservers()
+            ref.child("Utility\(self.nomeTabella)").removeAllObservers()
+            ref.child("Messages\(self.nomeTabella)").removeAllObservers()
+            
+            self.partitaFinita = true
         }))
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (action) in
         }))
@@ -516,6 +528,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
         ref.child("Utility\(nomeTabella)").child("buttonEnabled").setValue("9")
+        ref.child("Utility\(nomeTabella)").child("abbandona").setValue("")
         self.buttonEnabled = 9
         
         
@@ -587,12 +600,37 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             }
         
         }
+        ref.child("Utility\(nomeTabella)").child("abbandona").observe(.value) { (snap) in
+            
+            let quit = snap.value as! String
+            
+            if quit == self.enemy.nickName {
+                
+                ref.child("Players").child("\(MainViewController.user.id)").child("vittorie").setValue("\(MainViewController.user.vittorie + 1)")
+                
+                ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
+                ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
+                ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+                
+                ref.child("\(self.nomeTabella)").removeAllObservers()
+                ref.child("Utility\(self.nomeTabella)").removeAllObservers()
+                ref.child("Messages\(self.nomeTabella)").removeAllObservers()
+                
+                ref.child("\(self.nomeTabella)").removeValue()
+                ref.child("Utility\(self.nomeTabella)").removeValue()
+                ref.child("Messages\(self.nomeTabella)").removeValue()
+                
+                self.partitaFinita = true
+            }
+        }
         
         
-        ref.child("Utility\(nomeTabella)").observe(.value) { (snap) in
+        ref.child("Utility\(nomeTabella)").child("buttonEnabled").observe(.value) { (snap) in
             
             let utility = snap.value as! [String : Any]
+            
             let tmp = utility["buttonEnabled"] as! String
+            
             self.buttonEnabled = Int(tmp)!
             
             if self.buttonEnabled == 0 && self.getWinner() == "" && self.sPlayer == true {

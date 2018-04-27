@@ -627,6 +627,6 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     @IBAction func goHome(_ sender: Any) {
         
-        self.dismiss(animated: true, completion: nil)
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
 }
