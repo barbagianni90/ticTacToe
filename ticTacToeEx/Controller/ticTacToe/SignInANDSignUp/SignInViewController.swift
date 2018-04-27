@@ -11,15 +11,11 @@ import UIKit
 import Firebase
 import Alamofire
 
-protocol Lobby {
-    func presentLobby()
-}
 
 class SignInViewController: UIViewController,UITextFieldDelegate{
     
     
     
-    var delegate: Lobby?
     
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
@@ -90,7 +86,7 @@ class SignInViewController: UIViewController,UITextFieldDelegate{
   
         
         homeButton.setTitle("Home", for: .normal)
-        homeButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)
+        homeButton.titleLabel?.font = UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.height / 6)
         
         
         homeButton.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -134,7 +130,7 @@ class SignInViewController: UIViewController,UITextFieldDelegate{
 //        emailLabel.layer.borderWidth = 0.5
 //        emailLabel.layer.borderColor = UIColor.black.cgColor
         
-        NSLayoutConstraint(item: emailLabel, attribute: .top, relatedBy: .equal, toItem: signinLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 18).isActive = true
+        NSLayoutConstraint(item: emailLabel, attribute: .top, relatedBy: .equal, toItem: signinLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 14).isActive = true
         
           NSLayoutConstraint(item: emailLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         
@@ -232,7 +228,7 @@ class SignInViewController: UIViewController,UITextFieldDelegate{
         registerButton.titleLabel?.baselineAdjustment = .alignCenters
         
         registerButton.setTitle("Register!", for: .normal)
-        registerButton.titleLabel?.font = UIFont(name: "Raleway-Light", size: UIScreen.main.bounds.height / 4)
+        registerButton.titleLabel?.font = UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.height / 4)
         
         
         // CONSTRAINTS REGISTER LABEL
@@ -306,13 +302,13 @@ class SignInViewController: UIViewController,UITextFieldDelegate{
         
         NSLayoutConstraint(item: loginButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 2).isActive = true
         
-        NSLayoutConstraint(item: loginButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height / 6).isActive = true
+        NSLayoutConstraint(item: loginButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height / 6  ).isActive = true
         
         loginButton.titleLabel?.adjustsFontSizeToFitWidth = true
         loginButton.titleLabel?.baselineAdjustment = .alignCenters
         
         loginButton.setTitle("Login", for: .normal)
-        loginButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.width / 2)
+        loginButton.titleLabel?.font = UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.height / 5)
         
         //remindeMe Label
         
@@ -387,7 +383,7 @@ class SignInViewController: UIViewController,UITextFieldDelegate{
     
     @IBAction func loginButton(_ sender: Any) {
         
-        self.activityIndicator.center = CGPoint(x: self.view.center.x, y: UIScreen.main.bounds.height / 8)
+        self.activityIndicator.center = CGPoint(x: self.view.center.x, y: UIScreen.main.bounds.height / 1.5)
         self.activityIndicator.hidesWhenStopped = true
         self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.white
         self.view.addSubview(self.activityIndicator)
@@ -490,12 +486,14 @@ class SignInViewController: UIViewController,UITextFieldDelegate{
                                         self.activityIndicator.stopAnimating()
                                         UIApplication.shared.endIgnoringInteractionEvents()
 
-                                        self.dismiss(animated: true, completion: nil)
-                                        self.delegate?.presentLobby()
+                                        let storyboard = UIStoryboard(name: "Lobby", bundle: nil).instantiateViewController(withIdentifier: "lobby")
+                                        self.present(storyboard, animated: true, completion: nil)
+                            
                                     }
                                 
                                     else {
                                         print("wrong login")
+                                        print(error)
                                         self.activityIndicator.stopAnimating()
                                         UIApplication.shared.endIgnoringInteractionEvents()
                                     }
@@ -522,7 +520,7 @@ class SignInViewController: UIViewController,UITextFieldDelegate{
     
     @IBAction func goHome(_ sender: Any) {
         
-        self.dismiss(animated: true, completion: nil)
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {

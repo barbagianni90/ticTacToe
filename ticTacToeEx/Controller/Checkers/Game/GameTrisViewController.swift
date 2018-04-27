@@ -46,9 +46,23 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func dismissButton(_ sender: Any) {
         
         
-        let alert = UIAlertController(title: "Logout", message: "Are you sure?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Abbandona", message: "Are you sure?", preferredStyle: .alert)
+        
         alert.addAction(UIAlertAction(title: "Si", style: .default, handler: { (action) in
-            self.dismiss(animated: true, completion: nil)
+            
+            let ref = Database.database().reference()
+            
+            ref.child("Players").child("\(MainViewController.user.id)").child("sconfitte").setValue("\(MainViewController.user.sconfitte + 1)")
+            ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
+            ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
+            ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+            ref.child("Utility\(self.nomeTabella)").child("abbandona").setValue("\(MainViewController.user.nickName)")
+            
+            ref.child("\(self.nomeTabella)").removeAllObservers()
+            ref.child("Utility\(self.nomeTabella)").removeAllObservers()
+            ref.child("Messages\(self.nomeTabella)").removeAllObservers()
+            
+            self.partitaFinita = true
         }))
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (action) in
         }))
@@ -86,7 +100,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
 //            cell.nickNameLabel.layer.borderColor = UIColor.white.cgColor
             cell.nickNameLabel.textColor = UIColor.white
 
-            cell.nickNameLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 30)
+            cell.nickNameLabel.font = UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.size.height / 35)
             cell.nickNameLabel.adjustsFontSizeToFitWidth = true
 
             
@@ -97,7 +111,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             
             cell.messageLabel.textAlignment = .right
             
-            cell.messageLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 30)
+            cell.messageLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 40)
             cell.messageLabel.adjustsFontSizeToFitWidth = true
 
             cell.isUserInteractionEnabled = false
@@ -120,7 +134,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             cell.nickNameLabel.text = self.enemy.nickName
             cell.nickNameLabel.textColor = UIColor.white
             
-            cell.nickNameLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 30)
+            cell.nickNameLabel.font = UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.size.height / 35)
             
             cell.nickNameLabel.adjustsFontSizeToFitWidth = true
             
@@ -129,7 +143,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
 
             cell.messageLabel.textAlignment = .left
             
-            cell.messageLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 30)
+            cell.messageLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 40)
             
             cell.messageLabel.adjustsFontSizeToFitWidth = true
             
@@ -382,6 +396,8 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         chatView.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.5)
         
         
+        
+        
 //        NSLayoutConstraint(item: chatView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: textFieldMessage.bounds.height).isActive = true
         
         //text field message
@@ -482,6 +498,11 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         chatButton.titleLabel?.adjustsFontSizeToFitWidth = true
         chatButton.titleLabel?.textAlignment = .center
         
+        chatButton.layer.borderColor = UIColor.white.cgColor
+        chatButton.layer.borderWidth = 0.5
+        chatButton.layer.cornerRadius =  15
+        
+        
         
         //xButton
         xButton.translatesAutoresizingMaskIntoConstraints = false
@@ -516,6 +537,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
         ref.child("Utility\(nomeTabella)").child("buttonEnabled").setValue("9")
+        ref.child("Utility\(nomeTabella)").child("abbandona").setValue("No")
         self.buttonEnabled = 9
         
         
@@ -592,8 +614,28 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         ref.child("Utility\(nomeTabella)").observe(.value) { (snap) in
             
             let utility = snap.value as! [String : Any]
-            let tmp = utility["buttonEnabled"] as! String
-            self.buttonEnabled = Int(tmp)!
+            
+            let quit = utility["abbandona"] as! String
+            self.buttonEnabled = Int(utility["buttonEnabled"] as! String)!
+            
+            if quit == self.enemy.nickName {
+                
+                ref.child("Players").child("\(MainViewController.user.id)").child("vittorie").setValue("\(MainViewController.user.vittorie + 1)")
+                
+                ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
+                ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
+                ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+                
+                ref.child("\(self.nomeTabella)").removeAllObservers()
+                ref.child("Utility\(self.nomeTabella)").removeAllObservers()
+                ref.child("Messages\(self.nomeTabella)").removeAllObservers()
+                
+                ref.child("\(self.nomeTabella)").removeValue()
+                ref.child("Utility\(self.nomeTabella)").removeValue()
+                ref.child("Messages\(self.nomeTabella)").removeValue()
+                
+                self.partitaFinita = true
+            }
             
             if self.buttonEnabled == 0 && self.getWinner() == "" && self.sPlayer == true {
                 
@@ -637,7 +679,6 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
                 self.present(alert, animated: true)
             }
         }
-        
         ref.child("\(nomeTabella)").observe(.value) { (snap) in
             
             let celle = snap.value as! [String : Any]

@@ -171,7 +171,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         
         homeButton.setTitle("Home", for: .normal)
-        homeButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)
+        homeButton.titleLabel?.font = UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.height / 6)
         
         
         homeButton.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -264,7 +264,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         
         
-        let attStatoLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 24)]
+        let attStatoLabel = [NSAttributedStringKey.font: UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.height / 24)]
         
         let statoLabelText = "Status"
         let attStato = NSMutableAttributedString(string: statoLabelText, attributes: attStatoLabel)
@@ -295,7 +295,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         
         
-        let attGiocatoreLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 24)]
+        let attGiocatoreLabel = [NSAttributedStringKey.font: UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.height / 24)]
         
         let giocatoreLabelText = "Player"
         let attGiocatore = NSMutableAttributedString(string: giocatoreLabelText, attributes: attGiocatoreLabel)
@@ -353,153 +353,171 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let ref = Database.database().reference()
         
-        ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").observe(.value) { (snap) in
+        ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").observe(.value) { (snap, error) in
             
-            let value = snap.value as! String
+            if error == nil {
             
-            if value != "" {
+                let value = snap.value as! String
                 
-                LobbyViewController.gameSelected = ConvertOptionalString.extractNameGame(value)
-                
-                let enemyNickName = ConvertOptionalString.extractNickname(value)
-                
-                ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("occupato")
-                
-                var idNickInvito = ""
-                
-                for user in self.players {
+                if value != "" {
                     
-                    if user.nickName == enemyNickName {
+                    LobbyViewController.gameSelected = ConvertOptionalString.extractNameGame(value)
+                    
+                    let enemyNickName = ConvertOptionalString.extractNickname(value)
+                    
+                    ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("occupato")
+                    
+                    var idNickInvito = ""
+                    
+                    for user in self.players {
                         
-                        idNickInvito = user.id
+                        if user.nickName == enemyNickName {
+                            
+                            idNickInvito = user.id
+                        }
                     }
+                    
+                    let alert = UIAlertController(title: "\(enemyNickName) ti ha invitato a giocare a \(LobbyViewController.gameSelected)", message: nil, preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "Accetto", style: .default, handler: { action in
+                        
+                        ref.child("Players").child("\(idNickInvito)").child("invitoAccettato").setValue("Si")
+                        
+                        if LobbyViewController.gameSelected == "tris" {
+                            
+                            let segue = UIStoryboard(name:"GameTris",bundle:nil).instantiateViewController(withIdentifier: "GameTrisID") as! GameTrisViewController
+                            
+                            let enemy = User()
+                            enemy.id = idNickInvito
+                            enemy.nickName = "\(enemyNickName)"
+                            
+                            for user in self.players {
+                                
+                                if user.nickName == enemyNickName {
+                                    
+                                    enemy.image = user.image
+                                }
+                            }
+                            segue.enemy = enemy
+                            
+                            segue.fPlayer = false
+                            segue.sPlayer = true
+                            
+                            self.present(segue, animated: true, completion: nil)
+                        }
+                        
+                        if LobbyViewController.gameSelected == "dama" {
+                            
+                            let segue = UIStoryboard(name:"GameCheckers",bundle:nil).instantiateViewController(withIdentifier: "GameCheckID") as! GameCheckersViewController
+                            
+                            let enemy = User()
+                            enemy.id = idNickInvito
+                            enemy.nickName = "\(enemyNickName)"
+                            
+                            for user in self.players {
+                                
+                                if user.nickName == enemyNickName {
+                                    
+                                    enemy.image = user.image
+                                }
+                            }
+                            segue.enemy = enemy
+                            
+                            segue.fPlayer = false
+                            segue.sPlayer = true
+                            
+                            self.present(segue, animated: true, completion: nil)
+                        }
+                    }))
+                    
+                    alert.addAction(UIAlertAction(title: "Rifiuto", style: .default, handler: { action in
+                        
+                        ref.child("Players").child("\(idNickInvito)").child("invitoAccettato").setValue("No")
+                        ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
+                        ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+                    }))
+                    
+                    self.present(alert, animated: true)
                 }
+            }
+            else {
                 
-                let alert = UIAlertController(title: "\(enemyNickName) ti ha invitato a giocare a \(LobbyViewController.gameSelected)", message: nil, preferredStyle: .alert)
-                
-                alert.addAction(UIAlertAction(title: "Accetto", style: .default, handler: { action in
-                    
-                    ref.child("Players").child("\(idNickInvito)").child("invitoAccettato").setValue("Si")
-                    
-                    if LobbyViewController.gameSelected == "tris" {
-                        
-                        let segue = UIStoryboard(name:"GameTris",bundle:nil).instantiateViewController(withIdentifier: "GameTrisID") as! GameTrisViewController
-                        
-                        let enemy = User()
-                        enemy.id = idNickInvito
-                        enemy.nickName = "\(enemyNickName)"
-                        
-                        for user in self.players {
-                            
-                            if user.nickName == enemyNickName {
-                                
-                                enemy.image = user.image
-                            }
-                        }
-                        segue.enemy = enemy
-                        
-                        segue.fPlayer = false
-                        segue.sPlayer = true
-                        
-                        self.present(segue, animated: true, completion: nil)
-                    }
-                    
-                    if LobbyViewController.gameSelected == "dama" {
-                        
-                        let segue = UIStoryboard(name:"GameCheckers",bundle:nil).instantiateViewController(withIdentifier: "GameCheckID") as! GameCheckersViewController
-                        
-                        let enemy = User()
-                        enemy.id = idNickInvito
-                        enemy.nickName = "\(enemyNickName)"
-                        
-                        for user in self.players {
-                            
-                            if user.nickName == enemyNickName {
-                                
-                                enemy.image = user.image
-                            }
-                        }
-                        segue.enemy = enemy
-                        
-                        segue.fPlayer = false
-                        segue.sPlayer = true
-                        
-                        self.present(segue, animated: true, completion: nil)
-                    }
-                }))
-                
-                alert.addAction(UIAlertAction(title: "Rifiuto", style: .default, handler: { action in
-                    
-                    ref.child("Players").child("\(idNickInvito)").child("invitoAccettato").setValue("No")
-                    ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
-                    ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
-                }))
-                
-                self.present(alert, animated: true)
+                ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
+                ref.child("Players").child("\(MainViewController.user.id)").child("InvitoAccettato").setValue("")
+                ref.child("Players").child("\(MainViewController.user.id)").child("loggato").setValue("No")
             }
         }
         
-        ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").observe(.value) { (snap) in
+        ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").observe(.value) { (snap, error) in
+            
+            if error == nil {
             
             let value = snap.value as! String
             
-            if value != "" {
-                
-                self.activitiyViewController.dismiss(animated: true, completion: nil)
-                UIApplication.shared.endIgnoringInteractionEvents()
-                
-                if value == "Si" {
+                if value != "" {
                     
-                    if LobbyViewController.gameSelected == "tris" {
+                    self.activitiyViewController.dismiss(animated: true, completion: nil)
+                    UIApplication.shared.endIgnoringInteractionEvents()
+                    
+                    if value == "Si" {
                         
-                        let segue = UIStoryboard(name:"GameTris",bundle:nil).instantiateViewController(withIdentifier: "GameTrisID") as! GameTrisViewController
-                        
-                        let enemy = User()
-                        enemy.id = self.sfidante["id"]!
-                        enemy.nickName = self.sfidante["nickname"]!
-                        
-                        for user in self.players {
+                        if LobbyViewController.gameSelected == "tris" {
                             
-                            if user.nickName == self.sfidante["nickname"]! {
+                            let segue = UIStoryboard(name:"GameTris",bundle:nil).instantiateViewController(withIdentifier: "GameTrisID") as! GameTrisViewController
+                            
+                            let enemy = User()
+                            enemy.id = self.sfidante["id"]!
+                            enemy.nickName = self.sfidante["nickname"]!
+                            
+                            for user in self.players {
                                 
-                                enemy.image = user.image
+                                if user.nickName == self.sfidante["nickname"]! {
+                                    
+                                    enemy.image = user.image
+                                }
                             }
+                            segue.enemy = enemy
+                            
+                            segue.fPlayer = true
+                            segue.sPlayer = false
+                            
+                            self.present(segue, animated: true, completion: nil)
                         }
-                        segue.enemy = enemy
                         
-                        segue.fPlayer = true
-                        segue.sPlayer = false
-                        
-                        self.present(segue, animated: true, completion: nil)
+                        if LobbyViewController.gameSelected == "dama" {
+                            
+                            let segue = UIStoryboard(name:"GameCheckers",bundle:nil).instantiateViewController(withIdentifier: "GameCheckID") as! GameCheckersViewController
+                            
+                            let enemy = User()
+                            enemy.id = self.sfidante["id"]!
+                            enemy.nickName = self.sfidante["nickname"]!
+                            
+                            for user in self.players {
+                                
+                                if user.nickName == self.sfidante["nickname"]! {
+                                    
+                                    enemy.image = user.image
+                                }
+                            }
+                            segue.enemy = enemy
+                            
+                            segue.fPlayer = true
+                            segue.sPlayer = false
+                            
+                            self.present(segue, animated: true, completion: nil)
+                        }
                     }
-                    
-                    if LobbyViewController.gameSelected == "dama" {
-                        
-                        let segue = UIStoryboard(name:"GameCheckers",bundle:nil).instantiateViewController(withIdentifier: "GameCheckID") as! GameCheckersViewController
-                        
-                        let enemy = User()
-                        enemy.id = self.sfidante["id"]!
-                        enemy.nickName = self.sfidante["nickname"]!
-                        
-                        for user in self.players {
-                            
-                            if user.nickName == self.sfidante["nickname"]! {
-                                
-                                enemy.image = user.image
-                            }
-                        }
-                        segue.enemy = enemy
-                        
-                        segue.fPlayer = true
-                        segue.sPlayer = false
-                        
-                        self.present(segue, animated: true, completion: nil)
+                    else {
+                        ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+                        ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
                     }
                 }
-                else {
-                    ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
-                    ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
-                }
+            }
+            else {
+                
+                ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
+                ref.child("Players").child("\(MainViewController.user.id)").child("InvitoAccettato").setValue("")
+                ref.child("Players").child("\(MainViewController.user.id)").child("loggato").setValue("No")
             }
         }
     }
@@ -522,12 +540,16 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if self.selectedRow == indexPath.row {
-            return 115.0
+            let cell = tableView.cellForRow(at: indexPath) as! CustomLobbyCell
+            if cell.frame.height == 45.0 {
+                return 115.0
+            } else {
+                return 45.0
+            }
         }
-        else{
-            return 45.0
-        }
+        return 45.0
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
         tableView.beginUpdates()
@@ -562,17 +584,14 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         cell.button1.layer.cornerRadius = cell.button1.frame.size.width / 2
         cell.button2.layer.cornerRadius = cell.button2.frame.size.width / 2
-        cell.button3.layer.cornerRadius = cell.button3.frame.size.width / 2
         
         
         
         cell.button1.setBackgroundImage(UIImage(named: "iconTris"), for: .normal)
         cell.button2.setBackgroundImage(UIImage(named: "checkIcon"), for: .normal)
-        cell.button3.setBackgroundImage(UIImage(named: "chessIcon"), for: .normal)
         
         
-        cell.button3.isEnabled = false
-        cell.button3.alpha = 0.5
+      
         
         tableView.rowHeight = UIScreen.main.bounds.size.height / 8
         
@@ -600,7 +619,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     player.nickName = datiSinglePlayer["nickname"] as! String
                     player.stato = datiSinglePlayer["stato"] as! String
                     
-                    if player.stato == "online" || player.stato == "occupato" {
+                    if player.stato == "online" {
                     
                         let decodeString = Data(base64Encoded: datiSinglePlayer["image"] as! String)
                         
@@ -626,6 +645,6 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     @IBAction func goHome(_ sender: Any) {
         
-        self.dismiss(animated: true, completion: nil)
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
 }

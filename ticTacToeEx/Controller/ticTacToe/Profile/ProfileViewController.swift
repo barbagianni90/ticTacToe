@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var stateLabel: UILabel!
     
+    @IBOutlet weak var vittorieDama: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,7 +36,7 @@ class ProfileViewController: UIViewController {
         
         
         homeButton.setTitle("Back", for: .normal)
-        homeButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)
+        homeButton.titleLabel?.font = UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.height / 6)
         homeButton.setTitleColor(UIColor.white, for: .normal)
         
         homeButton.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -60,7 +61,7 @@ class ProfileViewController: UIViewController {
         
         
         editButton.setTitle("Edit", for: .normal)
-        editButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)
+        editButton.titleLabel?.font = UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.height / 6)
         editButton.setTitleColor(UIColor.white, for: .normal)
         
         editButton.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -157,7 +158,7 @@ class ProfileViewController: UIViewController {
         
         
         
-        // status label
+        // Vittorie tris label
         
         stateLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -166,10 +167,10 @@ class ProfileViewController: UIViewController {
         
         NSLayoutConstraint(item: stateLabel, attribute: .top, relatedBy: .equal, toItem: nickNameLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 20).isActive = true
         
-        NSLayoutConstraint(item: stateLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: stateLabel, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: UIScreen.main.bounds.size.width / 8).isActive = true
         
         NSLayoutConstraint(item: stateLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 3).isActive = true
-        NSLayoutConstraint(item: stateLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 18).isActive = true
+        NSLayoutConstraint(item: stateLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 12).isActive = true
         
         
         let attStateLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 22)]
@@ -219,7 +220,7 @@ class ProfileViewController: UIViewController {
         
         let percentualeVittorie: Float = ((vittorieDouble / (vittorieDouble + sconfitteDouble))*100)
         
-        var string: String = "La blablablòa: "
+        var string: String = "La percentuale di vittoria è: \n "
         var concat: String = String(format: "%.2f", percentualeVittorie)
         var perc: String = "%"
         

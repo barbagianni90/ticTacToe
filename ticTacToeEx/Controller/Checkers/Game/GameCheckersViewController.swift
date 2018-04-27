@@ -190,20 +190,20 @@ class GameCheckersViewController: UIViewController {
         //top
         NSLayoutConstraint(item: dismissButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 15).isActive = true
         //right
-        NSLayoutConstraint(item: dismissButton, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: -UIScreen.main.bounds.width / 15).isActive = true
+        NSLayoutConstraint(item: dismissButton, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: UIScreen.main.bounds.width / 15).isActive = true
         //width
         NSLayoutConstraint(item: dismissButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 4).isActive = true
         //height
         NSLayoutConstraint(item: dismissButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 7).isActive = true
         
         
-        dismissButton.setTitle("Abbandona", for: .normal)
-        //        dismissButton.titleLabel?.textColor = UIColor.white
+        dismissButton.setTitle("Quit", for: .normal)
+        dismissButton.setTitleColor(UIColor.white, for: .normal)
         //        dismissButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.width)
         
         dismissButton.titleLabel?.adjustsFontSizeToFitWidth = true
         dismissButton.titleLabel?.baselineAdjustment = .alignCenters
-        dismissButton.titleLabel?.textAlignment = .right
+        dismissButton.titleLabel?.textAlignment = .center
         
     }
 

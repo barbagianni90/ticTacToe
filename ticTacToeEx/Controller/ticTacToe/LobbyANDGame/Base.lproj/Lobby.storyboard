@@ -30,6 +30,7 @@
                                 <rect key="frame" x="0.0" y="105" width="375" height="562"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="2000" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="115" id="W1p-Yc-Vml" customClass="CustomLobbyCell" customModule="ticTacToeEx" customModuleProvider="target">
@@ -57,39 +58,6 @@
                                                         <constraint firstAttribute="width" constant="40" id="tyg-dv-lsU"/>
                                                     </constraints>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="7hY-Yi-xGF">
-                                                    <rect key="frame" x="69" y="74" width="215" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MhQ-ky-MRS">
-                                                            <rect key="frame" x="0.0" y="0.0" width="53" height="30"/>
-                                                            <state key="normal" title="tris">
-                                                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
-                                                            <connections>
-                                                                <action selector="selectGame:" destination="W1p-Yc-Vml" eventType="touchUpInside" id="GfB-QU-BXQ"/>
-                                                            </connections>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJQ-Hd-Xw7">
-                                                            <rect key="frame" x="81" y="0.0" width="53" height="30"/>
-                                                            <state key="normal" title="dama">
-                                                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
-                                                            <connections>
-                                                                <action selector="selectGame:" destination="W1p-Yc-Vml" eventType="touchUpInside" id="lNx-s8-RJ2"/>
-                                                            </connections>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6X-0H-4fF">
-                                                            <rect key="frame" x="162" y="0.0" width="53" height="30"/>
-                                                            <state key="normal" title="scacchi">
-                                                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
-                                                            <connections>
-                                                                <action selector="selectGame:" destination="W1p-Yc-Vml" eventType="touchUpInside" id="Yaf-un-Gz2"/>
-                                                            </connections>
-                                                        </button>
-                                                    </subviews>
-                                                </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Online" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzf-mu-po5">
                                                     <rect key="frame" x="306" y="11" width="51" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -99,6 +67,30 @@
                                                     <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <size key="shadowOffset" width="0.0" height="1"/>
                                                 </label>
+                                                <stackView opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="7hY-Yi-xGF">
+                                                    <rect key="frame" x="124" y="74" width="106" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MhQ-ky-MRS">
+                                                            <rect key="frame" x="0.0" y="0.0" width="38" height="30"/>
+                                                            <state key="normal" title="tris">
+                                                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="selectGame:" destination="W1p-Yc-Vml" eventType="touchUpInside" id="GfB-QU-BXQ"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJQ-Hd-Xw7">
+                                                            <rect key="frame" x="68" y="0.0" width="38" height="30"/>
+                                                            <state key="normal" title="dama">
+                                                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="selectGame:" destination="W1p-Yc-Vml" eventType="touchUpInside" id="lNx-s8-RJ2"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -113,7 +105,6 @@
                                         <connections>
                                             <outlet property="button1" destination="MhQ-ky-MRS" id="cPk-C1-lXT"/>
                                             <outlet property="button2" destination="pJQ-Hd-Xw7" id="Tfn-73-LAV"/>
-                                            <outlet property="button3" destination="H6X-0H-4fF" id="wVy-VL-cbN"/>
                                             <outlet property="contentViewCell" destination="0yx-SY-8U4" id="6Ja-Rk-Oyp"/>
                                             <outlet property="imageCell" destination="JhX-Ya-at1" id="bp9-gj-hWf"/>
                                             <outlet property="nickNameLabel" destination="hXZ-kj-cCG" id="afd-Qu-u77"/>
