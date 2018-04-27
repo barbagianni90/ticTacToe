@@ -12,20 +12,35 @@ import Firebase
 
 class RankingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+
+    var rankingSelected: String = "" {
+        didSet{
+            self.refresh()
+        }
+    }
+
    
     @IBOutlet weak var posizioneLabel: UILabel!
     @IBOutlet weak var labelFissa: UILabel!
     
     @IBAction func segmented(_ sender: UISegmentedControl) {
-        
-//        switch sender.selectedSegmentIndex {
-//        case 0:
-//
-//        default:
-//            <#code#>
-//        }
+
+        switch sender.selectedSegmentIndex {
+
+        case 0:
+
+            self.rankingSelected = "tris"
+            
+        case 1:
+
+            self.rankingSelected = "dama"
+
+        default:
+
+            break
+        }
     }
-    
+
     @IBOutlet weak var rankingLabel: UILabel!
     
     @IBOutlet weak var giocatoreLabel: UILabel!
@@ -45,6 +60,8 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tableRanking: UITableView!
 
     @IBOutlet weak var segmented: UISegmentedControl!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -346,8 +363,15 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellRank") as! CustomCellRanking
         
+        if self.segmented.selectedSegmentIndex == 0 {
+            cell.scoreLabel.text = String(players[indexPath.row].vittorieTris)
+        }
+        else {
+            cell.scoreLabel.text = String(players[indexPath.row].vittorieDama)
+        }
+        
         cell.nickNameLabel.text = players[indexPath.row].nickName
-        cell.scoreLabel.text = String(players[indexPath.row].vittorie)
+        
         cell.imagePlayer.image = players[indexPath.row].image
         
         cell.imagePlayer.layer.cornerRadius = cell.imagePlayer.frame.size.width / 2
@@ -391,7 +415,10 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
                 
                 player.id = key
                 player.nickName = datiSinglePlayer["nickname"] as! String
-                player.vittorie = Int(datiSinglePlayer["vittorie"] as! String)!
+                player.vittorieTris = Int(datiSinglePlayer["vittorieTris"] as! String)!
+                player.vittorieDama = Int(datiSinglePlayer["vittorieDama"] as! String)!
+                player.sconfitteTris = Int(datiSinglePlayer["sconfitteTris"] as! String)!
+                player.sconfitteDama = Int(datiSinglePlayer["sconfitteDama"] as! String)!
                 
                 let decodeString = Data(base64Encoded: datiSinglePlayer["image"] as! String)
                 
@@ -404,7 +431,13 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.players.append(player)
                 
             }
-            self.players.sort(by: {$0.vittorie > $1.vittorie})
+            if self.segmented.selectedSegmentIndex == 0 {
+                self.players.sort(by: {$0.vittorieTris > $1.vittorieTris})
+            }
+            else {
+                self.players.sort(by: {$0.vittorieDama > $1.vittorieDama})
+            }
+            
             self.tableRanking.reloadData()
         })
     }

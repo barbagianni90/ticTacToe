@@ -41,30 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
     
-    func application(_ application: UIApplication, didFailToContinueUserActivityWithType userActivityType: String, error: Error) {
-        
-        let uploadData = UIImagePNGRepresentation(MainViewController.user.image!)!
-        
-        let base64ImageString = uploadData.base64EncodedString()
-        
-        let ref = Database.database().reference()
-        
-        ref.child("Players").child("\(MainViewController.user.id)").setValue(
-            
-            [
-                "nickname" : "\(MainViewController.user.nickName)",
-                "image" : "\(base64ImageString)",
-                "email" : "\(MainViewController.user.email)",
-                "vittorie" : "\(MainViewController.user.vittorie)",
-                "sconfitte" : "\(MainViewController.user.sconfitte)",
-                "stato" : "offline",
-                "invitatoDa" : "",
-                "invitoAccettato" : "",
-                "loggato" : "No"
-            ])
-        
-    }
-
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         
@@ -80,8 +56,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 "nickname" : "\(MainViewController.user.nickName)",
                 "image" : "\(base64ImageString)",
                 "email" : "\(MainViewController.user.email)",
-                "vittorie" : "\(MainViewController.user.vittorie)",
-                "sconfitte" : "\(MainViewController.user.sconfitte)",
+                "vittorieTris" : "\(MainViewController.user.vittorieTris)",
+                "vittorieDama" : "\(MainViewController.user.vittorieDama)",
+                "sconfitteTris" : "\(MainViewController.user.sconfitteTris)",
+                "sconfitteDama" : "\(MainViewController.user.sconfitteDama)",
                 "stato" : "offline",
                 "invitatoDa" : "",
                 "invitoAccettato" : "",

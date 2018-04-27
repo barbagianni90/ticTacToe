@@ -142,8 +142,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
                                     [   "nickname" : "\(name)",
                                         "email" : "\(ConvertOptionalString.convert(self.emailTextField.text))",
                                         "stato" : "online",
-                                        "vittorie" : "0",
-                                        "sconfitte" : "0",
+                                        "vittorieTris" : "0",
+                                        "vittorieDama" : "0",
+                                        "sconfitteTris" : "0",
+                                        "sconfitteDama" : "0",
                                         "invitatoDa" : "",
                                         "invitoAccettato" : "",
                                         "loggato" : "Si" ])
