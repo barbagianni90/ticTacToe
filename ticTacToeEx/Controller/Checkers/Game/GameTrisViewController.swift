@@ -47,6 +47,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         
         
         let alert = UIAlertController(title: "Abbandona", message: "Are you sure?", preferredStyle: .alert)
+        
         alert.addAction(UIAlertAction(title: "Si", style: .default, handler: { (action) in
             
             let ref = Database.database().reference()
@@ -55,6 +56,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
             ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
             ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+            ref.child("Utility\(self.nomeTabella)").child("abbandona").setValue("\(MainViewController.user.nickName)")
             
             ref.child("\(self.nomeTabella)").removeAllObservers()
             ref.child("Utility\(self.nomeTabella)").removeAllObservers()
@@ -528,7 +530,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
         ref.child("Utility\(nomeTabella)").child("buttonEnabled").setValue("9")
-        ref.child("Utility\(nomeTabella)").child("abbandona").setValue("")
+        ref.child("Utility\(nomeTabella)").child("abbandona").setValue("No")
         self.buttonEnabled = 9
         
         
@@ -600,9 +602,14 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             }
         
         }
-        ref.child("Utility\(nomeTabella)").child("abbandona").observe(.value) { (snap) in
+        
+        
+        ref.child("Utility\(nomeTabella)").observe(.value) { (snap) in
             
-            let quit = snap.value as! String
+            let utility = snap.value as! [String : Any]
+            
+            let quit = utility["abbandona"] as! String
+            self.buttonEnabled = Int(utility["buttonEnabled"] as! String)!
             
             if quit == self.enemy.nickName {
                 
@@ -622,14 +629,6 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
                 
                 self.partitaFinita = true
             }
-        }
-        
-        
-        ref.child("Utility\(nomeTabella)").child("buttonEnabled").observe(.value) { (snap) in
-            
-            let buttonEnabled = snap.value as! String
-                        
-            self.buttonEnabled = Int(buttonEnabled)!
             
             if self.buttonEnabled == 0 && self.getWinner() == "" && self.sPlayer == true {
                 

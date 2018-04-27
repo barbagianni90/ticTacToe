@@ -122,12 +122,12 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546511753.222735"
+                  timestampString = "546516284.7456"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "348"
                   endingLineNumber = "348"
-                  offsetFromSymbolStart = "4988">
+                  offsetFromSymbolStart = "5263">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -137,12 +137,12 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546511753.225106"
+                  timestampString = "546516284.750659"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "348"
                   endingLineNumber = "348"
-                  offsetFromSymbolStart = "29676">
+                  offsetFromSymbolStart = "32435">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -186,12 +186,12 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546511753.2424591"
+                  timestampString = "546516284.7708139"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "360"
                   endingLineNumber = "360"
-                  offsetFromSymbolStart = "9032">
+                  offsetFromSymbolStart = "9696">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -201,12 +201,12 @@
                   moduleName = "ticTacToeEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/macluca/Desktop/ticTacToeFinal/ticTacToeEx/Controller/Checkers/Game/GameCheckersViewController.swift"
-                  timestampString = "546511753.244801"
+                  timestampString = "546516284.775108"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "360"
                   endingLineNumber = "360"
-                  offsetFromSymbolStart = "29684">
+                  offsetFromSymbolStart = "32459">
                </Location>
             </Locations>
          </BreakpointContent>
