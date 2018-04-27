@@ -580,17 +580,14 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         cell.button1.layer.cornerRadius = cell.button1.frame.size.width / 2
         cell.button2.layer.cornerRadius = cell.button2.frame.size.width / 2
-        cell.button3.layer.cornerRadius = cell.button3.frame.size.width / 2
         
         
         
         cell.button1.setBackgroundImage(UIImage(named: "iconTris"), for: .normal)
         cell.button2.setBackgroundImage(UIImage(named: "checkIcon"), for: .normal)
-        cell.button3.setBackgroundImage(UIImage(named: "chessIcon"), for: .normal)
         
         
-        cell.button3.isEnabled = false
-        cell.button3.alpha = 0.5
+      
         
         tableView.rowHeight = UIScreen.main.bounds.size.height / 8
         

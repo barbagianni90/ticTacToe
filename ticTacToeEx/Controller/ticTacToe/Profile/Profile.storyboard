@@ -83,6 +83,13 @@
                                     <action selector="goHome:" destination="Kyp-9A-6zI" eventType="touchUpInside" id="VqA-jw-T5h"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNU-Kt-i2R">
+                                <rect key="frame" x="277" y="484" width="42" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="K59-b7-4OJ"/>
@@ -98,11 +105,12 @@
                         <outlet property="nickNameLabel" destination="9DV-dB-ViT" id="wrP-BQ-oeM"/>
                         <outlet property="profileLabel" destination="24i-Qf-DmL" id="cwg-sX-Z6O"/>
                         <outlet property="stateLabel" destination="SrW-1U-p5c" id="aHM-NG-izc"/>
+                        <outlet property="vittorieDama" destination="aNU-Kt-i2R" id="IDf-YU-gyh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xHo-bf-Gfu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1101.5999999999999" y="-903.59820089955031"/>
+            <point key="canvasLocation" x="1101.5999999999999" y="-903.69458128078827"/>
         </scene>
         <!--Edit Profile View Controller-->
         <scene sceneID="PQB-HC-rpG">

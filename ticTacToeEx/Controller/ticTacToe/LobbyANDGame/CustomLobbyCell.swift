@@ -15,7 +15,6 @@ class CustomLobbyCell: UITableViewCell {
     
     @IBOutlet weak var button2: UIButton!
     
-    @IBOutlet weak var button3: UIButton!
     
     @IBOutlet weak var nickNameLabel: UILabel!
     
@@ -40,9 +39,9 @@ class CustomLobbyCell: UITableViewCell {
 
         NSLayoutConstraint(item: stackViewGames, attribute: .top, relatedBy: .equal, toItem: imageCell , attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 150).isActive = true
 
-        NSLayoutConstraint(item: stackViewGames, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 1.5).isActive = true
+        NSLayoutConstraint(item: stackViewGames, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 2.4).isActive = true
 
-        NSLayoutConstraint(item: stackViewGames, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 13).isActive = true
+        NSLayoutConstraint(item: stackViewGames, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 12.8).isActive = true
 
         stackViewGames.contentMode = .scaleAspectFill
         stackViewGames.distribution = .fillEqually

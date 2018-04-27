@@ -13,6 +13,8 @@ import Firebase
 class RankingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
    
+    @IBOutlet weak var posizioneLabel: UILabel!
+    @IBOutlet weak var labelFissa: UILabel!
     
     @IBAction func segmented(_ sender: UISegmentedControl) {
         
@@ -65,8 +67,6 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         self.tableRanking.addSubview(refreshControl)
         
-        
-        segmented.isHidden = true
         
         
         //background
@@ -135,7 +135,7 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         NSLayoutConstraint(item: rankingLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 2).isActive = true
         
-        NSLayoutConstraint(item: rankingLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 6).isActive = true
+        NSLayoutConstraint(item: rankingLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 10).isActive = true
         
         let attTitleLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)]
         
@@ -176,6 +176,102 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
 //        punteggioLabel.adjustsFontSizeToFitWidth = true
 //        punteggioLabel.baselineAdjustment = .alignCenters
 //
+        
+        
+        // LABEL FISSA
+        
+        labelFissa.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        NSLayoutConstraint(item: labelFissa, attribute: .top, relatedBy: .equal, toItem: rankingLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 30).isActive = true
+        
+        NSLayoutConstraint(item: labelFissa, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: UIScreen.main.bounds.size.width / 12).isActive = true
+        
+        
+        NSLayoutConstraint(item: labelFissa, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 3).isActive = true
+        
+        
+        NSLayoutConstraint(item: labelFissa, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 12).isActive = true
+        
+        
+        let attLabelFissa = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 12)]
+        
+        let LabelFissaText = "La tua posizione è: "
+        let attFissa = NSMutableAttributedString(string: LabelFissaText, attributes: attLabelFissa)
+        
+        labelFissa.attributedText = attFissa
+        
+        labelFissa.adjustsFontSizeToFitWidth = true
+        labelFissa.baselineAdjustment = .alignCenters
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // POSIZIONE LABEL
+        
+        posizioneLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint(item: posizioneLabel, attribute: .top, relatedBy: .equal, toItem: rankingLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 40).isActive = true
+        
+        NSLayoutConstraint(item: posizioneLabel, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: UIScreen.main.bounds.size.width / -10).isActive = true
+        
+        
+        NSLayoutConstraint(item: posizioneLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 6).isActive = true
+        
+   
+         NSLayoutConstraint(item: posizioneLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 6).isActive = true
+        
+        let attLabelPosizione = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 12)]
+        
+        let LabelPosizioneText = "55 "
+        let attPosizione = NSMutableAttributedString(string: LabelPosizioneText, attributes: attLabelPosizione)
+        
+        posizioneLabel.attributedText = attPosizione
+        
+        posizioneLabel.adjustsFontSizeToFitWidth = true
+        posizioneLabel.baselineAdjustment = .alignCenters
+        
+        
+ 
+        
+        
+        // SEGMENTED
+        
+        segmented.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        NSLayoutConstraint(item: segmented, attribute: .top, relatedBy: .equal, toItem: posizioneLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 40).isActive = true
+        
+        NSLayoutConstraint(item: segmented, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        
+        
+        NSLayoutConstraint(item: segmented, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 1.25).isActive = true
+        
+        
+        NSLayoutConstraint(item: segmented, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 16).isActive = true
+       
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
        
         // title stack view
         
@@ -183,9 +279,9 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     
         
-        NSLayoutConstraint(item: titleStackview, attribute: .top, relatedBy: .equal, toItem: rankingLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 10).isActive = true
+        NSLayoutConstraint(item: titleStackview, attribute: .top, relatedBy: .equal, toItem: segmented, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 30).isActive = true
         
-        NSLayoutConstraint(item: titleStackview, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: -40).isActive = true
+        NSLayoutConstraint(item: titleStackview, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: -20).isActive = true
         
         NSLayoutConstraint(item: titleStackview, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 20).isActive = true
         
@@ -199,7 +295,7 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
 //        giocatoreLabel.layer.borderColor = UIColor.white.cgColor
 //        giocatoreLabel.layer.borderWidth = 0.5
         
-        NSLayoutConstraint(item: giocatoreLabel, attribute: .top, relatedBy: .equal, toItem: rankingLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 10).isActive = true
+        NSLayoutConstraint(item: giocatoreLabel, attribute: .top, relatedBy: .equal, toItem: segmented, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 30).isActive = true
         
         NSLayoutConstraint(item: giocatoreLabel, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: UIScreen.main.bounds.size.width / 15).isActive = true
         
