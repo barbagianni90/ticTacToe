@@ -73,7 +73,7 @@ class SignInViewController: UIViewController {
   
         
         homeButton.setTitle("Home", for: .normal)
-        homeButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)
+        homeButton.titleLabel?.font = UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.height / 6)
         
         
         homeButton.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -117,7 +117,7 @@ class SignInViewController: UIViewController {
 //        emailLabel.layer.borderWidth = 0.5
 //        emailLabel.layer.borderColor = UIColor.black.cgColor
         
-        NSLayoutConstraint(item: emailLabel, attribute: .top, relatedBy: .equal, toItem: signinLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 18).isActive = true
+        NSLayoutConstraint(item: emailLabel, attribute: .top, relatedBy: .equal, toItem: signinLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 14).isActive = true
         
           NSLayoutConstraint(item: emailLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         
@@ -215,7 +215,7 @@ class SignInViewController: UIViewController {
         registerButton.titleLabel?.baselineAdjustment = .alignCenters
         
         registerButton.setTitle("Register!", for: .normal)
-        registerButton.titleLabel?.font = UIFont(name: "Raleway-Light", size: UIScreen.main.bounds.height / 4)
+        registerButton.titleLabel?.font = UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.height / 4)
         
         
         // CONSTRAINTS REGISTER LABEL
@@ -289,13 +289,13 @@ class SignInViewController: UIViewController {
         
         NSLayoutConstraint(item: loginButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 2).isActive = true
         
-        NSLayoutConstraint(item: loginButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height / 6).isActive = true
+        NSLayoutConstraint(item: loginButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height / 6  ).isActive = true
         
         loginButton.titleLabel?.adjustsFontSizeToFitWidth = true
         loginButton.titleLabel?.baselineAdjustment = .alignCenters
         
         loginButton.setTitle("Login", for: .normal)
-        loginButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.width / 2)
+        loginButton.titleLabel?.font = UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.height / 5)
         
         
         

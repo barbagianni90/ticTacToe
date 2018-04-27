@@ -293,7 +293,7 @@ class SignUpViewController: UIViewController{
         
         
         homeButton.setTitle("Home", for: .normal)
-        homeButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)
+        homeButton.titleLabel?.font = UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.height / 6)
         
         
         homeButton.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -504,7 +504,7 @@ class SignUpViewController: UIViewController{
         signinButton.titleLabel?.baselineAdjustment = .alignCenters
         
         signinButton.setTitle("Sign in!", for: .normal)
-        signinButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 4)
+        signinButton.titleLabel?.font = UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.height / 4)
         
         
         
@@ -553,7 +553,7 @@ class SignUpViewController: UIViewController{
         submitButton.titleLabel?.adjustsFontSizeToFitWidth = true
         submitButton.titleLabel?.baselineAdjustment = .alignCenters
         
-        submitButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 12)
+        submitButton.titleLabel?.font = UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.height / 12)
         
         
         

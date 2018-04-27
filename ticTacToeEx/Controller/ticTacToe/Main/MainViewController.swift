@@ -48,6 +48,7 @@ class MainViewController: UIViewController {
         
 //        startButton.layer.borderWidth = 0.5
 //        startButton.layer.borderColor = UIColor.black.cgColor
+    
         
         NSLayoutConstraint(item: startButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         
@@ -61,7 +62,11 @@ class MainViewController: UIViewController {
         
         startButton.setTitle("Start Game", for: .normal)
         startButton.titleLabel?.font = UIFont(name: "shojumaru", size: UIScreen.main.bounds.size.height / 7)
-    
+        
+       
+        
+        
+        
         startButton.titleLabel?.baselineAdjustment = .alignCenters
         
         //set contraints ranking button

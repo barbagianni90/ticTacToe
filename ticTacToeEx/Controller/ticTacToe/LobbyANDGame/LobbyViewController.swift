@@ -171,7 +171,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         
         homeButton.setTitle("Home", for: .normal)
-        homeButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)
+        homeButton.titleLabel?.font = UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.height / 6)
         
         
         homeButton.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -264,7 +264,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         
         
-        let attStatoLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 24)]
+        let attStatoLabel = [NSAttributedStringKey.font: UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.height / 24)]
         
         let statoLabelText = "Status"
         let attStato = NSMutableAttributedString(string: statoLabelText, attributes: attStatoLabel)
@@ -295,7 +295,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         
         
-        let attGiocatoreLabel = [NSAttributedStringKey.font: UIFont(name: "raleway", size: UIScreen.main.bounds.height / 24)]
+        let attGiocatoreLabel = [NSAttributedStringKey.font: UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.height / 24)]
         
         let giocatoreLabelText = "Player"
         let attGiocatore = NSMutableAttributedString(string: giocatoreLabelText, attributes: attGiocatoreLabel)

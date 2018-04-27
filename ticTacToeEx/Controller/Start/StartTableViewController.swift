@@ -79,8 +79,8 @@ class StartTableViewController: UITableViewController{
                 let signInView = UIStoryboard(name: "SignInANDSignUp", bundle: nil).instantiateViewController(withIdentifier: "signIn")
                 self.present(signInView, animated: true, completion: nil)
             }else{
-                let alert = UIAlertController(title: "Logout", message: "Are you sure?", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Si", style: .default, handler: { (action) in
+                let alert = UIAlertController(title: "Log out", message: "Are you sure?", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
                     do {
                         try Auth.auth().signOut()
                         let ref = Database.database().reference()

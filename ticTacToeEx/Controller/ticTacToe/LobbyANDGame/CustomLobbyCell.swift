@@ -56,7 +56,7 @@ class CustomLobbyCell: UITableViewCell {
 //        stateLabel.layer.borderWidth = 0.5
 //        stateLabel.layer.borderColor = UIColor.white.cgColor
         
-        NSLayoutConstraint(item: stateLabel, attribute: .right, relatedBy: .equal, toItem: contentViewCell, attribute: .right, multiplier: 1, constant: UIScreen.main.bounds.size.width / -40).isActive = true
+        NSLayoutConstraint(item: stateLabel, attribute: .right, relatedBy: .equal, toItem: contentViewCell, attribute: .right, multiplier: 1, constant: UIScreen.main.bounds.size.width / -20).isActive = true
         
         NSLayoutConstraint(item: stateLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 4).isActive = true
         

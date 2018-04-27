@@ -35,7 +35,7 @@ class ProfileViewController: UIViewController {
         
         
         homeButton.setTitle("Back", for: .normal)
-        homeButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)
+        homeButton.titleLabel?.font = UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.height / 6)
         homeButton.setTitleColor(UIColor.white, for: .normal)
         
         homeButton.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -60,7 +60,7 @@ class ProfileViewController: UIViewController {
         
         
         editButton.setTitle("Edit", for: .normal)
-        editButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)
+        editButton.titleLabel?.font = UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.height / 6)
         editButton.setTitleColor(UIColor.white, for: .normal)
         
         editButton.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -219,7 +219,7 @@ class ProfileViewController: UIViewController {
         
         let percentualeVittorie: Float = ((vittorieDouble / (vittorieDouble + sconfitteDouble))*100)
         
-        var string: String = "La blablablòa: "
+        var string: String = "La percentuale di vittoria è: "
         var concat: String = String(format: "%.2f", percentualeVittorie)
         var perc: String = "%"
         
