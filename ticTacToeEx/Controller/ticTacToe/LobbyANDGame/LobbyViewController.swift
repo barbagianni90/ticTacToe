@@ -540,12 +540,16 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if self.selectedRow == indexPath.row {
-            return 115.0
+            let cell = tableView.cellForRow(at: indexPath) as! CustomLobbyCell
+            if cell.frame.height == 45.0 {
+                return 115.0
+            } else {
+                return 45.0
+            }
         }
-        else{
-            return 45.0
-        }
+        return 45.0
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
         tableView.beginUpdates()
