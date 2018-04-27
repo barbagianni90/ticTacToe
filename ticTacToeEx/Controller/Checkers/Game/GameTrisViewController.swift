@@ -105,7 +105,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
 //            cell.nickNameLabel.layer.borderColor = UIColor.white.cgColor
             cell.nickNameLabel.textColor = UIColor.white
 
-            cell.nickNameLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 30)
+            cell.nickNameLabel.font = UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.size.height / 35)
             cell.nickNameLabel.adjustsFontSizeToFitWidth = true
 
             
@@ -116,7 +116,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             
             cell.messageLabel.textAlignment = .right
             
-            cell.messageLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 30)
+            cell.messageLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 40)
             cell.messageLabel.adjustsFontSizeToFitWidth = true
 
             cell.isUserInteractionEnabled = false
@@ -139,7 +139,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
             cell.nickNameLabel.text = self.enemy.nickName
             cell.nickNameLabel.textColor = UIColor.white
             
-            cell.nickNameLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 30)
+            cell.nickNameLabel.font = UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.size.height / 35)
             
             cell.nickNameLabel.adjustsFontSizeToFitWidth = true
             
@@ -148,7 +148,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
 
             cell.messageLabel.textAlignment = .left
             
-            cell.messageLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 30)
+            cell.messageLabel.font = UIFont(name: "raleway", size: UIScreen.main.bounds.size.height / 40)
             
             cell.messageLabel.adjustsFontSizeToFitWidth = true
             
@@ -401,6 +401,8 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         chatView.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.5)
         
         
+        
+        
 //        NSLayoutConstraint(item: chatView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: textFieldMessage.bounds.height).isActive = true
         
         //text field message
@@ -500,6 +502,11 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         chatButton.titleLabel?.baselineAdjustment = .alignCenters
         chatButton.titleLabel?.adjustsFontSizeToFitWidth = true
         chatButton.titleLabel?.textAlignment = .center
+        
+        chatButton.layer.borderColor = UIColor.white.cgColor
+        chatButton.layer.borderWidth = 0.5
+        chatButton.layer.cornerRadius =  15
+        
         
         
         //xButton

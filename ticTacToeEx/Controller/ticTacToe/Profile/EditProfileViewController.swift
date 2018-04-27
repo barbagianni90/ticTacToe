@@ -93,7 +93,7 @@ class EditProfileViewController: UIViewController {
         
         
         profileButton.setTitle("Back", for: .normal)
-        profileButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)
+        profileButton.titleLabel?.font = UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.height / 6)
         profileButton.setTitleColor(UIColor.white, for: .normal)
         
         profileButton.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -116,7 +116,7 @@ class EditProfileViewController: UIViewController {
         
         
         doneButton.setTitle("Done", for: .normal)
-        doneButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.height / 6)
+        doneButton.titleLabel?.font = UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.height / 6)
         
         
         doneButton.titleLabel?.adjustsFontSizeToFitWidth = true

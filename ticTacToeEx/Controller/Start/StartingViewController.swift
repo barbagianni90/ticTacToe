@@ -13,8 +13,10 @@ class StartingViewController: UIViewController{
     @IBOutlet weak var avatarButton: UIButton!
     @IBOutlet weak var nickNameLabel: UILabel!
     
+    @IBOutlet weak var startButtonView: UIView!
     @IBOutlet weak var rankingButton: UIButton!
     
+    @IBOutlet weak var rankingButtonView: UIView!
     @IBAction func avatarButton(_ sender: Any) {
         
         let profile = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "profileInfo")
@@ -138,17 +140,20 @@ class StartingViewController: UIViewController{
         
         trisButton.translatesAutoresizingMaskIntoConstraints = false
         
-        trisButton.layer.borderWidth = 0.5
-        trisButton.layer.borderColor = UIColor.white.cgColor
+//        trisButton.layer.borderWidth = 0.5
+//        trisButton.layer.borderColor = UIColor.white.cgColor
         
         NSLayoutConstraint(item: trisButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.size.height / 3).isActive = true
+        
         
 //        NSLayoutConstraint(item: trisButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         
         NSLayoutConstraint(item: trisButton, attribute: .left, relatedBy: .equal, toItem: sideMenuView, attribute: .right, multiplier: 1, constant: (UIScreen.main.bounds.width - (UIScreen.main.bounds.width / 1.25)) / 2).isActive = true
         
-        
-        
+//        NSLayoutConstraint(item: trisButton, attribute: .centerX, relatedBy: .equal, toItem: startButtonView, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+//
+//        NSLayoutConstraint(item: trisButton, attribute: .centerY, relatedBy: .equal, toItem: startButtonView, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
+//
         NSLayoutConstraint(item: trisButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 1.25).isActive = true
         
          NSLayoutConstraint(item: trisButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 8).isActive = true
@@ -160,6 +165,32 @@ class StartingViewController: UIViewController{
         
         trisButton.titleLabel?.adjustsFontSizeToFitWidth = true
         trisButton.titleLabel?.baselineAdjustment = .alignCenters
+        
+//        trisButton.layer.shadowColor = UIColor.black.cgColor
+//        trisButton.layer.shadowOpacity = 1.0
+//        trisButton.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        
+        
+        
+        
+        // start button view
+        
+        startButtonView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint(item: startButtonView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.size.height / 3).isActive = true
+        
+        NSLayoutConstraint(item: startButtonView, attribute: .left, relatedBy: .equal, toItem: sideMenuView, attribute: .right, multiplier: 1, constant: 0).isActive = true
+        
+        NSLayoutConstraint(item: startButtonView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width).isActive = true
+        
+        NSLayoutConstraint(item: startButtonView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 8).isActive = true
+        
+        
+        startButtonView.backgroundColor = UIColor.black
+        startButtonView.alpha = 0.4
+        
+        
+
         
         
         
@@ -186,9 +217,34 @@ class StartingViewController: UIViewController{
         
         rankingButton.titleLabel?.adjustsFontSizeToFitWidth = true
         rankingButton.titleLabel?.baselineAdjustment = .alignCenters
+    
+//        rankingButton.layer.shadowColor = UIColor.black.cgColor
+//        rankingButton.layer.shadowOpacity = 1.0
+//        rankingButton.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
         
-
         
+        
+        
+        // ranking button view
+        
+        rankingButtonView.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        NSLayoutConstraint(item: rankingButtonView, attribute: .top, relatedBy: .equal, toItem: trisButton, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 10).isActive = true
+        
+        //        NSLayoutConstraint(item: rankingButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        
+        NSLayoutConstraint(item: rankingButtonView, attribute: .left, relatedBy: .equal, toItem: sideMenuView, attribute: .right, multiplier: 1, constant: 0).isActive = true
+        
+        
+        NSLayoutConstraint(item: rankingButtonView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width).isActive = true
+        
+        NSLayoutConstraint(item: rankingButtonView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 9).isActive = true
+        
+        
+        rankingButtonView.backgroundColor = UIColor.black
+        
+        rankingButtonView.alpha = 0.4
         
 
         
@@ -280,6 +336,8 @@ class StartingViewController: UIViewController{
         trisButton.isHidden = true
         rankingButton.isHidden = true
         nickNameLabel.isHidden = true
+        startButtonView.isHidden = true
+        rankingButtonView.isHidden = true
         
         UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()
@@ -292,6 +350,8 @@ class StartingViewController: UIViewController{
         trisButton.isHidden = false
         rankingButton.isHidden = false
         nickNameLabel.isHidden = false
+        startButtonView.isHidden = false
+        rankingButtonView.isHidden = false
         
         UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()
