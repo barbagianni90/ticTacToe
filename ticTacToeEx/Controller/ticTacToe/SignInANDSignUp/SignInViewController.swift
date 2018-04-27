@@ -11,13 +11,9 @@ import UIKit
 import Firebase
 import Alamofire
 
-protocol Lobby {
-    func presentLobby()
-}
 
 class SignInViewController: UIViewController {
     
-    var delegate: Lobby?
     
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
@@ -305,7 +301,7 @@ class SignInViewController: UIViewController {
     
     @IBAction func loginButton(_ sender: Any) {
         
-        self.activityIndicator.center = CGPoint(x: self.view.center.x, y: UIScreen.main.bounds.height / 8)
+        self.activityIndicator.center = CGPoint(x: self.view.center.x, y: UIScreen.main.bounds.height / 1.5)
         self.activityIndicator.hidesWhenStopped = true
         self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.white
         self.view.addSubview(self.activityIndicator)
@@ -397,12 +393,14 @@ class SignInViewController: UIViewController {
                                         self.activityIndicator.stopAnimating()
                                         UIApplication.shared.endIgnoringInteractionEvents()
 
-                                        self.dismiss(animated: true, completion: nil)
-                                        self.delegate?.presentLobby()
+                                        let storyboard = UIStoryboard(name: "Lobby", bundle: nil).instantiateViewController(withIdentifier: "lobby")
+                                        self.present(storyboard, animated: true, completion: nil)
+                            
                                     }
                                 
                                     else {
                                         print("wrong login")
+                                        print(error)
                                         self.activityIndicator.stopAnimating()
                                         UIApplication.shared.endIgnoringInteractionEvents()
                                     }
@@ -429,7 +427,7 @@ class SignInViewController: UIViewController {
     
     @IBAction func goHome(_ sender: Any) {
         
-        self.dismiss(animated: true, completion: nil)
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {

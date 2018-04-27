@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StartingViewController: UIViewController, Lobby {
+class StartingViewController: UIViewController{
     
     @IBOutlet weak var avatarButton: UIButton!
     @IBOutlet weak var nickNameLabel: UILabel!
@@ -24,12 +24,6 @@ class StartingViewController: UIViewController, Lobby {
         
     }
     
-    func presentLobby() {
-        
-        let segue = UIStoryboard(name:"Lobby",bundle:nil).instantiateViewController(withIdentifier: "lobby") as! LobbyViewController
-        
-        self.present(segue, animated: true)
-    }
     
     @IBAction func trisButton(_ sender: Any) {
         if MainViewController.user.nickName != ""{
@@ -71,6 +65,7 @@ class StartingViewController: UIViewController, Lobby {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         //observer signOut
         NotificationCenter.default.addObserver(forName: Notification.Name(rawValue:"LogOut"), object: nil, queue: nil, using: signOut)
