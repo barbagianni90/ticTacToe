@@ -525,7 +525,6 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
                 self.present(alert, animated: true)
             }
         }
-        
         ref.child("\(nomeTabella)").observe(.value) { (snap) in
             
             let celle = snap.value as! [String : Any]

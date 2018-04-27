@@ -383,6 +383,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 alert.addAction(UIAlertAction(title: "Rifiuto", style: .default, handler: { action in
                     
                     ref.child("Players").child("\(idNickInvito)").child("invitoAccettato").setValue("No")
+                    ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
                     ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
                 }))
                 
