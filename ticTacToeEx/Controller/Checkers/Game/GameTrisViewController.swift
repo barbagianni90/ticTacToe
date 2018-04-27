@@ -627,11 +627,9 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         
         ref.child("Utility\(nomeTabella)").child("buttonEnabled").observe(.value) { (snap) in
             
-            let utility = snap.value as! [String : Any]
-            
-            let tmp = utility["buttonEnabled"] as! String
-            
-            self.buttonEnabled = Int(tmp)!
+            let buttonEnabled = snap.value as! String
+                        
+            self.buttonEnabled = Int(buttonEnabled)!
             
             if self.buttonEnabled == 0 && self.getWinner() == "" && self.sPlayer == true {
                 
