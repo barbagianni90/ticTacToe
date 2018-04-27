@@ -12,6 +12,8 @@ import Firebase
 
 class RankingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+   
+    
     @IBAction func segmented(_ sender: UISegmentedControl) {
         
 //        switch sender.selectedSegmentIndex {
@@ -106,6 +108,18 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         homeButton.titleLabel?.adjustsFontSizeToFitWidth = true
         homeButton.titleLabel?.baselineAdjustment = .alignCenters
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         // ranking label

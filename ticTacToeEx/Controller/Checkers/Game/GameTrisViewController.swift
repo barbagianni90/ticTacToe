@@ -35,6 +35,8 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
     
     //----------------------Chat-------------------------
     
+    @IBOutlet weak var chatViewTop: NSLayoutConstraint!
+    
     @IBOutlet weak var chatTable: UITableView!
     
     @IBOutlet weak var bottomTextField: NSLayoutConstraint!
@@ -43,7 +45,15 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func dismissButton(_ sender: Any) {
         
-        dismiss(animated: true, completion: nil)
+        
+        let alert = UIAlertController(title: "Logout", message: "Are you sure?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Si", style: .default, handler: { (action) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: { (action) in
+        }))
+        self.present(alert,animated: true, completion: nil)
+            
     }
     
     var messages: [Message] = []
@@ -147,6 +157,7 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if let textField = textField as? UITextField {
+            textFieldTouched = textField
             self.textFieldTouched = textField
         }
         else {
@@ -197,10 +208,56 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         ref.child("Messages\(nomeTabella)").child("Message\(newMessageNumber)").setValue(message)
         self.textFieldTouched?.text = ""
     }
+    
+    
+    @IBAction func chatAction(_ sender: UIButton) {
+        showChawView()
+    }
+    @IBAction func xButtonAction(_ sender: Any) {
+        hideChatView()
+    }
+    
+    func showChawView(){
+        textFieldMessage.becomeFirstResponder()
+        
+        chatViewTop.constant = UIScreen.main.bounds.height / 4
+        trisImage.alpha = 0.3
+        stackView.alpha = 0.3
+        for i in buttons{
+            i.isEnabled = false
+        }
+        chatButton.isHidden = true
+        xButton.isHidden = false
+        chatButton.setTitleColor(UIColor.white, for: .normal)
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    func hideChatView(){
+        chatViewTop.constant = UIScreen.main.bounds.height
+        trisImage.alpha = 1
+        stackView.alpha = 1
+        for i in buttons{
+            i.isEnabled = true
+        }
+        
+        chatButton.isHidden = false
+        xButton.isHidden = true
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+        })
+        
+    }
     //----------------------Game-------------------------
     
     
     
+    
+    @IBOutlet weak var xButton: UIButton!
+    
+    @IBOutlet weak var chatButton: UIButton!
     
     @IBOutlet weak var stackView: UIStackView!
     
@@ -288,7 +345,10 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         
         
         //top
-        NSLayoutConstraint(item: trisImage, attribute: .top, relatedBy: .equal, toItem: dismissButton, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 15).isActive = true
+//        NSLayoutConstraint(item: trisImage, attribute: .top, relatedBy: .equal, toItem: dismissButton, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 15).isActive = true
+        //centerY
+        NSLayoutConstraint(item: trisImage, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
+        
         //centerX
         NSLayoutConstraint(item: trisImage, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         //width
@@ -307,17 +367,22 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
 //
 //        NSLayoutConstraint(item: chatView, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: UIScreen.main.bounds.size.width / -15).isActive = true
         
-        NSLayoutConstraint(item: chatView, attribute: .top, relatedBy: .equal, toItem: trisImage, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 16).isActive = true
+//        NSLayoutConstraint(item: chatView, attribute: .top, relatedBy: .equal, toItem: trisImage, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.size.height / 16).isActive = true
         
 //        NSLayoutConstraint(item: chatView, attribute: .bottom, relatedBy: .equal, toItem: textFieldMessage, attribute: .top, multiplier: 1, constant: 0).isActive = true
-//
+        //width
         NSLayoutConstraint(item: chatView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width).isActive = true
-        
+        //centerx
         NSLayoutConstraint(item: chatView, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        //height
+        NSLayoutConstraint(item: chatView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: (UIScreen.main.bounds.size.height / 4) * 3).isActive = true
         
-//        NSLayoutConstraint(item: chatView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.height / 3).isActive = true
+        chatViewTop.constant = UIScreen.main.bounds.height
         
-        NSLayoutConstraint(item: chatView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: textFieldMessage.bounds.height).isActive = true
+        chatView.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.5)
+        
+        
+//        NSLayoutConstraint(item: chatView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: textFieldMessage.bounds.height).isActive = true
         
         //text field message
         
@@ -327,9 +392,9 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
 //        NSLayoutConstraint(item: textFieldMessage, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: UIScreen.main.bounds.size.width / 15).isActive = true
 //        //right
 //        NSLayoutConstraint(item: textFieldMessage, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: -10).isActive = true
-        
+        //CenterX
         NSLayoutConstraint(item: textFieldMessage, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
-//
+        //width
         NSLayoutConstraint(item: textFieldMessage, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.size.width / 1.1).isActive = true
 //
         //height
@@ -342,10 +407,10 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         
         chatTable.translatesAutoresizingMaskIntoConstraints = false
         //top
-        NSLayoutConstraint(item: chatTable, attribute: .top, relatedBy: .equal, toItem: chatView, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.size.height / 30 ).isActive = true
+        NSLayoutConstraint(item: chatTable, attribute: .top, relatedBy: .equal, toItem: xButton, attribute: .bottom, multiplier: 1, constant: 0 ).isActive = true
         
         //bottom
-        NSLayoutConstraint(item: chatTable, attribute: .bottom, relatedBy: .equal, toItem: chatView, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: chatTable, attribute: .bottom, relatedBy: .equal, toItem: chatView, attribute: .bottom, multiplier: 1, constant: -UIScreen.main.bounds.size.height / 20).isActive = true
         //left
         NSLayoutConstraint(item: chatTable, attribute: .left, relatedBy: .equal, toItem: chatView, attribute: .left, multiplier: 1, constant: 0).isActive = true
         //right
@@ -357,8 +422,8 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         
         dismissButton.translatesAutoresizingMaskIntoConstraints = false
         
-        dismissButton.layer.borderWidth = 0.5
-        dismissButton.layer.borderColor = UIColor.white.cgColor
+//        dismissButton.layer.borderWidth = 0.5
+//        dismissButton.layer.borderColor = UIColor.white.cgColor
         
         
         //top
@@ -374,10 +439,10 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         NSLayoutConstraint(item: dismissButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 8).isActive = true
         
         
-        dismissButton.setTitle("Abbandona", for: .normal)
+        dismissButton.setTitle("Quit", for: .normal)
         dismissButton.setTitleColor(UIColor.white, for: .normal)
         
-        dismissButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.width / 8)
+        dismissButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.width / 4)
         
         dismissButton.titleLabel?.adjustsFontSizeToFitWidth = true
         dismissButton.titleLabel?.baselineAdjustment = .alignCenters
@@ -385,7 +450,51 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
         
         
         
-     
+        //Chat Button
+        chatButton.translatesAutoresizingMaskIntoConstraints = false
+        
+//        chatButton.layer.borderWidth = 0.5
+//        chatButton.layer.borderColor = UIColor.white.cgColor
+        
+        //top
+        NSLayoutConstraint(item: chatButton, attribute: .top, relatedBy: .equal, toItem: trisImage, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 10).isActive = true
+        
+        //bottom
+//        NSLayoutConstraint(item: chatButton, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+        
+        //right
+//        NSLayoutConstraint(item: chatButton, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: -UIScreen.main.bounds.width / 10).isActive = true
+        
+        //centerx
+        NSLayoutConstraint(item: chatButton, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        
+        //width
+        NSLayoutConstraint(item: chatButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 2).isActive = true
+        
+        //height
+        NSLayoutConstraint(item: chatButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 6).isActive = true
+        
+        chatButton.setTitle("Chat with: \(enemy.nickName)", for: .normal)
+        chatButton.titleLabel?.font = UIFont(name: "raleway", size: UIScreen.main.bounds.width / 7)
+        chatButton.setTitleColor(UIColor.white, for: .normal)
+        
+        chatButton.titleLabel?.baselineAdjustment = .alignCenters
+        chatButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        chatButton.titleLabel?.textAlignment = .center
+        
+        
+        //xButton
+        xButton.translatesAutoresizingMaskIntoConstraints = false
+        
+//        xButton.layer.borderWidth = 0.5
+//        xButton.layer.borderColor = UIColor.white.cgColor
+        
+        NSLayoutConstraint(item: xButton, attribute: .top, relatedBy: .equal, toItem: chatView, attribute: .top, multiplier: 1, constant: 0).isActive = true
+        
+        NSLayoutConstraint(item: xButton, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: 0).isActive = true
+        
+        //
+        
         
 
         
@@ -470,6 +579,9 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
                 self.messages.sort(by: {$0.n_message < $1.n_message})
                 self.chatTable.reloadData()
                 
+                if(self.messages.count > 0) && self.chatViewTop.constant == UIScreen.main.bounds.height{
+                    self.chatButton.setTitleColor(UIColor.red, for: .normal)
+                }
                 self.scrollToLastRow()
 
             }

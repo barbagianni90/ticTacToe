@@ -89,6 +89,15 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var lobbyLabel: UILabel!
     @IBOutlet weak var statoLabel: UILabel!
     
+    @IBOutlet weak var avatarButton: UIButton!
+    
+    @IBAction func avatarButton(_ sender: UIButton) {
+        
+        let profile = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "profileInfo")
+        self.present(profile,animated: true,completion: nil)
+        
+    }
+    
     
     let activitiyViewController = ActivityViewController(message: "Attending...")
     
@@ -167,6 +176,45 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         homeButton.titleLabel?.adjustsFontSizeToFitWidth = true
         homeButton.titleLabel?.baselineAdjustment = .alignCenters
+        
+        
+        // constraints avatar button
+        
+        avatarButton.translatesAutoresizingMaskIntoConstraints = false
+        //                avatarButton.layer.borderWidth = 1
+        //                avatarButton.layer.borderColor = UIColor.white.cgColor
+        
+        NSLayoutConstraint(item: avatarButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: UIScreen.main.bounds.height / 20).isActive = true
+        
+        NSLayoutConstraint(item: avatarButton, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: UIScreen.main.bounds.width / -15).isActive = true
+        
+        NSLayoutConstraint(item: avatarButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 8).isActive = true
+        
+        NSLayoutConstraint(item: avatarButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 8).isActive = true
+        
+        
+        avatarButton.imageView?.contentMode = .scaleAspectFill
+        avatarButton.imageView?.layer.cornerRadius = (UIScreen.main.bounds.width / 7) / 2
+        
+        
+        if MainViewController.user.nickName == "" {
+            self.avatarButton.isHidden = true
+        }
+        else{
+            self.avatarButton.isHidden = false
+            self.avatarButton.setBackgroundImage(MainViewController.user.image, for: .normal)
+            self.avatarButton.layer.cornerRadius = (UIScreen.main.bounds.width / 8) / 2
+            self.avatarButton.layer.masksToBounds = true
+            self.avatarButton.backgroundColor = UIColor.clear
+            self.avatarButton.imageView?.contentMode = .scaleAspectFill
+            
+        }
+        
+        
+        
+        
+        
+        
         
         
         // lobby label
@@ -385,6 +433,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     ref.child("Players").child("\(idNickInvito)").child("invitoAccettato").setValue("No")
                     ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
                     ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+                    ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
                 }))
                 
                 self.present(alert, animated: true)
@@ -450,6 +499,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 }
                 else {
                     ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+                    ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
                 }
             }
         }
