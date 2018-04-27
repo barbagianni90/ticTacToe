@@ -618,7 +618,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     player.nickName = datiSinglePlayer["nickname"] as! String
                     player.stato = datiSinglePlayer["stato"] as! String
                     
-                    if player.stato == "online" || player.stato == "occupato" {
+                    if player.stato == "online" {
                     
                         let decodeString = Data(base64Encoded: datiSinglePlayer["image"] as! String)
                         
