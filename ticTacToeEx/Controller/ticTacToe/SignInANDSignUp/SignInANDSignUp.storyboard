@@ -122,6 +122,21 @@
                                     <action selector="goHome:" destination="CXE-9n-eKf" eventType="touchUpInside" id="GPa-EQ-ScC"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEA-iE-D8B">
+                                <rect key="frame" x="261" y="398" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="remindMeAction:" destination="CXE-9n-eKf" eventType="touchUpInside" id="gfR-kx-AFI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ya3-pc-h8u">
+                                <rect key="frame" x="67" y="403" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="nAs-E3-bZt"/>
@@ -136,6 +151,8 @@
                         <outlet property="passTextField" destination="QdX-cS-kn0" id="aqf-0g-lcL"/>
                         <outlet property="registerButton" destination="Nwc-83-zTP" id="oG0-Gr-w6b"/>
                         <outlet property="registerLabel" destination="7Wr-jL-Vfo" id="3OQ-Ga-PY1"/>
+                        <outlet property="remindMeButton" destination="kEA-iE-D8B" id="y9R-Y9-o9g"/>
+                        <outlet property="remindMeLabel" destination="Ya3-pc-h8u" id="7C6-Gz-qUz"/>
                         <outlet property="signinLabel" destination="Iq1-AS-m25" id="Gsw-ue-Stm"/>
                     </connections>
                 </viewController>
@@ -339,6 +356,21 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2K5-GD-ciu">
+                                <rect key="frame" x="287" y="418" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGq-kR-nK7">
+                                <rect key="frame" x="271" y="380" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="remindMeAction:" destination="7QO-Ut-Jhh" eventType="touchUpInside" id="XH9-Ll-RTP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ftE-1q-f7Q"/>
@@ -352,6 +384,8 @@
                         <outlet property="homeButton" destination="Po7-Lg-u7P" id="cvf-xk-ggv"/>
                         <outlet property="passLabel" destination="NiC-cP-VRo" id="hV2-cX-0q1"/>
                         <outlet property="passTextField" destination="dI5-xH-9tq" id="WMc-43-XlZ"/>
+                        <outlet property="remindMeButton" destination="aGq-kR-nK7" id="uYs-DB-Yge"/>
+                        <outlet property="remindMeLabel" destination="2K5-GD-ciu" id="HOG-lV-eS4"/>
                         <outlet property="scatta" destination="Xz3-oe-omg" id="hhI-aw-kVB"/>
                         <outlet property="signinButton" destination="A0B-In-QjE" id="fCh-Pu-DUR"/>
                         <outlet property="signinLabel" destination="ldo-HL-TRO" id="N7l-3z-ZVa"/>

@@ -39,6 +39,8 @@
 		C4ED73FB207F6CB000099716 /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C4ED73FA207F6CB000099716 /* default.jpg */; };
 		F31876302085E90C00482CAD /* GameCheckers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F318762F2085E90C00482CAD /* GameCheckers.storyboard */; };
 		F31876322085EBEE00482CAD /* GameCheckersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31876312085EBEE00482CAD /* GameCheckersViewController.swift */; };
+		F32C765720931F4D00FAC153 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F32C765520931F4D00FAC153 /* CoreData.xcdatamodeld */; };
+		F32C76592093231500FAC153 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C76582093231500FAC153 /* CoreDataController.swift */; };
 		F3CEB71C207CABD200B4D772 /* MainCheckers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3CEB71B207CABD200B4D772 /* MainCheckers.storyboard */; };
 		F3CEB71E207CABF500B4D772 /* MainCheckersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CEB71D207CABF500B4D772 /* MainCheckersViewController.swift */; };
 		F3F62E962084E2A100A674BE /* StartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F62E952084E2A100A674BE /* StartingViewController.swift */; };
@@ -102,6 +104,8 @@
 		C4ED73FA207F6CB000099716 /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
 		F318762F2085E90C00482CAD /* GameCheckers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameCheckers.storyboard; sourceTree = "<group>"; };
 		F31876312085EBEE00482CAD /* GameCheckersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCheckersViewController.swift; sourceTree = "<group>"; };
+		F32C765620931F4D00FAC153 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		F32C76582093231500FAC153 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		F3CEB71B207CABD200B4D772 /* MainCheckers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainCheckers.storyboard; sourceTree = "<group>"; };
 		F3CEB71D207CABF500B4D772 /* MainCheckersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCheckersViewController.swift; sourceTree = "<group>"; };
 		F3F62E952084E2A100A674BE /* StartingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingViewController.swift; sourceTree = "<group>"; };
@@ -320,6 +324,7 @@
 		FE4D552B2069023F00ABF6C1 /* ticTacToeEx */ = {
 			isa = PBXGroup;
 			children = (
+				F32C76582093231500FAC153 /* CoreDataController.swift */,
 				FE4D552C2069023F00ABF6C1 /* AppDelegate.swift */,
 				C433A56D206D2D1400C2888F /* User.swift */,
 				C445E5752074D00B00241182 /* Message.swift */,
@@ -329,6 +334,7 @@
 				FE4D55332069024000ABF6C1 /* Assets.xcassets */,
 				FE4D55352069024000ABF6C1 /* LaunchScreen.storyboard */,
 				C46A2E982087730200DD38B6 /* GoogleService-Info.plist */,
+				F32C765520931F4D00FAC153 /* CoreData.xcdatamodeld */,
 				FE4D55382069024000ABF6C1 /* Info.plist */,
 				FEC8A0A3206B9AC20031001B /* Fonts */,
 				C433A572206D356B00C2888F /* Avatar */,
@@ -534,6 +540,7 @@
 				C41036ED206E284E00423D7D /* LobbyViewController.swift in Sources */,
 				FE4D552F2069024000ABF6C1 /* MainViewController.swift in Sources */,
 				FEAE5096208F16CC00AEB1BB /* SideMenuTableViewCell.swift in Sources */,
+				F32C765720931F4D00FAC153 /* CoreData.xcdatamodeld in Sources */,
 				FE1B8AA7207CEC6000960EEB /* RankingDamaViewController.swift in Sources */,
 				FE4D552D2069023F00ABF6C1 /* AppDelegate.swift in Sources */,
 				FEC8A08D206B899D0031001B /* RankingViewController.swift in Sources */,
@@ -542,6 +549,7 @@
 				C445E5782075057100241182 /* PhotoProfile.swift in Sources */,
 				C4413CA62088815700286EF2 /* ConvertOptionalString.swift in Sources */,
 				C4103700206E84DE00423D7D /* EditProfileViewController.swift in Sources */,
+				F32C76592093231500FAC153 /* CoreDataController.swift in Sources */,
 				FEC8A084206B849C0031001B /* SignInViewController.swift in Sources */,
 				F31876322085EBEE00482CAD /* GameCheckersViewController.swift in Sources */,
 				FEC8A089206B87AA0031001B /* SignUpViewController.swift in Sources */,
@@ -768,6 +776,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F32C765520931F4D00FAC153 /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F32C765620931F4D00FAC153 /* CoreData.xcdatamodel */,
+			);
+			currentVersion = F32C765620931F4D00FAC153 /* CoreData.xcdatamodel */;
+			path = CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FE4D55212069023F00ABF6C1 /* Project object */;
 }

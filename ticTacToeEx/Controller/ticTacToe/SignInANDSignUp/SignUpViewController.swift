@@ -16,7 +16,7 @@ import Firebase
 import Alamofire
 
 
-class SignUpViewController: UIViewController{
+class SignUpViewController: UIViewController, UITextFieldDelegate{
     
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
@@ -50,10 +50,24 @@ class SignUpViewController: UIViewController{
     
     @IBOutlet weak var stackView: UIStackView!
     
+    @IBOutlet weak var remindMeButton: UIButton!
+    
+    @IBOutlet weak var remindMeLabel: UILabel!
+    
+    var remindUser: RemindUser?
     
     @IBAction func signInButton(_ sender: Any) {
         
         dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func remindMeAction(_ sender: UIButton) {
+        if sender.titleLabel?.text == " "{
+            sender.setTitle("√", for: .normal)
+        }else{
+            sender.setTitle(" ", for: .normal)
+        }
     }
     
     @IBAction func submitButton(_ sender: Any) {
@@ -128,8 +142,10 @@ class SignUpViewController: UIViewController{
                                     [   "nickname" : "\(name)",
                                         "email" : "\(ConvertOptionalString.convert(self.emailTextField.text))",
                                         "stato" : "online",
-                                        "vittorie" : "0",
-                                        "sconfitte" : "0",
+                                        "vittorieTris" : "0",
+                                        "vittorieDama" : "0",
+                                        "sconfitteTris" : "0",
+                                        "sconfitteDama" : "0",
                                         "invitatoDa" : "",
                                         "invitoAccettato" : "",
                                         "loggato" : "Si" ])
@@ -164,6 +180,17 @@ class SignUpViewController: UIViewController{
                         }))
                         
                         self.present(alert, animated: true)
+                        
+                        if self.remindMeButton.titleLabel?.text == "√"{
+                            if self.remindUser == nil{
+                                CoreDataController.addRemindUser(mail: self.emailTextField.text!, password: self.passTextField.text!)
+                                CoreDataController.saveContext()
+                            }else{
+                                self.remindUser?.mail = self.emailTextField.text!
+                                self.remindUser?.pass = self.passTextField.text!
+                                CoreDataController.saveContext()
+                            }
+                        }
                         
                     } else {
                         
@@ -246,6 +273,8 @@ class SignUpViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        remindUser = CoreDataController.fetchRemindUser()
         
         self.hideKeyboardWhenTappedAround()
         
@@ -555,7 +584,73 @@ class SignUpViewController: UIViewController{
         
         submitButton.titleLabel?.font = UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.height / 12)
         
+        //remindeMe Label
         
+        remindMeLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        //        remindMeLabel.layer.borderWidth = 0.5
+        //        remindMeLabel.layer.borderColor = UIColor.white.cgColor
+        
+        //left
+        NSLayoutConstraint(item: remindMeLabel, attribute: .left, relatedBy: .equal, toItem: passTextField, attribute: .left, multiplier: 1, constant: 0).isActive = true
+        
+        //top
+        NSLayoutConstraint(item: remindMeLabel, attribute: .top, relatedBy: .equal, toItem: passTextField, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 60).isActive = true
+        
+        //right
+        NSLayoutConstraint(item: remindMeLabel, attribute: .right, relatedBy: .equal, toItem: remindMeButton, attribute: .left, multiplier: 1, constant: -10).isActive = true
+        
+        //height
+        NSLayoutConstraint(item: remindMeLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 20).isActive = true
+        
+        
+        remindMeLabel.baselineAdjustment = .alignCenters
+        
+        remindMeLabel.textColor = UIColor.white
+        
+        remindMeLabel.text = "Remind Me"
+        remindMeLabel.font = UIFont(name: "raleway", size: 20)
+        
+        remindMeLabel.textAlignment = .right
+        
+        
+        //remindMe Button
+        remindMeButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        remindMeButton.layer.borderWidth = 0.5
+        remindMeButton.layer.borderColor = UIColor.white.cgColor
+        
+        //height
+        NSLayoutConstraint(item: remindMeButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 20).isActive = true
+        
+        //width
+        NSLayoutConstraint(item: remindMeButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 20).isActive = true
+        
+        //top
+        NSLayoutConstraint(item: remindMeButton, attribute: .top, relatedBy: .equal, toItem: passTextField, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 60).isActive = true
+        
+        //right
+        NSLayoutConstraint(item: remindMeButton, attribute: .right, relatedBy: .equal, toItem: passTextField, attribute: .right, multiplier: 1, constant: -UIScreen.main.bounds.width / 6).isActive = true
+        
+        remindMeButton.titleLabel?.baselineAdjustment = .alignCenters
+        
+        //        remindMeButton.titleLabel?.textColor = UIColor.white
+        
+        
+        remindMeButton.setTitleColor(UIColor.white, for: .normal)
+        remindMeButton.setTitle(" ", for: .normal)
+        
+        //        remindMeButton.titleLabel?.text = " "
+        
+        remindMeButton.titleLabel?.font = UIFont(name: "raleway", size: 20)
+        
+        
+        
+        
+        //DELEGATE
+        
+        emailTextField.delegate = self
+        passTextField.delegate = self
         
         
         
@@ -641,5 +736,14 @@ class SignUpViewController: UIViewController{
                 print(encodingError)
             }
         })
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailTextField{
+            passTextField.becomeFirstResponder()
+        }else{
+            textField.resignFirstResponder()
+        }
+        return true
     }
 }

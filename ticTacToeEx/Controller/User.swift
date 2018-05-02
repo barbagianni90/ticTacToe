@@ -14,8 +14,10 @@ class User {
     var id: String = ""
     var nickName: String = ""
     var email: String = ""
-    var vittorie: Int = 0
-    var sconfitte: Int = 0
+    var vittorieTris: Int = 0
+    var vittorieDama: Int = 0
+    var sconfitteTris: Int = 0
+    var sconfitteDama: Int = 0
     var stato: String = ""
     var image: UIImage?
     var nameImage: String = ""
@@ -24,8 +26,10 @@ class User {
     init() {
         nickName = ""
         email = ""
-        vittorie = 0
-        sconfitte = 0
+        vittorieTris = 0
+        vittorieDama = 0
+        sconfitteTris = 0
+        sconfitteDama = 0
         stato = "offline"
     }
     init(_ nickName: String) {
