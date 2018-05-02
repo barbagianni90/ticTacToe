@@ -317,27 +317,33 @@ class SignInViewController: UIViewController,UITextFieldDelegate{
 //        remindMeLabel.layer.borderWidth = 0.5
 //        remindMeLabel.layer.borderColor = UIColor.white.cgColor
         
-        //left
-        NSLayoutConstraint(item: remindMeLabel, attribute: .left, relatedBy: .equal, toItem: passTextField, attribute: .left, multiplier: 1, constant: 0).isActive = true
+//        //left
+//        NSLayoutConstraint(item: remindMeLabel, attribute: .left, relatedBy: .equal, toItem: passTextField, attribute: .left, multiplier: 1, constant: 0).isActive = true
+        
+        NSLayoutConstraint(item: remindMeLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        
         
         //top
-        NSLayoutConstraint(item: remindMeLabel, attribute: .top, relatedBy: .equal, toItem: passTextField, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 60).isActive = true
+        NSLayoutConstraint(item: remindMeLabel, attribute: .top, relatedBy: .equal, toItem: passTextField, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 80).isActive = true
         
         //right
-        NSLayoutConstraint(item: remindMeLabel, attribute: .right, relatedBy: .equal, toItem: remindMeButton, attribute: .left, multiplier: 1, constant: -10).isActive = true
+//        NSLayoutConstraint(item: remindMeLabel, attribute: .right, relatedBy: .equal, toItem: remindMeButton, attribute: .left, multiplier: 1, constant: -10).isActive = true
+        
+        NSLayoutConstraint(item: remindMeLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 4).isActive = true
         
         //height
-        NSLayoutConstraint(item: remindMeLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 20).isActive = true
+        NSLayoutConstraint(item: remindMeLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height / 40).isActive = true
         
         
         remindMeLabel.baselineAdjustment = .alignCenters
+        remindMeLabel.adjustsFontSizeToFitWidth = true
         
-        remindMeLabel.textColor = UIColor.white
+        let remindLabelAttribute = [NSAttributedStringKey.font: UIFont(name: "Raleway-Light", size: remindMeLabel.frame.width)]
+        let remindLabelText = "Remind me"
+        let AttributeRemindLabel = NSMutableAttributedString(string: remindLabelText, attributes: remindLabelAttribute)
+        remindMeLabel.attributedText = AttributeRemindLabel
         
-        remindMeLabel.text = "Remind Me"
-        remindMeLabel.font = UIFont(name: "raleway", size: 20)
-       
-        remindMeLabel.textAlignment = .right
+        
         
         
         //remindMe Button
@@ -347,27 +353,25 @@ class SignInViewController: UIViewController,UITextFieldDelegate{
         remindMeButton.layer.borderColor = UIColor.white.cgColor
         
         //height
-        NSLayoutConstraint(item: remindMeButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 20).isActive = true
+        NSLayoutConstraint(item: remindMeButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height / 50).isActive = true
         
         //width
-        NSLayoutConstraint(item: remindMeButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 20).isActive = true
+        NSLayoutConstraint(item: remindMeButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height / 50).isActive = true
         
         //top
         NSLayoutConstraint(item: remindMeButton, attribute: .top, relatedBy: .equal, toItem: passTextField, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 60).isActive = true
         
         //right
-        NSLayoutConstraint(item: remindMeButton, attribute: .right, relatedBy: .equal, toItem: passTextField, attribute: .right, multiplier: 1, constant: -UIScreen.main.bounds.width / 6).isActive = true
+        NSLayoutConstraint(item: remindMeButton, attribute: .left, relatedBy: .equal, toItem: remindMeLabel, attribute: .right, multiplier: 1, constant: UIScreen.main.bounds.width / 50).isActive = true
         
         remindMeButton.titleLabel?.baselineAdjustment = .alignCenters
+        remindMeButton.titleLabel?.adjustsFontSizeToFitWidth = true
         
 //        remindMeButton.titleLabel?.textColor = UIColor.white
         
         
         remindMeButton.setTitleColor(UIColor.white, for: .normal)
         remindMeButton.setTitle(" ", for: .normal)
-        
-//        remindMeButton.titleLabel?.text = " "
-        
         remindMeButton.titleLabel?.font = UIFont(name: "raleway", size: 20)
     
         
