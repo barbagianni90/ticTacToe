@@ -367,7 +367,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
 //                emailLabel.layer.borderWidth = 0.5
 //                emailLabel.layer.borderColor = UIColor.black.cgColor
         
-        NSLayoutConstraint(item: emailLabel, attribute: .top, relatedBy: .equal, toItem: signupLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 20).isActive = true
+        NSLayoutConstraint(item: emailLabel, attribute: .top, relatedBy: .equal, toItem: signupLabel, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 30).isActive = true
         
         
 //        NSLayoutConstraint(item: emailLabel, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: UIScreen.main.bounds.width / 15).isActive = true
@@ -411,7 +411,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         //        passLabel.layer.borderWidth = 0.5
         //        passLabel.layer.borderColor = UIColor.black.cgColor
         
-        NSLayoutConstraint(item: passLabel, attribute: .top, relatedBy: .equal, toItem: emailTextField, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 20).isActive = true
+        NSLayoutConstraint(item: passLabel, attribute: .top, relatedBy: .equal, toItem: emailTextField, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 40).isActive = true
         
         
         NSLayoutConstraint(item: passLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
@@ -453,7 +453,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         avatarLabel.translatesAutoresizingMaskIntoConstraints = false
         
         
-        NSLayoutConstraint(item: avatarLabel, attribute: .top, relatedBy: .equal, toItem: passTextField, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 38).isActive = true
+        NSLayoutConstraint(item: avatarLabel, attribute: .top, relatedBy: .equal, toItem: remindMeButton, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 35).isActive = true
         
         
         NSLayoutConstraint(item: avatarLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
@@ -593,27 +593,29 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         //        remindMeLabel.layer.borderWidth = 0.5
         //        remindMeLabel.layer.borderColor = UIColor.white.cgColor
         
-        //left
-        NSLayoutConstraint(item: remindMeLabel, attribute: .left, relatedBy: .equal, toItem: passTextField, attribute: .left, multiplier: 1, constant: 0).isActive = true
+  
         
         //top
-        NSLayoutConstraint(item: remindMeLabel, attribute: .top, relatedBy: .equal, toItem: passTextField, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 60).isActive = true
+        NSLayoutConstraint(item: remindMeLabel, attribute: .top, relatedBy: .equal, toItem: passTextField, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 80).isActive = true
         
-        //right
-        NSLayoutConstraint(item: remindMeLabel, attribute: .right, relatedBy: .equal, toItem: remindMeButton, attribute: .left, multiplier: 1, constant: -10).isActive = true
+        //
+        NSLayoutConstraint(item: remindMeLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        
+        
+        
+        NSLayoutConstraint(item: remindMeLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.width / 4).isActive = true
         
         //height
-        NSLayoutConstraint(item: remindMeLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 20).isActive = true
+        NSLayoutConstraint(item: remindMeLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height / 40).isActive = true
         
         
         remindMeLabel.baselineAdjustment = .alignCenters
+        remindMeLabel.adjustsFontSizeToFitWidth = true
         
-        remindMeLabel.textColor = UIColor.white
-        
-        remindMeLabel.text = "Remind Me"
-        remindMeLabel.font = UIFont(name: "raleway", size: 20)
-        
-        remindMeLabel.textAlignment = .right
+        let remindLabelAttribute = [NSAttributedStringKey.font: UIFont(name: "Raleway-Light", size: remindMeLabel.frame.width)]
+        let remindLabelText = "Remind me"
+        let AttributeRemindLabel = NSMutableAttributedString(string: remindLabelText, attributes: remindLabelAttribute)
+        remindMeLabel.attributedText = AttributeRemindLabel
         
         
         //remindMe Button
@@ -622,17 +624,19 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         remindMeButton.layer.borderWidth = 0.5
         remindMeButton.layer.borderColor = UIColor.white.cgColor
         
+        
+        
         //height
-        NSLayoutConstraint(item: remindMeButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 20).isActive = true
+        NSLayoutConstraint(item: remindMeButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height / 50).isActive = true
         
         //width
-        NSLayoutConstraint(item: remindMeButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 20).isActive = true
+        NSLayoutConstraint(item: remindMeButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: UIScreen.main.bounds.height / 50).isActive = true
         
         //top
         NSLayoutConstraint(item: remindMeButton, attribute: .top, relatedBy: .equal, toItem: passTextField, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 60).isActive = true
         
         //right
-        NSLayoutConstraint(item: remindMeButton, attribute: .right, relatedBy: .equal, toItem: passTextField, attribute: .right, multiplier: 1, constant: -UIScreen.main.bounds.width / 6).isActive = true
+        NSLayoutConstraint(item: remindMeButton, attribute: .left, relatedBy: .equal, toItem: remindMeLabel, attribute: .right, multiplier: 1, constant: UIScreen.main.bounds.width / 50).isActive = true
         
         remindMeButton.titleLabel?.baselineAdjustment = .alignCenters
         
