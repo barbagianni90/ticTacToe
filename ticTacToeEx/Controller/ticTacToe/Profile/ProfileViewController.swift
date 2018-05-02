@@ -241,15 +241,15 @@ class ProfileViewController: UIViewController {
         let percentualeVittorieTris: Float = ((vittorieTrisDouble / (vittorieTrisDouble + sconfitteTrisDouble))*100)
         let percentualeVittorieDama: Float = ((vittorieDamaDouble / (vittorieDamaDouble + sconfitteDamaDouble))*100)
         
-        var string: String = "La blablablòa: "
+        let string: String = "La blablablòa: "
         
-        var concatTris: String = String(format: "%.2f", percentualeVittorieTris)
-        var concatDama: String = String(format: "%.2f", percentualeVittorieDama)
+        let concatTris: String = String(format: "%.2f", percentualeVittorieTris)
+        let concatDama: String = String(format: "%.2f", percentualeVittorieDama)
         
-        var perc: String = "%"
+        let perc: String = "%"
         
-        var finalTris = string + concatTris + perc
-        var finalDama = string + concatDama + perc
+        let finalTris = string + concatTris + perc
+        let finalDama = string + concatDama + perc
         
         self.stateLabelTris.text = finalTris
         self.stateLabelDama.text = finalDama

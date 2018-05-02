@@ -72,7 +72,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="64" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlL-aA-hfa" userLabel="Media">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="64" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlL-aA-hfa" userLabel="Score">
                                                             <rect key="frame" x="144" y="0.0" width="50" height="25"/>
                                                             <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -98,9 +98,11 @@
                                         <color key="backgroundColor" white="1" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="imagePlayer" destination="WUE-Z1-cVo" id="kmA-yR-uJf"/>
-                                            <outlet property="nickNameLabel" destination="V3D-48-fnY" id="wXH-Ax-QbA"/>
-                                            <outlet property="scoreLabel" destination="fEo-Yc-Yjm" id="Zln-xT-XW7"/>
+                                            <outlet property="nickNameLabel" destination="V3D-48-fnY" id="4Iy-oA-voC"/>
+                                            <outlet property="sconfitteLabel" destination="Twj-0b-aDn" id="L3w-hC-wCi"/>
+                                            <outlet property="scoreLabel" destination="rlL-aA-hfa" id="UY9-k4-B9e"/>
                                             <outlet property="stackView" destination="lHO-aF-zsd" id="dYB-g6-nEj"/>
+                                            <outlet property="vittorieLabel" destination="fEo-Yc-Yjm" id="Blf-cv-FmL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -197,11 +199,11 @@
                         <outlet property="giocatoreLabel" destination="48k-uH-w6s" id="PCu-Rp-gsI"/>
                         <outlet property="homeButton" destination="JcH-3b-bVr" id="oPz-WP-Ram"/>
                         <outlet property="labelFissa" destination="edt-Ul-fPN" id="uHE-xq-Pu9"/>
-                        <outlet property="mediaLabel" destination="yJn-mT-cbC" id="X7a-Rv-9oO"/>
+                        <outlet property="mediaLabel" destination="yJn-mT-cbC" id="SQ2-Iv-aoc"/>
                         <outlet property="posizioneLabel" destination="pVV-sQ-ErE" id="erU-HY-epb"/>
                         <outlet property="punteggioLabel" destination="f0l-nD-iyD" id="yPc-Vl-LMs"/>
                         <outlet property="rankingLabel" destination="nHc-3x-lOI" id="AkU-pp-IKX"/>
-                        <outlet property="sconfitteLabel" destination="rRp-9f-b8N" id="n4F-Ut-mAc"/>
+                        <outlet property="sconLabel" destination="rRp-9f-b8N" id="btZ-Xy-dyT"/>
                         <outlet property="segmented" destination="ASh-II-0tb" id="69K-ba-0QI"/>
                         <outlet property="tableRanking" destination="YO0-mk-1iM" id="ASr-8D-4fm"/>
                         <outlet property="titleStackview" destination="aFz-SQ-rGY" id="EuF-R2-909"/>

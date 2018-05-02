@@ -13,6 +13,8 @@ class CustomCellRanking: UITableViewCell {
     @IBOutlet weak var nickNameLabel: UILabel!
     
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var vittorieLabel: UILabel!
+    @IBOutlet weak var sconfitteLabel: UILabel!
     
     @IBOutlet weak var imagePlayer: UIImageView!
     
