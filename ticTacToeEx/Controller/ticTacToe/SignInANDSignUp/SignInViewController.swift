@@ -12,7 +12,9 @@ import Firebase
 import Alamofire
 
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController,UITextFieldDelegate{
+    
+    
     
     
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
@@ -47,10 +49,25 @@ class SignInViewController: UIViewController {
     
     @IBOutlet weak var backgroundImage: UIImageView!
     
+    @IBOutlet weak var remindMeLabel: UILabel!
+    
+    @IBOutlet weak var remindMeButton: UIButton!
+    
+    
+    
+    var remindUser: RemindUser?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.hideKeyboardWhenTappedAround()
+        
+        remindUser = CoreDataController.fetchRemindUser()
+        
+        if remindUser != nil{
+            emailTextField.text = remindUser?.mail
+            passTextField.text = remindUser?.pass
+        }
         
         
         //set constraints home button
@@ -293,7 +310,72 @@ class SignInViewController: UIViewController {
         loginButton.setTitle("Login", for: .normal)
         loginButton.titleLabel?.font = UIFont(name: "Roboto-Regular", size: UIScreen.main.bounds.height / 5)
         
+        //remindeMe Label
         
+        remindMeLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+//        remindMeLabel.layer.borderWidth = 0.5
+//        remindMeLabel.layer.borderColor = UIColor.white.cgColor
+        
+        //left
+        NSLayoutConstraint(item: remindMeLabel, attribute: .left, relatedBy: .equal, toItem: passTextField, attribute: .left, multiplier: 1, constant: 0).isActive = true
+        
+        //top
+        NSLayoutConstraint(item: remindMeLabel, attribute: .top, relatedBy: .equal, toItem: passTextField, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 60).isActive = true
+        
+        //right
+        NSLayoutConstraint(item: remindMeLabel, attribute: .right, relatedBy: .equal, toItem: remindMeButton, attribute: .left, multiplier: 1, constant: -10).isActive = true
+        
+        //height
+        NSLayoutConstraint(item: remindMeLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 20).isActive = true
+        
+        
+        remindMeLabel.baselineAdjustment = .alignCenters
+        
+        remindMeLabel.textColor = UIColor.white
+        
+        remindMeLabel.text = "Remind Me"
+        remindMeLabel.font = UIFont(name: "raleway", size: 20)
+       
+        remindMeLabel.textAlignment = .right
+        
+        
+        //remindMe Button
+        remindMeButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        remindMeButton.layer.borderWidth = 0.5
+        remindMeButton.layer.borderColor = UIColor.white.cgColor
+        
+        //height
+        NSLayoutConstraint(item: remindMeButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 20).isActive = true
+        
+        //width
+        NSLayoutConstraint(item: remindMeButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 20).isActive = true
+        
+        //top
+        NSLayoutConstraint(item: remindMeButton, attribute: .top, relatedBy: .equal, toItem: passTextField, attribute: .bottom, multiplier: 1, constant: UIScreen.main.bounds.height / 60).isActive = true
+        
+        //right
+        NSLayoutConstraint(item: remindMeButton, attribute: .right, relatedBy: .equal, toItem: passTextField, attribute: .right, multiplier: 1, constant: -UIScreen.main.bounds.width / 6).isActive = true
+        
+        remindMeButton.titleLabel?.baselineAdjustment = .alignCenters
+        
+//        remindMeButton.titleLabel?.textColor = UIColor.white
+        
+        
+        remindMeButton.setTitleColor(UIColor.white, for: .normal)
+        remindMeButton.setTitle(" ", for: .normal)
+        
+//        remindMeButton.titleLabel?.text = " "
+        
+        remindMeButton.titleLabel?.font = UIFont(name: "raleway", size: 20)
+    
+        
+        
+        
+        //textField delegate
+        emailTextField.delegate = self
+        passTextField.delegate = self
         
         
         
@@ -392,6 +474,17 @@ class SignInViewController: UIViewController {
                                         ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
                                         ref.child("Players").child("\(MainViewController.user.id)").child("loggato").setValue("Si")
                                         
+                                        if self.remindMeButton.titleLabel?.text == "√"{
+                                            if self.remindUser == nil{
+                                                CoreDataController.addRemindUser(mail: self.emailTextField.text!, password: self.passTextField.text!)
+                                                CoreDataController.saveContext()
+                                            }else{
+                                                self.remindUser?.mail = self.emailTextField.text!
+                                                self.remindUser?.pass = self.passTextField.text!
+                                                CoreDataController.saveContext()
+                                            }
+                                        }
+                                        
                                         self.activityIndicator.stopAnimating()
                                         UIApplication.shared.endIgnoringInteractionEvents()
 
@@ -436,5 +529,23 @@ class SignInViewController: UIViewController {
         emailTextField.becomeFirstResponder()
     }
     
+    @IBAction func remindMeAction(_ sender: UIButton) {
+        if sender.titleLabel?.text == " "{
+            sender.setTitle("√", for: .normal)
+        }else{
+            sender.setTitle(" ", for: .normal)
+        }
+    }
     
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailTextField{
+            passTextField.becomeFirstResponder()
+        }else{
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+
 }
