@@ -306,7 +306,7 @@ class GameCheckersViewController: UIViewController {
                 self.cellsMustEat.updateValue(tmpFinalCells, forKey: casella.titleLabel?.text as! String)
             }
         }
-        else if x - 2 >= 0 && y - 2 <= 0 && y + 2 <= 7 {
+        if x - 2 >= 0 && y - 2 <= 0 && y + 2 <= 7 {
             
             var tmpFinalCells: [String] = []
             
@@ -319,7 +319,7 @@ class GameCheckersViewController: UIViewController {
                 self.cellsMustEat.updateValue(tmpFinalCells, forKey: casella.titleLabel?.text as! String)
             }
         }
-        else if x - 2 >= 0 && y - 2 >= 0 && y + 2 >= 7 {
+        if x - 2 >= 0 && y - 2 >= 0 && y + 2 >= 7 {
             
             var tmpFinalCells: [String] = []
             
@@ -351,7 +351,7 @@ class GameCheckersViewController: UIViewController {
                 self.cellsMustEat.updateValue(tmpFinalCells, forKey: casella.titleLabel?.text as! String)
             }
         }
-        else if x - 2 >= 0 && y - 2 <= 0 && y + 2 <= 7 {
+        if x - 2 >= 0 && y - 2 <= 0 && y + 2 <= 7 {
             
             var tmpFinalCells: [String] = []
             
@@ -364,7 +364,7 @@ class GameCheckersViewController: UIViewController {
                 self.cellsMustEat.updateValue(tmpFinalCells, forKey: casella.titleLabel?.text as! String)
             }
         }
-        else if x - 2 >= 0 && y - 2 >= 0 && y + 2 >= 7 {
+        if x - 2 >= 0 && y - 2 >= 0 && y + 2 >= 7 {
             
             var tmpFinalCells: [String] = []
             
@@ -376,7 +376,7 @@ class GameCheckersViewController: UIViewController {
                 self.cellsMustEat.updateValue(tmpFinalCells, forKey: casella.titleLabel?.text as! String)
             }
         }
-        else if x + 2 <= 7 && y - 2 >= 0 && y + 2 <= 7 {
+        if x + 2 <= 7 && y - 2 >= 0 && y + 2 <= 7 {
             
             var tmpFinalCells: [String] = []
             
@@ -393,7 +393,7 @@ class GameCheckersViewController: UIViewController {
             }
         }
             
-        else if x + 2 >= 0 && y - 2 <= 0 && y + 2 <= 7 {
+        if x + 2 >= 0 && y - 2 <= 0 && y + 2 <= 7 {
             
             var tmpFinalCells: [String] = []
             
@@ -407,7 +407,7 @@ class GameCheckersViewController: UIViewController {
             }
         }
             
-        else if x + 2 >= 0 && y - 2 >= 0 && y + 2 >= 7 {
+        if x + 2 >= 0 && y - 2 >= 0 && y + 2 >= 7 {
             
             var tmpFinalCells: [String] = []
             
@@ -685,7 +685,7 @@ class GameCheckersViewController: UIViewController {
             ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
             ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
             
-            ref.child("\(MainViewController.user.nickName)Damiera").removeAllObservers()
+            ref.child("\(MainViewController.user.nickName)Damiera").child("Mossa").removeAllObservers()
             ref.child("\(MainViewController.user.nickName)Damiera").removeValue()
             ref.child("Utility\(self.nomeTabella)").removeAllObservers()
             
@@ -707,7 +707,7 @@ class GameCheckersViewController: UIViewController {
             ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
             ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
             
-            ref.child("\(MainViewController.user.nickName)Damiera").removeAllObservers()
+            ref.child("\(MainViewController.user.nickName)Damiera").child("Mossa").removeAllObservers()
             ref.child("\(MainViewController.user.nickName)Damiera").removeValue()
             ref.child("Utility\(self.nomeTabella)").removeAllObservers()
             ref.child("Utility\(self.nomeTabella)").removeValue()

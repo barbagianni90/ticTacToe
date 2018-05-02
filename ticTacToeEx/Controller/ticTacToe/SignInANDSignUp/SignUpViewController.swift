@@ -215,6 +215,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
                 
                 let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 alertController.addAction(defaultAction)
+                
+                self.present(alertController, animated: true, completion: nil)
             }
         }
     }
