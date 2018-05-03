@@ -1,0 +1,54 @@
+
+/* Class = "UIButton"; normalTitle = "1:2"; ObjectID = "50A-BV-sHQ"; */
+"50A-BV-sHQ.normalTitle" = "1:2";
+
+/* Class = "UILabel"; text = "Stato"; ObjectID = "72u-cO-2eZ"; */
+"72u-cO-2eZ.text" = "Stato";
+
+/* Class = "UIButton"; normalTitle = "2:1"; ObjectID = "FD1-ch-a7b"; */
+"FD1-ch-a7b.normalTitle" = "2:1";
+
+/* Class = "UILabel"; text = "Giocatore"; ObjectID = "K0P-2q-Pfi"; */
+"K0P-2q-Pfi.text" = "Giocatore";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "NGb-MK-P3b"; */
+"NGb-MK-P3b.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "0:1"; ObjectID = "Xgi-7L-RzA"; */
+"Xgi-7L-RzA.normalTitle" = "0:1";
+
+/* Class = "UIButton"; normalTitle = "0:0"; ObjectID = "bFH-js-ame"; */
+"bFH-js-ame.normalTitle" = "0:0";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bUh-zF-U6s"; */
+"bUh-zF-U6s.text" = "Label";
+
+/* Class = "UILabel"; text = "Online"; ObjectID = "dzf-mu-po5"; */
+"dzf-mu-po5.text" = "Online";
+
+/* Class = "UIButton"; normalTitle = "2:2"; ObjectID = "eqn-ZX-KJG"; */
+"eqn-ZX-KJG.normalTitle" = "2:2";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gqV-OH-usy"; */
+"gqV-OH-usy.text" = "Label";
+
+/* Class = "UILabel"; text = "Stark92"; ObjectID = "hXZ-kj-cCG"; */
+"hXZ-kj-cCG.text" = "Stark92";
+
+/* Class = "UIButton"; normalTitle = "Home"; ObjectID = "i6O-PV-O4j"; */
+"i6O-PV-O4j.normalTitle" = "Home";
+
+/* Class = "UIButton"; normalTitle = "2:0"; ObjectID = "kyE-GO-hte"; */
+"kyE-GO-hte.normalTitle" = "2:0";
+
+/* Class = "UIButton"; normalTitle = "1:1"; ObjectID = "lZB-KW-NdP"; */
+"lZB-KW-NdP.normalTitle" = "1:1";
+
+/* Class = "UIButton"; normalTitle = "0:2"; ObjectID = "yQI-ax-sTb"; */
+"yQI-ax-sTb.normalTitle" = "0:2";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zNH-gS-c7w"; */
+"zNH-gS-c7w.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "1:0"; ObjectID = "zOw-zM-VyU"; */
+"zOw-zM-VyU.normalTitle" = "1:0";

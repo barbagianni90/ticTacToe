@@ -1,0 +1,24 @@
+
+/* Class = "UIButton"; normalTitle = "Log out"; ObjectID = "5SM-Cs-gbs"; */
+"5SM-Cs-gbs.normalTitle" = "Log out";
+
+/* Class = "UIButton"; normalTitle = "Ranking"; ObjectID = "6Hb-Vd-dNN"; */
+"6Hb-Vd-dNN.normalTitle" = "Classifica";
+
+/* Class = "UIButton"; normalTitle = "Start Game"; ObjectID = "BwO-M9-pEi"; */
+"BwO-M9-pEi.normalTitle" = "Gioca";
+
+/* Class = "UIButton"; normalTitle = "Sign in"; ObjectID = "IDn-w2-xMD"; */
+"IDn-w2-xMD.normalTitle" = "Sign in";
+
+/* Class = "UIButton"; normalTitle = "Options"; ObjectID = "ePS-Wg-ri0"; */
+"ePS-Wg-ri0.normalTitle" = "Options";
+
+/* Class = "UIButton"; normalTitle = "Home"; ObjectID = "jM4-3b-EON"; */
+"jM4-3b-EON.normalTitle" = "Home";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ode-OO-V6w"; */
+"ode-OO-V6w.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "q17-lu-dXO"; */
+"q17-lu-dXO.normalTitle" = "Button";

@@ -1,0 +1,12 @@
+
+/* Class = "UIButton"; normalTitle = "Menu"; ObjectID = "7r6-ZC-Pyb"; */
+"7r6-ZC-Pyb.normalTitle" = "Menu";
+
+/* Class = "UILabel"; text = "Sign In"; ObjectID = "Aj0-Yi-why"; */
+"Aj0-Yi-why.text" = "Registrati";
+
+/* Class = "UILabel"; text = "Profile"; ObjectID = "Oc6-GL-BRU"; */
+"Oc6-GL-BRU.text" = "Profilo";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "qO9-3t-CqM"; */
+"qO9-3t-CqM.text" = "Lingua";

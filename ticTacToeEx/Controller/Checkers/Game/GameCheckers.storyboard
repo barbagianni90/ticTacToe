@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Raleway-Light.ttf">
+            <string>Raleway-Light</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Game Checkers View Controller-->
+        <scene sceneID="UTn-aZ-QG5">
+            <objects>
+                <viewController storyboardIdentifier="GameCheckID" id="8Az-MP-R2l" customClass="GameCheckersViewController" customModule="ticTacToeEx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VOr-L4-1ex">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KXc-ed-2GA" userLabel="Chat View">
+                                <rect key="frame" x="18" y="387" width="339" height="262"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hBL-0j-t6C">
+                                        <rect key="frame" x="-9" y="8" width="353" height="272"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="separatorInset" minX="2000" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellEnemy" rowHeight="130" id="GTQ-aZ-eOA" customClass="CustomEnemyChatCell" customModule="ticTacToeEx" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="353" height="130"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GTQ-aZ-eOA" id="ilQ-8Q-5A8">
+                                                    <rect key="frame" x="0.0" y="0.0" width="353" height="129.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Boj-sL-DnI">
+                                                            <rect key="frame" x="15" y="1" width="45" height="45"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="45" id="bmw-sx-KQQ"/>
+                                                                <constraint firstAttribute="width" constant="45" id="h57-On-L15"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vx-Ss-DRP">
+                                                            <rect key="frame" x="63" y="1" width="205" height="45"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="45" id="f7Q-e4-7Hf"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <size key="shadowOffset" width="0.0" height="1"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLh-s6-bya">
+                                                            <rect key="frame" x="15" y="54" width="253" height="65"/>
+                                                            <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="oLh-s6-bya" firstAttribute="leading" secondItem="ilQ-8Q-5A8" secondAttribute="leadingMargin" id="2QK-l1-BwK"/>
+                                                        <constraint firstItem="3vx-Ss-DRP" firstAttribute="top" secondItem="ilQ-8Q-5A8" secondAttribute="top" constant="1" id="3zo-35-4WR"/>
+                                                        <constraint firstItem="Boj-sL-DnI" firstAttribute="top" secondItem="ilQ-8Q-5A8" secondAttribute="top" constant="1" id="KaB-Ax-JJO"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="oLh-s6-bya" secondAttribute="trailing" constant="70" id="Mb2-8Y-sus"/>
+                                                        <constraint firstItem="Boj-sL-DnI" firstAttribute="leading" secondItem="ilQ-8Q-5A8" secondAttribute="leading" constant="15" id="N9s-nn-3qs"/>
+                                                        <constraint firstItem="oLh-s6-bya" firstAttribute="bottom" secondItem="ilQ-8Q-5A8" secondAttribute="bottomMargin" id="cxB-dI-tyz"/>
+                                                        <constraint firstAttribute="trailing" secondItem="3vx-Ss-DRP" secondAttribute="trailing" constant="85" id="ic8-C9-YD1"/>
+                                                        <constraint firstItem="oLh-s6-bya" firstAttribute="top" secondItem="3vx-Ss-DRP" secondAttribute="bottom" constant="8" id="pFS-lf-KNr"/>
+                                                        <constraint firstItem="oLh-s6-bya" firstAttribute="top" secondItem="Boj-sL-DnI" secondAttribute="bottom" constant="8" id="qJu-qX-nfV"/>
+                                                        <constraint firstItem="3vx-Ss-DRP" firstAttribute="leading" secondItem="Boj-sL-DnI" secondAttribute="trailing" constant="3" id="sX4-29-VWL"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <outlet property="imageProfile" destination="Boj-sL-DnI" id="x9D-6Q-isq"/>
+                                                    <outlet property="messageLabel" destination="oLh-s6-bya" id="o2h-cX-5oT"/>
+                                                    <outlet property="nickNameLabel" destination="3vx-Ss-DRP" id="Jog-5d-SEM"/>
+                                                </connections>
+                                            </tableViewCell>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellUser" rowHeight="162" id="Gho-cS-rmg" customClass="CustomUserChatCell" customModule="ticTacToeEx" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="158" width="353" height="162"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gho-cS-rmg" id="d1L-8a-zMD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="353" height="161.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NIC-ij-zXf">
+                                                            <rect key="frame" x="293" y="11" width="45" height="45"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="45" id="XHC-nt-md7"/>
+                                                                <constraint firstAttribute="width" constant="45" id="cPK-Dg-6Fi"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65Y-bA-cJy">
+                                                            <rect key="frame" x="80" y="70" width="258" height="81"/>
+                                                            <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWB-FV-mTa">
+                                                            <rect key="frame" x="80" y="11" width="205" height="45"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="45" id="oCZ-rS-l37"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <size key="shadowOffset" width="0.0" height="1"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="uWB-FV-mTa" firstAttribute="leading" secondItem="d1L-8a-zMD" secondAttribute="leadingMargin" constant="65" id="1jI-cC-lll"/>
+                                                        <constraint firstItem="uWB-FV-mTa" firstAttribute="top" secondItem="d1L-8a-zMD" secondAttribute="topMargin" id="CaF-pi-pAm"/>
+                                                        <constraint firstItem="65Y-bA-cJy" firstAttribute="leading" secondItem="d1L-8a-zMD" secondAttribute="leadingMargin" constant="65" id="K9f-8m-oEK"/>
+                                                        <constraint firstItem="65Y-bA-cJy" firstAttribute="bottom" secondItem="d1L-8a-zMD" secondAttribute="bottomMargin" id="bax-eN-RBi"/>
+                                                        <constraint firstItem="NIC-ij-zXf" firstAttribute="top" secondItem="d1L-8a-zMD" secondAttribute="topMargin" id="g8o-Oi-nY4"/>
+                                                        <constraint firstItem="65Y-bA-cJy" firstAttribute="trailing" secondItem="d1L-8a-zMD" secondAttribute="trailingMargin" id="ilX-an-AFv"/>
+                                                        <constraint firstItem="NIC-ij-zXf" firstAttribute="trailing" secondItem="d1L-8a-zMD" secondAttribute="trailingMargin" id="lZd-cS-N5F"/>
+                                                        <constraint firstItem="NIC-ij-zXf" firstAttribute="leading" secondItem="uWB-FV-mTa" secondAttribute="trailing" constant="8" id="rdq-WL-Iwi"/>
+                                                        <constraint firstItem="65Y-bA-cJy" firstAttribute="top" secondItem="uWB-FV-mTa" secondAttribute="bottom" constant="14" id="vmz-ZN-spq"/>
+                                                        <constraint firstItem="65Y-bA-cJy" firstAttribute="top" secondItem="NIC-ij-zXf" secondAttribute="bottom" constant="14" id="xvB-eR-7vh"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <outlet property="imageProfile" destination="NIC-ij-zXf" id="hIh-Tb-Jx1"/>
+                                                    <outlet property="messageLabel" destination="65Y-bA-cJy" id="jee-22-gJk"/>
+                                                    <outlet property="nickNameLabel" destination="uWB-FV-mTa" id="zpO-Ig-W1S"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gJ-qA-f6S">
+                                        <rect key="frame" x="293" y="6" width="30" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="X">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="xButtonAction:" destination="8Az-MP-R2l" eventType="touchUpInside" id="lWe-zL-wLe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Cbb-LD-JEz">
+                                <rect key="frame" x="3" y="51" width="240" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0Tp-JL-SmB">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" restorationIdentifier="Dama" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPs-kv-VOa">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="0:0">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="WxP-FF-Gx9"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TzD-1c-zsL">
+                                                <rect key="frame" x="30" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="0:1">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="luO-Ts-NJn"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7f-8f-k6w">
+                                                <rect key="frame" x="60" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="0:2">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="dRS-WM-DyV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8s-9N-QnC">
+                                                <rect key="frame" x="90" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="0:3">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="ujb-ZN-Z7R"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MsL-gC-q1Y">
+                                                <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="0:4">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="dFG-K3-Thh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lo8-st-X0z">
+                                                <rect key="frame" x="150" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="0:5">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="FCf-ce-mXD"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcn-IB-aAN">
+                                                <rect key="frame" x="180" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="0:6">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="HJE-IC-uIf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hcg-Ef-Zd3">
+                                                <rect key="frame" x="210" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="0:7">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="qIV-Fu-8mZ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Vl1-58-B3s">
+                                        <rect key="frame" x="0.0" y="30" width="240" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iK0-Qs-gad">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="1:0">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="Dyp-su-EWZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wl9-jZ-ELV">
+                                                <rect key="frame" x="30" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="1:1">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="Yrf-ZR-j2I"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QeQ-67-iQP">
+                                                <rect key="frame" x="60" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="1:2">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="q2N-JA-M68"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZy-mr-nNy" userLabel="1:3">
+                                                <rect key="frame" x="90" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="1:3">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="3Cq-JF-N0P"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Wb-a8-OQW">
+                                                <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="1:4">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="Mxz-5g-jI9"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHv-a9-IZg">
+                                                <rect key="frame" x="150" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="1:5">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="B0H-Sf-z1m"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYw-bo-yFV">
+                                                <rect key="frame" x="180" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="1:6">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="HT2-Da-ttS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JqV-Xs-Uc8">
+                                                <rect key="frame" x="210" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="1:7">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="ATh-uX-g4v"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="erj-Cs-cvc">
+                                        <rect key="frame" x="0.0" y="60" width="240" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5y-bm-aFk">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="2:0">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="3xF-df-Ac2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQs-np-SZv">
+                                                <rect key="frame" x="30" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="2:1">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="7XV-Np-S56"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yz-aH-tbD">
+                                                <rect key="frame" x="60" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="2:2">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="yVM-Qj-Umx"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPg-hb-NwZ">
+                                                <rect key="frame" x="90" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="2:3">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="sak-ll-3xN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkB-WD-hCU">
+                                                <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="2:4">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="HnP-3v-oEM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J9W-IT-I9Y">
+                                                <rect key="frame" x="150" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="2:5">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="gpn-5o-J9f"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wBi-4M-1Yd">
+                                                <rect key="frame" x="180" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="2:6">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="FcM-QB-J4S"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNv-Zx-1oG">
+                                                <rect key="frame" x="210" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="2:7">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="JCs-OM-o2N"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="akz-x6-zly">
+                                        <rect key="frame" x="0.0" y="90" width="240" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Md2-zN-PiE">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="3:0">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="ExA-VP-hgh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIT-0a-KCc">
+                                                <rect key="frame" x="30" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="3:1">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="SEX-n9-8IW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2Q-OH-8Cr">
+                                                <rect key="frame" x="60" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="3:2">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="o4k-qs-Waa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PqQ-rm-9IR">
+                                                <rect key="frame" x="90" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="3:3">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="YtY-el-brc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4z-LR-gPv">
+                                                <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="3:4">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="jkX-wL-QXb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgB-tq-dTs">
+                                                <rect key="frame" x="150" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="3:5">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="bPN-7S-qr0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPZ-Lb-aHo">
+                                                <rect key="frame" x="180" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="3:6">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="b5h-gs-myQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6r-aP-m4I">
+                                                <rect key="frame" x="210" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="3:7">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="mzO-j0-0qy"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="90Y-mb-t8s">
+                                        <rect key="frame" x="0.0" y="120" width="240" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrl-67-iM6">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="4:0">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="1UB-Se-n55"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kpb-5G-1i4">
+                                                <rect key="frame" x="30" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="4:1">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="Fbt-pt-mot"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpd-cE-yS1">
+                                                <rect key="frame" x="60" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="4:2">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="N5d-cn-aNU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8If-dp-x7C">
+                                                <rect key="frame" x="90" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="4:3">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="E0b-xA-mQu"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wa5-3M-2L6">
+                                                <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="4:4">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="qKM-ql-uBc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZy-UZ-cTb">
+                                                <rect key="frame" x="150" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="4:5">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="kME-op-Bai"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tci-pC-7bS">
+                                                <rect key="frame" x="180" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="4:6">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="f9c-R1-RPk"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7I-zI-QQG">
+                                                <rect key="frame" x="210" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="4:7">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="kiH-7a-acV"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7b4-55-qKh">
+                                        <rect key="frame" x="0.0" y="150" width="240" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPv-8A-67G">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="5:0">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="4Ju-Vb-4S4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkj-TH-tn1">
+                                                <rect key="frame" x="30" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="5:1">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="ueS-NI-qib"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFt-xB-2CH">
+                                                <rect key="frame" x="60" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="5:2">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="NwB-bd-yHn"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4t-IV-jFa">
+                                                <rect key="frame" x="90" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="5:3">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="kWg-U1-gQW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2d-4y-aeb">
+                                                <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="5:4">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="Hc4-Ft-Nn7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cm-2m-1Rm">
+                                                <rect key="frame" x="150" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="5:5">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="RLE-vZ-8Hd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfS-lX-Mv8">
+                                                <rect key="frame" x="180" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="5:6">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="MVb-6f-Qrg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LL9-LV-9GF">
+                                                <rect key="frame" x="210" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="5:7">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="reY-pd-g3v"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0Jh-od-7UY">
+                                        <rect key="frame" x="0.0" y="180" width="240" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wJ-hn-Gok">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="6:0">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="SU7-3A-X98"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uph-Ah-Al0">
+                                                <rect key="frame" x="30" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="6:1">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="vda-EA-1EN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oio-qZ-8ZO">
+                                                <rect key="frame" x="60" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="6:2">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="Gjh-uW-ySv"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4om-Yl-SFQ">
+                                                <rect key="frame" x="90" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="6:3">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="t8M-xX-tRk"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G29-GK-eTx">
+                                                <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="6:4">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="nWO-aH-heF"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzS-Xj-myy">
+                                                <rect key="frame" x="150" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="6:5">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="bZ9-O6-aab"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdE-vB-ZXX">
+                                                <rect key="frame" x="180" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="6:6">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="OtI-d8-Kob"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahK-Pc-A2a">
+                                                <rect key="frame" x="210" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="6:7">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="bh3-lf-CkR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dkc-De-tqw">
+                                        <rect key="frame" x="0.0" y="210" width="240" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYC-lX-nul">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="7:0">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="6PS-km-qyW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5J-Ot-LBD">
+                                                <rect key="frame" x="30" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="7:1">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="PWJ-aC-GP8"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ex8-In-wGX">
+                                                <rect key="frame" x="60" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="7:2">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="nOy-zV-UU6"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gY5-Pb-2L7">
+                                                <rect key="frame" x="90" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="7:3">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="udo-qF-6C8"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="So9-Gy-smd">
+                                                <rect key="frame" x="120" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="7:4">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="oEo-YU-GNR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbG-wc-dLW">
+                                                <rect key="frame" x="150" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="7:5">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="ojK-hR-g8Q"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jV-tQ-cSw">
+                                                <rect key="frame" x="180" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="7:6">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="ZYh-5i-O3b"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXN-QC-y7r">
+                                                <rect key="frame" x="210" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="7:7">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mossa:" destination="8Az-MP-R2l" eventType="touchUpInside" id="1MR-id-ZkT"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.51076373249999996" green="0.52946077560000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.51076373251085916" green="0.52946077563521254" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Send a message here.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dyk-j1-YOb">
+                                <rect key="frame" x="24" y="319" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRU-5L-dde">
+                                <rect key="frame" x="314" y="97" width="30" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="17"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissButton:" destination="8Az-MP-R2l" eventType="touchUpInside" id="CEP-Pc-4Nr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kpj-2E-qPE">
+                                <rect key="frame" x="176" y="322" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="chatAction:" destination="8Az-MP-R2l" eventType="touchUpInside" id="nTv-E3-na4"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ocm-Gz-vdt">
+                                <rect key="frame" x="71" y="20" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KXc-ed-2GA" firstAttribute="top" secondItem="VOr-L4-1ex" secondAttribute="top" constant="-314" id="AF9-kt-ibT"/>
+                            <constraint firstItem="KXc-ed-2GA" firstAttribute="bottom" secondItem="Dyk-j1-YOb" secondAttribute="bottom" id="BgW-HQ-ytD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="G0u-c6-0WK"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomTextField" destination="BgW-HQ-ytD" id="5rQ-wJ-vuJ"/>
+                        <outlet property="chatButton" destination="Kpj-2E-qPE" id="swK-NJ-bWb"/>
+                        <outlet property="chatTable" destination="hBL-0j-t6C" id="iCS-qF-20z"/>
+                        <outlet property="chatView" destination="KXc-ed-2GA" id="Iwx-gn-SUe"/>
+                        <outlet property="chatViewTop" destination="AF9-kt-ibT" id="NAk-I4-p2F"/>
+                        <outlet property="damieraImage" destination="Ocm-Gz-vdt" id="j0V-Vj-KXI"/>
+                        <outlet property="damieraStackView" destination="Cbb-LD-JEz" id="ZH3-ds-4bP"/>
+                        <outlet property="dismissButton" destination="rRU-5L-dde" id="2Wk-I4-j6C"/>
+                        <outlet property="textFieldMessage" destination="Dyk-j1-YOb" id="hlV-Yc-9yF"/>
+                        <outlet property="xButton" destination="7gJ-qA-f6S" id="t5H-RS-emt"/>
+                        <outletCollection property="buttons" destination="vPs-kv-VOa" collectionClass="NSMutableArray" id="FCP-lH-NgA"/>
+                        <outletCollection property="buttons" destination="TzD-1c-zsL" collectionClass="NSMutableArray" id="0IN-lP-0VW"/>
+                        <outletCollection property="buttons" destination="I7f-8f-k6w" collectionClass="NSMutableArray" id="qB4-QO-eeF"/>
+                        <outletCollection property="buttons" destination="O8s-9N-QnC" collectionClass="NSMutableArray" id="Pod-tl-LyX"/>
+                        <outletCollection property="buttons" destination="MsL-gC-q1Y" collectionClass="NSMutableArray" id="nk6-YF-B4x"/>
+                        <outletCollection property="buttons" destination="Lo8-st-X0z" collectionClass="NSMutableArray" id="ZZY-2m-b13"/>
+                        <outletCollection property="buttons" destination="Fcn-IB-aAN" collectionClass="NSMutableArray" id="l0x-cz-s4T"/>
+                        <outletCollection property="buttons" destination="Hcg-Ef-Zd3" collectionClass="NSMutableArray" id="pYb-9v-cKU"/>
+                        <outletCollection property="buttons" destination="iK0-Qs-gad" collectionClass="NSMutableArray" id="aKI-pS-0hc"/>
+                        <outletCollection property="buttons" destination="wl9-jZ-ELV" collectionClass="NSMutableArray" id="dAD-iX-klg"/>
+                        <outletCollection property="buttons" destination="QeQ-67-iQP" collectionClass="NSMutableArray" id="rBA-nc-fJ5"/>
+                        <outletCollection property="buttons" destination="CZy-mr-nNy" collectionClass="NSMutableArray" id="y7L-4o-xco"/>
+                        <outletCollection property="buttons" destination="6Wb-a8-OQW" collectionClass="NSMutableArray" id="bBp-9i-svb"/>
+                        <outletCollection property="buttons" destination="qHv-a9-IZg" collectionClass="NSMutableArray" id="6Ms-iM-acS"/>
+                        <outletCollection property="buttons" destination="rYw-bo-yFV" collectionClass="NSMutableArray" id="zA0-dP-2WE"/>
+                        <outletCollection property="buttons" destination="JqV-Xs-Uc8" collectionClass="NSMutableArray" id="3U8-xT-7Nh"/>
+                        <outletCollection property="buttons" destination="k5y-bm-aFk" collectionClass="NSMutableArray" id="WVD-c2-fCf"/>
+                        <outletCollection property="buttons" destination="cQs-np-SZv" collectionClass="NSMutableArray" id="jts-ro-kG5"/>
+                        <outletCollection property="buttons" destination="6yz-aH-tbD" collectionClass="NSMutableArray" id="1Pd-Mx-1d4"/>
+                        <outletCollection property="buttons" destination="mPg-hb-NwZ" collectionClass="NSMutableArray" id="qHU-Ir-QDe"/>
+                        <outletCollection property="buttons" destination="rkB-WD-hCU" collectionClass="NSMutableArray" id="59z-Bx-9ws"/>
+                        <outletCollection property="buttons" destination="J9W-IT-I9Y" collectionClass="NSMutableArray" id="uOL-4o-LBR"/>
+                        <outletCollection property="buttons" destination="wBi-4M-1Yd" collectionClass="NSMutableArray" id="EFG-uy-Uvj"/>
+                        <outletCollection property="buttons" destination="jNv-Zx-1oG" collectionClass="NSMutableArray" id="shg-nl-UVo"/>
+                        <outletCollection property="buttons" destination="Md2-zN-PiE" collectionClass="NSMutableArray" id="Dbn-VO-bBc"/>
+                        <outletCollection property="buttons" destination="rIT-0a-KCc" collectionClass="NSMutableArray" id="4oP-x9-lvW"/>
+                        <outletCollection property="buttons" destination="i2Q-OH-8Cr" collectionClass="NSMutableArray" id="rjo-Ld-hgZ"/>
+                        <outletCollection property="buttons" destination="PqQ-rm-9IR" collectionClass="NSMutableArray" id="aCi-Qz-Qj5"/>
+                        <outletCollection property="buttons" destination="O4z-LR-gPv" collectionClass="NSMutableArray" id="QsP-Ab-pmu"/>
+                        <outletCollection property="buttons" destination="LgB-tq-dTs" collectionClass="NSMutableArray" id="jKf-B3-aex"/>
+                        <outletCollection property="buttons" destination="fPZ-Lb-aHo" collectionClass="NSMutableArray" id="6BY-s1-SND"/>
+                        <outletCollection property="buttons" destination="G6r-aP-m4I" collectionClass="NSMutableArray" id="aJY-AC-33x"/>
+                        <outletCollection property="buttons" destination="hrl-67-iM6" collectionClass="NSMutableArray" id="VbH-md-F0s"/>
+                        <outletCollection property="buttons" destination="Kpb-5G-1i4" collectionClass="NSMutableArray" id="lvP-Uo-L0L"/>
+                        <outletCollection property="buttons" destination="cpd-cE-yS1" collectionClass="NSMutableArray" id="VC9-dH-gd9"/>
+                        <outletCollection property="buttons" destination="8If-dp-x7C" collectionClass="NSMutableArray" id="nq1-MA-qyN"/>
+                        <outletCollection property="buttons" destination="wa5-3M-2L6" collectionClass="NSMutableArray" id="xQH-YF-LdW"/>
+                        <outletCollection property="buttons" destination="hZy-UZ-cTb" collectionClass="NSMutableArray" id="eIo-gc-zbe"/>
+                        <outletCollection property="buttons" destination="tci-pC-7bS" collectionClass="NSMutableArray" id="EeP-lY-WYs"/>
+                        <outletCollection property="buttons" destination="o7I-zI-QQG" collectionClass="NSMutableArray" id="sm6-dt-NLY"/>
+                        <outletCollection property="buttons" destination="ZPv-8A-67G" collectionClass="NSMutableArray" id="dxm-Di-tE6"/>
+                        <outletCollection property="buttons" destination="kkj-TH-tn1" collectionClass="NSMutableArray" id="fWc-aY-4Cl"/>
+                        <outletCollection property="buttons" destination="fFt-xB-2CH" collectionClass="NSMutableArray" id="3Wn-6q-nKU"/>
+                        <outletCollection property="buttons" destination="M4t-IV-jFa" collectionClass="NSMutableArray" id="s5U-Jt-6jx"/>
+                        <outletCollection property="buttons" destination="g2d-4y-aeb" collectionClass="NSMutableArray" id="VLi-hr-wwK"/>
+                        <outletCollection property="buttons" destination="5cm-2m-1Rm" collectionClass="NSMutableArray" id="4dL-cS-dua"/>
+                        <outletCollection property="buttons" destination="mfS-lX-Mv8" collectionClass="NSMutableArray" id="zbg-PE-vyS"/>
+                        <outletCollection property="buttons" destination="LL9-LV-9GF" collectionClass="NSMutableArray" id="Boj-qX-QTO"/>
+                        <outletCollection property="buttons" destination="0wJ-hn-Gok" collectionClass="NSMutableArray" id="a0E-Kr-SQo"/>
+                        <outletCollection property="buttons" destination="uph-Ah-Al0" collectionClass="NSMutableArray" id="wXK-nk-GdB"/>
+                        <outletCollection property="buttons" destination="oio-qZ-8ZO" collectionClass="NSMutableArray" id="8TS-ct-lDc"/>
+                        <outletCollection property="buttons" destination="4om-Yl-SFQ" collectionClass="NSMutableArray" id="2sz-Ih-tZx"/>
+                        <outletCollection property="buttons" destination="G29-GK-eTx" collectionClass="NSMutableArray" id="bRK-rv-1Wr"/>
+                        <outletCollection property="buttons" destination="xzS-Xj-myy" collectionClass="NSMutableArray" id="ehJ-J0-gYL"/>
+                        <outletCollection property="buttons" destination="xdE-vB-ZXX" collectionClass="NSMutableArray" id="zjY-1N-ZXd"/>
+                        <outletCollection property="buttons" destination="ahK-Pc-A2a" collectionClass="NSMutableArray" id="6Fp-xQ-kyD"/>
+                        <outletCollection property="buttons" destination="UYC-lX-nul" collectionClass="NSMutableArray" id="opK-GT-ZSV"/>
+                        <outletCollection property="buttons" destination="z5J-Ot-LBD" collectionClass="NSMutableArray" id="QBg-JG-dUZ"/>
+                        <outletCollection property="buttons" destination="ex8-In-wGX" collectionClass="NSMutableArray" id="c6P-XF-jmY"/>
+                        <outletCollection property="buttons" destination="gY5-Pb-2L7" collectionClass="NSMutableArray" id="Yot-CA-i2F"/>
+                        <outletCollection property="buttons" destination="So9-Gy-smd" collectionClass="NSMutableArray" id="qic-aj-OQ6"/>
+                        <outletCollection property="buttons" destination="DbG-wc-dLW" collectionClass="NSMutableArray" id="udp-mR-diU"/>
+                        <outletCollection property="buttons" destination="1jV-tQ-cSw" collectionClass="NSMutableArray" id="j6U-gJ-Gfe"/>
+                        <outletCollection property="buttons" destination="AXN-QC-y7r" collectionClass="NSMutableArray" id="QhC-N8-VWn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NOl-7q-IJ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.80000000000000004" y="82.3088455772114"/>
+        </scene>
+    </scenes>
+</document>
