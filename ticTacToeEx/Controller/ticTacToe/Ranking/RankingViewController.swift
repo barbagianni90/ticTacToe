@@ -106,7 +106,7 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         view.sendSubview(toBack: background)
         
         
-        
+        //HOME BUTTON
         
         
         homeButton.translatesAutoresizingMaskIntoConstraints = false
@@ -128,15 +128,6 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         homeButton.titleLabel?.adjustsFontSizeToFitWidth = true
         homeButton.titleLabel?.baselineAdjustment = .alignCenters
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         
         
@@ -366,32 +357,53 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellRank") as! CustomCellRanking
         
-        if self.segmented.selectedSegmentIndex == 0 {
+        if self.segmented.selectedSegmentIndex == 1 {
             cell.vittorieLabel.text = String(players[indexPath.row].vittorieTris)
             cell.sconfitteLabel.text = String(players[indexPath.row].sconfitteTris)
             
             if players[indexPath.row].sconfitteTris != 0 {
-                cell.scoreLabel.text = String((players[indexPath.row].vittorieTris) / (players[indexPath.row].sconfitteTris))
+               
+                if(players[indexPath.row].vittorieTris % players[indexPath.row].sconfitteTris) == 0{
+                    cell.scoreLabel.text = String((players[indexPath.row].vittorieTris) / (players[indexPath.row].sconfitteTris))
+                }else{
+                    let score: Float = Float(players[indexPath.row].vittorieTris) / Float(players[indexPath.row].sconfitteTris)
+                    
+                    cell.scoreLabel.text = String(format: "%.2f", score)
+                }
             }
             else {
-                cell.scoreLabel.text = String("0")
+                cell.scoreLabel.text = String(players[indexPath.row].vittorieTris)
             }
         }
         else {
             
             cell.vittorieLabel.text = String(players[indexPath.row].vittorieDama)
             cell.sconfitteLabel.text = String(players[indexPath.row].sconfitteDama)
-            cell.scoreLabel.text = String((players[indexPath.row].vittorieDama / (players[indexPath.row].vittorieDama + players[indexPath.row].sconfitteDama))*100)
             
             if players[indexPath.row].sconfitteDama != 0 {
-                cell.scoreLabel.text = String((players[indexPath.row].vittorieDama) / (players[indexPath.row].sconfitteDama))
+                
+                if(players[indexPath.row].vittorieDama % players[indexPath.row].sconfitteDama) == 0{
+                    cell.scoreLabel.text = String((players[indexPath.row].vittorieDama) / (players[indexPath.row].sconfitteDama))
+                }else{
+                    let score: Float = Float(players[indexPath.row].vittorieDama) / Float(players[indexPath.row].sconfitteDama)
+                    
+                    cell.scoreLabel.text = String(format: "%.2f", score)
+                }
+                
             }
             else {
-                cell.scoreLabel.text = String("0")
+                cell.scoreLabel.text = String(players[indexPath.row].vittorieDama)
             }
         }
         
+        
         cell.nickNameLabel.text = players[indexPath.row].nickName
+        
+        if MainViewController.user.nickName == players[indexPath.row].nickName{
+            cell.nickNameLabel.textColor = UIColor.white
+        }else{
+            cell.nickNameLabel.textColor = UIColor.black
+        }
         
         cell.imagePlayer.image = players[indexPath.row].image
         
@@ -417,6 +429,20 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
         refreshControl.endRefreshing()
         
     }
+    
+    
+    @IBAction func segmentedControl(_ sender: UISegmentedControl) {
+        
+        if self.segmented.selectedSegmentIndex == 1 {
+            self.players.sort(by: {$0.vittorieTris > $1.vittorieTris})
+        }else {
+            self.players.sort(by: {$0.vittorieDama > $1.vittorieDama})
+        }
+        
+        tableRanking.reloadData()
+        
+    }
+    
     
     func refresh() {
         
@@ -453,7 +479,7 @@ class RankingViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.players.append(player)
                 
             }
-            if self.segmented.selectedSegmentIndex == 0 {
+            if self.segmented.selectedSegmentIndex == 1 {
                 self.players.sort(by: {$0.vittorieTris > $1.vittorieTris})
             }
             else {
