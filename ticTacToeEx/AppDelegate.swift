@@ -48,23 +48,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         case .cellular:
             
-            let alert = UIAlertController(title: "Riconnesso", message: nil, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+//            let alert = UIAlertController(title: "Riconnesso", message: nil, preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//            self.window?.rootViewController?.present(alert, animated: true, completion: nil)
             
             break
         case .wifi:
             
-            let alert = UIAlertController(title: "Riconnesso", message: nil, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+//            let alert = UIAlertController(title: "Riconnesso", message: nil, preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//            self.window?.rootViewController?.present(alert, animated: true, completion: nil)
             
             break
         case .none:
             
             let alert = UIAlertController(title: "Connessione persa", message: nil, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+            
+            let window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
+            window?.rootViewController = UIViewController()
+            window?.windowLevel = UIWindowLevelAlert + 1
+            window?.makeKeyAndVisible()
+            window?.rootViewController?.present(alert, animated: true, completion: nil)
             
             break
         }
