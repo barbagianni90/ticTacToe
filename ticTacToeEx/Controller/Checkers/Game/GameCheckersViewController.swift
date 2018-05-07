@@ -41,9 +41,11 @@ class GameCheckersViewController: UIViewController, UITableViewDelegate, UITable
             ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
             ref.child("Utility\(self.nomeTabella)").child("abbandona").setValue("\(MainViewController.user.nickName)")
             
-            ref.child("\(self.nomeTabella)").removeAllObservers()
+            ref.child("\(MainViewController.user.nickName)Damiera").child("Mossa").removeAllObservers()
             ref.child("Utility\(self.nomeTabella)").removeAllObservers()
             ref.child("Messages\(self.nomeTabella)").removeAllObservers()
+            
+            ref.child("\(MainViewController.user.nickName)Damiera").removeValue()
             
             self.partitaFinita = true
         }))
@@ -339,7 +341,39 @@ class GameCheckersViewController: UIViewController, UITableViewDelegate, UITable
             
             let dict = snap.value as! [String : Any]
             
+            let quit = dict["abbandona"] as! String
             let turno = dict["TurnoDi"] as! String
+            
+            if quit == self.enemy.nickName {
+                
+                let alert = UIAlertController(title: "L'avversario ha abbandonato la partita", message: nil, preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                    
+                    if LobbyViewController.gameSelected == "tris" {
+                        ref.child("Players").child("\(MainViewController.user.id)").child("sconfitteTris").setValue("\(MainViewController.user.vittorieTris + 1)")
+                    }
+                    else if LobbyViewController.gameSelected == "dama" {
+                        ref.child("Players").child("\(MainViewController.user.id)").child("sconfitteDama").setValue("\(MainViewController.user.vittorieDama + 1)")
+                    }
+                    
+                    ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
+                    ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
+                    ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+                    
+                    ref.child("\(MainViewController.user.nickName)Damiera").child("Mossa").removeAllObservers()
+                    ref.child("Utility\(self.nomeTabella)").removeAllObservers()
+                    ref.child("Messages\(self.nomeTabella)").removeAllObservers()
+                    
+                    ref.child("\(MainViewController.user.nickName)Damiera").removeValue()
+                    ref.child("Utility\(self.nomeTabella)").removeValue()
+                    ref.child("Messages\(self.nomeTabella)").removeValue()
+                    
+                    self.partitaFinita = true
+                }))
+                
+                self.present(alert, animated: true)
+            }
             
             if (turno == "PrimoGiocatore" && self.fPlayer == true) || (turno == "SecondoGiocatore" && self.sPlayer == true)  {
                 
@@ -686,6 +720,8 @@ class GameCheckersViewController: UIViewController, UITableViewDelegate, UITable
         ref.child("\(MainViewController.user.nickName)Damiera").child("Mossa").child("GiocoIniziato").setValue("Ok")
         
         ref.child("Utility\(self.nomeTabella)").child("TurnoDi").setValue("PrimoGiocatore")
+        
+        ref.child("Utility\(self.nomeTabella)").child("abbandona").setValue("")
     }
     
     func mangiateObbligatorie(_ casella: UIButton) {

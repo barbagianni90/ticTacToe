@@ -675,7 +675,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     
     func getData() {
         
-        let url = URL(string: "http://10.0.101.6:8081/api/jsonws/add-user-portlet.appuser/get-users")
+        let url = URL(string: "http://10.0.101.6:8080/api/jsonws/appuser.appuser/get-users")
         
         URLSession.shared.dataTask(with: url!) { (data, response, error) in
             
@@ -703,7 +703,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     }
     func postCompleteUser(_ email: String) {
         
-        let url = URL(string: "http://10.0.101.6:8081/api/jsonws/add-user-portlet.appuser/conf-user/-email")
+        let url = URL(string: "http://10.0.101.6:8080/api/jsonws/appuser.appuser/conf-user/-email")
         
         Alamofire.upload(multipartFormData: { multipartFormData in
             multipartFormData.append((email.data(using: String.Encoding.utf8, allowLossyConversion: false))!, withName: "email")
@@ -723,7 +723,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     }
     func postNewUser(_ nickname: String, _ email: String, _ password: String) {
         
-        let url = URL(string: "http://10.0.101.6:8081/api/jsonws/add-user-portlet.appuser/add-app-user/-tag/-email/-password")
+        let url = URL(string: "http://10.0.101.6:8080/api/jsonws/appuser.appuser/add-app-user/-tag/-email/-password")
         
         Alamofire.upload(multipartFormData: { multipartFormData in
             multipartFormData.append((nickname.data(using: .utf8))!, withName: "tag")

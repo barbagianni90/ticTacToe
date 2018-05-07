@@ -13,13 +13,14 @@ import Firebase
 
 class ActivityViewController: UIViewController {
     
-    private let activityView = ActivityView()
+    let activityView = ActivityView()
     
-    init(message: String) {
+    init(message: String, count: Int) {
         super.init(nibName: nil, bundle: nil)
         modalTransitionStyle = .crossDissolve
         modalPresentationStyle = .overFullScreen
         activityView.messageLabel.text = message
+        activityView.counter.text = "\(count)"
         view = activityView
     }
     
@@ -28,11 +29,12 @@ class ActivityViewController: UIViewController {
     }
 }
 
-private class ActivityView: UIView {
+class ActivityView: UIView {
     
     let activityIndicatorView = UIActivityIndicatorView()
     let boundingBoxView = UIView()
     let messageLabel = UILabel()
+    let counter = UILabel()
     
     init() {
         
@@ -51,9 +53,16 @@ private class ActivityView: UIView {
         self.messageLabel.shadowColor = UIColor.black
         self.messageLabel.numberOfLines = 0
         
+        self.counter.font = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
+        self.counter.textColor = UIColor.white
+        self.counter.textAlignment = .center
+        self.counter.shadowColor = UIColor.black
+        self.counter.numberOfLines = 0
+        
         addSubview(boundingBoxView)
         addSubview(activityIndicatorView)
         addSubview(messageLabel)
+        addSubview(counter)
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -76,10 +85,20 @@ private class ActivityView: UIView {
         messageLabel.frame.size.height = messageLabelSize.height
         messageLabel.frame.origin.x = (bounds.width / 2.0) - (messageLabel.frame.width / 2.0)
         messageLabel.frame.origin.y = activityIndicatorView.frame.origin.y + activityIndicatorView.frame.size.height + ((boundingBoxView.frame.height - activityIndicatorView.frame.height) / 4.0) - (messageLabel.frame.height / 2.0)
+        
+        let counterSize = counter.sizeThatFits(CGSize(width: 160.0 - 20.0 * 2.0, height: CGFloat.greatestFiniteMagnitude))
+        counter.frame.size.width = counterSize.width
+        counter.frame.size.height = counterSize.height
+        counter.frame.origin.x = (bounds.width / 2.0) - (counter.frame.width / 2.0)
+        counter.frame.origin.y = activityIndicatorView.frame.origin.y - activityIndicatorView.frame.size.height - ((boundingBoxView.frame.height - activityIndicatorView.frame.height) / 4.0) - (counter.frame.height / 2.0)
     }
 }
 
 class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var timer = Timer()
+    
+    var count = 30
     
     var players: [User] = []
     
@@ -99,7 +118,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     
-    let activitiyViewController = ActivityViewController(message: "Attending...")
+    var activitiyViewController = ActivityViewController(message: "Attending...", count: 30)
     
     var sfidante: [String : String] = ["id" : "",
                                        "nickname" : ""]
@@ -344,9 +363,33 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     self.sfidante.updateValue(user.id, forKey: "id")
                 }
             }
-            
+            self.activitiyViewController = ActivityViewController(message: "Attending...", count: 30)
             self.present(activitiyViewController, animated: true, completion: nil)
+            
+            self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
         }
+    }
+    
+    @objc func countDown() {
+        
+        self.count = count - 1
+        
+        self.activitiyViewController.activityView.counter.text = String(self.count)
+        
+        if self.count == 0 {
+            
+            let ref = Database.database().reference()
+            
+            ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+            ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
+            
+            self.count = 30
+            
+            self.timer.invalidate()
+            
+            self.activitiyViewController.dismiss(animated: true, completion: nil)
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -508,8 +551,15 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         }
                     }
                     else {
+                        
                         ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
                         ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
+                        
+                        self.count = 30
+                        
+                        self.timer.invalidate()
+                        
+                        self.activitiyViewController.dismiss(animated: true, completion: nil)
                     }
                 }
             }
@@ -630,7 +680,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         player.image = UIImage(data: imagePNG!)
                         
                         self.players.append(player)
-                        self.lobbyTable.reloadData()
+                        self.animatedTable()
                     }
                 }
             }
@@ -643,6 +693,26 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         refreshControl.endRefreshing()
         
     }
+    
+    func animatedTable() {
+        self.lobbyTable.reloadData()
+        let cells = self.lobbyTable.visibleCells
+        
+        
+        for cell in cells {
+            cell.transform = CGAffineTransform(translationX: 0, y: self.lobbyTable.frame.size.height)
+        }
+        
+        
+        var delayCounter = 0
+        for cell in cells {
+            UIView.animate(withDuration: 1.75, delay: Double(delayCounter) * 0.05, options: .curveEaseInOut, animations: {
+                cell.transform = CGAffineTransform(translationX: 0, y: 0)
+            }, completion: nil)
+            delayCounter += 1
+        }
+    }
+    
     @IBAction func goHome(_ sender: Any) {
         
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)

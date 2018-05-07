@@ -14,12 +14,60 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
+        
+    private var reachability: Reachability!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         FirebaseApp.configure()
+        
+        self.observeReachability()
         // Override point for customization after application launch.
+        
         return true
+    }
+    
+    func observeReachability(){
+        self.reachability = Reachability()
+        
+        NotificationCenter.default.addObserver(self, selector:#selector(self.reachabilityChanged), name: NSNotification.Name.reachabilityChanged, object: nil)
+        
+        do {
+            try self.reachability.startNotifier()
+        }
+        catch(let error) {
+            print("Error occured while starting reachability notifications : \(error.localizedDescription)")
+        }
+    }
+    
+    @objc func reachabilityChanged(note: Notification) {
+        
+        let reachability = note.object as! Reachability
+        
+        switch reachability.connection {
+            
+        case .cellular:
+            
+            let alert = UIAlertController(title: "Riconnesso", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+            
+            break
+        case .wifi:
+            
+            let alert = UIAlertController(title: "Riconnesso", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+            
+            break
+        case .none:
+            
+            let alert = UIAlertController(title: "Connessione persa", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+            
+            break
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

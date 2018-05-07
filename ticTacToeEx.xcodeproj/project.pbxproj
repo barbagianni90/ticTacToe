@@ -34,6 +34,7 @@
 		C445E5782075057100241182 /* PhotoProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445E5772075057100241182 /* PhotoProfile.swift */; };
 		C46A2E992087730200DD38B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C46A2E982087730200DD38B6 /* GoogleService-Info.plist */; };
 		C48477A1206D15C8002B6E18 /* SignInANDSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48477A0206D15C8002B6E18 /* SignInANDSignUp.storyboard */; };
+		C4D6E53C20A08B28009225C2 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6E53B20A08B27009225C2 /* Reachability.swift */; };
 		C4E2E64D2077C1A9005CDD72 /* croce.png in Resources */ = {isa = PBXBuildFile; fileRef = C4E2E64B2077C1A9005CDD72 /* croce.png */; };
 		C4E2E64E2077C1A9005CDD72 /* cerchio.png in Resources */ = {isa = PBXBuildFile; fileRef = C4E2E64C2077C1A9005CDD72 /* cerchio.png */; };
 		C4ED73FB207F6CB000099716 /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C4ED73FA207F6CB000099716 /* default.jpg */; };
@@ -99,6 +100,7 @@
 		C445E5772075057100241182 /* PhotoProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoProfile.swift; sourceTree = "<group>"; };
 		C46A2E982087730200DD38B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C48477A0206D15C8002B6E18 /* SignInANDSignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInANDSignUp.storyboard; sourceTree = "<group>"; };
+		C4D6E53B20A08B27009225C2 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		C4E2E64B2077C1A9005CDD72 /* croce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = croce.png; sourceTree = "<group>"; };
 		C4E2E64C2077C1A9005CDD72 /* cerchio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cerchio.png; sourceTree = "<group>"; };
 		C4ED73FA207F6CB000099716 /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 		FE4D552B2069023F00ABF6C1 /* ticTacToeEx */ = {
 			isa = PBXGroup;
 			children = (
+				C4D6E53B20A08B27009225C2 /* Reachability.swift */,
 				F32C76582093231500FAC153 /* CoreDataController.swift */,
 				FE4D552C2069023F00ABF6C1 /* AppDelegate.swift */,
 				C433A56D206D2D1400C2888F /* User.swift */,
@@ -560,6 +563,7 @@
 				FE1B8AA7207CEC6000960EEB /* RankingDamaViewController.swift in Sources */,
 				FE4D552D2069023F00ABF6C1 /* AppDelegate.swift in Sources */,
 				FEC8A08D206B899D0031001B /* RankingViewController.swift in Sources */,
+				C4D6E53C20A08B28009225C2 /* Reachability.swift in Sources */,
 				FEC8A0A5206BA0A40031001B /* GameTrisViewController.swift in Sources */,
 				C433A56E206D2D1400C2888F /* User.swift in Sources */,
 				C445E5782075057100241182 /* PhotoProfile.swift in Sources */,
@@ -742,7 +746,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZAJLT4BRY8;
+				DEVELOPMENT_TEAM = U6UD8WWS49;
 				INFOPLIST_FILE = ticTacToeEx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -760,7 +764,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZAJLT4BRY8;
+				DEVELOPMENT_TEAM = U6UD8WWS49;
 				INFOPLIST_FILE = ticTacToeEx/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
