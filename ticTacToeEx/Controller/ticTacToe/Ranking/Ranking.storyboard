@@ -146,6 +146,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="segmented:" destination="eOE-nf-9mp" eventType="valueChanged" id="tSL-8x-31l"/>
+                                    <action selector="segmentedControl:" destination="eOE-nf-9mp" eventType="valueChanged" id="9Nd-aG-tWE"/>
                                 </connections>
                             </segmentedControl>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="aFz-SQ-rGY">

@@ -238,8 +238,21 @@ class ProfileViewController: UIViewController {
         
         let sconfitteTrisDouble: Float = Float(MainViewController.user.sconfitteTris)
         
-        let percentualeVittorieTris: Float = ((vittorieTrisDouble / (vittorieTrisDouble + sconfitteTrisDouble))*100)
-        let percentualeVittorieDama: Float = ((vittorieDamaDouble / (vittorieDamaDouble + sconfitteDamaDouble))*100)
+        var percentualeVittorieTris: Float
+        
+        if(vittorieTrisDouble == 0 && sconfitteTrisDouble == 0){
+            percentualeVittorieTris = 0.0
+        }else{
+            percentualeVittorieTris = ((vittorieTrisDouble / (vittorieTrisDouble + sconfitteTrisDouble))*100)
+        }
+        
+        var percentualeVittorieDama: Float
+        
+        if (vittorieDamaDouble == 0 && sconfitteDamaDouble == 0){
+            percentualeVittorieDama = 0.0
+        }else{
+            percentualeVittorieDama = ((vittorieDamaDouble / (vittorieDamaDouble + sconfitteDamaDouble))*100)
+        }
         
         let stringDama: String = "Vittorie dama: \n"
         let stringTris: String = "Vittorie tris: \n"
