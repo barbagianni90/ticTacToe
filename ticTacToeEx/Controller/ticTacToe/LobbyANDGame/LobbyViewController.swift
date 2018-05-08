@@ -366,11 +366,11 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.activitiyViewController = ActivityViewController(message: "Attending...", count: 30)
             self.present(activitiyViewController, animated: true, completion: nil)
             
-            self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countDown), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countDownSend), userInfo: nil, repeats: true)
         }
     }
     
-    @objc func countDown() {
+    @objc func countDownSend() {
         
         self.count = count - 1
         
@@ -381,13 +381,35 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let ref = Database.database().reference()
             
             ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
-            ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
             
             self.count = 30
             
             self.timer.invalidate()
             
             self.activitiyViewController.dismiss(animated: true, completion: nil)
+        }
+        
+    }
+    
+    @objc func countDownReceve() {
+        
+        self.count = count - 1
+        
+        if self.count == 0 {
+            
+            let ref = Database.database().reference()
+            
+            ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+            ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
+            
+            LobbyViewController.gameSelected = ""
+            
+            self.count = 30
+            
+            self.timer.invalidate()
+            
+            self.dismiss(animated: true, completion: nil)
+            
         }
         
     }
@@ -481,6 +503,8 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     }))
                     
                     self.present(alert, animated: true)
+                    
+                    self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.countDownReceve), userInfo: nil, repeats: true)
                 }
             }
             else {
