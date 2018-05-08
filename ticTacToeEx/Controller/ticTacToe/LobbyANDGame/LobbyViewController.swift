@@ -446,6 +446,8 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     
                     alert.addAction(UIAlertAction(title: "Accetto", style: .default, handler: { action in
                         
+                        self.timer.invalidate()
+                        
                         ref.child("Players").child("\(idNickInvito)").child("invitoAccettato").setValue("Si")
                         
                         if LobbyViewController.gameSelected == "tris" {
@@ -523,6 +525,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
                 if value != "" {
                     
+                    self.timer.invalidate()
                     self.activitiyViewController.dismiss(animated: true, completion: nil)
                     UIApplication.shared.endIgnoringInteractionEvents()
                     
