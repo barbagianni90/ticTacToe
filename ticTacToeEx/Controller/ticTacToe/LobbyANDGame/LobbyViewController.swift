@@ -447,6 +447,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     alert.addAction(UIAlertAction(title: "Accetto", style: .default, handler: { action in
                         
                         self.timer.invalidate()
+                        self.count = 30
                         
                         ref.child("Players").child("\(idNickInvito)").child("invitoAccettato").setValue("Si")
                         
@@ -526,6 +527,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 if value != "" {
                     
                     self.timer.invalidate()
+                    self.count = 30
                     self.activitiyViewController.dismiss(animated: true, completion: nil)
                     UIApplication.shared.endIgnoringInteractionEvents()
                     
