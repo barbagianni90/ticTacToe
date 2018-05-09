@@ -157,27 +157,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         
-        let uploadData = UIImagePNGRepresentation(MainViewController.user.image!)!
+        if MainViewController.user.nickName != "" {
         
-        let base64ImageString = uploadData.base64EncodedString()
-        
-        let ref = Database.database().reference()
-        
-        ref.child("Players").child("\(MainViewController.user.id)").setValue(
+            let uploadData = UIImagePNGRepresentation(MainViewController.user.image!)!
             
-            [
-                "nickname" : "\(MainViewController.user.nickName)",
-                "image" : "\(base64ImageString)",
-                "email" : "\(MainViewController.user.email)",
-                "vittorieTris" : "\(MainViewController.user.vittorieTris)",
-                "vittorieDama" : "\(MainViewController.user.vittorieDama)",
-                "sconfitteTris" : "\(MainViewController.user.sconfitteTris)",
-                "sconfitteDama" : "\(MainViewController.user.sconfitteDama)",
-                "stato" : "online",
-                "invitatoDa" : "",
-                "invitoAccettato" : "",
-                "loggato" : "Si"
-            ])
+            let base64ImageString = uploadData.base64EncodedString()
+            
+            let ref = Database.database().reference()
+            
+            ref.child("Players").child("\(MainViewController.user.id)").setValue(
+                
+                [
+                    "nickname" : "\(MainViewController.user.nickName)",
+                    "image" : "\(base64ImageString)",
+                    "email" : "\(MainViewController.user.email)",
+                    "vittorieTris" : "\(MainViewController.user.vittorieTris)",
+                    "vittorieDama" : "\(MainViewController.user.vittorieDama)",
+                    "sconfitteTris" : "\(MainViewController.user.sconfitteTris)",
+                    "sconfitteDama" : "\(MainViewController.user.sconfitteDama)",
+                    "stato" : "online",
+                    "invitatoDa" : "",
+                    "invitoAccettato" : "",
+                    "loggato" : "Si"
+                ])
+        }
         self.saveContext()
     }
     
