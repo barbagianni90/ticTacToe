@@ -174,6 +174,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
                                 
                             }
                             
+                            Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("loggato").onDisconnectSetValue("No")
+                            
                             self.getData()
                             self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
                             

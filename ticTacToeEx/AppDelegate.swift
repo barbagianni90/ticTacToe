@@ -22,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         self.observeReachability()
-        // Override point for customization after application launch.
         
         return true
     }
@@ -50,17 +49,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         case .cellular:
             
-//            let alert = UIAlertController(title: "Riconnesso", message: nil, preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//            self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+            if MainViewController.user.nickName != "" {
             
+                Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("loggato").onDisconnectSetValue("No")
+            }
             break
         case .wifi:
             
-//            let alert = UIAlertController(title: "Riconnesso", message: nil, preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//            self.window?.rootViewController?.present(alert, animated: true, completion: nil)
-            
+            if MainViewController.user.nickName != "" {
+                
+                Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("loggato").onDisconnectSetValue("No")
+            }
             break
         case .none:
             
@@ -79,79 +78,92 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillResignActive(_ application: UIApplication) {
         
-        let uploadData = UIImagePNGRepresentation(MainViewController.user.image!)!
+        print("Enter in ResignActive")
         
-        let base64ImageString = uploadData.base64EncodedString()
+        if MainViewController.user.nickName != "" {
         
-        let ref = Database.database().reference()
-        
-        ref.child("Players").child("\(MainViewController.user.id)").setValue(
+            let uploadData = UIImagePNGRepresentation(MainViewController.user.image!)!
             
-            [
-                "nickname" : "\(MainViewController.user.nickName)",
-                "image" : "\(base64ImageString)",
-                "email" : "\(MainViewController.user.email)",
-                "vittorieTris" : "\(MainViewController.user.vittorieTris)",
-                "vittorieDama" : "\(MainViewController.user.vittorieDama)",
-                "sconfitteTris" : "\(MainViewController.user.sconfitteTris)",
-                "sconfitteDama" : "\(MainViewController.user.sconfitteDama)",
-                "stato" : "offline",
-                "invitatoDa" : "",
-                "invitoAccettato" : "",
-                "loggato" : "No"
-            ])
+            let base64ImageString = uploadData.base64EncodedString()
+            
+            let ref = Database.database().reference()
+            
+            ref.child("Players").child("\(MainViewController.user.id)").setValue(
+                
+                [
+                    "nickname" : "\(MainViewController.user.nickName)",
+                    "image" : "\(base64ImageString)",
+                    "email" : "\(MainViewController.user.email)",
+                    "vittorieTris" : "\(MainViewController.user.vittorieTris)",
+                    "vittorieDama" : "\(MainViewController.user.vittorieDama)",
+                    "sconfitteTris" : "\(MainViewController.user.sconfitteTris)",
+                    "sconfitteDama" : "\(MainViewController.user.sconfitteDama)",
+                    "stato" : "offline",
+                    "invitatoDa" : "",
+                    "invitoAccettato" : "",
+                    "loggato" : "Pausa"
+                ])
+        }
         self.saveContext()
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         
-        let uploadData = UIImagePNGRepresentation(MainViewController.user.image!)!
+        print("Enter in Background")
         
-        let base64ImageString = uploadData.base64EncodedString()
-        
-        let ref = Database.database().reference()
-        
-        ref.child("Players").child("\(MainViewController.user.id)").setValue(
+        if MainViewController.user.nickName != "" {
             
-            [
-                "nickname" : "\(MainViewController.user.nickName)",
-                "image" : "\(base64ImageString)",
-                "email" : "\(MainViewController.user.email)",
-                "vittorieTris" : "\(MainViewController.user.vittorieTris)",
-                "vittorieDama" : "\(MainViewController.user.vittorieDama)",
-                "sconfitteTris" : "\(MainViewController.user.sconfitteTris)",
-                "sconfitteDama" : "\(MainViewController.user.sconfitteDama)",
-                "stato" : "offline",
-                "invitatoDa" : "",
-                "invitoAccettato" : "",
-                "loggato" : "No"
-            ])
+            let uploadData = UIImagePNGRepresentation(MainViewController.user.image!)!
+            
+            let base64ImageString = uploadData.base64EncodedString()
+            
+            let ref = Database.database().reference()
+            
+            ref.child("Players").child("\(MainViewController.user.id)").setValue(
+                
+                [
+                    "nickname" : "\(MainViewController.user.nickName)",
+                    "image" : "\(base64ImageString)",
+                    "email" : "\(MainViewController.user.email)",
+                    "vittorieTris" : "\(MainViewController.user.vittorieTris)",
+                    "vittorieDama" : "\(MainViewController.user.vittorieDama)",
+                    "sconfitteTris" : "\(MainViewController.user.sconfitteTris)",
+                    "sconfitteDama" : "\(MainViewController.user.sconfitteDama)",
+                    "stato" : "offline",
+                    "invitatoDa" : "",
+                    "invitoAccettato" : "",
+                    "loggato" : "Pausa"
+                ])
+        }
         self.saveContext()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         
-        let uploadData = UIImagePNGRepresentation(MainViewController.user.image!)!
+        if MainViewController.user.nickName != "" {
         
-        let base64ImageString = uploadData.base64EncodedString()
-        
-        let ref = Database.database().reference()
-        
-        ref.child("Players").child("\(MainViewController.user.id)").setValue(
+            let uploadData = UIImagePNGRepresentation(MainViewController.user.image!)!
             
-            [
-                "nickname" : "\(MainViewController.user.nickName)",
-                "image" : "\(base64ImageString)",
-                "email" : "\(MainViewController.user.email)",
-                "vittorieTris" : "\(MainViewController.user.vittorieTris)",
-                "vittorieDama" : "\(MainViewController.user.vittorieDama)",
-                "sconfitteTris" : "\(MainViewController.user.sconfitteTris)",
-                "sconfitteDama" : "\(MainViewController.user.sconfitteDama)",
-                "stato" : "online",
-                "invitatoDa" : "",
-                "invitoAccettato" : "",
-                "loggato" : "Si"
-            ])
+            let base64ImageString = uploadData.base64EncodedString()
+            
+            let ref = Database.database().reference()
+            
+            ref.child("Players").child("\(MainViewController.user.id)").setValue(
+                
+                [
+                    "nickname" : "\(MainViewController.user.nickName)",
+                    "image" : "\(base64ImageString)",
+                    "email" : "\(MainViewController.user.email)",
+                    "vittorieTris" : "\(MainViewController.user.vittorieTris)",
+                    "vittorieDama" : "\(MainViewController.user.vittorieDama)",
+                    "sconfitteTris" : "\(MainViewController.user.sconfitteTris)",
+                    "sconfitteDama" : "\(MainViewController.user.sconfitteDama)",
+                    "stato" : "online",
+                    "invitatoDa" : "",
+                    "invitoAccettato" : "",
+                    "loggato" : "Si"
+                ])
+        }
         self.saveContext()
     }
 
@@ -185,29 +197,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         
-        let uploadData = UIImagePNGRepresentation(MainViewController.user.image!)!
-        
-        let base64ImageString = uploadData.base64EncodedString()
-        
-        let ref = Database.database().reference()
-        
-        ref.child("Players").child("\(MainViewController.user.id)").setValue(
-        
-            [
-                "nickname" : "\(MainViewController.user.nickName)",
-                "image" : "\(base64ImageString)",
-                "email" : "\(MainViewController.user.email)",
-                "vittorieTris" : "\(MainViewController.user.vittorieTris)",
-                "vittorieDama" : "\(MainViewController.user.vittorieDama)",
-                "sconfitteTris" : "\(MainViewController.user.sconfitteTris)",
-                "sconfitteDama" : "\(MainViewController.user.sconfitteDama)",
-                "stato" : "offline",
-                "invitatoDa" : "",
-                "invitoAccettato" : "",
-                "loggato" : "No"
-            ])
+       
         self.saveContext()
     }
     

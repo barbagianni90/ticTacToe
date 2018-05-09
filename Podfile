@@ -10,5 +10,6 @@ target 'ticTacToeEx' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'Alamofire'
-  
+  pod 'Firebase/Functions'
+
 end

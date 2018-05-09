@@ -438,7 +438,7 @@ class SignInViewController: UIViewController,UITextFieldDelegate{
                         
                             if datiPlayer["email"] as! String == emailCurrentUser {
                                 
-                                if datiPlayer["loggato"] as! String == "Si" {
+                                if datiPlayer["loggato"] as! String == "Si" || datiPlayer["loggato"] as! String == "Pausa" {
                                     
                                     self.activityIndicator.stopAnimating()
                                     UIApplication.shared.endIgnoringInteractionEvents()
@@ -488,6 +488,8 @@ class SignInViewController: UIViewController,UITextFieldDelegate{
                                                 CoreDataController.saveContext()
                                             }
                                         }
+                                        
+                                        Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("loggato").onDisconnectSetValue("No")
                                         
                                         self.activityIndicator.stopAnimating()
                                         UIApplication.shared.endIgnoringInteractionEvents()
