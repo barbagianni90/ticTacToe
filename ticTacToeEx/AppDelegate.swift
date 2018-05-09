@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func observeReachability(){
+        
+        
         self.reachability = Reachability()
         
         NotificationCenter.default.addObserver(self, selector:#selector(self.reachabilityChanged), name: NSNotification.Name.reachabilityChanged, object: nil)
@@ -76,18 +78,81 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        
+        let uploadData = UIImagePNGRepresentation(MainViewController.user.image!)!
+        
+        let base64ImageString = uploadData.base64EncodedString()
+        
+        let ref = Database.database().reference()
+        
+        ref.child("Players").child("\(MainViewController.user.id)").setValue(
+            
+            [
+                "nickname" : "\(MainViewController.user.nickName)",
+                "image" : "\(base64ImageString)",
+                "email" : "\(MainViewController.user.email)",
+                "vittorieTris" : "\(MainViewController.user.vittorieTris)",
+                "vittorieDama" : "\(MainViewController.user.vittorieDama)",
+                "sconfitteTris" : "\(MainViewController.user.sconfitteTris)",
+                "sconfitteDama" : "\(MainViewController.user.sconfitteDama)",
+                "stato" : "offline",
+                "invitatoDa" : "",
+                "invitoAccettato" : "",
+                "loggato" : "No"
+            ])
         self.saveContext()
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        let uploadData = UIImagePNGRepresentation(MainViewController.user.image!)!
+        
+        let base64ImageString = uploadData.base64EncodedString()
+        
+        let ref = Database.database().reference()
+        
+        ref.child("Players").child("\(MainViewController.user.id)").setValue(
+            
+            [
+                "nickname" : "\(MainViewController.user.nickName)",
+                "image" : "\(base64ImageString)",
+                "email" : "\(MainViewController.user.email)",
+                "vittorieTris" : "\(MainViewController.user.vittorieTris)",
+                "vittorieDama" : "\(MainViewController.user.vittorieDama)",
+                "sconfitteTris" : "\(MainViewController.user.sconfitteTris)",
+                "sconfitteDama" : "\(MainViewController.user.sconfitteDama)",
+                "stato" : "offline",
+                "invitatoDa" : "",
+                "invitoAccettato" : "",
+                "loggato" : "No"
+            ])
+        self.saveContext()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        
+        let uploadData = UIImagePNGRepresentation(MainViewController.user.image!)!
+        
+        let base64ImageString = uploadData.base64EncodedString()
+        
+        let ref = Database.database().reference()
+        
+        ref.child("Players").child("\(MainViewController.user.id)").setValue(
+            
+            [
+                "nickname" : "\(MainViewController.user.nickName)",
+                "image" : "\(base64ImageString)",
+                "email" : "\(MainViewController.user.email)",
+                "vittorieTris" : "\(MainViewController.user.vittorieTris)",
+                "vittorieDama" : "\(MainViewController.user.vittorieDama)",
+                "sconfitteTris" : "\(MainViewController.user.sconfitteTris)",
+                "sconfitteDama" : "\(MainViewController.user.sconfitteDama)",
+                "stato" : "online",
+                "invitatoDa" : "",
+                "invitoAccettato" : "",
+                "loggato" : "Si"
+            ])
+        self.saveContext()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -120,7 +185,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             ])
         self.saveContext()
     }
-
+    
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation

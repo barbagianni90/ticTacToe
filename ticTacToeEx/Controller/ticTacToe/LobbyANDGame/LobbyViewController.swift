@@ -395,6 +395,8 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         self.count = count - 1
         
+        print(count)
+        
         if self.count == 0 {
             
             let ref = Database.database().reference()
@@ -447,6 +449,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     alert.addAction(UIAlertAction(title: "Accetto", style: .default, handler: { action in
                         
                         self.timer.invalidate()
+                        
                         self.count = 30
                         
                         ref.child("Players").child("\(idNickInvito)").child("invitoAccettato").setValue("Si")
@@ -500,14 +503,19 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     
                     alert.addAction(UIAlertAction(title: "Rifiuto", style: .default, handler: { action in
                         
+                        self.timer.invalidate()
+                        
+                        self.count = 30
+                        
                         ref.child("Players").child("\(idNickInvito)").child("invitoAccettato").setValue("No")
                         ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
                         ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
                     }))
                     
-                    self.present(alert, animated: true)
-                    
-                    self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.countDownReceve), userInfo: nil, repeats: true)
+                    self.present(alert, animated: true, completion: {
+                        
+                        self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.countDownReceve), userInfo: nil, repeats: true)
+                    })
                 }
             }
             else {
@@ -583,10 +591,6 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         
                         ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
                         ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
-                        
-                        self.count = 30
-                        
-                        self.timer.invalidate()
                         
                         self.activitiyViewController.dismiss(animated: true, completion: nil)
                     }
