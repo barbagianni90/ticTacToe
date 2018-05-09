@@ -156,7 +156,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        let uploadData = UIImagePNGRepresentation(MainViewController.user.image!)!
+        
+        let base64ImageString = uploadData.base64EncodedString()
+        
+        let ref = Database.database().reference()
+        
+        ref.child("Players").child("\(MainViewController.user.id)").setValue(
+            
+            [
+                "nickname" : "\(MainViewController.user.nickName)",
+                "image" : "\(base64ImageString)",
+                "email" : "\(MainViewController.user.email)",
+                "vittorieTris" : "\(MainViewController.user.vittorieTris)",
+                "vittorieDama" : "\(MainViewController.user.vittorieDama)",
+                "sconfitteTris" : "\(MainViewController.user.sconfitteTris)",
+                "sconfitteDama" : "\(MainViewController.user.sconfitteDama)",
+                "stato" : "online",
+                "invitatoDa" : "",
+                "invitoAccettato" : "",
+                "loggato" : "Si"
+            ])
+        self.saveContext()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
