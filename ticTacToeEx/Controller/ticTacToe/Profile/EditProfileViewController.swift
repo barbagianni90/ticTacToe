@@ -437,89 +437,95 @@ class EditProfileViewController: UIViewController {
     }
     
     @IBAction func done(_ sender: Any) {
-        
-        self.activityIndicator.center = CGPoint(x: self.view.center.x, y: UIScreen.main.bounds.height / 6)
-        self.activityIndicator.hidesWhenStopped = true
-        self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-        self.view.addSubview(self.activityIndicator)
-        
-        self.activityIndicator.startAnimating()
-        
-        
-        if nickNameTextField.text == "" && emailTextField.text == "" && passTextField.text == "" && EditProfileViewController.imageSelected == nil {
-            let alertController = UIAlertController(title: "Error", message: "Nessuna modifica effettuata", preferredStyle: .alert)
+        if AppDelegate.isConnected == true{
+            self.activityIndicator.center = CGPoint(x: self.view.center.x, y: UIScreen.main.bounds.height / 6)
+            self.activityIndicator.hidesWhenStopped = true
+            self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+            self.view.addSubview(self.activityIndicator)
             
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
+            self.activityIndicator.startAnimating()
             
-            present(alertController, animated: true, completion: nil)
             
-        }
-        else {
-            
-            let alert = UIAlertController(title: "Confermare le modifiche?", message: nil, preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            if nickNameTextField.text == "" && emailTextField.text == "" && passTextField.text == "" && EditProfileViewController.imageSelected == nil {
+                let alertController = UIAlertController(title: "Error", message: "Nessuna modifica effettuata", preferredStyle: .alert)
                 
-                let ref = Database.database().reference()
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
                 
-                if self.nickNameTextField.text != "" {
+                present(alertController, animated: true, completion: nil)
+                
+            }
+            else {
+                
+                let alert = UIAlertController(title: "Confermare le modifiche?", message: nil, preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                     
-                    ref.child("Players").child("\(MainViewController.user.id)").child("nickname").setValue("\(ConvertOptionalString.convert(self.nickNameTextField.text!))")
+                    let ref = Database.database().reference()
                     
-                    MainViewController.user.nickName = ConvertOptionalString.convert(self.nickNameTextField.text!)
-                    MainViewController.user.stato = "online"
-                    
-                }
-                if self.emailTextField.text != "" {
-                    
-                    if self.isValidEmail(testStr: ConvertOptionalString.convert(self.emailTextField.text!)) == false {
+                    if self.nickNameTextField.text != "" {
                         
-                        let alertController = UIAlertController(title: "Error", message: "Please enter a valid email", preferredStyle: .alert)
+                        ref.child("Players").child("\(MainViewController.user.id)").child("nickname").setValue("\(ConvertOptionalString.convert(self.nickNameTextField.text!))")
                         
-                        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                        alertController.addAction(defaultAction)
+                        MainViewController.user.nickName = ConvertOptionalString.convert(self.nickNameTextField.text!)
+                        MainViewController.user.stato = "online"
                         
-                        self.present(alertController, animated: true, completion: nil)
+                    }
+                    if self.emailTextField.text != "" {
+                        
+                        if self.isValidEmail(testStr: ConvertOptionalString.convert(self.emailTextField.text!)) == false {
+                            
+                            let alertController = UIAlertController(title: "Error", message: "Please enter a valid email", preferredStyle: .alert)
+                            
+                            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                            alertController.addAction(defaultAction)
+                            
+                            self.present(alertController, animated: true, completion: nil)
+                        }
+                        
+                        if self.remindUser != nil && self.remindUser.mail == MainViewController.user.email{
+                            self.remindUser.mail = self.emailTextField.text!
+                        }
+                        
+                        Auth.auth().currentUser?.updateEmail(to: "\(ConvertOptionalString.convert(self.emailTextField.text!))", completion: nil)
+                        ref.child("Players").child("\(MainViewController.user.id)").child("email").setValue("\(ConvertOptionalString.convert(self.emailTextField.text!))")
+                        MainViewController.user.email = self.emailTextField.text!
+                        
+                        
+                        
                     }
                     
-                    if self.remindUser != nil && self.remindUser.mail == MainViewController.user.email{
-                        self.remindUser.mail = self.emailTextField.text!
+                    if self.passTextField.text != "" {
+                        
+                        Auth.auth().currentUser?.updatePassword(to: "\(ConvertOptionalString.convert(self.passTextField.text!))", completion: nil)
+                        if self.remindUser != nil && self.remindUser.mail == MainViewController.user.email{
+                            self.remindUser.pass = self.passTextField.text!
+                        }
                     }
                     
-                    Auth.auth().currentUser?.updateEmail(to: "\(ConvertOptionalString.convert(self.emailTextField.text!))", completion: nil)
-                    ref.child("Players").child("\(MainViewController.user.id)").child("email").setValue("\(ConvertOptionalString.convert(self.emailTextField.text!))")
-                    MainViewController.user.email = self.emailTextField.text!
-                    
-                    
-                    
-                }
-                
-                if self.passTextField.text != "" {
-                    
-                    Auth.auth().currentUser?.updatePassword(to: "\(ConvertOptionalString.convert(self.passTextField.text!))", completion: nil)
-                    if self.remindUser != nil && self.remindUser.mail == MainViewController.user.email{
-                        self.remindUser.pass = self.passTextField.text!
+                    if EditProfileViewController.imageSelected != nil {
+                        
+                        let uploadData = UIImagePNGRepresentation(self.resizeImage(image: EditProfileViewController.imageSelected))!
+                        
+                        let base64ImageString = uploadData.base64EncodedString()
+                        
+                        ref.child("Players").child("\(MainViewController.user.id)").child("image").setValue(base64ImageString)
+                        
+                        MainViewController.user.image = EditProfileViewController.imageSelected
                     }
-                }
+                    
+                    self.activityIndicator.stopAnimating()
+                    UIApplication.shared.endIgnoringInteractionEvents()
+                    self.dismiss(animated: true, completion: nil)
+                }))
                 
-                if EditProfileViewController.imageSelected != nil {
-                    
-                    let uploadData = UIImagePNGRepresentation(self.resizeImage(image: EditProfileViewController.imageSelected))!
-                    
-                    let base64ImageString = uploadData.base64EncodedString()
-                    
-                    ref.child("Players").child("\(MainViewController.user.id)").child("image").setValue(base64ImageString)
-                    
-                    MainViewController.user.image = EditProfileViewController.imageSelected
-                }
-                
-                self.activityIndicator.stopAnimating()
-                UIApplication.shared.endIgnoringInteractionEvents()
-                self.dismiss(animated: true, completion: nil)
-            }))
+                self.present(alert, animated: true)
+            }
+        }else{
+            let alert = UIAlertController(title: "Connect the device", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             
-            self.present(alert, animated: true)
+            present(alert, animated: true, completion: nil)
         }
     }
     @IBAction func goProfile(_ sender: Any) {

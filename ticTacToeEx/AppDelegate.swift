@@ -14,6 +14,8 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    
+    static var isConnected: Bool!
         
     private var reachability: Reachability!
     
@@ -54,6 +56,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("loggato").onDisconnectSetValue("No")
                 Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("stato").onDisconnectSetValue("offline")
             }
+            
+            AppDelegate.isConnected = true
+            
             break
         case .wifi:
             
@@ -62,6 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("loggato").onDisconnectSetValue("No")
                 Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("stato").onDisconnectSetValue("offline")
             }
+            AppDelegate.isConnected = true
             break
         case .none:
             
@@ -73,6 +79,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.windowLevel = UIWindowLevelAlert + 1
             window?.makeKeyAndVisible()
             window?.rootViewController?.present(alert, animated: true, completion: nil)
+            
+            AppDelegate.isConnected = false
             
             break
         }

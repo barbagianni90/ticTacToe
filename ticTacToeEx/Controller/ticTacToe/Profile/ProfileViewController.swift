@@ -277,6 +277,12 @@ class ProfileViewController: UIViewController {
         
     }
    
+    
+    @IBAction func editAction(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "editProfile")
+        self.present(storyboard, animated: true, completion: nil)
+    }
+    
     /*
      // MARK: - Navigation
      

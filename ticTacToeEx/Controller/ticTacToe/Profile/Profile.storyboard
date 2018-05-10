@@ -54,7 +54,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="819-g1-KOZ" kind="show" id="WJE-ux-Wuh"/>
+                                    <action selector="editAction:" destination="Kyp-9A-6zI" eventType="touchUpInside" id="B80-FW-U27"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DV-dB-ViT">
@@ -117,7 +117,7 @@
         <!--Edit Profile View Controller-->
         <scene sceneID="PQB-HC-rpG">
             <objects>
-                <viewController id="819-g1-KOZ" customClass="EditProfileViewController" customModule="ticTacToeEx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="editProfile" id="819-g1-KOZ" customClass="EditProfileViewController" customModule="ticTacToeEx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ifE-gK-TgX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

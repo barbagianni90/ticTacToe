@@ -713,6 +713,9 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         player.image = UIImage(data: imagePNG!)
                         
                         self.players.append(player)
+                        
+                        self.selectedRow = -1
+                        
                         self.animatedTable()
                     }
                 }
@@ -739,7 +742,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         var delayCounter = 0
         for cell in cells {
-            UIView.animate(withDuration: 1.75, delay: Double(delayCounter) * 0.05, options: .curveEaseInOut, animations: {
+            UIView.animate(withDuration: 0.75, delay: Double(delayCounter) * 0.05, options: .curveEaseInOut, animations: {
                 cell.transform = CGAffineTransform(translationX: 0, y: 0)
             }, completion: nil)
             delayCounter += 1
