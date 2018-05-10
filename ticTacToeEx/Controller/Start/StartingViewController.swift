@@ -109,7 +109,11 @@ class StartingViewController: UIViewController{
                             
                             if datiPlayer["loggato"] as! String == "Si" || datiPlayer["loggato"] as! String == "Pausa" {
                                 
-                                self.loadingLabel.text = "Profile logged in another device!"
+                                self.loadingLabel.text = "Your profile is logged in another device!"
+                                
+                                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)){
+                                    self.loadingLabel.isHidden = true
+                                }
                                 
                                 print("Utente già loggato")
                                 
@@ -152,7 +156,12 @@ class StartingViewController: UIViewController{
                                         
                                     }else {
                                         print("wrong login")
+                                        print(error!)
                                         self.loadingLabel.text = "Error loading profile!"
+                                        
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)){
+                                            self.loadingLabel.isHidden = true
+                                        }
                                     }
                                 }
                             }
