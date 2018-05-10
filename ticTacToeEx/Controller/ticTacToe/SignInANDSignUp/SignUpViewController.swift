@@ -178,6 +178,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
                             }
                             
                             Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("loggato").onDisconnectSetValue("No")
+                            Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("stato").onDisconnectSetValue("offline")
                             
                             self.getData()
                             self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
@@ -193,7 +194,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
                             }else{
                                 self.remindUser?.mail = self.emailTextField.text!
                                 self.remindUser?.pass = self.passTextField.text!
+                                self.remindUser?.loggato = true
                                 CoreDataController.saveContext()
+                            }
+                        }else{
+                            if self.remindUser != nil{
+                                self.remindUser?.loggato = false
                             }
                         }
                         

@@ -52,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if MainViewController.user.nickName != "" {
             
                 Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("loggato").onDisconnectSetValue("No")
+                Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("stato").onDisconnectSetValue("offline")
             }
             break
         case .wifi:
@@ -59,6 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if MainViewController.user.nickName != "" {
                 
                 Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("loggato").onDisconnectSetValue("No")
+                Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("stato").onDisconnectSetValue("offline")
             }
             break
         case .none:
@@ -79,7 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(_ application: UIApplication) {
         
         print("Enter in ResignActive")
-        
+        /*
         if MainViewController.user.nickName != "" {
         
             let uploadData = UIImagePNGRepresentation(MainViewController.user.image!)!
@@ -103,7 +105,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     "invitoAccettato" : "",
                     "loggato" : "Pausa"
                 ])
-        }
+        }*/
         self.saveContext()
     }
 
@@ -134,12 +136,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     "invitoAccettato" : "",
                     "loggato" : "Pausa"
                 ])
+            Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("loggato").onDisconnectSetValue("No")
+            Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("stato").onDisconnectSetValue("offline")
         }
+        
         self.saveContext()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        
+        /*
         if MainViewController.user.nickName != "" {
         
             let uploadData = UIImagePNGRepresentation(MainViewController.user.image!)!
@@ -163,7 +168,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     "invitoAccettato" : "",
                     "loggato" : "Si"
                 ])
-        }
+        }*/
         self.saveContext()
     }
 
@@ -192,7 +197,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     "invitoAccettato" : "",
                     "loggato" : "Si"
                 ])
+            Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("loggato").onDisconnectSetValue("No")
+            Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("stato").onDisconnectSetValue("offline")
         }
+        
         self.saveContext()
     }
     
