@@ -27,6 +27,7 @@ class CoreDataController: NSObject {
         
         newUser.mail = mail
         newUser.pass = password
+        newUser.loggato = true
         
         do{
             try context.save()

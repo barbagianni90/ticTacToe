@@ -5,6 +5,7 @@ target 'ticTacToeEx' do
 
   use_frameworks!
 
+  pod 'Firebase'
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
   pod 'Firebase/Database'

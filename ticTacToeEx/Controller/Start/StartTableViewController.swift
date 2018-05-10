@@ -15,9 +15,14 @@ class StartTableViewController: UITableViewController{
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var profileLabel: UILabel!
     
+    var remindUser: RemindUser!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        remindUser = CoreDataController.fetchRemindUser()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadList), name: NSNotification.Name(rawValue: "load"), object: nil)
         
         if MainViewController.user.nickName == ""{
             
@@ -85,6 +90,10 @@ class StartTableViewController: UITableViewController{
                         try Auth.auth().signOut()
                         let ref = Database.database().reference()
                         ref.child("Players").child("\(MainViewController.user.id)").child("loggato").setValue("No")
+                        ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("offline")
+                        if (self.remindUser) != nil{
+                            self.remindUser.loggato = false
+                        }
                         MainViewController.user = User()
                         self.label.text = "Sign In"
                         NotificationCenter.default.post(name: Notification.Name(rawValue:"LogOut"), object: nil)
@@ -112,6 +121,11 @@ class StartTableViewController: UITableViewController{
         return UIScreen.main.bounds.height / 12
     }
     
+    
+    @objc func loadList(notification: NSNotification){
+        //load data here
+        viewWillAppear(true)
+    }
     
     
     

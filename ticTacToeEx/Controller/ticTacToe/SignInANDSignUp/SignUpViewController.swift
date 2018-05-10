@@ -130,7 +130,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
                             
                             if let name = alert.textFields?.first?.text {
                                 
-                                MainViewController.user.id = (user?.uid)!
+                                
+                                MainViewController.user.id = (Auth.auth().currentUser?.uid)!
                                 MainViewController.user.nickName = name
                                 self.nicknameChose = name
                                 MainViewController.user.stato = "online"
@@ -172,6 +173,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
                                     MainViewController.user.image = UIImage(named: "default.jpg")
                                 }
                                 
+                            }else{
+                                print("Insert username")
                             }
                             
                             Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("loggato").onDisconnectSetValue("No")

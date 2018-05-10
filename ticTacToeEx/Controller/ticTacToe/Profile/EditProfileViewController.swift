@@ -43,8 +43,14 @@ class EditProfileViewController: UIViewController {
     
     @IBOutlet var avatars: [UIButton]!
     
+    var remindUser: RemindUser!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        remindUser = CoreDataController.fetchRemindUser()
         
         self.hideKeyboardWhenTappedAround()
         
@@ -477,14 +483,24 @@ class EditProfileViewController: UIViewController {
                         self.present(alertController, animated: true, completion: nil)
                     }
                     
+                    if self.remindUser != nil && self.remindUser.mail == MainViewController.user.email{
+                        self.remindUser.mail = self.emailTextField.text!
+                    }
+                    
                     Auth.auth().currentUser?.updateEmail(to: "\(ConvertOptionalString.convert(self.emailTextField.text!))", completion: nil)
                     ref.child("Players").child("\(MainViewController.user.id)").child("email").setValue("\(ConvertOptionalString.convert(self.emailTextField.text!))")
+                    MainViewController.user.email = self.emailTextField.text!
+                    
+                    
                     
                 }
                 
                 if self.passTextField.text != "" {
                     
                     Auth.auth().currentUser?.updatePassword(to: "\(ConvertOptionalString.convert(self.passTextField.text!))", completion: nil)
+                    if self.remindUser != nil && self.remindUser.mail == MainViewController.user.email{
+                        self.remindUser.pass = self.passTextField.text!
+                    }
                 }
                 
                 if EditProfileViewController.imageSelected != nil {

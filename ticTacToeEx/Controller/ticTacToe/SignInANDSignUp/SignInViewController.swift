@@ -485,11 +485,17 @@ class SignInViewController: UIViewController,UITextFieldDelegate{
                                             }else{
                                                 self.remindUser?.mail = self.emailTextField.text!
                                                 self.remindUser?.pass = self.passTextField.text!
+                                                self.remindUser?.loggato = true
                                                 CoreDataController.saveContext()
+                                            }
+                                        }else if self.remindUser != nil{
+                                            if self.remindUser?.mail == self.emailTextField.text!{
+                                                self.remindUser?.loggato = true
                                             }
                                         }
                                         
                                         Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("loggato").onDisconnectSetValue("No")
+                                        Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("stato").onDisconnectSetValue("offline")
                                         
                                         self.activityIndicator.stopAnimating()
                                         UIApplication.shared.endIgnoringInteractionEvents()

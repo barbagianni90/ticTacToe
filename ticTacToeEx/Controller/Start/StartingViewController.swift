@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class StartingViewController: UIViewController{
     
@@ -51,8 +52,10 @@ class StartingViewController: UIViewController{
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var SMConstraint: NSLayoutConstraint!
     @IBOutlet weak var conteinerView: UIView!
-    
+    @IBOutlet weak var loadingLabel: UILabel!
     @IBOutlet weak var trisButton: UIButton!
+    
+    
     var sideMenuConstraint: NSLayoutConstraint!
     var isSlideMenuHidden = true
     
@@ -63,8 +66,106 @@ class StartingViewController: UIViewController{
         self.nickNameLabel.text = ""
     }
     
+    var remindUser: RemindUser!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        loadingLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        loadingLabel.isHidden = true
+        loadingLabel.textColor = UIColor.white
+        
+        NSLayoutConstraint(item: loadingLabel, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: loadingLabel, attribute: .bottom, relatedBy: .equal, toItem: trisButton, attribute: .top, multiplier: 1, constant: -10).isActive = true
+        
+        //***************************************************
+        //LOGIN AUTOMATICO
+        
+        remindUser = CoreDataController.fetchRemindUser()
+        
+        if remindUser != nil{
+            if remindUser.loggato == true{
+                
+                
+                
+                loadingLabel.text = "Loading profile.."
+                
+                let ref = Database.database().reference()
+                
+                ref.child("Players").observeSingleEvent(of: .value, with:{ (snap) in
+                    
+                    self.loadingLabel.isHidden = false
+                    
+                    let players = snap.value as! [String : Any]
+                    
+                    for(key, value) in players {
+                        
+                        let datiPlayer = value as! [String : Any]
+                        
+                        if datiPlayer["email"] as? String == self.remindUser.mail {
+                            
+                            if datiPlayer["loggato"] as! String == "Si" || datiPlayer["loggato"] as! String == "Pausa" {
+                                
+                                self.loadingLabel.text = "Profile logged in another device!"
+                                
+                                print("Utente già loggato")
+                                
+                            }
+                            else {
+                                
+                                Auth.auth().signIn(withEmail: self.remindUser.mail!, password: self.remindUser.pass!) { (user, error) in
+                                    
+                                    if error == nil {
+                                        
+                                        MainViewController.user.id = key
+                                        MainViewController.user.nickName = datiPlayer["nickname"] as! String
+                                        MainViewController.user.email = datiPlayer["email"] as! String
+                                        MainViewController.user.vittorieTris = Int(datiPlayer["vittorieTris"] as! String)!
+                                        MainViewController.user.vittorieDama = Int(datiPlayer["vittorieDama"] as! String)!
+                                        MainViewController.user.sconfitteTris = Int(datiPlayer["sconfitteTris"] as! String)!
+                                        MainViewController.user.sconfitteDama = Int(datiPlayer["sconfitteDama"] as! String)!
+                                        MainViewController.user.stato = "online"
+                                        
+                                        let decodeString = Data(base64Encoded: datiPlayer["image"] as! String)
+                                        
+                                        let image = UIImage(data: decodeString!)
+                                        
+                                        let imagePNG = UIImagePNGRepresentation(image!)
+                                        
+                                        MainViewController.user.image = UIImage(data: imagePNG!)
+                                        
+                                        ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+                                        ref.child("Players").child("\(MainViewController.user.id)").child("loggato").setValue("Si")
+                                        
+                                        
+                                        Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("loggato").onDisconnectSetValue("No")
+                                        Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("stato").onDisconnectSetValue("offline")
+                                        
+                                        self.loadingLabel.text = "Loading profile successfully!"
+                                        
+                                        //reload view
+                                        self.viewDidAppear(true)
+                                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+                                        
+                                    }else {
+                                        print("wrong login")
+                                        self.loadingLabel.text = "Error loading profile!"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                })
+                
+            }
+        }
+        
+        
+        
+        //***************************************************
         
         
         //observer signOut
@@ -375,6 +476,10 @@ class StartingViewController: UIViewController{
             self.avatarButton.imageView?.contentMode = .scaleAspectFill
             
             self.nickNameLabel.text = MainViewController.user.nickName
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)){
+            self.loadingLabel.isHidden = true
         }
     }
 
