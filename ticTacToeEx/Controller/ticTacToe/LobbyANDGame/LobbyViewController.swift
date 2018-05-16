@@ -353,6 +353,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if self.statePlayerSelected == "lobby" {
             
             ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("occupato")
+            MainViewController.user.stato = "occupato"
             //-----
             ref.child("Lobby").observeSingleEvent(of: .value, with: { (snap) in
                 let stringLobby = snap.value as! String
@@ -541,7 +542,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     let enemyNickName = ConvertOptionalString.extractNickname(value)
                     
                     ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("occupato")
-                    
+                    MainViewController.user.stato = "occupato"
                     //---
                     
                     ref.child("Lobby").observeSingleEvent(of: .value, with: { (snap) in
@@ -630,6 +631,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         
                         ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
                         ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("lobby")
+                        MainViewController.user.stato = "lobby"
                         
                         ref.child("Lobby").observeSingleEvent(of: .value, with: { (snap) in
                             let stringLobby = snap.value as! String
@@ -725,6 +727,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     else {
                         
                         ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("lobby")
+                        MainViewController.user.stato = "lobby"
                         ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
                         
                         ref.child("Lobby").observeSingleEvent(of: .value, with: { (snap) in
