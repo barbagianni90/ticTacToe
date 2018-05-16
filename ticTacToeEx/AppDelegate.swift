@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     static var isConnected: Bool!
-        
+    
+    var enterBackground = false
+    
     private var reachability: Reachability!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -52,9 +54,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case .cellular:
             
             if MainViewController.user.nickName != "" {
-            
+                
                 Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("loggato").onDisconnectSetValue("No")
                 Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("stato").onDisconnectSetValue("offline")
+                
             }
             
             AppDelegate.isConnected = true
@@ -66,8 +69,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("loggato").onDisconnectSetValue("No")
                 Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("stato").onDisconnectSetValue("offline")
+                
             }
+            
             AppDelegate.isConnected = true
+            
             break
         case .none:
             
@@ -85,41 +91,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             break
         }
     }
-
+    
     func applicationWillResignActive(_ application: UIApplication) {
         
-        print("Enter in ResignActive")
-        /*
-        if MainViewController.user.nickName != "" {
         
-            let uploadData = UIImagePNGRepresentation(MainViewController.user.image!)!
-            
-            let base64ImageString = uploadData.base64EncodedString()
-            
-            let ref = Database.database().reference()
-            
-            ref.child("Players").child("\(MainViewController.user.id)").setValue(
-                
-                [
-                    "nickname" : "\(MainViewController.user.nickName)",
-                    "image" : "\(base64ImageString)",
-                    "email" : "\(MainViewController.user.email)",
-                    "vittorieTris" : "\(MainViewController.user.vittorieTris)",
-                    "vittorieDama" : "\(MainViewController.user.vittorieDama)",
-                    "sconfitteTris" : "\(MainViewController.user.sconfitteTris)",
-                    "sconfitteDama" : "\(MainViewController.user.sconfitteDama)",
-                    "stato" : "offline",
-                    "invitatoDa" : "",
-                    "invitoAccettato" : "",
-                    "loggato" : "Pausa"
-                ])
-        }*/
-        self.saveContext()
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        
-        print("Enter in Background")
+        enterBackground = true
         
         if MainViewController.user.nickName != "" {
             
@@ -146,15 +122,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 ])
             Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("loggato").onDisconnectSetValue("No")
             Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("stato").onDisconnectSetValue("offline")
+            
+            if MainViewController.user.stato == "lobby"{
+                ref.child("Lobby").observeSingleEvent(of: .value, with: { (snap) in
+                    var lobby = 0
+                    let stringLobby = snap.value as! String
+                    print("\n\n*********\n string lobby value: \(stringLobby) \n*********\n")
+                    lobby = (stringLobby as NSString).integerValue
+                    lobby -= 1
+                    ref.child("Lobby").setValue("\(lobby)")
+                    print("\n\n*********\n lobby value: \(lobby) \n*********\n")
+                })
+            }
+            
+            
+            print("\n\n*********\nBackground: \(MainViewController.user.stato)\n**********\n")
         }
+        
+        
         
         self.saveContext()
     }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
         /*
-        if MainViewController.user.nickName != "" {
+        print("Enter in Background")
         
+        enterBackground = true
+        
+        if MainViewController.user.nickName != "" {
+            
             let uploadData = UIImagePNGRepresentation(MainViewController.user.image!)!
             
             let base64ImageString = uploadData.base64EncodedString()
@@ -171,19 +168,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     "vittorieDama" : "\(MainViewController.user.vittorieDama)",
                     "sconfitteTris" : "\(MainViewController.user.sconfitteTris)",
                     "sconfitteDama" : "\(MainViewController.user.sconfitteDama)",
-                    "stato" : "online",
+                    "stato" : "offline",
                     "invitatoDa" : "",
                     "invitoAccettato" : "",
-                    "loggato" : "Si"
+                    "loggato" : "Pausa"
                 ])
-        }*/
+            Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("loggato").onDisconnectSetValue("No")
+            Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("stato").onDisconnectSetValue("offline")
+            
+            if MainViewController.user.stato == "lobby"{
+                ref.child("Lobby").observeSingleEvent(of: .value, with: { (snap) in
+                    var lobby = 0
+                    let stringLobby = snap.value as! String
+                    print("\n\n*********\n string lobby value: \(stringLobby) \n*********\n")
+                    lobby = (stringLobby as NSString).integerValue
+                    lobby -= 1
+                    ref.child("Lobby").setValue("\(lobby)")
+                    print("\n\n*********\n lobby value: \(lobby) \n*********\n")
+                })
+            }
+            
+            
+            print("\n\n*********\nBackground: \(MainViewController.user.stato)\n**********\n")
+        }
+        */
         self.saveContext()
     }
-
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        self.saveContext()
+    }
+    
     func applicationDidBecomeActive(_ application: UIApplication) {
         
         if MainViewController.user.nickName != "" {
-        
+            
             let uploadData = UIImagePNGRepresentation(MainViewController.user.image!)!
             
             let base64ImageString = uploadData.base64EncodedString()
@@ -205,8 +224,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     "invitoAccettato" : "",
                     "loggato" : "Si"
                 ])
+            
+            
             Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("loggato").onDisconnectSetValue("No")
             Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("stato").onDisconnectSetValue("offline")
+            
+            if MainViewController.user.stato == "lobby"{
+                
+                ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("lobby")
+                
+                if enterBackground{
+                    ref.child("Lobby").observeSingleEvent(of: .value, with: { (snap) in
+                        var lobby = 0
+                        let stringLobby = snap.value as! String
+                        print("\n\n*********\n string lobby value: \(stringLobby) \n*********\n")
+                        lobby = (stringLobby as NSString).integerValue
+                        lobby += 1
+                        ref.child("Lobby").setValue("\(lobby)")
+                        
+                        print("\n\n*********\n lobby value: \(lobby) \n*********\n")
+                    })
+                }
+                
+            }
+            enterBackground = false
+            print("\n\n*********\nEnter : \(MainViewController.user.stato)\n**********\n")
         }
         
         self.saveContext()
@@ -214,7 +256,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillTerminate(_ application: UIApplication) {
         
-       
+        print("\n\n*********\nTerminate: \(MainViewController.user.stato)\n**********\n")
+        MainViewController.user.stato = "offline"
         self.saveContext()
     }
     
@@ -258,6 +301,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
+    
 }
+
 

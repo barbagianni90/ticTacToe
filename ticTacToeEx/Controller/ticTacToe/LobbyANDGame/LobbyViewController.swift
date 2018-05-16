@@ -36,6 +36,7 @@ class ActivityView: UIView {
     let messageLabel = UILabel()
     let counter = UILabel()
     
+    
     init() {
         
         super.init(frame: CGRect())
@@ -102,6 +103,8 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var players: [User] = []
     
+    var lobby = 0
+    
     @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var giocatoreLabel: UILabel!
     
@@ -120,14 +123,15 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var activitiyViewController = ActivityViewController(message: "Attending...", count: 30)
     
-    var sfidante: [String : String] = ["id" : "",
-                                       "nickname" : ""]
-    
     var statePlayerSelected: String = ""
     
     static var gameSelected: String = ""
     
-    var selectedRow = -1
+    var allPlayers:[User] = []
+    
+    var selectUser = (id: "", bool: false)
+    
+    var selectedRowString = ""
     
     @IBOutlet weak var lobbyTable: UITableView!
     
@@ -228,10 +232,6 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.avatarButton.imageView?.contentMode = .scaleAspectFill
             
         }
-        
-        
-        
-        
         
         
         
@@ -350,23 +350,30 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         let ref = Database.database().reference()
         
-        if self.statePlayerSelected == "online" {
+        if self.statePlayerSelected == "lobby" {
             
             ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("occupato")
-            
-            for user in players {
-                
-                if user.nickName == self.sfidante["nickname"]{
+            //-----
+            ref.child("Lobby").observeSingleEvent(of: .value, with: { (snap) in
+                let stringLobby = snap.value as! String
+                self.lobby = (stringLobby as NSString).integerValue
+                self.lobby -= 1
+                ref.child("Lobby").setValue("\(self.lobby)")
+                //-----
+                for user in self.players {
                     
-                    ref.child("Players").child("\(user.id)").child("invitatoDa").setValue("\(MainViewController.user.nickName)\(LobbyViewController.gameSelected)")
-                    
-                    self.sfidante.updateValue(user.id, forKey: "id")
+                    if user.id == self.selectUser.id{
+                        
+                        ref.child("Players").child("\(user.id)").child("invitatoDa").setValue("\(MainViewController.user.nickName)\(LobbyViewController.gameSelected)")
+                    }
                 }
-            }
-            self.activitiyViewController = ActivityViewController(message: "Attending...", count: 30)
-            self.present(activitiyViewController, animated: true, completion: nil)
+                self.activitiyViewController = ActivityViewController(message: "Attending...", count: 30)
+                self.present(self.activitiyViewController, animated: true, completion: nil)
+                
+                self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.countDownSend), userInfo: nil, repeats: true)
+            })
+            //-----
             
-            self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countDownSend), userInfo: nil, repeats: true)
         }
     }
     
@@ -380,7 +387,21 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             let ref = Database.database().reference()
             
-            ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+            ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("lobby")
+            ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
+            ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
+            
+            
+            ref.child("Lobby").observeSingleEvent(of: .value, with: { (snap) in
+                let stringLobby = snap.value as! String
+                print("\n\n*********\n string lobby value: \(stringLobby) \n*********\n")
+                self.lobby = (stringLobby as NSString).integerValue
+                self.lobby += 1
+                ref.child("Lobby").setValue("\(self.lobby)")
+                print("\n\n*********\n lobby value: \(self.lobby) \n*********\n")
+            })
+            
+            
             
             self.count = 30
             
@@ -401,8 +422,18 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             let ref = Database.database().reference()
             
-            ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+            ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("lobby")
             ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
+            ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
+            
+            ref.child("Lobby").observeSingleEvent(of: .value, with: { (snap) in
+                let stringLobby = snap.value as! String
+                print("\n\n*********\n string lobby value: \(stringLobby) \n*********\n")
+                self.lobby = (stringLobby as NSString).integerValue
+                self.lobby += 1
+                ref.child("Lobby").setValue("\(self.lobby)")
+                print("\n\n*********\n lobby value: \(self.lobby) \n*********\n")
+            })
             
             LobbyViewController.gameSelected = ""
             
@@ -416,9 +447,86 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        MainViewController.user.stato = "lobby"
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         
+        refresh()
+        
+        
         let ref = Database.database().reference()
+        
+        ref.child("Players").observeSingleEvent(of: .value, with:{ (snap) in
+            
+            self.allPlayers.removeAll()
+            
+            let players = snap.value as! [String : Any]
+            
+            for(key, value) in players {
+                
+                let datiSinglePlayer = value as! [String : Any]
+                
+                if key != MainViewController.user.id {
+                    
+                    let player = User()
+                    player.id = key
+                    player.nickName = datiSinglePlayer["nickname"] as! String
+                    player.stato = datiSinglePlayer["stato"] as! String
+                    
+                    let decodeString = Data(base64Encoded: datiSinglePlayer["image"] as! String)
+                    
+                    let image = UIImage(data: decodeString!)
+                    
+                    let imagePNG = UIImagePNGRepresentation(image!)
+                    
+                    player.image = UIImage(data: imagePNG!)
+                    
+                    self.allPlayers.append(player)
+                    
+                }
+            }
+        })
+        
+        ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("lobby")
+        
+        
+        ref.child("Lobby").observeSingleEvent(of: .value, with: { (snap) in
+            let stringLobby = snap.value as! String
+            print("\n\n*********\n string lobby value: \(stringLobby) \n*********\n")
+            self.lobby = (stringLobby as NSString).integerValue
+            self.lobby += 1
+            ref.child("Lobby").setValue("\(self.lobby)")
+            print("\n\n*********\n lobby value: \(self.lobby) \n*********\n")
+        })
+        
+        
+        //observe for reload tebleView when one player enter/exit in lobby
+        
+        ref.child("Lobby").observe(.value){ (snap,error) in
+            if error == nil {
+                let currentLobbyString = snap.value as! String
+                
+                let currentLobby = (currentLobbyString as NSString).integerValue
+                
+                if currentLobby <= self.lobby{
+                    //quando esce un utente
+                    self.exitRefresh()
+                    self.lobby = currentLobby
+                }else{
+                    //quando entra un utente
+                    
+                    self.enterRefresh()
+                    self.lobby = currentLobby
+                }
+            }
+        }
+        
+        
+        
+        
         
         ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").observe(.value) { (snap, error) in
             
@@ -434,9 +542,22 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     
                     ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("occupato")
                     
+                    //---
+                    
+                    ref.child("Lobby").observeSingleEvent(of: .value, with: { (snap) in
+                        let stringLobby = snap.value as! String
+                        print("\n\n*********\n string lobby value: \(stringLobby) \n*********\n")
+                        self.lobby = (stringLobby as NSString).integerValue
+                        self.lobby -= 1
+                        ref.child("Lobby").setValue("\(self.lobby)")
+                        print("\n\n*********\n lobby value: \(self.lobby) \n*********\n")
+                    })
+                    
+                    //___
+                    
                     var idNickInvito = ""
                     
-                    for user in self.players {
+                    for user in self.allPlayers {
                         
                         if user.nickName == enemyNickName {
                             
@@ -462,7 +583,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                             enemy.id = idNickInvito
                             enemy.nickName = "\(enemyNickName)"
                             
-                            for user in self.players {
+                            for user in self.allPlayers {
                                 
                                 if user.nickName == enemyNickName {
                                     
@@ -485,7 +606,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                             enemy.id = idNickInvito
                             enemy.nickName = "\(enemyNickName)"
                             
-                            for user in self.players {
+                            for user in self.allPlayers {
                                 
                                 if user.nickName == enemyNickName {
                                     
@@ -507,9 +628,18 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         
                         self.count = 30
                         
-                        ref.child("Players").child("\(idNickInvito)").child("invitoAccettato").setValue("No")
                         ref.child("Players").child("\(MainViewController.user.id)").child("invitatoDa").setValue("")
-                        ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+                        ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("lobby")
+                        
+                        ref.child("Lobby").observeSingleEvent(of: .value, with: { (snap) in
+                            let stringLobby = snap.value as! String
+                            print("\n\n*********\n string lobby value: \(stringLobby) \n*********\n")
+                            self.lobby = (stringLobby as NSString).integerValue
+                            self.lobby += 1
+                            ref.child("Lobby").setValue("\(self.lobby)")
+                            ref.child("Players").child("\(idNickInvito)").child("invitoAccettato").setValue("No")
+                            print("\n\n*********\n lobby value: \(self.lobby) \n*********\n")
+                        })
                     }))
                     
                     self.present(alert, animated: true, completion: {
@@ -539,6 +669,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     self.activitiyViewController.dismiss(animated: true, completion: nil)
                     UIApplication.shared.endIgnoringInteractionEvents()
                     
+                    
                     if value == "Si" {
                         
                         if LobbyViewController.gameSelected == "tris" {
@@ -546,12 +677,14 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                             let segue = UIStoryboard(name:"GameTris",bundle:nil).instantiateViewController(withIdentifier: "GameTrisID") as! GameTrisViewController
                             
                             let enemy = User()
-                            enemy.id = self.sfidante["id"]!
-                            enemy.nickName = self.sfidante["nickname"]!
+//                            enemy.id = self.sfidante["id"]!
+                            enemy.id = self.selectUser.id
+//                            enemy.nickName = self.sfidante["nickname"]!
+                            enemy.nickName = self.allPlayers[self.getIndex(self.allPlayers, enemy.id)].nickName
                             
-                            for user in self.players {
+                            for user in self.allPlayers {
                                 
-                                if user.nickName == self.sfidante["nickname"]! {
+                                if /*user.nickName == self.sfidante["nickname"]!*/ user.id == self.selectUser.id{
                                     
                                     enemy.image = user.image
                                 }
@@ -569,12 +702,14 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                             let segue = UIStoryboard(name:"GameCheckers",bundle:nil).instantiateViewController(withIdentifier: "GameCheckID") as! GameCheckersViewController
                             
                             let enemy = User()
-                            enemy.id = self.sfidante["id"]!
-                            enemy.nickName = self.sfidante["nickname"]!
+                            enemy.id = self.selectUser.id
+                            enemy.nickName = self.allPlayers[self.getIndex(self.allPlayers, enemy.id)].nickName
+//                            enemy.id = self.sfidante["id"]!
+//                            enemy.nickName = self.sfidante["nickname"]!
                             
-                            for user in self.players {
+                            for user in self.allPlayers {
                                 
-                                if user.nickName == self.sfidante["nickname"]! {
+                                if /*user.nickName == self.sfidante["nickname"]!*/user.id == self.selectUser.id {
                                     
                                     enemy.image = user.image
                                 }
@@ -589,8 +724,17 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     }
                     else {
                         
-                        ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+                        ref.child("Players").child("\(MainViewController.user.id)").child("stato").setValue("lobby")
                         ref.child("Players").child("\(MainViewController.user.id)").child("invitoAccettato").setValue("")
+                        
+                        ref.child("Lobby").observeSingleEvent(of: .value, with: { (snap) in
+                            let stringLobby = snap.value as! String
+                            print("\n\n*********\n string lobby value: \(stringLobby) \n*********\n")
+                            self.lobby = (stringLobby as NSString).integerValue
+                            self.lobby += 1
+                            ref.child("Lobby").setValue("\(self.lobby)")
+                            print("\n\n*********\n lobby value: \(self.lobby) \n*********\n")
+                        })
                         
                         self.activitiyViewController.dismiss(animated: true, completion: nil)
                     }
@@ -620,33 +764,45 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Pass the selected object to the new view controller.
     }
     */
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        if self.selectedRow == indexPath.row {
-            let cell = tableView.cellForRow(at: indexPath) as! CustomLobbyCell
-            if cell.frame.height == 45.0 {
+        let index = getIndex(players, selectUser.id)
+        
+        if index == indexPath.row{
+            if selectUser.bool{
                 return 115.0
-            } else {
+            }else{
                 return 45.0
             }
         }
+
         return 45.0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
         tableView.beginUpdates()
-        self.selectedRow = indexPath.row
+        
+        if selectUser.id != players[indexPath.row].id{
+            selectUser.id = players[indexPath.row].id
+            selectUser.bool = true
+        }else{
+//            selectUser.id = ""
+            selectUser.bool = !selectUser.bool
+        }
+        
         tableView.endUpdates()
         
         tableView.deselectRow(at: indexPath, animated: true)
         
         let cell = tableView.cellForRow(at: indexPath) as! CustomLobbyCell
         
-        self.sfidante.updateValue(ConvertOptionalString.convert(cell.nickNameLabel.text!), forKey: "nickname")
+//        self.sfidante.updateValue(ConvertOptionalString.convert(cell.nickNameLabel.text!), forKey: "nickname")
         
         self.statePlayerSelected = ConvertOptionalString.convert(cell.stateLabel.text!)
         
+//        lobbyTable.reloadData()
     }
     
     
@@ -660,7 +816,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = lobbyTable.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomLobbyCell
         
         cell.nickNameLabel.text = players[indexPath.row].nickName
-        cell.stateLabel.text = players[indexPath.row].stato
+        cell.stateLabel.text = players[indexPath.row].stato /* "online"*/
         cell.imageCell.image = players[indexPath.row].image
         cell.imageCell.layer.cornerRadius = cell.imageCell.frame.size.width / 2
         cell.imageCell.layer.masksToBounds = true
@@ -674,12 +830,107 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.button2.setBackgroundImage(UIImage(named: "checkIcon"), for: .normal)
         
         
+
+        
       
         
         tableView.rowHeight = UIScreen.main.bounds.size.height / 8
         
         return cell
     }
+    //_________
+    func contiene (_ players: [User], _ user: User) ->Bool{
+        for player in players {
+            if player.id == user.id{
+                return true
+            }
+        }
+        return false
+    }
+    
+    func enterRefresh(){
+        
+        let ref = Database.database().reference()
+        
+        ref.child("Players").observeSingleEvent(of: .value, with:{ (snap) in
+            
+            let players = snap.value as! [String : Any]
+            
+            for(key, value) in players {
+                
+                let datiSinglePlayer = value as! [String : Any]
+                
+                if key != MainViewController.user.id {
+                    let player = User()
+                    player.id = key
+                    player.nickName = datiSinglePlayer["nickname"] as! String
+                    player.stato = datiSinglePlayer["stato"] as! String
+                    
+                    if player.stato == "lobby" && self.contiene(self.players, player) == false{
+                        
+                        let decodeString = Data(base64Encoded: datiSinglePlayer["image"] as! String)
+                        
+                        let image = UIImage(data: decodeString!)
+                        
+                        let imagePNG = UIImagePNGRepresentation(image!)
+                        
+                        player.image = UIImage(data: imagePNG!)
+                        
+                        self.players.append(player)
+                        
+                    }
+                }
+            }
+            self.lobbyTable.reloadData()
+        })
+    }
+    
+    
+    func exitRefresh(){
+        
+        let ref = Database.database().reference()
+        
+        ref.child("Players").observeSingleEvent(of: .value, with:{ (snap) in
+            
+            let players = snap.value as! [String : Any]
+            
+            for(key, value) in players {
+                
+                let datiSinglePlayer = value as! [String : Any]
+                
+                if key != MainViewController.user.id {
+                    let player = User()
+                    player.id = key
+                    player.nickName = datiSinglePlayer["nickname"] as! String
+                    player.stato = datiSinglePlayer["stato"] as! String
+                    
+                    if player.stato != "lobby" && self.contiene(self.players, player) == true{
+                        
+                        self.players.remove(at: self.getIndex(self.players, player.id))
+                        
+                    }
+                }
+            }
+            
+            if self.getIndex(self.players, self.selectUser.id) == -1{
+//                self.selectUser.id = ""
+                self.selectUser.bool = false
+            }
+            self.lobbyTable.reloadData()
+        })
+    }
+    
+    func getIndex(_ players: [User], _ user: String) -> Int{
+        var index = 0
+        for player in players{
+            if player.id == user{
+                return index
+            }
+            index += 1
+        }
+        return -1
+    }
+    //_________
     
     func refresh() -> Void {
         
@@ -702,7 +953,7 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     player.nickName = datiSinglePlayer["nickname"] as! String
                     player.stato = datiSinglePlayer["stato"] as! String
                     
-                    if player.stato == "online" {
+                    if player.stato == "lobby" {
                     
                         let decodeString = Data(base64Encoded: datiSinglePlayer["image"] as! String)
                         
@@ -714,42 +965,68 @@ class LobbyViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         
                         self.players.append(player)
                         
-                        self.selectedRow = -1
                         
-                        self.animatedTable()
                     }
                 }
             }
+            
+//            self.selectUser.id = ""
+            self.selectUser.bool = false
+            
+            self.animatedTable()
         })
     }
     
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
-        
         refresh()
         refreshControl.endRefreshing()
-        
     }
     
     func animatedTable() {
         self.lobbyTable.reloadData()
-        let cells = self.lobbyTable.visibleCells
         
-        
-        for cell in cells {
-            cell.transform = CGAffineTransform(translationX: 0, y: self.lobbyTable.frame.size.height)
-        }
-        
-        
-        var delayCounter = 0
-        for cell in cells {
-            UIView.animate(withDuration: 0.75, delay: Double(delayCounter) * 0.05, options: .curveEaseInOut, animations: {
-                cell.transform = CGAffineTransform(translationX: 0, y: 0)
-            }, completion: nil)
-            delayCounter += 1
+        if players.count > 0{
+            let cells = self.lobbyTable.visibleCells
+            
+            
+            for cell in cells {
+                cell.transform = CGAffineTransform(translationX: 0, y: self.lobbyTable.frame.size.height)
+            }
+            
+            
+            var delayCounter = 0
+            for cell in cells {
+                UIView.animate(withDuration: 0.75, delay: Double(delayCounter) * 0.05, options: .curveEaseInOut, animations: {
+                    cell.transform = CGAffineTransform(translationX: 0, y: 0)
+                }, completion: nil)
+                delayCounter += 1
+            }
         }
     }
     
     @IBAction func goHome(_ sender: Any) {
+        
+        Database.database().reference().child("Players").child("\(MainViewController.user.id)").child("stato").setValue("online")
+        let ref = Database.database().reference()
+        
+        
+        ref.child("Lobby").observeSingleEvent(of: .value, with: { (snap) in
+            let stringLobby = snap.value as! String
+            print("\n\n*********\n string lobby value: \(stringLobby) \n*********\n")
+            self.lobby = (stringLobby as NSString).integerValue
+            self.lobby -= 1
+            ref.child("Lobby").setValue("\(self.lobby)")
+            print("\n\n*********\n lobby value: \(self.lobby) \n*********\n")
+        })
+        
+        selectUser.id = ""
+        selectUser.bool = false
+        
+        allPlayers.removeAll()
+        players.removeAll()
+        
+        MainViewController.user.stato = "online"
+        
         
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }

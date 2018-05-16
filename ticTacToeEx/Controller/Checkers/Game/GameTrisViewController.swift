@@ -318,6 +318,9 @@ class GameTrisViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        MainViewController.user.stato = "game"
+        
+        
         
         //background
         let background: UIImageView!

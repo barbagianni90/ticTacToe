@@ -72,6 +72,7 @@ class StartingViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        trisButton.isEnabled = false
         
         loadingLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -87,6 +88,7 @@ class StartingViewController: UIViewController{
         remindUser = CoreDataController.fetchRemindUser()
         
         if remindUser != nil{
+            
             if remindUser.loggato == true{
                 
                 
@@ -98,6 +100,7 @@ class StartingViewController: UIViewController{
                 ref.child("Players").observeSingleEvent(of: .value, with:{ (snap) in
                     
                     self.loadingLabel.isHidden = false
+                    
                     
                     let players = snap.value as! [String : Any]
                     
@@ -113,6 +116,7 @@ class StartingViewController: UIViewController{
                                 
                                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)){
                                     self.loadingLabel.isHidden = true
+                                    self.trisButton.isEnabled = true
                                 }
                                 
                                 print("Utente già loggato")
@@ -153,6 +157,7 @@ class StartingViewController: UIViewController{
                                         //reload view
                                         self.viewDidAppear(true)
                                         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
+                                        self.trisButton.isEnabled = true
                                         
                                     }else {
                                         print("wrong login")
@@ -161,6 +166,7 @@ class StartingViewController: UIViewController{
                                         
                                         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)){
                                             self.loadingLabel.isHidden = true
+                                            self.trisButton.isEnabled = true
                                         }
                                     }
                                 }
@@ -169,7 +175,11 @@ class StartingViewController: UIViewController{
                     }
                 })
                 
+            }else{
+                trisButton.isEnabled = true
             }
+        }else{
+            trisButton.isEnabled = true
         }
         
         

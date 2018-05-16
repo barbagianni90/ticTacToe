@@ -312,6 +312,8 @@ class GameCheckersViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        MainViewController.user.stato = "game"
+        
         if fPlayer == true {
             myImage = UIImage(named: "pedinaBianca")
             myImageDama = UIImage(named: "damaBianca")
@@ -1140,7 +1142,7 @@ class GameCheckersViewController: UIViewController, UITableViewDelegate, UITable
             ref.child("\(MainViewController.user.nickName)Damiera").child("Mossa").removeAllObservers()
             ref.child("\(MainViewController.user.nickName)Damiera").removeValue()
             ref.child("Utility\(self.nomeTabella)").removeAllObservers()
-            
+            ref.child("Messages\(self.nomeTabella)").removeAllObservers()
             
             let alert = UIAlertController(title: "Hai vinto", message: "Bravo", preferredStyle: .alert)
             
@@ -1163,6 +1165,8 @@ class GameCheckersViewController: UIViewController, UITableViewDelegate, UITable
             ref.child("\(MainViewController.user.nickName)Damiera").removeValue()
             ref.child("Utility\(self.nomeTabella)").removeAllObservers()
             ref.child("Utility\(self.nomeTabella)").removeValue()
+            ref.child("Messages\(self.nomeTabella)").removeAllObservers()
+            ref.child("Messages\(self.nomeTabella)").removeValue()
             
             let alert = UIAlertController(title: "Hai perso", message: "Mi spiace", preferredStyle: .alert)
             
